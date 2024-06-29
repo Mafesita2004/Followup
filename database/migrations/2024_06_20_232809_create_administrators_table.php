@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('municipality');
             $table->string('neighborhood');
             $table->string('Birthdate');
+            $table->string('Birthdate');
             $table->string('password');
             $table->timestamps();
         });
