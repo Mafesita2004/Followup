@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ApprenticeController extends Controller
 {
+
+    public function home()
+    {
+        return view('apprentice.home');
+    }
     /**
      * Display a listing of the resource.
      */

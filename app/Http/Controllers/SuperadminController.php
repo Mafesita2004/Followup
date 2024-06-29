@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class SuperadminController extends Controller
 {
+
+
+    public function home()
+    {
+        return view('superadmin.home');
+    }
+
     /**
      * Display a listing of the resource.
      */
