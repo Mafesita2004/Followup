@@ -1,0 +1,108 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#contenedor {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #003153;
+    padding: 10px 20px;
+}
+
+#logo {
+    height: 40px;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#bienvenida {
+    flex: 1;
+    position: relative;
+}
+
+#bienvenida h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#bienvenida p {
+    font-size: 18px;
+    color: #666;
+    max-width: 60%;
+}
+
+#persona-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-height: 80%;
+}
+
+#login {
+    background-color: #003153;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+#login h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+
+input {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    flex: 1;
+}
+
+#forgot-password {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
