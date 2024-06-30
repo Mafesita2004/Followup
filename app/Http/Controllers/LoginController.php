@@ -9,22 +9,23 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('/resources/views/superadmin/home.blade.php');
+        return view('login');
     }
 
     public function login(Request $request)
     {
+        // Validar las credenciales
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
+        // Intentar autenticar al usuario
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            $user = Auth::user();
 
-            // Redirigir basado en el rol del usuario
-            switch($user->role) {
+            // Redireccionar según el rol del usuario
+            switch (auth()->user()->role) {
                 case 'superadmin':
                     return redirect()->route('superadmin.home');
                 case 'administrator':
@@ -38,9 +39,10 @@ class LoginController extends Controller
             }
         }
 
+        // Si la autenticación falla, redirigir de nuevo al formulario de login con errores
         return back()->withErrors([
-            'username' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
-        ])->onlyInput('username');
+            'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+        ])->withInput($request->only('email'));
     }
 
     public function logout(Request $request)
@@ -48,6 +50,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect('/');
     }
 }

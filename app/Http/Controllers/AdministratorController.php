@@ -17,7 +17,7 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        //console.log
+        
     }
 
     /**
