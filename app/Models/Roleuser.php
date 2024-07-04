@@ -9,5 +9,9 @@ class RoleUser extends Model
 {
     use HasFactory;
 
+    /**
+     * Define el nombre de la tabla asociada con el modelo.
+     * En este caso, la tabla 'role_user'.
+     */
     protected $table = 'role_user';
 }
