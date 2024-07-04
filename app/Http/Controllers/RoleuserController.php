@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\superadmin;
+use App\Models\Role;
+use App\Models\Roleuser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class SuperadminController extends Controller
+class RoleuserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role:superadmin');
+    public function asociar(){
+
+        $users = User::all();
+        $roles = Role::all();
+
+    return view('role_user.asociar',compact('users','roles'));
     }
     public function index()
     {
-        return view('superadmin.home');
+        //
     }
 
     /**
@@ -33,13 +34,14 @@ class SuperadminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user=User::find($request->user_id);
+        $user->roles()->attach($request->role_id);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(superadmin $superadmin)
+    public function show(Roleuser $roleuser)
     {
         //
     }
@@ -47,7 +49,7 @@ class SuperadminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(superadmin $superadmin)
+    public function edit(Roleuser $roleuser)
     {
         //
     }
@@ -55,7 +57,7 @@ class SuperadminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, superadmin $superadmin)
+    public function update(Request $request, Roleuser $roleuser)
     {
         //
     }
@@ -63,7 +65,7 @@ class SuperadminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(superadmin $superadmin)
+    public function destroy(Roleuser $roleuser)
     {
         //
     }

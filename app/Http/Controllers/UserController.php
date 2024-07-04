@@ -1,23 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\superadmin;
+use App\Http\Controllers\Controller;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class SuperadminController extends Controller
+class UserController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role:superadmin');
-    }
     public function index()
     {
-        return view('superadmin.home');
+        //
     }
 
     /**
@@ -39,7 +37,7 @@ class SuperadminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(superadmin $superadmin)
+    public function show(string $id)
     {
         //
     }
@@ -47,7 +45,7 @@ class SuperadminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(superadmin $superadmin)
+    public function edit(string $id)
     {
         //
     }
@@ -55,7 +53,7 @@ class SuperadminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, superadmin $superadmin)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -63,7 +61,7 @@ class SuperadminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(superadmin $superadmin)
+    public function destroy(string $id)
     {
         //
     }
