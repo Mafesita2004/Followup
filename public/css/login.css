@@ -59,21 +59,27 @@ main {
 }
 
 h2 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: #333;
-    line-height: 1.2;
+    font-size: 3rem; /* Ajusta el tamaño de fuente */
+    font-weight: bold; /* Ajusta el peso de la fuente */
+    color: #000; /* Ajusta el color del texto */
+    margin: 0; /* Elimina los márgenes */
+    line-height: 1.2; /* Ajusta el espacio entre líneas */
 }
 
 p {
-    color: #666;
-    font-size: 1.1em;
+    font-size: 1rem; /* Ajusta el tamaño de fuente */
+    font-weight: normal; /* Ajusta el peso de la fuente */
+    color: #666; /* Ajusta el color del texto */
+    margin: 0; /* Elimina los márgenes */
+    margin-top: 10px; /* Espacio superior */
 }
 
 .persona-img {
-    width: 300px;
+    width: 500px;
     height: auto;
     margin-left: 50px;
+    opacity: 0.5;
+    transform: scaleX(-1);
 }
 
 .login-container {
