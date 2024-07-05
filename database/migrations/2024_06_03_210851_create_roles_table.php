@@ -10,11 +10,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->string('guard_name')->unique();
-            $table->timestamps();
+            $table->id(); // Crea un campo ID autoincremental para la tabla 'roles'
+            $table->string('guard_name')->unique(); // Crea un campo 'guard_name' único para el nombre del rol
+            $table->timestamps(); // Crea campos 'created_at' y 'updated_at' para la gestión de fechas
         });
 
+        // Inserta registros iniciales en la tabla 'roles'
         DB::table('roles')->insert([
             ['guard_name' => 'superadmin'],
             ['guard_name' => 'administrator'],
@@ -25,6 +26,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('roles'); // Elimina la tabla 'roles' si existe
     }
 };

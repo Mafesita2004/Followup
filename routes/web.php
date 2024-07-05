@@ -4,17 +4,21 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
+// Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
     return view('auth.login');
 });
 
+// Rutas para el inicio de sesión y registro
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Grupo de rutas protegidas por middleware 'auth' (usuarios autenticados)
 Route::middleware(['auth'])->group(function () {
+    // Rutas para roles específicos
     Route::get('/superadmin/home', function () {
         return view('superadmin.home');
     })->name('superadmin.home');
