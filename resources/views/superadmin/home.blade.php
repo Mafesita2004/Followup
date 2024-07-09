@@ -1,55 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperAdmin Home</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-                "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-                "Source Han Sans CN", sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #04324d;
-            color: #ffffff;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .logout-button {
-            padding: 10px 20px;
-            background-color: #009e00;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .logout-button:hover {
-            background-color: #007a00;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('css/superadmin/superadmin-home.css')}}">
+    <title>Etapa Seguimiento</title>
 </head>
 <body>
     <header>
-        <h1>Hola, soy super admin</h1>
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-button">Cerrar Sesión</button>
-        </form>
+        <div class="EtapaSeguimiento">
+            <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
+            <h2>Etapa Seguimiento</h2>
+        </div>
+        <div class="SUPER-ADMINISTRADOR">
+            <h1>SUPER</h1>
+            <h1>ADMINISTRADOR</h1>
+        </div>
+        <img class="logoSena" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
     </header>
+    <nav class="user-nav">
+        <img class="notificacion" src="{{asset('img/notificaciones.png')}}" alt="">
+        <div class="user">Nombre de usuario</div>
+        <img class="user-icon" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+    </nav>
+    <main>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="{{ asset('img/administrador.png') }}" alt="Administradores">
+                <span>Administradores</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ asset('img/instructor.png') }}" alt="Instructores">
+                <span>Instructores</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices">
+                <span>Aprendices</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ asset('img/permisos.png') }}" alt="Permisos">
+                <span>Permisos</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ asset('img/reportes.png') }}" alt="Reportes">
+                <span>Reportes</span>
+            </div>
+            <div class="menu-item">
+                <img src="{{ asset('img/grafica.png') }}" alt="Gráfica">
+                <span>Gráfica</span>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

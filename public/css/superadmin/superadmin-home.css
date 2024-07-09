@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    color: #009e00;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 5px solid #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.EtapaSeguimiento {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.EtapaSeguimiento h2 {
+    font-size: 14px;
+    margin: 0;
+    color: #009e00;
+}
+
+.SUPER-ADMINISTRADOR {
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SUPER-ADMINISTRADOR h1 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+    color: #009e00;
+}
+
+.logoSena {
+    width: 40px;
+    height: 40px;
+}
+
+.user-nav {
+    background-color: #00324d;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    align-items: center;
+}
+
+.notificacion {
+    width: 30px;
+    height: auto;
+    margin-right: 20px; /* Espacio a la derecha del ícono de notificaciones */
+    filter: invert(1);
+}
+
+
+.user {
+    background-color: #ffffff; /* Color de fondo del usuario */
+    border-radius: 30px; /* Ajuste de borde redondeado */
+    padding: 5px 15px; /* Espaciado interno */
+    font-size: 14px;
+    color: #000000; /* Color de texto del usuario */
+    margin-left: auto; /* Alinear a la derecha */
+    margin-right: 0; /* Resetear el margen derecho */
+}
+
+.user-icon {
+    background-color: #ffffff; /* Color de fondo del ícono de usuario */
+    width: 35px;
+    height: auto;
+    border-radius: 100%; /* Ajuste de borde redondeado */
+    margin-left: -10px; /* Espacio a la izquierda del ícono de usuario */
+    border: 2px solid #000000; /* Borde negro de 2px */
+}
+
+
+
+main {
+    flex-grow: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.menu-item {
+    margin: 20px;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid #000000; /* Borde negro de 2px */
+}
+
+.menu-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.menu-item span {
+    font-size: 14px;
+}
