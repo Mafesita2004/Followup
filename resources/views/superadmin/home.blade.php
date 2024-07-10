@@ -12,7 +12,10 @@
     <header>
         <div class="EtapaSeguimiento">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
-            <h2>Etapa Seguimiento</h2>
+            <div class="etapa-text">
+                <h2>Etapa</h2>
+                <h2>Seguimiento</h2>
+            </div>
         </div>
         <div class="SUPER-ADMINISTRADOR">
             <h1>SUPER</h1>
