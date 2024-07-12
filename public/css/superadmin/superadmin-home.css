@@ -30,7 +30,7 @@ header {
 }
 
 .etapa-text {
-    display: flex;
+    display: flex; /* Define un contenedor flex */
     flex-direction: column; /* Organiza los elementos hijos en una columna */
 }
 
@@ -54,7 +54,6 @@ header {
 .SUPER-ADMINISTRADOR h1 {
     font-size: 18px; /* Tamaño de fuente del título h1 */
     margin: 0; /* Elimina el margen por defecto */
-    line-height: 1; /* Altura de línea del título h1 */
     color: #009e00; /* Color del texto del título h1 */
 }
 
@@ -137,4 +136,9 @@ main {
 
 .menu-item span {
     font-size: 14px; /* Tamaño de fuente del texto dentro del elemento del menú */
+}
+
+a {
+    text-decoration: none; /* Elimina la decoración de texto (subrayado) de los enlaces */
+    color: #000000; /* Define el color del texto de los enlaces */
 }

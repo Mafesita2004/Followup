@@ -30,10 +30,10 @@
     </nav>
     <main>
         <div class="menu-grid">
-            <div class="menu-item">
+            <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="menu-item">
                 <img src="{{ asset('img/administrador.png') }}" alt="Administradores">
                 <span>Administradores</span>
-            </div>
+            </a>
             <div class="menu-item">
                 <img src="{{ asset('img/instructor.png') }}" alt="Instructores">
                 <span>Instructores</span>

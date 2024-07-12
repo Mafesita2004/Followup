@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\SuperadminController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta principal que muestra el formulario de inicio de sesión
@@ -23,6 +24,11 @@ Route::middleware(['auth'])->group(function () {
         return view('superadmin.home');
     })->name('superadmin.home');
 
+    // Ruta del botón del home-superadmin a administrador
+    Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class, 'SuperAdminAdministrator'])->name('superadmin.SuperAdmin-Administrator');
+
+
+    //----------------------------------------------------------------------------------------------------
     Route::get('/administrator/home', function () {
         return view('administrator.home');
     })->name('administrator.home');
