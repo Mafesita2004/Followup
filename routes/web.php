@@ -28,6 +28,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class, 'SuperAdminAdministrator'])->name('superadmin.SuperAdmin-Administrator');
 
 
+    // Ruta del botón del home-superadmin a instructor
+    Route::get('/superadmin/SuperAdmin-Instructor', [SuperadminController::class, 'SuperAdminInstructor'])->name('superadmin.SuperAdmin-Instructor');
+
+
+    // Ruta del botón del home-superadmin a instructor
+    Route::get('/superadmin/SuperAdmin-Aprendiz', [SuperadminController::class, 'SuperAdminAprendiz'])->name('superadmin.SuperAdmin-Aprendiz');
     //----------------------------------------------------------------------------------------------------
     Route::get('/administrator/home', function () {
         return view('administrator.home');

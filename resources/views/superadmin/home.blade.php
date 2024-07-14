@@ -35,14 +35,14 @@
                 <img src="{{ asset('img/administrador.png') }}" alt="Administradores" class="w-[50px] h-[50px] mb-2.5">
                 <span class="text-sm">Administradores</span>
             </a>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5  bg-white border-[3px] border-black">
+            <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5  bg-white border-[3px] border-black">
                 <img src="{{ asset('img/instructor.png') }}" alt="Instructores" class="w-[50px] h-[50px] mb-2.5">
                 <span class="text-sm">Instructores</span>
-            </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5  bg-white border-[3px] border-black">
+            </a>
+            <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5  bg-white border-[3px] border-black">
                 <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices" class="w-[50px] h-[50px] mb-2.5">
                 <span class="text-sm">Aprendices</span>
-            </div>
+            </a>
             <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5  bg-white border-[3px] border-black">
                 <img src="{{ asset('img/permisos.png') }}" alt="Permisos" class="w-[50px] h-[50px] mb-2.5">
                 <span class="text-sm">Permisos</span>

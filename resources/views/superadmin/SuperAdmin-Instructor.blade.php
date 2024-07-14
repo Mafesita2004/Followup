@@ -27,7 +27,7 @@
     </header>
     <nav class="bg-[#00324d] p-2 flex items-center relative">
         <img class="w-9 h-auto mr-2 invert" src="{{asset('img/notificaciones.png')}}" alt="">
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Administrador</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Instructor</div>
         <div class="bg-white rounded-full px-8 py-1.5 text-sm text-black ml-auto mr-0">Nombre de usuario</div>
         <img class="bg-white w-[35px] h-auto rounded-full -ml-4 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
     </nav>

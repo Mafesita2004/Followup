@@ -17,6 +17,18 @@ class SuperadminController extends Controller
     {
         return view('superadmin.SuperAdmin-Administrator');
     }
+
+    public function SuperAdminInstructor()
+    {
+        return view('superadmin.SuperAdmin-Instructor');
+    }
+
+    public function SuperAdminAprendiz()
+    {
+        return view('superadmin.SuperAdmin-Aprendiz');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
