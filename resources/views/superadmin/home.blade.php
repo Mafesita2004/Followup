@@ -1,3 +1,4 @@
+{{-- home --}}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
-    <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
+    <style>
+        #userMenu {
+            top: 100%;
+            margin-top: 0.5rem;
+        }
+    </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
     <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
@@ -44,37 +51,68 @@
                 </ul>
             </div>
         </div>
-        <div class="bg-white rounded-full px-8 py-1.5 text-sm text-black ml-auto mr-2">Nombre de usuario</div>
-        <img class="bg-white w-[35px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-        </svg>
+        <div class="relative ml-auto flex items-center ">
+            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}</div>
+            <img class="bg-white w-[35px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+            <button id="menuButton" class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2 ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </button>
+            <div id="userMenu" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
+                <div class="p-4">
+                    <div class="flex items-center mb-4">
+                        <div>
+                            <p class="text-sm font-bold">{{ auth()->user()->name }}</p>
+                            <p class="text-sm mt-2">Super administrador</p>
+                        </div>
+
+                        <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
+                    </div>
+                    <ul>
+                        <a href="{{ route('superadmin.SuperAdmin-Perfil')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border  border-green-600 rounded-lg py-1">ver perfil</a>
+                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
+                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="block text-black hover:bg-white p-2 rounded-lg">Administradores</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructores</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
+                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
+                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
+                    </ul>
+                    <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
+                        @csrf
+                        <button type="submit" class="block text-center text-green-600 font-bold bg-white border border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                    </form>
+            </div>
+        </div>
     </nav>
-    <main class="flex-grow p-[30px] flex justify-center items-center bg-white">
-        <div class="grid grid-cols-3 gap-5 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[30px] rounded-[10px] max-w-[900px] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black">
-                <img src="{{ asset('img/administrador.png') }}" alt="Administradores" class="w-[50px] h-[50px] mb-2.5">
-                <span class="text-sm">Administradores</span>
+    <main class=" flex-nowrap p-10 flex justify-center items-center bg-white ">
+        <div class="grid grid-cols-3 gap-20 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+
+            <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56">
+                <img src="{{ asset('img/administrador.png') }}" alt="Administradores" class="w-[90px] h-[80px] mb-2.5">
+                <span class="text-sm p-8">Administradores</span>
             </a>
-            <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black">
-                <img src="{{ asset('img/instructor.png') }}" alt="Instructores" class="w-[50px] h-[50px] mb-2.5">
-                <span class="text-sm">Instructores</span>
+            <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black  w-56 h-56">
+                <img src="{{ asset('img/instructor.png') }}" alt="Instructores" class="w-[80px] h-[80px] mb-2.5">
+                <span class="text-sm p-8">Instructores</span>
             </a>
-            <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black">
-                <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices" class="w-[50px] h-[50px] mb-2.5">
-                <span class="text-sm">Aprendices</span>
+            <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black  w-56 h-56">
+                <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices" class="w-[80px] h-[80px] mb-2.5">
+                <span class="text-sm p-8">Aprendices</span>
             </a>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black">
-                <img src="{{ asset('img/permisos.png') }}" alt="Permisos" class="w-[50px] h-[50px] mb-2.5">
-                <span class="text-sm">Permisos</span>
+            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56">
+                <img src="{{ asset('img/permisos.png') }}" alt="Permisos" class="w-[80px] h-[80px] mb-2.5">
+                <span class="text-sm p-8">Permisos</span>
             </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black">
-                <img src="{{ asset('img/reportes.png') }}" alt="Reportes" class="w-[50px] h-[50px] mb-2.5">
-                <span class="text-sm">Reportes</span>
+            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56">
+                <img src="{{ asset('img/reportes.png') }}" alt="Reportes" class="w-[80px] h-[80px] mb-2.5">
+                <span class="text-sm p-8">Reportes</span>
             </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black">
-                <img src="{{ asset('img/grafica.png') }}" alt="Gráfica" class="w-[50px] h-[50px] mb-2.5">
-                <span class="text-sm">Gráfica</span>
+            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56">
+                <img src="{{ asset('img/grafica.png') }}" alt="Gráfica" class="w-[80px] h-[80px] mb-2.5">
+                <span class="text-sm p-8">Gráfica</span>
             </div>
         </div>
     </main>
