@@ -25,11 +25,33 @@
         </div>
         <img class="w-11 h-11" src="{{asset('img/logo-sena.png')}}" alt="Sena logo">
     </header>
-    <nav class="bg-[#00324d] p-2 flex items-center relative">
-        <img class="w-9 h-auto mr-2 invert" src="{{asset('img/notificaciones.png')}}" alt="">
+    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
+        <button id="notifButton" class="relative">
+            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
+        </button>
+        <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
+            <div class="p-4">
+                <h2 class="text-sm font-bold">Notificaciones</h2>
+                <ul>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Aprendiz</div>
-        <div class="bg-white rounded-full px-8 py-1.5 text-sm text-black ml-auto mr-0">Nombre de usuario</div>
-        <img class="bg-white w-[35px] h-auto rounded-full -ml-4 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+        <div class="bg-white rounded-full px-8 py-1.5 text-sm text-black ml-auto mr-2">Nombre de usuario</div>
+        <img class="bg-white w-[35px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
     </nav>
     <main class="flex flex-col items-center mt-4 relative">
         <div class="w-full flex justify-between items-center mb-4">
@@ -71,8 +93,7 @@
         </div>
         <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
-    <footer>
-    </footer>
+    <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>
 
 </html>
