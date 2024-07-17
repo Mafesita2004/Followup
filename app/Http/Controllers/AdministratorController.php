@@ -7,16 +7,20 @@ use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
 {
+   
+
     /**
-     * Display a listing of the resource.
+     * Muestra una lista del recurso.
+     * En este caso, muestra la vista del panel de inicio del administrador.
      */
     public function index()
     {
-        //
+        return view('administrator.home');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear un nuevo recurso.
+     * Este método está vacío y se puede implementar según sea necesario.
      */
     public function create()
     {
@@ -24,7 +28,8 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena un nuevo recurso en el almacenamiento.
+     * Este método está vacío y se puede implementar según sea necesario.
      */
     public function store(Request $request)
     {
@@ -32,7 +37,8 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra el recurso especificado.
+     * Este método está vacío y se puede implementar según sea necesario.
      */
     public function show(administrator $administrator)
     {
@@ -40,7 +46,8 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar el recurso especificado.
+     * Este método está vacío y se puede implementar según sea necesario.
      */
     public function edit(administrator $administrator)
     {
@@ -48,7 +55,8 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza el recurso especificado en el almacenamiento.
+     * Este método está vacío y se puede implementar según sea necesario.
      */
     public function update(Request $request, administrator $administrator)
     {
@@ -56,10 +64,12 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina el recurso especificado del almacenamiento.
+     * Este método está vacío y se puede implementar según sea necesario.
      */
     public function destroy(administrator $administrator)
     {
         //
     }
 }
+?>

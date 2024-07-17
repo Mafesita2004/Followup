@@ -1,18 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\trainer;
+use App\Http\Controllers\Controller;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class TrainerController extends Controller
+class UserController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('trainer.home');
+        //
     }
 
     /**
@@ -34,7 +37,7 @@ class TrainerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(trainer $trainer)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +45,7 @@ class TrainerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(trainer $trainer)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +53,7 @@ class TrainerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, trainer $trainer)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +61,7 @@ class TrainerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(trainer $trainer)
+    public function destroy(string $id)
     {
         //
     }

@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\trainer;
+use App\Models\Role;
+use App\Models\Roleuser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class TrainerController extends Controller
+class RoleuserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function asociar(){
+
+        $users = User::all();
+        $roles = Role::all();
+
+    return view('role_user.asociar',compact('users','roles'));
+    }
     public function index()
     {
-        return view('trainer.home');
+        //
     }
 
     /**
@@ -28,13 +34,14 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user=User::find($request->user_id);
+        $user->roles()->attach($request->role_id);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(trainer $trainer)
+    public function show(Roleuser $roleuser)
     {
         //
     }
@@ -42,7 +49,7 @@ class TrainerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(trainer $trainer)
+    public function edit(Roleuser $roleuser)
     {
         //
     }
@@ -50,7 +57,7 @@ class TrainerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, trainer $trainer)
+    public function update(Request $request, Roleuser $roleuser)
     {
         //
     }
@@ -58,7 +65,7 @@ class TrainerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(trainer $trainer)
+    public function destroy(Roleuser $roleuser)
     {
         //
     }

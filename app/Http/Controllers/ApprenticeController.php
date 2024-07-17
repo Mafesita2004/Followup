@@ -10,6 +10,7 @@ class ApprenticeController extends Controller
     /**
      * Display a listing of the resource.
      */
+   
     public function index()
     {
         return view('apprentice.home');

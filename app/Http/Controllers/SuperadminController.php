@@ -7,13 +7,27 @@ use Illuminate\Http\Request;
 
 class SuperadminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        return view('superadmin.home');
     }
+
+    public function SuperAdminAdministrator()
+    {
+        return view('superadmin.SuperAdmin-Administrator');
+    }
+
+    public function SuperAdminInstructor()
+    {
+        return view('superadmin.SuperAdmin-Instructor');
+    }
+
+    public function SuperAdminAprendiz()
+    {
+        return view('superadmin.SuperAdmin-Aprendiz');
+    }
+
 
     /**
      * Show the form for creating a new resource.
