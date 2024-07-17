@@ -12,7 +12,7 @@ class ApprenticeController extends Controller
      */
     public function index()
     {
-        //
+        return view('apprentice.home');
     }
 
     /**
@@ -34,11 +34,11 @@ class ApprenticeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(apprentice $apprentice)
+    public function show()
     {
-        //
+        $apprentice = Apprentice::findOrFail();
+        return view('apprentice.show', compact('apprentice'));
     }
-
     /**
      * Show the form for editing the specified resource.
      */
