@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/superadmin/SuperAdmin-Aprendiz', [SuperadminController::class, 'SuperAdminAprendiz'])->name('superadmin.SuperAdmin-Aprendiz');
 
     // Ruta para el perfil del superadmin
-    Route::get('/superadmin/profile', [SuperadminController::class, 'profile'])->name('superadmin.SuperAdmin-Perfil');
+    Route::get('/superadmin/SuperAdmin-Perfil', [SuperadminController::class, 'SuperAdminPerfil'])->name('superadmin.SuperAdmin-Perfil');
 
 
 
