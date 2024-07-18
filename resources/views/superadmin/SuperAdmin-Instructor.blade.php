@@ -50,7 +50,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Aprendices</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Instructores</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -71,8 +71,8 @@
                         <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
                     <ul>
-                        <a href="{{ route('superadmin.SuperAdmin-Perfil')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border  border-green-600 rounded-lg py-1">ver perfil</a>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
+                        <a href="{{ route('superadmin.SuperAdmin-Perfil')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">ver perfil</a>
+                        <li class="mt-2"><a href="{{ route('superadmin.home')}}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="block text-black hover:bg-white p-2 rounded-lg">Administradores</a></li>
@@ -83,7 +83,7 @@
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
-                        <button type="submit" class="block text-center text-green-600 font-bold bg-white border border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                        <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
                     </form>
             </div>
         </div>
@@ -113,9 +113,9 @@
                     $contador = 0;
                 @endphp
                 @for ($i = 0; $i < 24; $i++)
-                    <div class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center">
+                    <div class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100 ">
                         <img src="{{ asset('img/user-icon.png') }}" alt="User" class="w-8 h-8 mb-1">
-                        <span class="text-xs text-center p-1">Nombre Completo</span>
+                        <span class="text-xs text-center p-1 ">Nombre Completo</span>
                         <span class="text-xs text-center p-1">Cédula</span>
                         <span class="text-xs text-center p-1">Sede</span>
                         <span class="text-xs text-center p-1">Rol</span>
