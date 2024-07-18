@@ -63,7 +63,7 @@
                 <div class="p-4">
                     <div class="flex items-center mb-4">
                         <div>
-                            <p class="text-sm font-bold">{{ auth()->user()->name }}</p>
+                            <p class="text-sm font-bold">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</p>
                             <p class="text-sm mt-2">Super administrador</p>
                         </div>
 
