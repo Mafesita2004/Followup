@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainerController;
+
 
 // Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
@@ -35,3 +37,12 @@ Route::middleware(['auth'])->group(function () {
         return view('apprentice.home');
     })->name('apprentice.home');
 });
+
+//rutas intructor
+Route::get('/trainer/icon',[TrainerController::class,'icon']);
+Route::get('/trainer/apprentice',[TrainerController::class,'apprentice'])->name('apprentice');
+Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
+Route::get('/trainer/report',[TrainerController::class,'report'])->name('report');
+Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
+Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
+
