@@ -1,4 +1,3 @@
-{{-- home --}}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,7 +32,7 @@
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span>
         </button>
         <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
             <div class="p-4">
@@ -51,9 +50,10 @@
                 </ul>
             </div>
         </div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Instructores</div>
         <div class="relative ml-auto flex items-center ">
-            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
-            <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
+            <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
             <button id="menuButton" class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2 ">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -63,7 +63,8 @@
                 <div class="p-4">
                     <div class="flex items-center mb-4">
                         <div>
-                            <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+
+                            <p class="text-sm font-bold">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</p>
                             <p class="text-sm mt-2">Super administrador</p>
                         </div>
 
@@ -87,35 +88,47 @@
             </div>
         </div>
     </nav>
-    <main class=" flex-nowrap p-10 flex justify-center items-center bg-white ">
-        <div class="grid grid-cols-3 gap-20 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+    <main class="flex flex-col items-center mt-4 relative">
+        <div class="w-full flex justify-between items-center mb-4">
+            <a href="{{ route('superadmin.home') }}" class="ml-4">
+                <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
+            </a>
 
-            <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/administrador.png') }}" alt="Administradores" class="w-[90px] h-[80px] mb-2.5  ">
-                <span class="text-sm p-8 ">Administradores</span>
-            </a>
-            <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/instructor.png') }}" alt="Instructores" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Instructores</span>
-            </a>
-            <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Aprendices</span>
-            </a>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/permisos.png') }}" alt="Permisos" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Permisos</span>
-            </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/reportes.png') }}" alt="Reportes" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Reportes</span>
-            </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/grafica.png') }}" alt="Gráfica" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Gráfica</span>
+            <form action="#" method="GET" class="flex items-center">
+                <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
+                <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
+                    <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
+                </button>
+            </form>
+
+            <form action="#" method="GET" class="mr-8">
+                <button type="button" class="bg-white border-none p-2 cursor-pointer">
+                    <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
+                </button>
+            </form>
+        </div>
+        <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                @php
+                    $contador = 0;
+                @endphp
+                @for ($i = 0; $i < 24; $i++)
+                    <div class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100 ">
+                        <img src="{{ asset('img/user-icon.png') }}" alt="User" class="w-8 h-8 mb-1">
+                        <span class="text-xs text-center p-1 ">Nombre Completo</span>
+                        <span class="text-xs text-center p-1">Cédula</span>
+                        <span class="text-xs text-center p-1">Sede</span>
+                        <span class="text-xs text-center p-1">Rol</span>
+                    </div>
+                    @php
+                        $contador++;
+                    @endphp
+                @endfor
             </div>
         </div>
+        <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>
+
 </html>
