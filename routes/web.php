@@ -56,9 +56,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/apprentice/home', function () {
         return view('apprentice.home');
-    })->name('apprentice.home');
+    })->name('apprentice.index');
 });
 
 
 Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
-Route::post('/homeaprendiiz', [ApprenticeController::class, 'homeaprendizStore'])->name('homeaprendiz.store');   
+Route::post('/homeaprendiiz', [ApprenticeController::class, 'homeaprendizStore'])->name('homeaprendiz.store'); 
+Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');  

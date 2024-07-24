@@ -16,6 +16,11 @@ class ApprenticeController extends Controller
         return view('apprentice.home');
     }
 
+    public function calendar()
+    {
+        return view('apprentice.calendar');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -38,7 +43,7 @@ class ApprenticeController extends Controller
     public function show()
     {
         $apprentice = Apprentice::findOrFail();
-        return view('apprentice.show', compact('apprentice'));
+        return view('apprentice.home', compact('apprentice'));
     }
     /**
      * Show the form for editing the specified resource.
