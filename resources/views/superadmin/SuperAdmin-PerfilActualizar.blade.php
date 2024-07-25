@@ -50,7 +50,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Actualizar Perfil</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -89,7 +89,7 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('superadmin.home') }}" class="ml-4">
+        <a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
@@ -153,8 +153,8 @@
                 </div>
 
                 <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('superadmin.SuperAdmin-PerfilActualizar') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</a>
-                    <a href="{{ route('superadmin.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <button type="submit" src="{{ asset('superadmin.SuperAdmin-PerfilActualizar')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</button>
+                    <a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                 </div>
         </div>
     </main>

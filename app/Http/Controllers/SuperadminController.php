@@ -33,6 +33,12 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Perfil');
     }
 
+    public function SuperAdminPerfilActualizar()
+    {
+        return view('superadmin.SuperAdmin-PerfilActualizar');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
