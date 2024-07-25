@@ -42,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     // Ruta para el perfil del superadmin
     Route::get('/superadmin/SuperAdmin-Perfil', [SuperadminController::class, 'SuperAdminPerfil'])->name('superadmin.SuperAdmin-Perfil');
 
+    // Ruta para el actualizar perfil del superadmin
+    Route::get('/superadmin/SuperAdmin-PerfilActualizar', [SuperadminController::class, 'SuperAdminPerfilActualizar'])->name('superadmin.SuperAdmin-PerfilActualizar');
 
 
 
@@ -64,8 +66,8 @@ Route::middleware(['auth'])->group(function () {
 //RUTAS APRENDIZ
 
 Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
-Route::post('/homeaprendiiz', [ApprenticeController::class, 'homeaprendizStore'])->name('homeaprendiz.store'); 
-Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');  
+Route::post('/homeaprendiiz', [ApprenticeController::class, 'homeaprendizStore'])->name('homeaprendiz.store');
+Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');
 
 //rutas intructor
 Route::get('/trainer/icon',[TrainerController::class,'icon']);
