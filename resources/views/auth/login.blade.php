@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar Sesión - Etapa Seguimiento</title>
+    <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <title>Etapa Seguimiento</title> 
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>

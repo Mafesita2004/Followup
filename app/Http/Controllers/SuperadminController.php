@@ -7,11 +7,37 @@ use Illuminate\Http\Request;
 
 class SuperadminController extends Controller
 {
-    
+
     public function index()
     {
         return view('superadmin.home');
     }
+
+    public function SuperAdminAdministrator()
+    {
+        return view('superadmin.SuperAdmin-Administrator');
+    }
+
+    public function SuperAdminInstructor()
+    {
+        return view('superadmin.SuperAdmin-Instructor');
+    }
+
+    public function SuperAdminAprendiz()
+    {
+        return view('superadmin.SuperAdmin-Aprendiz');
+    }
+
+    public function SuperAdminPerfil()
+    {
+        return view('superadmin.SuperAdmin-Perfil');
+    }
+
+    public function SuperAdminPerfilActualizar()
+    {
+        return view('superadmin.SuperAdmin-PerfilActualizar');
+    }
+
 
     /**
      * Show the form for creating a new resource.

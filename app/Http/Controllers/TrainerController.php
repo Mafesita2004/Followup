@@ -15,21 +15,44 @@ class TrainerController extends Controller
         return view('trainer.home');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+   //inicio de instructor iconos
+    public function icon()
     {
-        //
+        return view('trainer.icon');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    //icono notificaciones
+    public function notification()
     {
-        //
+        return view('trainer.notification');
     }
+    //aprendiz icono
+
+    public function apprentice()
+    {
+        return view('trainer.apprentice');
+    }
+    //icono reportes
+    public function report()
+    {
+        return view('trainer.report');
+    }
+    //icono nombre usuario instructor
+    public function username()
+    {
+        return view('trainer.username');
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Display the specified resource.
