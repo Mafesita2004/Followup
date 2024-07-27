@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\AdministratorController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta principal que muestra el formulario de inicio de sesión
@@ -27,6 +28,16 @@ Route::middleware(['auth'])->group(function () {
         return view('administrator.home');
     })->name('administrator.home');
 
+    Route::get('/administrator/settings', [AdministratorController::class, 'settings'])->name('administrator.settings');
+    Route::get('/administrator/instructor', [AdministratorController::class, 'instructor'])->name('administrator.instructor');
+    Route::get('/administrator/apprentice', [AdministratorController::class, 'apprentice'])->name('administrator.apprentice');
+    Route::get('/administrator/reports', [AdministratorController::class, 'reports'])->name('administrator.reports');
+    Route::get('/administrator/graphic', [AdministratorController::class, 'graphic'])->name('administrator.graphic');
+    Route::get('/administrator/template', [AdministratorController::class, 'template'])->name('administrator.template');
+    Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
+    Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
+    
+    
     Route::get('/trainer/home', function () {
         return view('trainer.home');
     })->name('trainer.home');
