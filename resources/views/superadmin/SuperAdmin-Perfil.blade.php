@@ -39,13 +39,19 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 4</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 5</a>
                     </li>
                 </ul>
             </div>
@@ -124,7 +130,7 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Birthdate }}</p>
+                        <p type="date" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Birthdate }}</p>
                     </div>
                 </div>
 

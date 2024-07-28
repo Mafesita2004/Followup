@@ -5,12 +5,9 @@ use App\Http\Controllers\ApprenticeController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-<<<<<<< HEAD
 use App\Http\Controllers\AdministratorController;
-=======
 use App\Http\Controllers\SuperadminController;
 
->>>>>>> a288fb3c39b1c0a0b30b56d8b6ef0f6abe33c4a4
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
 
@@ -36,9 +33,18 @@ Route::middleware(['auth'])->group(function () {
 
     // Ruta del botón del home-superadmin a administrador
     Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class, 'SuperAdminAdministrator'])->name('superadmin.SuperAdmin-Administrator');
+    
+    Route::get('/superadmin/SuperAdmin-Notificaciones', [SuperadminController::class, 'SuperAdminNotificaciones'])->name('superadmin.SuperAdmin-Notificaciones');
+
+    Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [SuperadminController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
+
+    Route::get('/superadmin/SuperAdmin-AdministratorPerfil', [SuperadminController::class, 'SuperAdminAdministratorPerfil'])->name('superadmin.SuperAdmin-AdministratorPerfil');
 
     // Ruta del botón del home-superadmin a instructor
     Route::get('/superadmin/SuperAdmin-Instructor', [SuperadminController::class, 'SuperAdminInstructor'])->name('superadmin.SuperAdmin-Instructor');
+
+    Route::get('/superadmin/SuperAdmin-InstructorAñadir', [SuperadminController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
+
 
     // Ruta del botón del home-superadmin a aprendiz
     Route::get('/superadmin/SuperAdmin-Aprendiz', [SuperadminController::class, 'SuperAdminAprendiz'])->name('superadmin.SuperAdmin-Aprendiz');
@@ -66,8 +72,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/administrator/template', [AdministratorController::class, 'template'])->name('administrator.template');
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
-    
-    
+
+
     Route::get('/trainer/home', function () {
         return view('trainer.home');
     })->name('trainer.home');

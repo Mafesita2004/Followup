@@ -39,13 +39,19 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 4</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 5</a>
                     </li>
                 </ul>
             </div>
@@ -93,7 +99,6 @@
             <a href="{{ route('superadmin.home') }}" class="ml-4">
                 <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
             </a>
-
             <form action="#" method="GET" class="flex items-center">
                 <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
                 <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
@@ -102,30 +107,33 @@
             </form>
 
             <form action="#" method="GET" class="mr-8">
-                <button type="button" class="bg-white border-none p-2 cursor-pointer">
+                <a href="{{route('superadmin.SuperAdmin-AdministratorAñadir')}}" type="button" class="bg-white border-none p-2 cursor-pointer">
                     <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
-                </button>
+                </a>
             </form>
         </div>
         <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
+
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
                 @php
                     $contador = 0;
                 @endphp
                 @for ($i = 0; $i < 24; $i++)
-                    <div class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
+                    <a href="{{ route('superadmin.SuperAdmin-AdministratorPerfil') }}" class="w-40 h-30 bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
                         <img src="{{ asset('img/user-icon.png') }}" alt="User" class="w-8 h-8 mb-1">
                         <span class="text-xs text-center p-1">Nombre Completo</span>
                         <span class="text-xs text-center p-1">Cédula</span>
                         <span class="text-xs text-center p-1">Sede</span>
                         <span class="text-xs text-center p-1">Rol</span>
-                    </div>
+                    </a>
                     @php
                         $contador++;
                     @endphp
                 @endfor
             </div>
+
         </div>
+
         <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>

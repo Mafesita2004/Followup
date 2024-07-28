@@ -18,9 +18,29 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Administrator');
     }
 
+    public function SuperAdminNotificaciones()
+    {
+        return view('superadmin.SuperAdmin-Notificaciones');
+    }
+
+    public function SuperAdminAdministratorAñadir()
+    {
+        return view('superadmin.SuperAdmin-AdministratorAñadir');
+    }
+
+    public function SuperAdminAdministratorPerfil()
+    {
+        return view('superadmin.SuperAdmin-AdministratorPerfil');
+    }
+
     public function SuperAdminInstructor()
     {
         return view('superadmin.SuperAdmin-Instructor');
+    }
+
+    public function SuperAdminInstructorAñadir()
+    {
+        return view('superadmin.SuperAdmin-InstructorAñadir');
     }
 
     public function SuperAdminAprendiz()
