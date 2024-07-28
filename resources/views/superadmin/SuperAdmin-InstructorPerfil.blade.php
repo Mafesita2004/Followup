@@ -7,7 +7,9 @@
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
-    <style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <style>
         #userMenu {
             top: 100%;
             margin-top: 0.5rem;
@@ -56,7 +58,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil Administrador</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil Instructor</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -95,7 +97,7 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="ml-4">
+        <a href="{{route('superadmin.SuperAdmin-Instructor') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
@@ -106,61 +108,99 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
-                    <h1 class="text-lg m-0 text-black font-bold">ADMINISTRADOR</h1>
+                    <h1 class="text-lg m-0 text-black font-bold">INSTRUCTOR</h1>
                     </div>
+            <div class="max-w-screen-lg mx-auto p-4 rounded-lg ">
+                <div class="flex items-center mb-6">
+                    <a href="{{ route('superadmin.SuperAdmin-ListaAprendiz')}}" class="bg-[#009e00] hover:bg-green-700 text-white px-4 py-2 rounded-lg mr-4">Aprendices</a>
+                    <a class="bg-white text-black  border-gray-300 px-4 py-2 rounded-lg mr-4">24/100</a>
+                    <a href="{{ route('superadmin.SuperAdmin-Redactar')}}" class="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg">Reporte</a>
+                </div>
 
-                    <h3 class="font-bold mb-4">Datos básicos</h3>
-                    <div class="grid grid-cols-3 gap-4 mb-6">
-                        <div>
-                            <label class="block text-gray-700">Nombre</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Nombre">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Apellido</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Apellido">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Cedula</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Correo</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Celular</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
-                        </div>
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label class="block text-gray-700">Nombre</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Nombre">
                     </div>
-
-                    <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                    <div class="grid grid-cols-3 gap-4 mb-6">
-                        <div>
-                            <label class="block text-gray-700">Pais:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Pais">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Departamento:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Departamento">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Municipio:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Municipio">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Barrio:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Barrio">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Dirección:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Dirección">
-                        </div>
+                    <div>
+                        <label class="block text-gray-700">Apellido</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Apellido">
                     </div>
-                    <div class="flex justify-end mt-6 space-x-4">
-                        <a type="submit" href="{{ route('superadmin.SuperAdmin-Administrator')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
-                        <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <div>
+                        <label class="block text-gray-700">Cedula</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula">
                     </div>
+                    <div>
+                        <label class="block text-gray-700">Correo</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Celular</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Programa</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Programa">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Total de horas</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Total de horas">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Horas realizadas</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Horas realizadas">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Fecha de inicio</label>
+                        <input type="date" class="w-full border border-gray-300 rounded-lg p-2.5">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Fecha de fin</label>
+                        <input type="date" class="w-full border border-gray-300 rounded-lg p-2.5">
+                    </div>
+                </div>
             </div>
+            <div class="flex mb-6">
+                <div class="w-1/2 p-4 bg-white rounded-lg shadow">
+                    <h3 class="text-lg font-bold mb-4">Aprendices asignados</h3>
+                    <div class="flex justify-between mb-4">
+                        <span>Aprendices en 1 visita</span>
+                        <span class="text-right">[23]</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span>Aprendices en 2 visita</span>
+                        <span class="text-right">[43]</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span>Aprendices en 3 visita</span>
+                        <span class="text-right">[52]</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span>Aprendices aprobados</span>
+                        <span class="text-right">[12]</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span>Aprendices en mora</span>
+                        <span class="text-right">[33]</span>
+                    </div>
+                    <canvas id="doughnutChart" class="w-full"></canvas>
+                </div>
+                <a href='{{ route('superadmin.SuperAdmin-Cronograma')}}' class="w-1/2 p-4 bg-white rounded-lg shadow ml-4">
+                    <h3 class="text-lg font-bold mb-4">Cronograma</h3>
+
+                    <img src="{{ asset('img/calendario.png') }}" alt="Cronograma" class="w-full">
+                </a>
+            </div>
+
+            <div class="p-4 bg-white rounded-lg shadow mb-6">
+                <canvas id="barChart" class="w-full"></canvas>
+            </div>
+
+            <div class="flex justify-end mt-6 space-x-4">
+                <a type="submit" href="{{ route('superadmin.SuperAdmin-InstructorActualizarPerfil')}}" class="bg-[#009e00] hover:bg-green-700 text-white py-2 px-4 rounded">Actualizar</a>
+                <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+            </div>
+        </div>
         </main>
     </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>

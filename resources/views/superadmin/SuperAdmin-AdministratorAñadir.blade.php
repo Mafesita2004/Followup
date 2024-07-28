@@ -77,16 +77,16 @@
                         <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
                     <ul>
-                        <a href="{{ route('superadmin.SuperAdmin-Perfil')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">ver perfil</a>
-                        <li class="mt-2"><a href="{{ route('superadmin.home')}}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.home') }}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="block text-black hover:bg-white p-2 rounded-lg">Administradores</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructores</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
-                    </ul>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
+                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
                         <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
@@ -110,54 +110,52 @@
                     </div>
 
                     <h3 class="font-bold mb-4">Datos básicos</h3>
-                    <div class="space-y-4">
+                    <div class="grid grid-cols-3 gap-4 mb-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Nombre</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Nombre">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Apellido</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Apellido">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Cedula</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                            <input type="email" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Correo</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                            <input type="date" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Celular</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
                         </div>
                     </div>
 
                     <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                    <div class="space-y-4">
+                    <div class="grid grid-cols-3 gap-4 mb-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Pais:</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Pais">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Departamento:</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Departamento">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Municipio:</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Municipio">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Barrio:</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Barrio">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                            <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
+                            <label class="block text-gray-700">Dirección:</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Dirección">
                         </div>
                     </div>
-
-
                     <div class="flex justify-end mt-6 space-x-4">
                         <a type="submit" href="{{ route('superadmin.SuperAdmin-Administrator')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
                         <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>

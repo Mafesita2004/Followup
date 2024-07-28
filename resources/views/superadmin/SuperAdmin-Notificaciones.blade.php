@@ -17,7 +17,7 @@
 </head>
 
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
-    
+
     <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
         <div class="flex items-center">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
@@ -33,7 +33,7 @@
         <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
     </header>
 
-    
+
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -44,24 +44,24 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 4</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 4</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 5</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 5</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Notificaciones</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Reportes</div>
         <div class="relative ml-auto flex items-center">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -82,13 +82,13 @@
                     <ul>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.home') }}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="block text-black hover:bg-white p-2 rounded-lg">Administradores</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructores</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -98,8 +98,12 @@
             </div>
         </div>
     </nav>
+    <div class="w-full flex justify-between items-center mt-6">
+        <a href="{{ route('superadmin.home') }}" class="ml-4">
+            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
+        </a>
+    </div>
 
-    
     <div class="w-full flex justify-center mt-4 items-center mb-2 bg-white">
         <form action="#" method="GET" class="flex items-center">
             <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
@@ -109,9 +113,9 @@
         </form>
     </div>
 
-    
+
     <div class="w-auto flex justify-start m-2 pl-56 items-center">
-        <button type="submit" class="bg-red-600 hover:bg-red-800 text-white p-1 rounded">Redactar</button>
+        <a href="{{ route('superadmin.SuperAdmin-Redactar')}}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-1 rounded">Redactar</a>
     </div>
     <div class="flex justify-center">
         <main class="bg-white m-4 p-4 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
@@ -124,7 +128,8 @@
                     <div class="flex justify-between items-center p-4 hover:bg-gray-100">
                         <div>
                             <h2 class="text-lg font-bold">Título de la Notificación</h2>
-                            <p class="text-gray-600">Cuerpo de la Notificación</p>
+                            <p class="text-gray-600">Asunto de la Notificación</p>
+                            <p class="text-gray-600">Fecha</p>
                         </div>
                         <div class="flex items-center">
                             <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
@@ -137,6 +142,7 @@
                         <div>
                             <h2 class="text-lg font-bold">Título de la Notificación</h2>
                             <p class="text-gray-600">Cuerpo de la Notificación</p>
+                            <p class="text-gray-600">Fecha</p>
                         </div>
                         <div class="flex items-center">
                             <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
@@ -149,6 +155,7 @@
                         <div>
                             <h2 class="text-lg font-bold">Título de la Notificación</h2>
                             <p class="text-gray-600">Cuerpo de la Notificación</p>
+                            <p class="text-gray-600">Fecha</p>
                         </div>
                         <div class="flex items-center">
                             <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
@@ -161,6 +168,7 @@
                         <div>
                             <h2 class="text-lg font-bold">Título de la Notificación</h2>
                             <p class="text-gray-600">Cuerpo de la Notificación</p>
+                            <p class="text-gray-600">Fecha</p>
                         </div>
                         <div class="flex items-center">
                             <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
@@ -173,6 +181,7 @@
                         <div>
                             <h2 class="text-lg font-bold">Título de la Notificación</h2>
                             <p class="text-gray-600">Cuerpo de la Notificación</p>
+                            <p class="text-gray-600">Fecha</p>
                         </div>
                         <div class="flex items-center">
                             <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>

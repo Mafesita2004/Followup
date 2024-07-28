@@ -23,6 +23,27 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Notificaciones');
     }
 
+    public function SuperAdminConfiguracion()
+    {
+        return view('superadmin.SuperAdmin-Configuracion');
+    }
+
+    public function SuperAdminPermisos()
+    {
+        return view('superadmin.SuperAdmin-Permisos');
+    }
+
+    public function SuperAdminGraficas()
+    {
+        return view('superadmin.SuperAdmin-Graficas');
+    }
+
+    public function SuperAdminRedactar()
+    {
+        return view('superadmin.SuperAdmin-Redactar');
+    }
+
+
     public function SuperAdminAdministratorAñadir()
     {
         return view('superadmin.SuperAdmin-AdministratorAñadir');
@@ -43,9 +64,33 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-InstructorAñadir');
     }
 
+    public function SuperAdminInstructorPerfil()
+    {
+        return view('superadmin.SuperAdmin-InstructorPerfil');
+    }
+
+    public function SuperAdminInstructorActualizarPerfil()
+    {
+        return view('superadmin.SuperAdmin-InstructorActualizarPerfil');
+    }
+
     public function SuperAdminAprendiz()
     {
         return view('superadmin.SuperAdmin-Aprendiz');
+    }
+
+    public function SuperAdminAprendizAgregar()
+    {
+        return view('superadmin.SuperAdmin-AprendizAgregar');
+    }
+    public function SuperAdminCronograma()
+    {
+        return view('superadmin.SuperAdmin-Cronograma');
+    }
+
+    public function SuperAdminListaAprendiz()
+    {
+        return view('superadmin.SuperAdmin-ListaAprendiz');
     }
 
     public function SuperAdminPerfil()
@@ -53,12 +98,30 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Perfil');
     }
 
+    public function SuperAdminAprendizPerfil()
+    {
+        return view('superadmin.SuperAdmin-AprendizPerfil');
+    }
+
+    public function SuperAdminAprendizPerfilActualizar()
+    {
+        return view('superadmin.SuperAdmin-AprendizPerfilActualizar');
+    }
+
     public function SuperAdminPerfilActualizar()
     {
         return view('superadmin.SuperAdmin-PerfilActualizar');
     }
 
+    public function SuperAdminMensajeInstructor()
+    {
+        return view('superadmin.SuperAdmin-MensajeInstructor');
+    }
 
+    public function SuperAdminMensajeAprendiz()
+    {
+        return view('superadmin.SuperAdmin-MensajeAprendiz');
+    }
     /**
      * Show the form for creating a new resource.
      */
