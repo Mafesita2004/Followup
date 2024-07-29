@@ -121,7 +121,7 @@
                     </div>
                 </div>
 
-                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
+                <h3 class="font-bold mb-4 mt-6">Lugar Residenciade </h3>
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Pais:</label>
@@ -143,11 +143,26 @@
                         <label class="block text-sm font-medium text-gray-700">Dirección:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
                     </div>
+
+                <h3 class="font-bold mb-4 mt-6">Aprendiz</h3>
+                <div class="space-y-4">
+                    <a>
+                        <label class="block text-sm font-medium text-gray-700">Numero de horas seguimineto :</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                    </a>
+                    <a>
+                        <label class="block text-sm font-medium text-gray-700">Mes:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                    </a>
+                    <a>
+                        <label class="block text-sm font-medium text-gray-700">Numero De Aprendices Asignados:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                    </a>
                 </div>
 
                 <div class="flex justify-end mt-6 space-x-4">
                     <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</button>
-                    <a href="{{ route('superadmin.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <a href="{{ route('icon') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                 </div>
         </div>
     </main>
