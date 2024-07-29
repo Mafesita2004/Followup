@@ -51,6 +51,7 @@
                 </ul>
             </div>
         </div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Inicio</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -70,15 +71,15 @@
                         <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
                     <ul>
-                        <a href="{{ route('superadmin.SuperAdmin-Perfil')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">ver perfil</a>
-                        <li class="mt-2"><a href="{{ route('superadmin.home')}}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.home') }}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="block text-black hover:bg-white p-2 rounded-lg">Administradores</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructores</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
+                        <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -102,18 +103,18 @@
                 <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices" class="w-[80px] h-[80px] mb-2.5">
                 <span class="text-sm p-8">Aprendices</span>
             </a>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
+            <a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
                 <img src="{{ asset('img/permisos.png') }}" alt="Permisos" class="w-[80px] h-[80px] mb-2.5">
                 <span class="text-sm p-8">Permisos</span>
-            </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
+            </a>
+            <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
                 <img src="{{ asset('img/reportes.png') }}" alt="Reportes" class="w-[80px] h-[80px] mb-2.5">
                 <span class="text-sm p-8">Reportes</span>
-            </div>
-            <div class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
+            </a>
+            <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black  w-56 h-56 hover:border-green-600">
                 <img src="{{ asset('img/grafica.png') }}" alt="Gráfica" class="w-[80px] h-[80px] mb-2.5">
                 <span class="text-sm p-8">Gráfica</span>
-            </div>
+            </a>
         </div>
     </main>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>

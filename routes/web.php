@@ -6,6 +6,7 @@ use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdministratorController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
 
@@ -29,21 +30,76 @@ Route::middleware(['auth'])->group(function () {
         return view('superadmin.home');
     })->name('superadmin.home');
 
-    // Ruta del botón del home-superadmin a administrador
-    Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class, 'SuperAdminAdministrator'])->name('superadmin.SuperAdmin-Administrator');
+    // Rutas relacionadas con la gestión de administradores en el panel del superadmin
+// Ruta para la vista de administración general de administradores
+Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class, 'SuperAdminAdministrator'])->name('superadmin.SuperAdmin-Administrator');
 
-    // Ruta del botón del home-superadmin a instructor
-    Route::get('/superadmin/SuperAdmin-Instructor', [SuperadminController::class, 'SuperAdminInstructor'])->name('superadmin.SuperAdmin-Instructor');
+// Ruta para ver notificaciones de superadmin
+Route::get('/superadmin/SuperAdmin-Notificaciones', [SuperadminController::class, 'SuperAdminNotificaciones'])->name('superadmin.SuperAdmin-Notificaciones');
 
-    // Ruta del botón del home-superadmin a aprendiz
-    Route::get('/superadmin/SuperAdmin-Aprendiz', [SuperadminController::class, 'SuperAdminAprendiz'])->name('superadmin.SuperAdmin-Aprendiz');
+// Ruta para redactar nuevas notificaciones
+Route::get('/superadmin/SuperAdmin-Redactar', [SuperadminController::class, 'SuperAdminRedactar'])->name('superadmin.SuperAdmin-Redactar');
 
-    // Ruta para el perfil del superadmin
-    Route::get('/superadmin/SuperAdmin-Perfil', [SuperadminController::class, 'SuperAdminPerfil'])->name('superadmin.SuperAdmin-Perfil');
+// Ruta para añadir un nuevo administrador
+Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [SuperadminController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
 
-    // Ruta para el actualizar perfil del superadmin
-    Route::get('/superadmin/SuperAdmin-PerfilActualizar', [SuperadminController::class, 'SuperAdminPerfilActualizar'])->name('superadmin.SuperAdmin-PerfilActualizar');
+// Ruta para ver el perfil de un administrador específico
+Route::get('/superadmin/SuperAdmin-AdministratorPerfil', [SuperadminController::class, 'SuperAdminAdministratorPerfil'])->name('superadmin.SuperAdmin-AdministratorPerfil');
 
+// Ruta para gestionar permisos de administradores
+Route::get('/superadmin/SuperAdmin-Permisos', [SuperadminController::class, 'SuperAdminPermisos'])->name('superadmin.SuperAdmin-Permisos');
+
+// Ruta para ver gráficos relacionados con la administración
+Route::get('/superadmin/SuperAdmin-Graficas', [SuperadminController::class, 'SuperAdminGraficas'])->name('superadmin.SuperAdmin-Graficas');
+
+// Rutas relacionadas con la gestión de instructores en el panel del superadmin
+// Ruta para ver la lista de instructores
+Route::get('/superadmin/SuperAdmin-Instructor', [SuperadminController::class, 'SuperAdminInstructor'])->name('superadmin.SuperAdmin-Instructor');
+
+// Ruta para ver el perfil de un instructor específico
+Route::get('/superadmin/SuperAdmin-InstructorPerfil', [SuperadminController::class, 'SuperAdminInstructorPerfil'])->name('superadmin.SuperAdmin-InstructorPerfil');
+
+// Ruta para actualizar el perfil de un instructor
+Route::get('/superadmin/SuperAdmin-InstructorActualizarPerfil', [SuperadminController::class, 'SuperAdminInstructorActualizarPerfil'])->name('superadmin.SuperAdmin-InstructorActualizarPerfil');
+
+// Ruta para añadir un nuevo instructor
+Route::get('/superadmin/SuperAdmin-InstructorAñadir', [SuperadminController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
+
+// Ruta para configuración general del superadmin
+Route::get('/superadmin/SuperAdmin-Configuracion', [SuperadminController::class, 'SuperAdminConfiguracion'])->name('superadmin.SuperAdmin-Configuracion');
+
+// Rutas relacionadas con la gestión de aprendices en el panel del superadmin
+// Ruta para ver la lista de aprendices
+Route::get('/superadmin/SuperAdmin-Aprendiz', [SuperadminController::class, 'SuperAdminAprendiz'])->name('superadmin.SuperAdmin-Aprendiz');
+
+// Ruta para ver el perfil de un aprendiz específico
+Route::get('/superadmin/SuperAdmin-AprendizPerfil', [SuperadminController::class, 'SuperAdminAprendizPerfil'])->name('superadmin.SuperAdmin-AprendizPerfil');
+
+// Ruta para actualizar el perfil de un aprendiz
+Route::get('/superadmin/SuperAdmin-AprendizPerfilActualizar', [SuperadminController::class, 'SuperAdminAprendizPerfilActualizar'])->name('superadmin.SuperAdmin-AprendizPerfilActualizar');
+
+// Ruta para añadir un nuevo aprendiz
+Route::get('/superadmin/SuperAdmin-AprendizAgregar', [SuperadminController::class, 'SuperAdminAprendizAgregar'])->name('superadmin.SuperAdmin-AprendizAgregar');
+
+// Ruta para ver la lista de aprendices
+Route::get('/superadmin/SuperAdmin-ListaAprendiz', [SuperadminController::class, 'SuperAdminListaAprendiz'])->name('superadmin.SuperAdmin-ListaAprendiz');
+
+// Ruta para ver el cronograma de actividades
+Route::get('/superadmin/SuperAdmin-Cronograma', [SuperadminController::class, 'SuperAdminCronograma'])->name('superadmin.SuperAdmin-Cronograma');
+
+// Rutas relacionadas con el perfil del superadmin
+// Ruta para ver el perfil del superadmin
+Route::get('/superadmin/SuperAdmin-Perfil', [SuperadminController::class, 'SuperAdminPerfil'])->name('superadmin.SuperAdmin-Perfil');
+
+// Ruta para actualizar el perfil del superadmin
+Route::get('/superadmin/SuperAdmin-PerfilActualizar', [SuperadminController::class, 'SuperAdminPerfilActualizar'])->name('superadmin.SuperAdmin-PerfilActualizar');
+
+// Rutas para manejar mensajes a instructores y aprendices
+// Ruta para enviar un mensaje a un instructor
+Route::get('/superadmin/SuperAdmin-MensajeInstructor', [SuperadminController::class, 'SuperAdminMensajeInstructor'])->name('superadmin.SuperAdmin-MensajeInstructor');
+
+// Ruta para enviar un mensaje a un aprendiz
+Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::class, 'SuperAdminMensajeAprendiz'])->name('superadmin.SuperAdmin-MensajeAprendiz');
 
 
 
@@ -67,6 +123,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
     Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
 
+    Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
+    Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
 
 
     Route::get('/trainer/home', function () {
@@ -78,11 +136,13 @@ Route::middleware(['auth'])->group(function () {
     })->name('apprentice.index');
 });
 
-//RUTAS APRENDIZ
+//RUTAS APRENDIZ 
+Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index'); 
+Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');  
+Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');  
+Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');  
+Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');  
 
-Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
-Route::post('/homeaprendiiz', [ApprenticeController::class, 'homeaprendizStore'])->name('homeaprendiz.store');
-Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');
 
 //rutas intructor
 Route::get('/trainer/icon',[TrainerController::class,'icon']);

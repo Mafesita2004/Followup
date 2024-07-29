@@ -4,9 +4,10 @@
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <style>
-        header{
-            background: none; 
+         header{
+            background: none; /* Quita cualquier fondo */
             background-color: transparent;
         }
         .head-container{
@@ -41,10 +42,11 @@ display: flex;
 
         }
         .logo-container h1 {
-            margin-right: 100px; 
+            margin-right: 100px; /* Ajusta el espacio entre "Etapa Seguimiento" y el h1 */
             color: #009E00;
         }
         .head-container p{
+            /* Nombre de usuario */
             background: #FFFFFF;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
@@ -134,107 +136,101 @@ background: url(image);
 margin-right: 10px;
 
         }
-        .trainer-container {
+        .calendar-container{
             position: absolute;
-width: 1470px;
-height: 156px;
+            width: 1470px;
+            height: 38px;
 left: calc(50% - 1470px/2 + 0.5px);
-top: calc(51% - 33px/2 - 167px);
+top: calc(58% - 58px/2 - 201px);
 
 background: #D9D9D9;
-    font-family: 'DM Sans', sans-serif;
+display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
-        .trainer-container h2 {
-            margin-top: 0;
-            font-size: 20px;
+        .calendar-container {
+            flex: 1; /* Take the remaining space */
         }
-        .trainer-container ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .trainer-container li {
-            margin-bottom: 10px;
-            padding: 5px;
-            border-bottom: 1px solid #fff;
-        }
-        .trainer-container li:last-child {
-            border-bottom: none;
-        }
-        .trainer-container .label {
-            font-weight: bold;
-        }
-
-        
-        .timeline-container h3{
-            background: #D9D9D9;
-            position: absolute;
-
-           left: calc(50% - 1470px/2 + 0.5px);
-        top: calc(58% - 30px/2 - 78px);
-
-
-        width: 1470px;
-        height: 38px;
-left: 15px;
+        .calendar-container h3{
+            position: relative;
+width: 476px;
+height: 26px;
+left: 84px;
 
 font-family: 'DM Sans', sans-serif;
 font-style: normal;
-font-weight: 700;
+font-weight: 400;
 font-size: 20px;
 line-height: 36px;
 display: flex;
 align-items: center;
 
 color: #000000;
- 
+margin: 0 10px;
         }
-        .timeline{
-            position: absolute;
-width: 1024px;
-height: 471px;
-left: 50 px;
-top: 391px;
-
-background: url(lineatiempo.png);
-        }
-
-        .blog-container {
-            position: absolute;
-            width: 343px;
-            height: 419px;
-            left: calc(50% - 343px/2 + 564px);
-            top: calc(59% - 515px/2 + 219.5px);
-            background: #D9D9D9;
-            padding: 20px;
-            box-sizing: border-box; 
-        }
-
-        .blog-container h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-style: normal;
-            font-weight: 700; 
-            font-size: 20px;
-            line-height: 31px;
-            text-align: center;
+        .back-button{
+            background-color: transparent;
             color: #000000;
-            margin: 0 auto 20px auto; 
-            display: block; 
+            font-style:normal;
+            position: absolute;
+width: 27px;
+height: 27px;
+left: 40px;
+top: -16px;
+padding: 15px;
+text-align: center; 
+            font-size: 32px;
+            cursor: pointer;
+            text-decoration: none;
+
+
         }
 
-        .blog {
-            width: 262px;
-            height: 262px;
-            margin: 0 auto; 
-            background: url('{{ asset('img/bitacora.png') }}') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            
+        #calendar {
+            position: absolute;
+width: 1470px;
+height: 649px;
+left: calc(50% - 1470px/2 + 0.5px);
+top: calc(52% - 649px/2 + 175.5px);
+
+background: #D9D9D9;
+
+position: absolute;
+width: 1054px;
+height: 600px;
+left: 193px;/* Make the calendar take the full width of the container */
+            margin: 0 auto; /* Center the calendar */
         }
 
+        .fc .fc-daygrid-day {
+            height: 150px;
+            padding: 60px; /* Adjust the height of each day cell */
+        }
 
+        .fc .fc-col-header-cell {
+            font-size: 15px; /* Adjust the font size of the day names */
+        }
+
+        .fc .fc-daygrid-day-number {
+            font-size: 16px; /* Adjust the font size of the day numbers */
+        }
+
+        .fc .fc-daygrid-event {
+            font-size: 14px; 
+        
+        }
+        .fc-day-other {
+            visibility: hidden;
+        }
+body {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.3);
+}
+        
     </style>
 </head>
 <body>
@@ -261,53 +257,64 @@ background: url(lineatiempo.png);
             <a href="ficha">Numero Ficha:2711891</a>
             <br>
             <a href="#option1">Inicio</a>
-            <a href="{{ route('apprentice.calendar') }}">Calendario</a>
+            <a href="#option2">Calendario</a>
             <br>
             <a href="#option3">Cerrar Sesión</a>
              </div>
         </div>
     </div>
-
-    <div class="trainer-container">
-        <h2>Instructor Asignado</h2>
-        <ul>
-            <li><span class="label">Nombre:</span> Mariany Dorado</li>
-            <li><span class="label">Correo:</span> edusena10@gmail.com</li>
-            <li><span class="label">Teléfono:</span> 322 5467867</li>
-        </ul>
-    </div>
-
-    <div class="timeline-container">
-        <h3>LINEA TEMPORAL (Etapa de seguimiento)</h3>
-        <img src="{{asset('img/lineatiempo.png')}}" alt="timeline" class='timeline'>
-    </div>
-    <div class="blog-container">
-        <h4>BITACORAS</h4>
-        <img src="{{asset('img/bitacora.png')}}" alt="blog" class='blog'>
+    <div class="calendar-container">
+        <h3>Calendario (Agenda)</h3>
+        <a href="{{ route('apprentice.index') }}" class="back-button">&#60; </a>
 
     </div>
-
- <script> 
- document.querySelector('.dropbtn').addEventListener('click', function() {
-   document.querySelector('.dropdown-content').classList.toggle('show');
-});
-        
-
-window.onclick = function(event) {
- if (!event.target.matches('.dropbtn')) {
- var dropdowns = document.getElementsByClassName("dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
-         var openDropdown = dropdowns[i];
-         if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-         }
-         }
-    }
- }
-  </script>
-
+    <div id="calendar"></div>
 
    
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'timeGridWeek', // Similar to Google Calendar's week view
+            headerToolbar: {
+                left: 'prev',
+                center: 'title',
+                right: 'dayGridMonth'
+            },
+            locale: 'es', // Spanish language
+            events: [
+            ],
+            editable: true, // Allow events to be draggable and resizable
+                selectable: true, // Allow date selection
+                dayMaxEvents: true, // Allow "more" link when too many events
+                fixedWeekCount: false 
+        });
+        calendar.render();
+    });
+</script>
 
+
+    <script>  // Optional JavaScript for additional functionality
+        document.querySelector('.dropbtn').addEventListener('click', function() {
+          document.querySelector('.dropdown-content').classList.toggle('show');
+       });
+               
+       // Close the dropdown if the user clicks outside of it
+       window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+             for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                   openDropdown.classList.remove('show');
+                }
+                }
+           }
+        }
+      </script>
+       
+    
 </body>
 </html>

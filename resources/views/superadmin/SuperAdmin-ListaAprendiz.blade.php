@@ -56,7 +56,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Lista de Aprendices</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -94,81 +94,48 @@
             </div>
         </div>
     </nav>
-    <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('superadmin.home') }}" class="ml-4">
-            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-        </a>
-    </div>
-        <div class="flex justify-center">
-    <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
-        <div class=" bg-gray-100 p-6 rounded-lg">
-            <div class="text-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                <h1 class="text-lg m-0 text-black font-bold">SUPER</h1>
-                <h1 class="text-lg m-0 text-black font-bold">ADMINISTRADOR</h1>
-                </div>
+    <main class="flex flex-col items-center mt-4 relative">
+        <div class="w-full flex justify-between items-center mb-4">
+            <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil') }}" class="ml-4">
+                <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
+            </a>
 
-                <h3 class="font-bold mb-4">Datos básicos</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->phone }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->email }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p type="date" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Birthdate }}</p>
-                    </div>
-                </div>
-
-                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->country }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->department }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->neighborhood }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->address }}</p>
-                    </div>
-                </div>
-
-                <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('superadmin.SuperAdmin-PerfilActualizar') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</a>
-                    <a href="{{ route('superadmin.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-                </div>
+            <form action="#" method="GET" class="flex items-center pl-48">
+                <input type="text" name="q" placeholder="Buscar..." class="px-2  py-1 text-sm border border-black rounded-full w-96">
+                <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
+                    <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
+                </button>
+            </form>
+            <div class="bg-white border-none pr-28 cursor-pointer">
+                    <h1>Seleccionar aprendices</h1>
+            </div>
         </div>
+        <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                @php
+                    $contador = 0;
+                @endphp
+                @for ($i = 0; $i < 24; $i++)
+                    <div class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
+                        <img src="{{ asset('img/user-icon.png') }}" alt="User" class="w-8 h-8 mb-1">
+                        <span class="text-xs text-center p-1">Nombre Completo</span>
+                        <span class="text-xs text-center p-1">Cédula</span>
+                        <span class="text-xs text-center p-1">Ficha</span>
+                        <span class="text-xs text-center p-1">Programa</span>
+                    </div>
+                    @php
+                        $contador++;
+                    @endphp
+                @endfor
+            </div>
+            <div class="flex justify-end mt-6 space-x-4">
+                <a type="submit" href="{{ route('superadmin.SuperAdmin-InstructorPerfil')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
+                <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+            </div>
+        </div>
+        <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
-</div>
-<script src="{{ asset('js/SuperAdmin.js') }}"></script>
+    <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>
+
 </html>
