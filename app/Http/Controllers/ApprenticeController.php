@@ -29,6 +29,12 @@ class ApprenticeController extends Controller
         return view('apprentice.registervisit');
     }
 
+    public function profile()
+    {
+        return view('apprentice.profile');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
