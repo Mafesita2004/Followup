@@ -7,7 +7,7 @@
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }

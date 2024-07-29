@@ -82,7 +82,7 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('icon') }}" class="ml-4">
+        <a href="{{ route('apprentice') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>

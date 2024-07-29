@@ -1,14 +1,15 @@
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <script src="{{ asset('js/Trainer.js') }}"></script>
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -57,6 +58,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
+
             <div id="userMenuTri" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
                 <div class="p-4">
                     <div class="flex items-center mb-4">
@@ -84,7 +86,7 @@
         </div>
     </nav>
     <main class=" flex-nowrap p-10 flex justify-center items-center bg-white ">
-       
+
         <div class="grid grid-cols-3 gap-10 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
 
             <a href="{{ route('apprentice') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
@@ -97,9 +99,9 @@
             </a>
         </div>
     </main>
-    <script src="{{ asset('js/Trainer.js') }}"></script>
 
-    
+
+
 
 </body>
 </html>
