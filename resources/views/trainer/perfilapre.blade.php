@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenuTri {
+        #userMenu{
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -147,8 +148,12 @@
                 </div>
                 <div class="md:col-span-2 flex flex-col items-center space-y-4">
                     <div class="flex justify-between items-center w-full">
-                        <a href="{{ route('bitacora') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Bitacoras</a>
-                        <a href="{{ route('visita') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Visitas</a>
+                        <div>
+                            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Bitacoras</button>
+                            <img src="{{ asset('img/Bitacor.png') }}" alt="">
+
+                        </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Visitas</button>
                         <button class="bg-green-500 text-white px-4 py-2 rounded-md">ACTIVO</button>
                     </div>
                     <div class="bg-gray-100 p-4 rounded-md w-full">

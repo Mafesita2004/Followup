@@ -30,6 +30,10 @@ class AdministratorController extends Controller
     {
         return view('administrator.notificaciones');
     }
+    public function redactar()
+    {
+        return view('administrator.redactar');
+    }
 
     //VISTAS PERFILES
     public function Adminperfil()
