@@ -65,7 +65,7 @@
         <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
     </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-between items-center relative z-10">
-        <button id="notifButton">
+        <button id="notifButton" onclick="navigateTo('{{ route('administrator.notificaciones') }}')">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button>
         <a href="{{ route('administrator.home') }}" alt="flecha">

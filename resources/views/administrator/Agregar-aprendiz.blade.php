@@ -410,7 +410,7 @@
             <h2 class="text-2">Seguimiento</h2>
             <h2 class="text-ventana">Base de Datos</h2> 
         </form>
-        <button id="notifButton">
+        <button id="notifButton" onclick="navigateTo('{{ route('administrator.notificaciones') }}')">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
         <a href="{{ route('administrator.home') }}" alt="flecha">

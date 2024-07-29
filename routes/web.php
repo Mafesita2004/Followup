@@ -120,28 +120,29 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
     Route::get('/administrator/Agregar-aprendiz', [AdministratorController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
     Route::get('/administrator/Añadir-aprendiz', [AdministratorController::class, 'AñadirAprendiz'])->name('administrator.Añadir-aprendiz');
-    Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
+    Route::get('/administrator/notificaciones', [AdministratorController::class, 'Notificaciones'])->name('administrator.notificaciones');
+    Route::get('/administrator/redactar', [AdministratorController::class, 'redactar'])->name('administrator.redactar');
     Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
-
+    Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
 
 
-    Route::get('/trainer/home', function () {
-        return view('trainer.home');
-    })->name('trainer.home');
+    Route::get('/trainer/icon', function () {
+        return view('trainer.icon');
+    })->name('trainer.icon');
 
     Route::get('/apprentice/home', function () {
         return view('apprentice.home');
     })->name('apprentice.index');
 });
 
-//RUTAS APRENDIZ 
-Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index'); 
-Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');  
-Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');  
-Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');  
-Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');  
+//RUTAS APRENDIZ
+Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
+Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');
+Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');
+Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
+Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
 
 
 //rutas intructor
@@ -152,7 +153,7 @@ Route::get('/trainer/report',[TrainerController::class,'report'])->name('report'
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
 Route::get('/trainer/Bitacora',[TrainerController::class,'bitacora'])->name('bitacora');
 Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita');
-Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('trainer.perfilapre');
+Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('perfilapre');
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 
 

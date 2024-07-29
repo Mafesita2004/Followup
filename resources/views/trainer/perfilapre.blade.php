@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenu{
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -82,75 +83,135 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('icon') }}" class="ml-4">
+        <a href="{{ route('apprentice') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
         <div class="flex justify-center">
     <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
-        <div class=" bg-gray-100 p-6 rounded-lg">
-            <div class="text-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                <h1 class="text-lg m-0 text-black font-bold">INSTRUCTOR</h1>
-                </div>
 
-                <h3 class="font-bold mb-4">Datos básicos</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                </div>
 
-                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                </div>
+        <div class="container  mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg">
 
-                <div class="flex justify-end mt-6 space-x-4">
-                    <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</button>
-                    <a href="{{ route('superadmin.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+            <div class="flex items-center justify-center space-x-4 mb-6">
+                <h3 class="text-xl text-center 8-2 font-bold">Aprendiz</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-1 flex flex-col items-center space-y-4">
+                    <div class="bg-gray-200 rounded-full p-6  border-4 border-black">
+                        <img src="{{ asset('img/user-icon.png') }}" alt="Avatar" class="h-16">
+                    </div>
+                    <div class="w-full">
+                        <label for="nombre" class="block text-sm font-medium text-gray-700">Nombres</label>
+                        <input type="text" id="nombre" value="MARIAN" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="apellido" class="block text-sm font-medium text-gray-700">Apellidos</label>
+                        <input type="text" id="apellido" value="DIAZ" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="identificacion" class="block text-sm font-medium text-gray-700">N° identificación</label>
+                        <input type="text" id="identificacion" value="1060435627" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="ficha" class="block text-sm font-medium text-gray-700">N° ficha</label>
+                        <input type="text" id="ficha" value="2654013" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                        <input type="email" id="email" value="mariandiaz@gmail.com" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="departamento" class="block text-sm font-medium text-gray-700">Departamento</label>
+                        <input type="text" id="departamento" value="CAUCA" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="municipio" class="block text-sm font-medium text-gray-700">Municipio</label>
+                        <input type="text" id="municipio" value="POPAYAN" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="fecha_nacimiento" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
+                        <input type="text" id="fecha_nacimiento" value="12/SEP/1995" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="genero" class="block text-sm font-medium text-gray-700">Género</label>
+                        <input type="text" id="genero" value="FEMENINO" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="nivel_formacion" class="block text-sm font-medium text-gray-700">Nivel de Formación</label>
+                        <input type="text" id="nivel_formacion" value="TECNOLOGO" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="programa" class="block text-sm font-medium text-gray-700">Nombre del Programa</label>
+                        <input type="text" id="programa" value="ADSO" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
                 </div>
+                <div class="md:col-span-2 flex flex-col items-center space-y-4">
+                    <div class="flex justify-between items-center w-full">
+                        <div>
+                            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Bitacoras</button>
+                            <img src="{{ asset('img/Bitacor.png') }}" alt="">
+
+                        </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Visitas</button>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded-md">ACTIVO</button>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-md w-full">
+                        <h4 class="font-bold text-lg mb-4">Seguimiento</h4>
+                        <div class="grid grid-cols-4 gap-2">
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-purple-500 text-white p-2 rounded-full">29-12-2023</span>
+                                <span class="mt-2">ASIGNACION</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-green-500 text-white p-2 rounded-full">01-01-2024</span>
+                                <span class="mt-2">INICIO ETAPA PRODUCTIVA</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 1</span>
+                                <span class="mt-2">PRIMERA VISITA</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 2</span>
+                                <span class="mt-2">SEGUNDA VISITA</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 3</span>
+                                <span class="mt-2">MES 3</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 4</span>
+                                <span class="mt-2">MES 4</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 5</span>
+                                <span class="mt-2">MES 5</span>
+                            </div>
+                            <div class="col-span-1 flex flex-col items-center">
+                                <span class="bg-green-500 text-white p-2 rounded-full">01-07-2023</span>
+                                <span class="mt-2">FINALIZACION DE ETAPA PRODUCTIVA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </main>
 </div>
 <script src="{{ asset('js/Trainer.js') }}"></script>
+<script>
+    const notifButton = document.getElementById('notifButton');
+    const notifMenu = document.getElementById('notifMenu');
+    notifButton.addEventListener('click', () => {
+        notifMenu.classList.toggle('hidden');
+    });
+
+    const menuButton = document.getElementById('menuButton');
+    const userMenu = document.getElementById('userMenu');
+    menuButton.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>

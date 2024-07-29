@@ -1,14 +1,15 @@
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <script src="{{ asset('js/Trainer.js') }}"></script>
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -38,7 +39,7 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
                         <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
@@ -57,6 +58,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
+
             <div id="userMenuTri" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
                 <div class="p-4">
                     <div class="flex items-center mb-4">
@@ -74,7 +76,6 @@
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="{{ route('username') }}" class="block text-black hover:bg-white p-2 rounded-lg">Perfil</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -84,22 +85,26 @@
         </div>
     </nav>
     <main class=" flex-nowrap p-10 flex justify-center items-center bg-white ">
-       
-        <div class="grid grid-cols-3 gap-10 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+
+        <div class="grid grid-cols-3 gap-10 bg-[#f0f0f0]  border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
 
             <a href="{{ route('apprentice') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/Triner Aprendices.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
+                <img src="{{ asset('img/Triner Aprendices.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
                 <span class="text-sm p-8 ">Aprendices</span>
             </a>
-            <a href="{{ route('report') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-60 h-56 hover:border-green-600">
-                <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
+            <a class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 cursor-default">
+                {{-- <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  "> --}}
+                <span class="text-sm p-8 "></span>
+            </a>
+            <a href="{{ route('report') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
                 <span class="text-sm p-8 ">Reportes</span>
             </a>
         </div>
     </main>
-    <script src="{{ asset('js/Trainer.js') }}"></script>
 
-    
+
+
 
 </body>
 </html>

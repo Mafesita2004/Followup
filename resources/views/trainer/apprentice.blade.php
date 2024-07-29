@@ -7,7 +7,7 @@
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -81,88 +81,53 @@
                     </form>
             </div>
         </div>
-           </nav>
-           <div class="w-full flex justify-between items-center mt-6">
-            <a href="{{ route('icon') }}" class="ml-4">
-                <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-            </a>
+        </nav>
+
         </div>
-        <main class=" flex-nowrap p-10 flex justify-center items-center bg-white ">
-            <div class="grid grid-cols-3 gap-10 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            
-        
-                <div href="{{ route('apprentice') }}"class=" m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-green w-56 h-56 hover:border-green-600"></a>
-                    <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
-                    <label class="block text-sm font-medium text-gray-700">Nombres Completo:</label>
-                    <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                    <label class="block text-sm font-medium text-gray-700">N° Ficha:</label>
-                    <label class="block text-sm font-medium text-gray-700">Tipo de seguimineto:</label> 
-                </div>
+        <main class="flex flex-col items-center mt-4 relative">
+            <div class="w-full flex justify-between items-center mb-4">
+                <a href="{{ route('icon') }}" class="ml-4">
+                    <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
+                </a>
 
-                <div href="{{ route('icon') }}"class=" m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-green w-60 h-56 hover:border-green-600"></a>
-                    <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
-                    <label class="block text-sm font-medium text-gray-700">Nombres Completo:</label>
-                    <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                    <label class="block text-sm font-medium text-gray-700">N° Ficha:</label>
-                    <label class="block text-sm font-medium text-gray-700">Tipo de seguimineto:</label>
+                <form action="#" method="GET" class="flex items-center pl-48">
+                    <input  placeholder="Buscar..." class="px-2  py-1 text-sm border border-black rounded-full w-96">
+                    <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
+                        <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
+                    </button>
+                </form>
+                <div class="bg-white border-none pr-28 cursor-pointer">
                 </div>
-
-                <div href="{{ route('icon') }}"class=" m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-green w-60 h-56 hover:border-green-600"></a>
-                    <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
-                    <label class="block text-sm font-medium text-gray-700">Nombres Completo:</label>
-                    <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                    <label class="block text-sm font-medium text-gray-700">N° Ficha:</label>
-                    <label class="block text-sm font-medium text-gray-700">Tipo de seguimineto:</label>
-                </div>
-                <div href="{{ route('apprentice') }}"class=" m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-green w-60 h-56 hover:border-green-600"></a>
-                    <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
-                    <label class="block text-sm font-medium text-gray-700">Nombres Completo:</label>
-                    <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                    <label class="block text-sm font-medium text-gray-700">N° Ficha:</label>
-                    <label class="block text-sm font-medium text-gray-700">Tipo de seguimineto:</label>
-                </div>
-
-                <div href="{{ route('apprentice') }}"class=" m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-green w-60 h-56 hover:border-green-600"></a>
-                    <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
-                    <label class="block text-sm font-medium text-gray-700">Nombres Completo:</label>
-                    <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                    <label class="block text-sm font-medium text-gray-700">N° Ficha:</label>
-                    <label class="block text-sm font-medium text-gray-700">Tipo de seguimineto:</label>
-                </div>
-
-                <div href="{{ route('apprentice') }}"class=" m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-green w-60 h-56 hover:border-green-600"></a>
-                    <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  ">
-                    <label class="block text-sm font-medium text-gray-700">Nombres Completo:</label>
-                    <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                    <label class="block text-sm font-medium text-gray-700">N° Ficha:</label>
-                    <label class="block text-sm font-medium text-gray-700">Tipo de seguimineto:</label>
-                </div>
-                
-                
-                
-                
-                
-                
             </div>
+            <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                    @php
+                        $contador = 0;
+                    @endphp
+                    @for ($i = 0; $i < 24; $i++)
+                        <a  href="{{ route('perfilapre') }}" class=" w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
+                            <img src="{{ asset('img/user-icon.png') }}" alt="User" class="w-8 h-8 mb-1">
+                            <span class="text-xs text-center p-1">Nombre Completo</span>
+                            <span class="text-xs text-center p-1">Cédula</span>
+                            <span class="text-xs text-center p-1">Ficha</span>
+                            <span class="text-xs text-center p-1">Programa</span>
+                        </a>
+                        @php
+                            $contador++;
+                        @endphp
+                    @endfor
+                </div>
+                <div class="flex justify-end mt-6 space-x-4">
+                    <a type="submit" href="{{ route('perfilapre')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
+                    <a href="{{ route('perfilapre') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                </div>
+            </div>
+            <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
         </main>
         <script src="{{ asset('js/Trainer.js') }}"></script>
-    
-    </nav>
 
 
 
 
-
-
-    <h1>Hola desde Icono aprendiz</h1>
-    <tr>
-        <label>
-            ICONO VOLVER AL HOME
-        <br>
-        <td><a href="{{route('icon')}}">volver</a></td> 
-        <br>
-    </label>
-       
-       </tr>
 </body>
 </html>
