@@ -7,7 +7,7 @@
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -147,8 +147,8 @@
                 </div>
                 <div class="md:col-span-2 flex flex-col items-center space-y-4">
                     <div class="flex justify-between items-center w-full">
-                        <button src='' class="bg-blue-500 text-white px-4 py-2 rounded-md">Bitacoras</button>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Visitas</button>
+                        <a href="{{ route('bitacora') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Bitacoras</a>
+                        <a href="{{ route('visita') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Visitas</a>
                         <button class="bg-green-500 text-white px-4 py-2 rounded-md">ACTIVO</button>
                     </div>
                     <div class="bg-gray-100 p-4 rounded-md w-full">
