@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
     <title>SuperAdmin Home</title>
     <style>
         /* BARRA AZUL */
@@ -20,7 +21,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 20px;
+            padding: 2px 20px;
             background-color: #04324d;
             color: #ffffff;
             z-index: 1;
@@ -99,7 +100,7 @@
             font-family: 'DM Sans', sans-serif;
             left: 50%; /* Ajusta la posición horizontal según sea necesario */
             transform: translateX(-50%); /* Centra el texto horizontalmente */
-            top: 0px; /* Ajusta la posición vertical según sea necesario */
+            top: 10px; /* Ajusta la posición vertical según sea necesario */
         }
         
         /* FIN BARRA AZUL */
@@ -163,12 +164,12 @@
         .icon-flecha {
             width: 100%;
             height: 100%;
-            margin-left: -1100px; /* lados */
+            margin-left: -550px; /* lados */
             margin-top: 0px; /* altura */
         }
         .nav {
             list-style: none;
-            padding: 20PX;
+            padding: 20px;
             display: none; /* Ocultamos el menú inicialmente */
             
         }
@@ -226,7 +227,70 @@
         }
 
         /* FIN MENU */
+        .settings-card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 500px;
+            margin: 30px auto; /* Centrar horizontalmente y añadir margen superior */
+        }
 
+        .settings-card h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .settings-card form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .settings-card form > div {
+            margin-bottom: 16px;
+        }
+
+        .settings-card label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        .settings-card input[type="text"],
+        .settings-card select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+            outline: none;
+        }
+
+        .settings-card input[type="text"]:focus,
+        .settings-card select:focus {
+            border-color: #48bb78;
+            box-shadow: 0 0 0 1px #48bb78;
+        }
+
+        .settings-card a[type="submit"] {
+            display: inline-block;
+            background-color: #48bb78;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .settings-card a[type="submit"]:hover {
+            background-color: #38a169;
+        }
+
+        
         
 
 
@@ -243,8 +307,7 @@
         
         <h1>ADMINISTRADOR</h1>
         <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            
+            @csrf           
 
             <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
             <img class="logo-sena" src="{{ asset('administrator/logo-sena.png') }}" alt="Logo-sena">
@@ -253,12 +316,24 @@
             <h2 class="text-2">Seguimiento</h2>
             <h2 class="text-ventana">Configuracion</h2> 
         </form>
-        <button id="notifButton">
+         <button id="notifButton">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
         <a href="{{ route('administrator.home') }}" alt="flecha">
             <img class="Flecha" src="{{ asset('img/flecha.png') }}" alt="Flecha">
         </a>
+        <div class=" relative flex ml-8 items-center">
+            <div class="bg-white h-8 w-64 rounded-xl" >{{ auth()->user()->name }}{{ auth()->user()->last_name }}
+            </div>
+            <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+            <button id="togg" class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2 ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </button>
+       </div>
+        
+        </div>
         
     </header>
         {{-- Termina barra azul --}}
@@ -266,9 +341,7 @@
 
         {{-- MENU --}}
     <div id="header">
-        <button id="menu-toggle">
-            <img class="icon-flecha" src="{{ asset('administrator/_.png') }}" alt="Icon-flecha">
-        </button>
+       
         
         <ul class="nav" id="nav-menu">
             <div class="profile-info">
@@ -307,7 +380,7 @@
     </div>
 
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('togg').addEventListener('click', function() {
             var menu = document.getElementById('nav-menu');
             if (menu.style.display === 'none' || menu.style.display === '') {
                 menu.style.display = 'block';
@@ -318,7 +391,50 @@
     </script>
     
     {{-- FIN MENU --}}
+    <div class="settings-card">
+        <h2 class="text-lg font-bold mb-4">Cambio de Contraseña</h2>
+        <form action="#" method="#">
+            @csrf
+            <div class="mb-4">
+                <label for="currentPassword" class="block text-sm font-medium text-gray-700">Contraseña Actual</label>
+                <input type="password" id="currentPassword" name="currentPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+            </div>
+            <div class="mb-4">
+                <label for="newPassword" class="block text-sm font-medium text-gray-700">Nueva Contraseña</label>
+                <input type="password" id="newPassword" name="newPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+            </div>
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar Nueva Contraseña</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+            </div>
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Actualizar Contraseña</button>
+        </form>
+    </div>
+
+    <!-- Sección de Configuración General -->
+    <div class="settings-card">
+        <h2>Configuración General</h2>
+        <form action="#" method="#">
+            @csrf
+            <div>
+                <label for="siteName">Nombre del Sitio</label>
+                <input type="text" id="siteName" name="siteName" value="" required>
+            </div>
+            <div>
+                <label for="timezone">Zona Horaria</label>
+                <select id="timezone" name="timezone" required>
+                    <!-- Opciones de zona horaria -->
+                    <option value="America/Bogota">Bogotá</option>
+                    <!-- Añadir más opciones según sea necesario -->
+                </select>
+            </div>
+            <a href="{{ route('administrator.home') }}" type="submit">Guardar Cambios</a>
+        </form>
+    </div>
+    </main>
+    </div>
     
+    <script src="{{ asset('js/Administrator.js') }}"></script>
     
 
 </body>
