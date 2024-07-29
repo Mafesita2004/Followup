@@ -11,9 +11,9 @@
         }
         .head-container{
             position: absolute;
-width: 1511px;
+width: 100%;
 height: 74px;
-left: -1px;
+left: 0%;
 top: 98px;
 
 background: #04324D;
@@ -52,12 +52,12 @@ display: flex;
             position: absolute;
             width: 367px;
             height: 45px;
-            left: 1082px;
+            left: 80%;
             
             
           width: 307px;
          height: 36px;
-         left: 1126px;
+         left: 80%;
 
 font-family: 'DM Sans';
 font-style: normal;
@@ -70,9 +70,9 @@ margin: 0 10px;
         }
         .user{
             position: absolute;
-width: 49px;
+width: 49;
 height: 49px;
-left: 1391px;
+left: 94%;
 
 background: url(image.png);
 
@@ -81,7 +81,7 @@ background: url(image.png);
         .dropdown {
                 position: relative;
             display: inline-block;
-            left: 1440px;
+            left: 97%;
             margin-left: 10px;
             color: #FFFFFF;
 
@@ -136,10 +136,10 @@ margin-right: 10px;
         }
         .trainer-container {
             position: absolute;
-width: 1470px;
+width: 100%;
 height: 156px;
-left: calc(50% - 1470px/2 + 0.5px);
-top: calc(51% - 33px/2 - 167px);
+left: 0%;
+top: 19%;
 
 background: #D9D9D9;
     font-family: 'DM Sans', sans-serif;
@@ -169,13 +169,13 @@ background: #D9D9D9;
             background: #D9D9D9;
             position: absolute;
 
-           left: calc(50% - 1470px/2 + 0.5px);
+           left:0%;
         top: calc(58% - 30px/2 - 78px);
 
 
-        width: 1470px;
+        width: 100%;
         height: 38px;
-left: 15px;
+top: 33.5%;
 
 font-family: 'DM Sans', sans-serif;
 font-style: normal;
@@ -192,7 +192,7 @@ color: #000000;
             position: absolute;
 width: 1024px;
 height: 471px;
-left: 50 px;
+left: 10%;
 top: 391px;
 
 background: url(lineatiempo.png);
@@ -200,10 +200,10 @@ background: url(lineatiempo.png);
 
         .blog-container {
             position: absolute;
-            width: 343px;
+            width: 20%;
             height: 419px;
-            left: calc(50% - 343px/2 + 564px);
-            top: calc(59% - 515px/2 + 219.5px);
+            left: 78%;
+            top: 40.5%;
             background: #D9D9D9;
             padding: 20px;
             box-sizing: border-box; 

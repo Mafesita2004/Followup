@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <style>
          header{
-            background: none; /* Quita cualquier fondo */
+            background: none; 
             background-color: transparent;
         }
         .head-container{
             position: absolute;
-width: 1511px;
+width: 100%;
 height: 74px;
-left: -1px;
+left: 0%;
 top: 98px;
 
 background: #04324D;
@@ -24,9 +24,9 @@ display: flex;
         }
         .logo-container h2 {
             position: absolute;
-            width: 333px;
+            width: 34%;
             height: 34px;
-            left: 589px;
+            left: 40%;
             top: 39px;
 
             font-family: 'DM Sans';
@@ -42,11 +42,10 @@ display: flex;
 
         }
         .logo-container h1 {
-            margin-right: 100px; /* Ajusta el espacio entre "Etapa Seguimiento" y el h1 */
+            margin-right: 100px;
             color: #009E00;
         }
         .head-container p{
-            /* Nombre de usuario */
             background: #FFFFFF;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
@@ -54,12 +53,12 @@ display: flex;
             position: absolute;
             width: 367px;
             height: 45px;
-            left: 1082px;
+            left: 80%;
             
             
           width: 307px;
          height: 36px;
-         left: 1126px;
+         left: 80%;
 
 font-family: 'DM Sans';
 font-style: normal;
@@ -74,7 +73,7 @@ margin: 0 10px;
             position: absolute;
 width: 49px;
 height: 49px;
-left: 1391px;
+left: 94%;
 
 background: url(image.png);
 
@@ -83,7 +82,7 @@ background: url(image.png);
         .dropdown {
                 position: relative;
             display: inline-block;
-            left: 1440px;
+            left: 97%;
             margin-left: 10px;
             color: #FFFFFF;
 
@@ -138,10 +137,10 @@ margin-right: 10px;
         }
         .calendar-container{
             position: absolute;
-            width: 1470px;
+            width: 100%;
             height: 38px;
-left: calc(50% - 1470px/2 + 0.5px);
-top: calc(58% - 58px/2 - 201px);
+left: 0%;
+top: 19%;
 
 background: #D9D9D9;
 display: flex;
@@ -149,7 +148,7 @@ display: flex;
             justify-content: flex-start;
         }
         .calendar-container {
-            flex: 1; /* Take the remaining space */
+            flex: 1;
         }
         .calendar-container h3{
             position: relative;
@@ -190,33 +189,33 @@ text-align: center;
             position: absolute;
 width: 1470px;
 height: 649px;
-left: calc(50% - 1470px/2 + 0.5px);
-top: calc(52% - 649px/2 + 175.5px);
+left: 50%;
+top: 23.5%;
 
 background: #D9D9D9;
 
 position: absolute;
 width: 1054px;
 height: 600px;
-left: 193px;/* Make the calendar take the full width of the container */
-            margin: 0 auto; /* Center the calendar */
+left: 22%;
+            margin: 0 auto; 
         }
 
         .fc .fc-daygrid-day {
             height: 150px;
-            padding: 60px; /* Adjust the height of each day cell */
+            padding: 60px; 
         }
 
         .fc .fc-col-header-cell {
-            font-size: 15px; /* Adjust the font size of the day names */
+            font-size: 15px; 
         }
 
         .fc .fc-daygrid-day-number {
-            font-size: 16px; /* Adjust the font size of the day numbers */
+            font-size: 16px; 
         }
 
         .fc .fc-daygrid-event {
-            font-size: 14px; /* Adjust the font size of the events */
+            font-size: 14px; 
         
         }
         .fc-day-other {
@@ -269,18 +268,18 @@ left: 193px;/* Make the calendar take the full width of the container */
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'timeGridWeek', // Similar to Google Calendar's week view
+            initialView: 'timeGridWeek',
             headerToolbar: {
                 left: 'prev',
                 center: 'title',
                 right: 'dayGridMonth'
             },
-            locale: 'es', // Spanish language
+            locale: 'es', 
             events: [
             ],
-            editable: true, // Allow events to be draggable and resizable
-                selectable: true, // Allow date selection
-                dayMaxEvents: true, // Allow "more" link when too many events
+            editable: true, 
+                selectable: true, 
+                dayMaxEvents: true, 
                 fixedWeekCount: false 
         });
         calendar.render();
@@ -288,7 +287,7 @@ left: 193px;/* Make the calendar take the full width of the container */
 </script>
 
 
-    <script>  // Optional JavaScript for additional functionality
+    <script>  
         document.querySelector('.dropbtn').addEventListener('click', function() {
           document.querySelector('.dropdown-content').classList.toggle('show');
        });

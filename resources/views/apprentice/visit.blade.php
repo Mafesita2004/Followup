@@ -11,9 +11,9 @@
         }
         .head-container{
             position: absolute;
-width: 1511px;
+width: 100%;
 height: 74px;
-left: 6px;
+left: 0%;
 top: 98px;
 
 background: #04324D;
@@ -23,9 +23,9 @@ display: flex;
         }
         .logo-container h2 {
             position: absolute;
-            width: 333px;
+            width: 34%;
             height: 34px;
-            left: 589px;
+            left: 40%;
             top: 39px;
 
             font-family: 'DM Sans';
@@ -52,12 +52,12 @@ display: flex;
             position: absolute;
             width: 367px;
             height: 45px;
-            left: 1082px;
+            left: 80%;
             
             
           width: 307px;
          height: 36px;
-         left: 1126px;
+         left: 80%;
 
 font-family: 'DM Sans';
 font-style: normal;
@@ -72,7 +72,7 @@ margin: 0 10px;
             position: absolute;
 width: 49px;
 height: 49px;
-left: 1391px;
+left: 94%;
 
 background: url(image.png);
 
@@ -81,7 +81,7 @@ background: url(image.png);
         .dropdown {
                 position: relative;
             display: inline-block;
-            left: 1440px;
+            left: 97%;
             margin-left: 10px;
             color: #FFFFFF;
 
@@ -136,10 +136,10 @@ margin-right: 10px;
         }
         .notification-container{
             position: absolute;
-            width: 1470px;
+            width: 100%;
             height: 38px;
-left: calc(50% - 1470px/2 + 0.5px);
-top: calc(56% - 58px/2 - 201px);
+            left: 0%;
+            top: 19%;
 
 background: #D9D9D9;
 display: flex;
@@ -147,7 +147,7 @@ display: flex;
             justify-content: flex-start;
         }
         .notification-container {
-            flex: 1; /* Take the remaining space */
+            flex: 1; 
         }
         .notification-container h3{
             position: relative;
@@ -188,8 +188,8 @@ text-align: center;
 position: absolute;
 width: 1286px;
 height: 38px;
-left: calc(50% - 1286px/2 - 5.5px);
-top: calc(58% - 58px/2 - 174.5px);
+left: 5.8%;
+top: 23.5%;
 display: flex;
   justify-content: space-between;
   align-items: center;
@@ -235,7 +235,7 @@ position: absolute;
 width: 792px;
 height: 334px;
 left: 110px;
-top: 36%;
+top: 29%;
 background: #FFFEFE;
 border: 1px solid rgba(0, 0, 0, 0.53);
 border-radius: 3px;
