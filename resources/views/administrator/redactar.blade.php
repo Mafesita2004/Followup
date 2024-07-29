@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    @vite('resources/css/app.css')
     <title>Etapa Seguimiento</title>
     <style>
         #userMenu {
@@ -28,13 +27,11 @@
             </div>
         </div>
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
-        <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
+            <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
         <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
     </header>
-    <button id="menu-toggle">
-        <img class="icon-flecha" src="{{ asset('administrator/_.png') }}" alt="Icon-flecha">
-    </button>
+
 
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
@@ -63,7 +60,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Notificaciones</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Redactar</div>
         <div class="relative ml-auto flex items-center">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -77,7 +74,7 @@
                     <div class="flex items-center mb-4">
                         <div>
                             <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                            <p class="text-sm mt-2">Administrador</p>
+                            <p class="text-sm mt-2">Super administrador</p>
                         </div>
                         <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
@@ -100,98 +97,26 @@
             </div>
         </div>
     </nav>
+
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('administrator.home') }}" class="ml-4">
+        <a href="{{ route('administrator.notificaciones') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
 
-    <div class="w-full flex justify-center mt-4 items-center mb-2 bg-white">
-        <form action="#" method="GET" class="flex items-center">
-            <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
-            <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
-                <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
-            </button>
-        </form>
-    </div>
-
-
-    <div class="w-auto flex justify-start m-2 pl-56 items-center">
-        <a href="{{ route('administrator.redactar')}}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-1 rounded">Redactar</a>
-    </div>
+    <div class="w-auto flex justify-start m-2 pl-56 items-center"></div>
     <div class="flex justify-center">
-        <main class="bg-white m-4 p-4 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
-            <div class="flex justify-center">
-                <button type="submit" class="hover:bg-gray-200 m-4 pr-28 pl-28 p-2 rounded">Recibidos</button>
-                <button type="submit" class="hover:bg-gray-200 m-4 pl-28 pr-28 p-2 rounded">Enviados</button>
-            </div>
-            <ul class="bg-white shadow overflow-hidden sm:rounded-md">
-                <li class="border-t border-gray-200">
-                    <div class="flex justify-between items-center p-4 hover:bg-gray-100">
-                        <div>
-                            <h2 class="text-lg font-bold">Título de la Notificación</h2>
-                            <p class="text-gray-600">Asunto de la Notificación</p>
-                            <p class="text-gray-600">Fecha</p>
-                        </div>
-                        <div class="flex items-center">
-                            <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
-                            <button class="bg-red-500 text-white p-2 rounded ml-2">Eliminar</button>
-                        </div>
+        <main class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
+            <h1 class="text-2xl font-bold mb-4">Reporte</h1>
+            <form class="mb-4">
+                <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
+                <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
+                <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
+                <a href="{{ route('administrator.notificaciones') }}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Enviar Reporte</a>
+                <a href="{{ route('administrator.notificaciones') }}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded">Cancelar</a>
+            </form>
+                </div>
                     </div>
-                </li>
-                <li class="border-t border-gray-200">
-                    <div class="flex justify-between items-center p-4 hover:bg-gray-100">
-                        <div>
-                            <h2 class="text-lg font-bold">Título de la Notificación</h2>
-                            <p class="text-gray-600">Cuerpo de la Notificación</p>
-                            <p class="text-gray-600">Fecha</p>
-                        </div>
-                        <div class="flex items-center">
-                            <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
-                            <button class="bg-red-500 text-white p-2 rounded ml-2">Eliminar</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="border-t border-gray-200">
-                    <div class="flex justify-between items-center p-4 hover:bg-gray-100">
-                        <div>
-                            <h2 class="text-lg font-bold">Título de la Notificación</h2>
-                            <p class="text-gray-600">Cuerpo de la Notificación</p>
-                            <p class="text-gray-600">Fecha</p>
-                        </div>
-                        <div class="flex items-center">
-                            <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
-                            <button class="bg-red-500 text-white p-2 rounded ml-2">Eliminar</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="border-t border-gray-200">
-                    <div class="flex justify-between items-center p-4 hover:bg-gray-100">
-                        <div>
-                            <h2 class="text-lg font-bold">Título de la Notificación</h2>
-                            <p class="text-gray-600">Cuerpo de la Notificación</p>
-                            <p class="text-gray-600">Fecha</p>
-                        </div>
-                        <div class="flex items-center">
-                            <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
-                            <button class="bg-red-500 text-white p-2 rounded ml-2">Eliminar</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="border-t border-gray-200">
-                    <div class="flex justify-between items-center p-4 hover:bg-gray-100">
-                        <div>
-                            <h2 class="text-lg font-bold">Título de la Notificación</h2>
-                            <p class="text-gray-600">Cuerpo de la Notificación</p>
-                            <p class="text-gray-600">Fecha</p>
-                        </div>
-                        <div class="flex items-center">
-                            <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
-                            <button class="bg-red-500 text-white p-2 rounded ml-2">Eliminar</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
         </main>
     </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
