@@ -2,15 +2,10 @@
 
 
 use App\Http\Controllers\ApprenticeController;
-
+use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-<<<<<<< HEAD
 use App\Http\Controllers\AdministratorController;
-=======
-use App\Http\Controllers\SuperadminController;
-
->>>>>>> a288fb3c39b1c0a0b30b56d8b6ef0f6abe33c4a4
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
 
@@ -53,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-
+    //RUTAS ADMINISTRADOR
     Route::get('/administrator/home', function () {
         return view('administrator.home');
     })->name('administrator.home');
@@ -64,10 +59,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/administrator/reports', [AdministratorController::class, 'reports'])->name('administrator.reports');
     Route::get('/administrator/graphic', [AdministratorController::class, 'graphic'])->name('administrator.graphic');
     Route::get('/administrator/template', [AdministratorController::class, 'template'])->name('administrator.template');
-    Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
-    Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
-    
-    
+    Route::get('/administrator/Administrator-perfil', [AdministratorController::class, 'Adminperfil'])->name('administrator.Administrator-perfil');
+    Route::get('/administrator/Apprentice-perfil', [AdministratorController::class, 'perfilAprendiz'])->name('administrator.Apprentice-perfil');
+    Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
+    Route::get('/administrator/Agregar-aprendiz', [AdministratorController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
+    Route::get('/administrator/Añadir-aprendiz', [AdministratorController::class, 'AñadirAprendiz'])->name('administrator.Añadir-aprendiz');
+    Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
+    Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
+
+
+
     Route::get('/trainer/home', function () {
         return view('trainer.home');
     })->name('trainer.home');
