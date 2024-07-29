@@ -1,3 +1,208 @@
+
+// Manejar la visibilidad del menú de notificaciones
+document.addEventListener('DOMContentLoaded', function () {
+    const notifButton = document.getElementById('notifButton');
+    const notifMenu = document.getElementById('notifMenu');
+
+    // Alternar la visibilidad del menú de notificaciones al hacer clic en el botón
+    notifButton.addEventListener('click', function (event) {
+        notifMenu.classList.toggle('hidden');
+        event.stopPropagation(); // Detener la propagación del evento para evitar el cierre inmediato
+    });
+
+    // Ocultar el menú de notificaciones si se hace clic fuera de él
+    document.addEventListener('click', function (event) {
+        if (!notifButton.contains(event.target) && !notifMenu.contains(event.target)) {
+            notifMenu.classList.add('hidden');
+        }
+    });
+
+    // Manejar la visibilidad del menú del usuario
+    const menuButton = document.getElementById('menuButton');
+    const userMenu = document.getElementById('userMenu');
+
+    // Alternar la visibilidad del menú del usuario al hacer clic en el botón
+    menuButton.addEventListener('click', function (event) {
+        userMenu.classList.toggle('hidden');
+        event.stopPropagation(); // Detener la propagación del evento para evitar el cierre inmediato
+    });
+
+    // Ocultar el menú del usuario si se hace clic fuera de él
+    document.addEventListener('click', function (event) {
+        if (!menuButton.contains(event.target) && !userMenu.contains(event.target)) {
+            userMenu.classList.add('hidden');
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Datos para las gráficas
+    const data = {
+        pasantia: 150,
+        vinculoLaboral: 250,
+        contratoAprendizaje: 110,
+        unidadProductiva: 190,
+        proyectoProductivo: 100
+    };
+
+    const dataAdicional = {
+        pasantia: 1150,
+        vinculoLaboral: 1250,
+        contratoAprendizaje: 1110,
+        unidadProductiva: 1190,
+        proyectoProductivo: 1100
+    };
+
+    function createPieChart(ctx, data) {
+        return new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(data),
+                datasets: [{
+                    data: Object.values(data),
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+                }]
+            }
+        });
+    }
+
+    function createBarChart(ctx, data) {
+        return new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(data),
+                datasets: [{
+                    label: 'Cantidad',
+                    data: Object.values(data),
+                    backgroundColor: '#36A2EB'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    function createDoughnutChart(ctx, data) {
+        return new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Aprendices', 'Otros'],
+                datasets: [{
+                    data: [data.contratoAprendizaje, Object.values(data).reduce((a, b) => a + b) - data.contratoAprendizaje],
+                    backgroundColor: ['#FF6384', '#36A2EB']
+                }]
+            }
+        });
+    }
+
+    // Crear gráficas
+    createPieChart(document.getElementById('pieChartAdicional').getContext('2d'), dataAdicional);
+    createBarChart(document.getElementById('barChartAdicional').getContext('2d'), dataAdicional);
+    createDoughnutChart(document.getElementById('doughnutChartAdicional').getContext('2d'), dataAdicional);
+});
+// Datos para las gráficas
+const data = {
+    pasantia: 150,
+    vinculoLaboral: 250,
+    contratoAprendizaje: 110,
+    unidadProductiva: 190,
+    proyectoProductivo: 100
+};
+
+const dataAdicional = {
+    pasantia: 1150,
+    vinculoLaboral: 1250,
+    contratoAprendizaje: 1110,
+    unidadProductiva: 1190,
+    proyectoProductivo: 1100
+};
+
+function createPieChart(ctx, data) {
+    return new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                data: Object.values(data),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            }]
+        }
+    });
+}
+
+function createBarChart(ctx, data) {
+    return new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                data: Object.values(data),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+function createDoughnutChart(ctx, data) {
+    return new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                data: Object.values(data),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            }]
+        }
+    });
+}
+
+// Crear gráficas
+createPieChart(document.getElementById('pieChart').getContext('2d'), data);
+createBarChart(document.getElementById('barChart').getContext('2d'), data);
+createDoughnutChart(document.getElementById('doughnutChart').getContext('2d'), data);
+
+createPieChart(document.getElementById('pieChartAdicional').getContext('2d'), dataAdicional);
+createBarChart(document.getElementById('barChartAdicional').getContext('2d'), dataAdicional);
+createDoughnutChart(document.getElementById('doughnutChartAdicional').getContext('2d'), dataAdicional);
+
+// Funcionalidad del formulario
+document.getElementById('contractForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Formulario enviado');
+});
+
+['pendienteBtn', 'activoBtn', 'finalizadosBtn'].forEach(id => {
+    document.getElementById(id).addEventListener('click', function() {
+        alert(`Estado cambiado a: ${this.textContent}`);
+    });
+});
+
+document.getElementById('cancelarBtn').addEventListener('click', function() {
+    document.getElementById('contractForm').reset();
+});
+
+// Actualizar los totales
+function updateTotals(data, suffix = '') {
+    for (let key in data) {
+        document.getElementById(key + suffix).textContent = data[key];
+    }
+    document.getElementById('total' + suffix).textContent = Object.values(data).reduce((a, b) => a + b);
+}
+
+updateTotals(data);
+updateTotals(dataAdicional, 'Adicional');
+
 // Agregar un listener al botón del menú del usuario para alternar la visibilidad del menú
 document.getElementById('menuButton').addEventListener('click', function () {
     document.getElementById('userMenu').classList.toggle('hidden');
@@ -113,41 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
 });
 
-// Manejar la visibilidad del menú de notificaciones
-document.addEventListener('DOMContentLoaded', function () {
-    const notifButton = document.getElementById('notifButton');
-    const notifMenu = document.getElementById('notifMenu');
-
-    // Alternar la visibilidad del menú de notificaciones al hacer clic en el botón
-    notifButton.addEventListener('click', function (event) {
-        notifMenu.classList.toggle('hidden');
-        event.stopPropagation(); // Detener la propagación del evento para evitar el cierre inmediato
-    });
-
-    // Ocultar el menú de notificaciones si se hace clic fuera de él
-    document.addEventListener('click', function (event) {
-        if (!notifButton.contains(event.target) && !notifMenu.contains(event.target)) {
-            notifMenu.classList.add('hidden');
-        }
-    });
-
-    // Manejar la visibilidad del menú del usuario
-    const menuButton = document.getElementById('menuButton');
-    const userMenu = document.getElementById('userMenu');
-
-    // Alternar la visibilidad del menú del usuario al hacer clic en el botón
-    menuButton.addEventListener('click', function (event) {
-        userMenu.classList.toggle('hidden');
-        event.stopPropagation(); // Detener la propagación del evento para evitar el cierre inmediato
-    });
-
-    // Ocultar el menú del usuario si se hace clic fuera de él
-    document.addEventListener('click', function (event) {
-        if (!menuButton.contains(event.target) && !userMenu.contains(event.target)) {
-            userMenu.classList.add('hidden');
-        }
-    });
-});
 
 // Configuración y renderizado de gráficos utilizando Chart.js
 const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
