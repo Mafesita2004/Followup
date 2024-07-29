@@ -63,9 +63,10 @@ Route::middleware(['auth'])->group(function () {
 
 //RUTAS APRENDIZ
 
-Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
-Route::post('/homeaprendiiz', [ApprenticeController::class, 'homeaprendizStore'])->name('homeaprendiz.store'); 
+Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index'); 
 Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');  
+Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');  
+Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');  
 
 //rutas intructor
 Route::get('/trainer/icon',[TrainerController::class,'icon']);
