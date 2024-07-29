@@ -7,14 +7,12 @@
     <style>
         /* BARRA AZUL */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-                "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-                "Source Han Sans CN", sans-serif;
+            font-family: 'DM Sans', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
 
         header {
             display: flex;
@@ -84,7 +82,24 @@
             height: auto; /* Mantiene la proporción de la imagen */
             filter: invert(1); /* Invierte los colores de la imagen */
         }
-
+        .Flecha {
+            display: block;
+            position: absolute;
+            width: 24px; /* tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-left: -1470px; /* lados */
+            margin-top: 40px; /* altura */
+        }
+        .text-ventana {
+            color: #ffffff; /* Color del texto para que contraste con el fondo */
+            font-size: 20px; /* Tamaño del texto para que sea visible */
+            position: absolute;
+            font-family: 'DM Sans', sans-serif;
+            left: 50%; /* Ajusta la posición horizontal según sea necesario */
+            transform: translateX(-50%); /* Centra el texto horizontalmente */
+            top: 0px; /* Ajusta la posición vertical según sea necesario */
+        }
+        
         /* FIN BARRA AZUL */
 
 
@@ -149,7 +164,6 @@
             margin-left: -1100px; /* lados */
             margin-top: 0px; /* altura */
         }
-        
         .nav {
             list-style: none;
             padding: 20PX;
@@ -210,70 +224,98 @@
         }
 
         /* FIN MENU */
+        
 
-
-
-
-
-
-
-
-
-
-        .logout-button {
-            padding: 10px 20px;
-            background-color: #009e00;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+        .container {
+            background-color: #aaa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;  /* Reduce el ancho del contenedor */
+            max-width: 100%;
+            margin: 20px auto;  /* Centro el contenedor y añado margen superior e inferior */
         }
 
-        .logout-button:hover {
-            background-color: #007a00;
-        }
-
-        .button-container {
-            width: 900px;
-            height: 600px; /* Aumenta la altura para que quepan todos los botones */
-            border: 2px solid #04324dce;
-            margin: 60px auto; /* Centrar horizontalmente y ajustar margen superior */
-            background-color: #2f3e4c16;
+        .form-group {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #D9D9D9;
             align-items: center;
-            border-radius: 10px; /* Borde redondeado */
+            height: auto;
+            width: 800px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-left: 350px; /* lados */
+            margin-top: 50px; /* altura */
         }
 
-        
+        .form-group label {
+            flex: 0 0 22%;
+            margin-bottom: 10px;
+        }
 
-        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
+        .form-group .full-width {
+            flex: 0 0 100%;
+        }
 
-        .button {
+        .buttons {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 200px; 
-            height: 200px; 
-            border: 0px solid #ccc;
-            padding: 10px;
-            cursor: pointer;
-            background-color: transparent;
-            font-family: 'DM Sans', sans-serif; /* Establece el tipo de letra */
-            font-size: 14px; /* Tamaño de la letra */
-            text-align: center;
-            color: #1E1E1E; /* Ajusta el color del texto */
-            margin: 20px;
+            justify-content: space-between;
+            gap: 10px; /* Espacio entre los botones */
         }
 
-        .button img {
-            width: 160px; 
-            height: 140px; 
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
+
+        .buttons .cancel {
+            background-color: #D9D9D9;
+            border-radius: 10px; /* Borde redondeado */
+            border: 1px solid #000000; /* Borde de 2px de grosor con color #009E00 */
+            margin-left: 250px; /* lados */
+            margin-top: 0px; /* altura */
+        }
+
+        .buttons .confirm {
+            background-color: #009E00;
+            color: white;
+            margin-left: 10px; /* lados */
+            margin-top: 0px; /* altura */
+        }
+
+        .buttons .report {
+            background-color: #838383;
+            margin-left: 140px; /* lados */
+            margin-top: 0px; /* altura */
+        }
+        .profile-pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            margin: auto;
+        }
+
+
     </style>
     <script>
         function navigateTo(page) {
@@ -295,11 +337,14 @@
             
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
+            <h2 class="text-ventana">Base de Datos</h2> 
         </form>
         <button id="notifButton">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
-        
+        <a href="{{ route('administrator.home') }}" alt="flecha">
+            <img class="Flecha" src="{{ asset('img/flecha.png') }}" alt="Flecha">
+        </a>
         
     </header>
         {{-- Termina barra azul --}}
@@ -316,14 +361,14 @@
                 <img class="icon" src="{{ asset('administrator/user-icon.png') }}" alt="Icono">
                 <span class="username">Nombre usuario</span><br>
                 <span class="role">Administrador</span><br>
-                <a href="{{ route('administrator.Administrator-perfil')}}" class="profile-link">Ver Perfil</a>
+                <a href="{{ route('administrator.reports')}}" class="profile-link">Ver Perfil</a>
             </div>
             <li><a href="{{ route('administrator.home')}}">Inicio</a></li>
             <li><a href="{{ route('administrator.settings')}}">Configuración</a></li>
             <li><a href="{{ route('administrator.apprentice')}}">Aprendices</a>
                 <ul>
                     <li>APRENDICES<a href="{{ route('administrator.apprentice')}}">Lista de Aprendices que inician etapa productiva</a></li>
-                    <li><a href="{{ route('administrator.Agregar-aprendiz')}}">Agregar Aprendices</a></li>
+                    <li><a href="{{ route('administrator.apprentice')}}">Agregar Aprendices</a></li>
                 </ul>
             </li>
             <li><a href="{{ route('administrator.instructor')}}">Instructores</a></li>
@@ -359,43 +404,84 @@
     </script>
     
     {{-- FIN MENU --}}
-    
-    
-
-
-
-
-
-    <div class="button-container">
-        <button class="button" onclick="navigateTo('{{ route('administrator.settings') }}')">
-            <img src="{{ asset('administrator/configuracion.png') }}" alt="configuracion">
-            Configuración
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.instructor') }}')">
-            <img src="{{ asset('administrator/instructor.png') }}" alt="instructor">
-            Instructores
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.apprentice') }}')">
-            <img src="{{ asset('administrator/aprendiz.png') }}" alt="aprendiz">
-            Aprendices
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.reports') }}')">
-            <img src="{{ asset('administrator/reportes.png') }}" alt="reportes">
-            Reportes
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.graphic') }}')">
-            <img src="{{ asset('administrator/grafica.png') }}" alt="grafica">
-            Graficas
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.template') }}')">
-            <img src="{{ asset('administrator/plantilla.png') }}" alt="plantilla">
-            Plantillas
-        </button>
+    <div class="form-group">
+        
+        <label>
+            Nombre
+            <input type="text" name="nombre">
+        </label>
+        <label>
+            Apellido
+            <input type="text" name="apellido">
+        </label>
+        <label>
+            Correo
+            <input type="email" name="correo">
+        </label>
+        <label>
+            Dirección
+            <input type="text" name="direccion">
+        </label>
+        <label>
+            Tipo de documento de Identidad
+            <select name="tipo-documento">
+                <option value="">Seleccione</option>
+            </select>
+        </label>
+        <label>
+            Número de documento
+            <input type="text" name="numero-documento">
+        </label>
+        <label>
+            Programa
+            <input type="text" name="programa">
+        </label>
+        <label>
+            Ficha
+            <input type="text" name="ficha">
+        </label>
+        <label>
+            Teléfono
+            <input type="text" name="telefono">
+        </label>
+        <label>
+            Modalidad
+            <select name="modalidad">
+                <option value="">Seleccione</option>
+            </select>
+        </label>
+        <label>
+            Inicio de Etapa Práctica
+            <input type="date" name="inicio-etapa-practica">
+        </label>
+        <label>
+            Fin de Etapa Práctica
+            <input type="date" name="fin-etapa-practica">
+        </label>
+        <label>
+            Ciudad
+            <input type="text" name="ciudad">
+        </label>
+        <label>
+            NIT. Empresa
+            <input type="text" name="nit-empresa">
+        </label>
+        <label>
+            Razón social
+            <input type="text" name="razon-social">
+        </label>
+        <label class="full-width">
+            Documentos
+            <textarea name="documentos" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+        </label>
+        <div class="buttons">
+            <button type="button" class="cancel" onclick="window.location.href='{{ route('administrator.Agregar-aprendiz') }}'">CANCELAR</button>
+            <button type="submit" class="confirm">CONFIRMAR</button>
+            <button type="button" class="report" onclick="window.location.href='{{ route('administrator.Reporte-aprendiz') }}'">REPORTE</button>
+        </div>
     </div>
+    
+</form>
+</div>
 </body>
 </html>

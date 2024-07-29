@@ -2,11 +2,10 @@
 
 
 use App\Http\Controllers\ApprenticeController;
-
+use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdministratorController;
-use App\Http\Controllers\SuperadminController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
@@ -105,7 +104,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
 
 
 
-
+    //RUTAS ADMINISTRADOR
     Route::get('/administrator/home', function () {
         return view('administrator.home');
     })->name('administrator.home');
@@ -116,6 +115,14 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/reports', [AdministratorController::class, 'reports'])->name('administrator.reports');
     Route::get('/administrator/graphic', [AdministratorController::class, 'graphic'])->name('administrator.graphic');
     Route::get('/administrator/template', [AdministratorController::class, 'template'])->name('administrator.template');
+    Route::get('/administrator/Administrator-perfil', [AdministratorController::class, 'Adminperfil'])->name('administrator.Administrator-perfil');
+    Route::get('/administrator/Apprentice-perfil', [AdministratorController::class, 'perfilAprendiz'])->name('administrator.Apprentice-perfil');
+    Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
+    Route::get('/administrator/Agregar-aprendiz', [AdministratorController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
+    Route::get('/administrator/Añadir-aprendiz', [AdministratorController::class, 'AñadirAprendiz'])->name('administrator.Añadir-aprendiz');
+    Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
+    Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
+
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
 
@@ -143,6 +150,9 @@ Route::get('/trainer/apprentice',[TrainerController::class,'apprentice'])->name(
 Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
 Route::get('/trainer/report',[TrainerController::class,'report'])->name('report');
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
+Route::get('/trainer/Bitacora',[TrainerController::class,'bitacora'])->name('bitacora');
+Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita');
+Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('trainer.perfilapre');
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 
 

@@ -26,13 +26,38 @@ class AdministratorController extends Controller
     public function template(){
         return view('administrator.template');
     }
-    public function perfil(){
-        return view('administrator.perfil');
+    
+
+    //VISTAS PERFILES
+    public function Adminperfil()
+    {
+        return view('administrator.Administrator-perfil');
+    }
+
+    
+    public function perfilAprendiz(){
+        return view('administrator.Apprentice-perfil');
     }
     public function perfilInstructor()
     {
-        return view('administrator.perfil-instructor');
+        return view('administrator.Instructor-perfil');
     }
-     
+
+    public function AgregarAprendiz()
+    {
+        return view('administrator.Agregar-aprendiz');
+    }
+    public function AñadirAprendiz()
+    {
+        return view('administrator.Añadir-aprendiz');
+    }
+    public function ReporteAprendiz()
+    {
+        return view('administrator.Reporte-aprendiz');
+    }
+    public function Email()
+    {
+        return view('administrator.email');
+    }
 }
 ?>

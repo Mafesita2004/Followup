@@ -84,7 +84,24 @@
             height: auto; /* Mantiene la proporción de la imagen */
             filter: invert(1); /* Invierte los colores de la imagen */
         }
-
+        .Flecha {
+            display: block;
+            position: absolute;
+            width: 24px; /* tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-left: -1470px; /* lados */
+            margin-top: 40px; /* altura */
+        }
+        .text-ventana {
+            color: #ffffff; /* Color del texto para que contraste con el fondo */
+            font-size: 20px; /* Tamaño del texto para que sea visible */
+            position: absolute;
+            font-family: 'DM Sans', sans-serif;
+            left: 50%; /* Ajusta la posición horizontal según sea necesario */
+            transform: translateX(-50%); /* Centra el texto horizontalmente */
+            top: 0px; /* Ajusta la posición vertical según sea necesario */
+        }
+        
         /* FIN BARRA AZUL */
 
 
@@ -98,6 +115,7 @@
             position: absolute;
             margin-left: 1200px; /* lados */
             margin-top: 0px; /* altura */
+            z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
         }
         .profile-info {
             margin-bottom: 20px;
@@ -149,7 +167,6 @@
             margin-left: -1100px; /* lados */
             margin-top: 0px; /* altura */
         }
-        
         .nav {
             list-style: none;
             padding: 20PX;
@@ -210,70 +227,166 @@
         }
 
         /* FIN MENU */
+        /* Main container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+}
 
+/* Top bar */
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 
+/* Home link */
+.home-link {
+    margin-left: 1rem;
+}
 
+/* Search form */
+.search-form {
+    display: flex;
+    align-items: center;
+}
 
+.search-input {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid black;
+    border-radius: 9999px;
+    width: 24rem;
+}
 
+.search-button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: -2.5rem;
+}
 
+.search-icon {
+    width: 1rem;
+    height: auto;
+}
 
+/* Add form */
+.add-form {
+    margin-right: 2rem;
+}
 
+.add-button {
+    background-color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
 
+.add-icon {
+    width: 1.25rem;
+    height: auto;
+}
 
-        .logout-button {
-            padding: 10px 20px;
-            background-color: #009e00;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+/* Content container */
+.content-container {
+    width: 100%;
+    max-width: 72rem;
+    background-color: rgba(47, 62, 76, 0.078);
+    border: 2px solid #04324D;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin-top: 0.25rem;
+}
 
-        .logout-button:hover {
-            background-color: #007a00;
-        }
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
 
-        .button-container {
-            width: 900px;
-            height: 600px; /* Aumenta la altura para que quepan todos los botones */
-            border: 2px solid #04324dce;
-            margin: 60px auto; /* Centrar horizontalmente y ajustar margen superior */
-            background-color: #2f3e4c16;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            border-radius: 10px; /* Borde redondeado */
-        }
+@media (min-width: 640px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid-container {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+/* User card */
+.user-card {
+    width: 120px;
+    height: 150px;
+    background-color: #BDBDBD;
+    border: 2px solid #009E00;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.user-card:hover {
+    background-color: #f0fff4;
+}
+
+.user-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.user-info {
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.3rem;
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto en color negro */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    margin-bottom: 0.2rem; /* Espacio entre cada línea de información */
+}
+
+/* Footer */
+.footer {
+    margin-top: 1rem;
+    text-align: center;
+    margin: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
 
         
 
-        
 
-
-        .button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 200px; 
-            height: 200px; 
-            border: 0px solid #ccc;
-            padding: 10px;
-            cursor: pointer;
-            background-color: transparent;
-            font-family: 'DM Sans', sans-serif; /* Establece el tipo de letra */
-            font-size: 14px; /* Tamaño de la letra */
-            text-align: center;
-            color: #1E1E1E; /* Ajusta el color del texto */
-            margin: 20px;
-        }
-
-        .button img {
-            width: 160px; 
-            height: 140px; 
-        }
     </style>
     <script>
         function navigateTo(page) {
@@ -295,11 +408,14 @@
             
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
+            <h2 class="text-ventana">Base de Datos</h2> 
         </form>
         <button id="notifButton">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
-        
+        <a href="{{ route('administrator.home') }}" alt="flecha">
+            <img class="Flecha" src="{{ asset('img/flecha.png') }}" alt="Flecha">
+        </a>
         
     </header>
         {{-- Termina barra azul --}}
@@ -316,14 +432,14 @@
                 <img class="icon" src="{{ asset('administrator/user-icon.png') }}" alt="Icono">
                 <span class="username">Nombre usuario</span><br>
                 <span class="role">Administrador</span><br>
-                <a href="{{ route('administrator.Administrator-perfil')}}" class="profile-link">Ver Perfil</a>
+                <a href="{{ route('administrator.reports')}}" class="profile-link">Ver Perfil</a>
             </div>
             <li><a href="{{ route('administrator.home')}}">Inicio</a></li>
             <li><a href="{{ route('administrator.settings')}}">Configuración</a></li>
             <li><a href="{{ route('administrator.apprentice')}}">Aprendices</a>
                 <ul>
                     <li>APRENDICES<a href="{{ route('administrator.apprentice')}}">Lista de Aprendices que inician etapa productiva</a></li>
-                    <li><a href="{{ route('administrator.Agregar-aprendiz')}}">Agregar Aprendices</a></li>
+                    <li><a href="{{ route('administrator.apprentice')}}">Agregar Aprendices</a></li>
                 </ul>
             </li>
             <li><a href="{{ route('administrator.instructor')}}">Instructores</a></li>
@@ -359,43 +475,52 @@
     </script>
     
     {{-- FIN MENU --}}
-    
+    <main class="main-container">
+        <div class="top-bar">
+            <a href="{{ route('administrator.home') }}" class="home-link"></a>
+
+            <form action="#" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Buscar..." class="search-input">
+                <button type="submit" aria-label="Buscar" class="search-button">
+                    <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="search-icon">
+                </button>
+            </form>
+
+            <form action="#" method="GET" class="add-form">
+                <button type="button" class="add-button">
+                    <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="add-icon">
+                </button>
+            </form>
+        </div>
+        <div class="content-container">
+            <div class="grid-container">
+                @php
+                    $contador = 0;
+                @endphp
+                @for ($i = 0; $i < 24; $i++)
+                    <div class="user-card" onclick="redirectToAddLearner()">
+                        <img src="{{ asset('img/user-icon.png') }}" alt="User" class="user-icon">
+                        <span class="user-info">Nombre Completo</span>
+                        <span class="user-info">Cédula</span>
+                        <span class="user-info">Sede</span>
+                        <span class="user-info">Rol</span>
+                    </div>
+                    <script>
+                        function redirectToAddLearner() {
+                            window.location.href = "{{ route('administrator.Añadir-aprendiz') }}";
+                        }
+                    </script>
+                    @php
+                        $contador++;
+                    @endphp
+                @endfor
+            </div>
+        </div>
+        <div class="footer">
+            Total de cuadros: {{ $contador }}
+        </div>
+    </main>
     
 
-
-
-
-
-    <div class="button-container">
-        <button class="button" onclick="navigateTo('{{ route('administrator.settings') }}')">
-            <img src="{{ asset('administrator/configuracion.png') }}" alt="configuracion">
-            Configuración
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.instructor') }}')">
-            <img src="{{ asset('administrator/instructor.png') }}" alt="instructor">
-            Instructores
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.apprentice') }}')">
-            <img src="{{ asset('administrator/aprendiz.png') }}" alt="aprendiz">
-            Aprendices
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.reports') }}')">
-            <img src="{{ asset('administrator/reportes.png') }}" alt="reportes">
-            Reportes
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.graphic') }}')">
-            <img src="{{ asset('administrator/grafica.png') }}" alt="grafica">
-            Graficas
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.template') }}')">
-            <img src="{{ asset('administrator/plantilla.png') }}" alt="plantilla">
-            Plantillas
-        </button>
-    </div>
 </body>
 </html>
