@@ -87,20 +87,23 @@
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
-        <div class="flex justify-center">
-            <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
-                <div class=" bg-gray-100 p-6 rounded-lg">
-                    <div class="flex flex-row justify-center items-center">
-                       <div class="pr-8">Recibidos</div>
-                       <div>Enviados</div>
+    <div class="w-auto flex justify-start m-2 pl-56 items-center"></div>
+    <div class="flex justify-center">
 
-                    </div>
-
-
-
-
+        <main class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
+            <h1 class="text-2xl font-bold mb-4">Reporte</h1>
+            <form class="mb-4">
+                <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
+                <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
+                <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
+                <a href="{{ route('notification') }}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Enviar Reporte</a>
+                <a href="{{ route('notification') }}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded">Cancelar</a>
+            </form>
                 </div>
-            </div>
+                    </div>
         </main>
+    </div>
+    <script src="{{ asset('js/Trainer.js') }}"></script>
+
 </body>
 </html>
