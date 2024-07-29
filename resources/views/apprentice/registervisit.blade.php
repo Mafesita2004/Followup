@@ -232,11 +232,6 @@ left: 22%;
             padding: 20px;
             margin: 20px auto;
             max-width: 792px;
-width: 792px;
-height: 334px;
-left: 110px;
-top: 29%;
-
         }
 
         .register-container {
@@ -246,23 +241,6 @@ top: 29%;
             border-radius: 3px;
             text-align: center;
             margin-bottom: 20px;
-            box-sizing: border-box;
-    text-align: center;
-    margin-bottom: 10px;
-    width: 792px;
-    height: 59px;
-    background: #04324D;
-    display: flex;
-    align-items: center; 
-    justify-content:center;
-    padding-right: 7px; 
-    margin: 0; 
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    color: #FFFFFF;
-           
         }
 
         .checkbox-option {
@@ -274,16 +252,8 @@ top: 29%;
         }
 
         .register-container p {
-            position: absolute;
-    width: 373px;
-    height: auto; 
-    left: 12px;
-    top: 10%;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    color: #000000;
+            margin: 5px 0;
+            font-size: 20px;
         }
 
         @media (max-width: 768px) {
