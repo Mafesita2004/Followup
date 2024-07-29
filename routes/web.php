@@ -127,9 +127,9 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
 
 
-    Route::get('/trainer/home', function () {
-        return view('trainer.home');
-    })->name('trainer.home');
+    Route::get('/trainer/icon', function () {
+        return view('trainer.icon');
+    })->name('trainer.icon');
 
     Route::get('/apprentice/home', function () {
         return view('apprentice.home');
