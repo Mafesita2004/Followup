@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>SuperAdmin Home</title>
     <style>
         /* BARRA AZUL */
@@ -296,7 +297,7 @@
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
         </form>
-        <button id="notifButton">
+        <button id="notifButton" onclick="navigateTo('{{ route('administrator.notificaciones') }}')">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
         
