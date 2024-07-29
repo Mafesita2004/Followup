@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <title>Etapa Seguimiento</title>
+    <title>Configuración - Etapa Seguimiento</title>
     <style>
         #userMenu {
             top: 100%;
             margin-top: 0.5rem;
         }
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-bottom: 2px solid #009e00;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+        }
+        .settings-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
+
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
+
     <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
         <div class="flex items-center">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
@@ -29,6 +46,7 @@
         </div>
         <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
     </header>
+
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -56,24 +74,22 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil</div>
-        <div class="relative ml-auto flex items-center ">
-            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Configuración</div>
+        <div class="relative ml-auto flex items-center">
+            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
             <button id="menuButton" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2 ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
-            <div id="userMenu" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
+            <div id="userMenu" class="hidden absolute right-4 mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
                 <div class="p-4">
                     <div class="flex items-center mb-4">
                         <div>
-
-                            <p class="text-sm font-bold">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</p>
+                            <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
                             <p class="text-sm mt-2">Super administrador</p>
                         </div>
-
                         <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
                     <ul>
@@ -91,84 +107,66 @@
                         @csrf
                         <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
                     </form>
+                </div>
             </div>
         </div>
     </nav>
+
     <div class="w-full flex justify-between items-center mt-6">
         <a href="{{ route('superadmin.home') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
-        <div class="flex justify-center">
-    <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
-        <div class=" bg-gray-100 p-6 rounded-lg">
-            <div class="text-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                <h1 class="text-lg m-0 text-black font-bold">SUPER</h1>
-                <h1 class="text-lg m-0 text-black font-bold">ADMINISTRADOR</h1>
-                </div>
 
-                <h3 class="font-bold mb-4">Datos básicos</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Cedula:</label>
-                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->phone }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->email }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p type="date" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Birthdate }}</p>
-                    </div>
-                </div>
+    <div class="flex justify-center">
+        <main class="bg-white m-4 p-6 rounded-lg shadow-lg border border-[#e0e0e0] w-2/3">
+            <h1 class="section-header">Configuración</h1>
 
-                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->country }}</p>
+            <!-- Sección de Cambio de Contraseña -->
+            <div class="settings-card">
+                <h2 class="text-lg font-bold mb-4">Cambio de Contraseña</h2>
+                <form action="#" method="#">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="currentPassword" class="block text-sm font-medium text-gray-700">Contraseña Actual</label>
+                        <input type="password" id="currentPassword" name="currentPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->department }}</p>
+                    <div class="mb-4">
+                        <label for="newPassword" class="block text-sm font-medium text-gray-700">Nueva Contraseña</label>
+                        <input type="password" id="newPassword" name="newPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar Nueva Contraseña</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->neighborhood }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->address }}</p>
-                    </div>
-                </div>
+                    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Actualizar Contraseña</button>
+                </form>
+            </div>
 
-                <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('superadmin.SuperAdmin-PerfilActualizar') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</a>
-                    <a href="{{ route('superadmin.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-                </div>
-        </div>
-    </main>
-</div>
-<script src="{{ asset('js/SuperAdmin.js') }}"></script>
+            <!-- Sección de Configuración General -->
+            <div class="settings-card">
+                <h2 class="text-lg font-bold mb-4">Configuración General</h2>
+                <form action="#" method="#">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="siteName" class="block text-sm font-medium text-gray-700">Nombre del Sitio</label>
+                        <input type="text" id="siteName" name="siteName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" value="" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="timezone" class="block text-sm font-medium text-gray-700">Zona Horaria</label>
+                        <select id="timezone" name="timezone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+                            <!-- Opciones de zona horaria -->
+                            <option value="America/Bogota">Bogotá</option>
+                            <!-- Añadir más opciones según sea necesario -->
+                        </select>
+                    </div>
+                    <a href="{{ route('administrator.home') }}" type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Guardar Cambios</a>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>
+
 </html>

@@ -8,68 +8,31 @@ use Illuminate\Http\Request;
 class AdministratorController extends Controller
 {
    
-
-    /**
-     * Muestra una lista del recurso.
-     * En este caso, muestra la vista del panel de inicio del administrador.
-     */
-    public function index()
-    {
-        return view('administrator.home');
+    public function settings(){
+        return view('administrator.settings');
     }
-
-    /**
-     * Muestra el formulario para crear un nuevo recurso.
-     * Este método está vacío y se puede implementar según sea necesario.
-     */
-    public function create()
-    {
-        //
+    public function instructor(){
+        return view('administrator.instructor');
     }
-
-    /**
-     * Almacena un nuevo recurso en el almacenamiento.
-     * Este método está vacío y se puede implementar según sea necesario.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function apprentice(){
+        return view('administrator.apprentice');
     }
-
-    /**
-     * Muestra el recurso especificado.
-     * Este método está vacío y se puede implementar según sea necesario.
-     */
-    public function show(administrator $administrator)
-    {
-        //
+    public function reports(){
+        return view('administrator.reports');
     }
-
-    /**
-     * Muestra el formulario para editar el recurso especificado.
-     * Este método está vacío y se puede implementar según sea necesario.
-     */
-    public function edit(administrator $administrator)
-    {
-        //
+    public function graphic(){
+        return view('administrator.graphic');
     }
-
-    /**
-     * Actualiza el recurso especificado en el almacenamiento.
-     * Este método está vacío y se puede implementar según sea necesario.
-     */
-    public function update(Request $request, administrator $administrator)
-    {
-        //
+    public function template(){
+        return view('administrator.template');
     }
-
-    /**
-     * Elimina el recurso especificado del almacenamiento.
-     * Este método está vacío y se puede implementar según sea necesario.
-     */
-    public function destroy(administrator $administrator)
-    {
-        //
+    public function perfil(){
+        return view('administrator.perfil');
     }
+    public function perfilInstructor()
+    {
+        return view('administrator.perfil-instructor');
+    }
+     
 }
 ?>

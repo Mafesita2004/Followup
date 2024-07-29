@@ -56,7 +56,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Actualizar Perfil</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }}{{ auth()->user()->last_name }}</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -86,7 +86,7 @@
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Notificaciones')}}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
                         <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
-                    </ul>
+                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
                         <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
@@ -95,12 +95,12 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('superadmin.home') }}" class="ml-4">
+        <a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
-        <div class="flex justify-center">
-    <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
+<div class="flex justify-center">
+    <main class=" bg-white m-4 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
         <div class=" bg-gray-100 p-6 rounded-lg">
             <div class="text-center mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
@@ -114,11 +114,11 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->name }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->last_name }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Cedula:</label>
@@ -126,15 +126,15 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->phone }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->phone }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->email }}</p>
+                        <input type="email" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->email }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p type="date" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Birthdate }}</p>
+                        <input type="date" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->Birthdate }}">
                     </div>
                 </div>
 
@@ -142,29 +142,30 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->country }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->country }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->department }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->department }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->municipality }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->neighborhood }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->neighborhood }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->address }}</p>
+                        <input type="text" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md" value="{{ auth()->user()->address }}">
                     </div>
                 </div>
 
+
                 <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('superadmin.SuperAdmin-PerfilActualizar') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</a>
-                    <a href="{{ route('superadmin.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <a type="submit" href="{{ route('superadmin.SuperAdmin-Administrator')}}"  class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
+                    <a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                 </div>
         </div>
     </main>
