@@ -84,7 +84,24 @@
             height: auto; /* Mantiene la proporción de la imagen */
             filter: invert(1); /* Invierte los colores de la imagen */
         }
-
+        .Flecha {
+            display: block;
+            position: absolute;
+            width: 24px; /* tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-left: -1470px; /* lados */
+            margin-top: 40px; /* altura */
+        }
+        .text-ventana {
+            color: #ffffff; /* Color del texto para que contraste con el fondo */
+            font-size: 20px; /* Tamaño del texto para que sea visible */
+            position: absolute;
+            font-family: 'DM Sans', sans-serif;
+            left: 50%; /* Ajusta la posición horizontal según sea necesario */
+            transform: translateX(-50%); /* Centra el texto horizontalmente */
+            top: 0px; /* Ajusta la posición vertical según sea necesario */
+        }
+        
         /* FIN BARRA AZUL */
 
 
@@ -149,7 +166,6 @@
             margin-left: -1100px; /* lados */
             margin-top: 0px; /* altura */
         }
-        
         .nav {
             list-style: none;
             padding: 20PX;
@@ -211,69 +227,83 @@
 
         /* FIN MENU */
 
-
-
-
-
-
-
-
-
-
-        .logout-button {
-            padding: 10px 20px;
-            background-color: #009e00;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .logout-button:hover {
-            background-color: #007a00;
-        }
-
-        .button-container {
-            width: 900px;
-            height: 600px; /* Aumenta la altura para que quepan todos los botones */
-            border: 2px solid #04324dce;
-            margin: 60px auto; /* Centrar horizontalmente y ajustar margen superior */
-            background-color: #2f3e4c16;
+        .form-group {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            border-radius: 10px; /* Borde redondeado */
+            flex-direction: column; /* Cambiado para apilar verticalmente */
+            background-color: #D9D9D9; 
+            width: 600px; /* Ajustado para encajar mejor */
+            padding: 20px;
+            margin: 20px auto; /* Centra el contenedor horizontalmente */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra suave */
         }
 
         
-
-        
-
-
-        .button {
+        .form-group {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 200px; 
-            height: 200px; 
-            border: 0px solid #ccc;
-            padding: 10px;
-            cursor: pointer;
-            background-color: transparent;
-            font-family: 'DM Sans', sans-serif; /* Establece el tipo de letra */
-            font-size: 14px; /* Tamaño de la letra */
-            text-align: center;
-            color: #1E1E1E; /* Ajusta el color del texto */
-            margin: 20px;
+            background-color: #D9D9D9;
+            width: 600px; 
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .button img {
-            width: 160px; 
-            height: 140px; 
+        .email-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
         }
+
+        .email-header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .email-header div {
+            margin-right: 15px;
+        }
+
+        .email-header div span {
+            display: block;
+        }
+
+        textarea {
+            width: 100%; 
+            padding: 10px;
+            height: 350px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .buttons .cancel {
+            background-color: #D9D9D9;
+            border: 1px solid #000000;
+        }
+
+        .buttons .confirm {
+            background-color: #009E00;
+            color: white;
+        }
+
     </style>
     <script>
         function navigateTo(page) {
@@ -295,11 +325,14 @@
             
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
+            <h2 class="text-ventana">Correo</h2> 
         </form>
         <button id="notifButton">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
-        
+        <a href="{{ route('administrator.home') }}" alt="flecha">
+            <img class="Flecha" src="{{ asset('img/flecha.png') }}" alt="Flecha">
+        </a>
         
     </header>
         {{-- Termina barra azul --}}
@@ -316,14 +349,14 @@
                 <img class="icon" src="{{ asset('administrator/user-icon.png') }}" alt="Icono">
                 <span class="username">Nombre usuario</span><br>
                 <span class="role">Administrador</span><br>
-                <a href="{{ route('administrator.Administrator-perfil')}}" class="profile-link">Ver Perfil</a>
+                <a href="{{ route('administrator.reports')}}" class="profile-link">Ver Perfil</a>
             </div>
             <li><a href="{{ route('administrator.home')}}">Inicio</a></li>
             <li><a href="{{ route('administrator.settings')}}">Configuración</a></li>
             <li><a href="{{ route('administrator.apprentice')}}">Aprendices</a>
                 <ul>
                     <li>APRENDICES<a href="{{ route('administrator.apprentice')}}">Lista de Aprendices que inician etapa productiva</a></li>
-                    <li><a href="{{ route('administrator.Agregar-aprendiz')}}">Agregar Aprendices</a></li>
+                    <li><a href="{{ route('administrator.apprentice')}}">Agregar Aprendices</a></li>
                 </ul>
             </li>
             <li><a href="{{ route('administrator.instructor')}}">Instructores</a></li>
@@ -361,41 +394,25 @@
     {{-- FIN MENU --}}
     
     
-
-
-
-
-
-    <div class="button-container">
-        <button class="button" onclick="navigateTo('{{ route('administrator.settings') }}')">
-            <img src="{{ asset('administrator/configuracion.png') }}" alt="configuracion">
-            Configuración
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.instructor') }}')">
-            <img src="{{ asset('administrator/instructor.png') }}" alt="instructor">
-            Instructores
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.apprentice') }}')">
-            <img src="{{ asset('administrator/aprendiz.png') }}" alt="aprendiz">
-            Aprendices
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.reports') }}')">
-            <img src="{{ asset('administrator/reportes.png') }}" alt="reportes">
-            Reportes
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.graphic') }}')">
-            <img src="{{ asset('administrator/grafica.png') }}" alt="grafica">
-            Graficas
-        </button>
-    
-        <button class="button" onclick="navigateTo('{{ route('administrator.template') }}')">
-            <img src="{{ asset('administrator/plantilla.png') }}" alt="plantilla">
-            Plantillas
-        </button>
+    <div class="form-group">
+    <label class="full-width">
+        <div class="email-header">
+            <img src="{{ asset('administrator/icon-email.png') }}" alt="Email">
+            <div>
+                <span>Asunto: xxxxxx</span>
+                <span>Para: xxxxxx</span>
+            </div>
+            <div>
+                <span>Fecha: xxxxxxxx</span>
+            </div>
+        </div>
+        Descripción
+        <textarea name="documentos" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+    </label>
+    <div class="buttons">
+        <button type="button" class="cancel" onclick="window.location.href='{{ route('administrator.reports') }}'">CANCELAR</button>
+        <button type="submit" class="confirm">CONFIRMAR</button>
     </div>
+</div>
 </body>
 </html>
