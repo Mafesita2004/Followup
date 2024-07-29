@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
+        #userMenu{
             top: 100%;
             margin-top: 0.5rem;
         }
