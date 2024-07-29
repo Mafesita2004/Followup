@@ -12,7 +12,7 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        return view('trainer.home');
+        return view('trainer.icon');
     }
 
    //inicio de instructor iconos
@@ -32,6 +32,11 @@ class TrainerController extends Controller
     {
         return view('trainer.apprentice');
     }
+     //icono perfil aprendiz
+     public function perfilapre()
+     {
+         return view('trainer.perfilapre');
+     }
     //icono reportes
     public function report()
     {
@@ -42,6 +47,17 @@ class TrainerController extends Controller
     {
         return view('trainer.username');
     }
+    //icono bitacora
+    public function bitacora()
+    {
+        return view('trainer.bitacora');
+    }
+    //icono visita
+    public function visita()
+    {
+        return view('trainer.visita');
+    }
+
 
 
 

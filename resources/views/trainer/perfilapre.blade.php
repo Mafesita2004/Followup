@@ -7,7 +7,7 @@
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenuTri {
+        #userMenu {
             top: 100%;
             margin-top: 0.5rem;
         }
@@ -73,7 +73,6 @@
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="{{ route('username') }}" class="block text-black hover:bg-white p-2 rounded-lg">Perfil</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -83,7 +82,7 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('icon') }}" class="ml-4">
+        <a href="{{ route('apprentice') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
@@ -154,5 +153,4 @@
 </div>
 <script src="{{ asset('js/Trainer.js') }}"></script>
 </body>
-</html>
 </html>
