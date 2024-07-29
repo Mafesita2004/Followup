@@ -26,7 +26,10 @@ class AdministratorController extends Controller
     public function template(){
         return view('administrator.template');
     }
-    
+    public function Notificaciones()
+    {
+        return view('administrator.notificaciones');
+    }
 
     //VISTAS PERFILES
     public function Adminperfil()

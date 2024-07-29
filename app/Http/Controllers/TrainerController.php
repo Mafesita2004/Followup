@@ -12,7 +12,7 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        return view('trainer.home');
+        return view('trainer.icon');
     }
 
    //inicio de instructor iconos
@@ -57,7 +57,7 @@ class TrainerController extends Controller
     {
         return view('trainer.visita');
     }
-   
+
 
 
 

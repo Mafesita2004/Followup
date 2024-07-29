@@ -121,15 +121,15 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Agregar-aprendiz', [AdministratorController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
     Route::get('/administrator/Añadir-aprendiz', [AdministratorController::class, 'AñadirAprendiz'])->name('administrator.Añadir-aprendiz');
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
+    Route::get('/administrator/notificaciones', [AdministratorController::class, 'Notificaciones'])->name('administrator.notificaciones');
     Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
-
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
 
 
-    Route::get('/trainer/home', function () {
-        return view('trainer.home');
-    })->name('trainer.home');
+    Route::get('/trainer/icon', function () {
+        return view('trainer.icon');
+    })->name('trainer.icon');
 
     Route::get('/apprentice/home', function () {
         return view('apprentice.home');
