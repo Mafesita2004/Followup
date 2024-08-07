@@ -11,15 +11,17 @@
         }
         .head-container{
             position: absolute;
-width: 1511px;
-height: 74px;
-left: -1px;
-top: 98px;
+           width: 1511px;
+           height: 74px;
+           left: -1px;
+           top: 98px;
 
-background: #04324D;
-display: flex;
+           background: #04324D;
+            display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 10px; 
+            box-sizing: border-box;
         }
         .logo-container h2 {
             position: absolute;
