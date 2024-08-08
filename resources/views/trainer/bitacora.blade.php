@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <script src="{{ asset('js/Trainer.js') }}"></script>
     <title>Etapa Seguimiento</title>
     <style>
         #userMenuTri {
@@ -37,7 +38,7 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
                         <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
@@ -56,6 +57,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
+
             <div id="userMenuTri" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
                 <div class="p-4">
                     <div class="flex items-center mb-4">
@@ -73,7 +75,6 @@
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="{{ route('username') }}" class="block text-black hover:bg-white p-2 rounded-lg">Perfil</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -82,28 +83,34 @@
             </div>
         </div>
     </nav>
-    <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('icon') }}" class="ml-4">
-            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-        </a>
-    </div>
-    <div class="w-auto flex justify-start m-2 pl-56 items-center"></div>
-    <div class="flex justify-center">
+    <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] items-center  w-5/6 ">
 
-        <main class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
-            <h1 class="text-2xl font-bold mb-4">Reporte</h1>
-            <form class="mb-4">
-                <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
-                <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
-                <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
-                <a href="{{ route('notification') }}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Enviar Reporte</a>
-                <a href="{{ route('notification') }}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded">Cancelar</a>
-            </form>
-                </div>
+
+        <div class="container  mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg">
+
+
+            <div class="items-center ">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6  md:col-span-1 items-center space-y-4 ">
+                    <div class="w-full">
+                        <a for="nombre" class="block text-sm font-medium text-gray-700">Nombres</a>
+                        <input type="text" id="nombre" value="MARIAN" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                     </div>
-        </main>
-    </div>
-    <script src="{{ asset('js/Trainer.js') }}"></script>
+                    <div class="w-full">
+                        <label for="apellido" class="block text-sm font-medium text-gray-700">Apellidos</label>
+                        <input type="text" id="apellido" value="DIAZ" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="identificacion" class="block text-sm font-medium text-gray-700">N° identificación</label>
+                        <input type="text" id="identificacion" value="1060435627" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                    <div class="w-full">
+                        <label for="ficha" class="block text-sm font-medium text-gray-700">N° ficha</label>
+                        <input type="text" id="ficha" value="2654013" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+            </main>
 
 </body>
 </html>

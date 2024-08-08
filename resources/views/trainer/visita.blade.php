@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <script src="{{ asset('js/Trainer.js') }}"></script>
     <title>Etapa Seguimiento</title>
     <style>
         #userMenuTri {
@@ -37,7 +38,7 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
                         <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
@@ -56,6 +57,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
+
             <div id="userMenuTri" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
                 <div class="p-4">
                     <div class="flex items-center mb-4">
@@ -73,7 +75,6 @@
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="{{ route('username') }}" class="block text-black hover:bg-white p-2 rounded-lg">Perfil</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -83,91 +84,11 @@
         </div>
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('icon') }}" class="ml-4">
+        <a href="{{ route('apprentice') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
         <div class="flex justify-center">
     <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
-        <div class=" bg-gray-100 p-6 rounded-lg">
-            <div class="text-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                <h1 class="text-lg m-0 text-black font-bold">INSTRUCTOR</h1>
-                </div>
-
-                <h3 class="font-bold mb-4">Datos básicos</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                </div>
-
-                <h3 class="font-bold mb-4 mt-6">Lugar Residenciade </h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </div>
-
-                <h3 class="font-bold mb-4 mt-6">Aprendiz</h3>
-                <div class="space-y-4">
-                    <a>
-                        <label class="block text-sm font-medium text-gray-700">Numero de horas seguimineto :</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </a>
-                    <a>
-                        <label class="block text-sm font-medium text-gray-700">Mes:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </a>
-                    <a>
-                        <label class="block text-sm font-medium text-gray-700">Numero De Aprendices Asignados:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
-                    </a>
-                </div>
-
-                <div class="flex justify-end mt-6 space-x-4">
-                    <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</button>
-                    <a href="{{ route('icon') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-                </div>
-        </div>
-    </main>
-</div>
-<script src="{{ asset('js/Trainer.js') }}"></script>
 </body>
-</html>
 </html>

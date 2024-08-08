@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,9 +47,6 @@
             top: 85px; /* Ajusta la posición vertical según sea necesario */
             z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
         }
-        .Linea-Tiempo {
-            display: block;
-        }
     </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
@@ -60,7 +57,7 @@
                 <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
                 <h2 class="text-sm m-0 text-[#009e00]">Seguimiento</h2>
             </div>
-            <h2 class="text-ventana">Perfil Aprendiz</h2> 
+            <h2 class="text-ventana">Perfil Instructor</h2> 
         </div>
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
@@ -109,7 +106,7 @@
                     <div class="flex items-center mb-4">
                         <div>
                             <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                            <p class="text-sm mt-2">Super administrador</p>
+                            <p class="text-sm mt-2">Administrador</p>
                         </div>
                         <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
@@ -137,32 +134,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
-                    <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
+                    <h1 class="text-lg m-0 text-black font-bold">INSTRUCTOR</h1>
                 </div>
-                
-                <h3 class="font-bold mb-4 mt-6">Información Modalidad</h4>
-                <div class="space-y-4">
-                        
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Tipo de Modalidad:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha Inicio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div> 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha Final:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div> 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Proceso:</label>
-                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                     </div> 
-                     <img class="Linea-Tiempo" src="{{ asset('administrator/linea-tiempo.png') }}" alt="linea-tiempo">
-                </div>
-                
-                <h3 class="font-bold mb-4 mt-6">Datos básicos</h3>
+                <h3 class="font-bold mb-4">Datos básicos</h3>
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Nombres:</label>
@@ -246,7 +220,25 @@
                     </div>
                 </div>
 
-                
+                <h3 class="font-bold mb-4 mt-6">Información Seguimiento</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Aprendices Asignados:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Horas:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Horas realizadas:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Total horas:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                    </div>
+                </div>
 
                 <div class="flex justify-end mt-6 space-x-4">
                     <a href="{{ route('administrator.reports') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>

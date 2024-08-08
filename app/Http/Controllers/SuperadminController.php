@@ -117,7 +117,7 @@ class SuperadminController extends Controller
     {
         return view('superadmin.SuperAdmin-MensajeInstructor');
     }
-
+ 
     public function SuperAdminMensajeAprendiz()
     {
         return view('superadmin.SuperAdmin-MensajeAprendiz');

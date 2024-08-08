@@ -107,6 +107,7 @@
 
     <div class="w-auto flex justify-start m-2 pl-56 items-center"></div>
     <div class="flex justify-center">
+
         <main class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
             <h1 class="text-2xl font-bold mb-4">Reporte</h1>
             <form class="mb-4">

@@ -11,10 +11,10 @@
         }
         .head-container{
             position: absolute;
-           width: 1511px;
-           height: 74px;
-           left: -1px;
-           top: 98px;
+width: 100%;
+height: 74px;
+left: 0%;
+top: 98px;
 
            background: #04324D;
             display: flex;
@@ -23,23 +23,25 @@
             padding: 0 10px; 
             box-sizing: border-box;
         }
-        .logo-container h2 {
-            position: absolute;
-            width: 333px;
-            height: 34px;
-            left: 589px;
-            top: 39px;
+ .logo-container h2 {
+    position: absolute;
+    width: 100%;
+    max-width: 333px;
+    height: 34px;
+    left: 50%;
+    top: 39px;
+    transform: translateX(-50%);
 
-            font-family: 'DM Sans';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 52px;
-            display: flex;
-            align-items: center;
-            text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-            color: #009E00;
+    color: #009E00;
 
         }
         .logo-container h1 {
@@ -48,33 +50,24 @@
         }
         .head-container p{
             background: #FFFFFF;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 20px;
-            position: absolute;
-            position: absolute;
-            width: 367px;
-            height: 45px;
-            left: 1082px;
-            
-            
-          width: 307px;
-         height: 36px;
-         left: 1126px;
-
-font-family: 'DM Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 36px;
-margin: 0 10px;
-
-
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    position: absolute;
+    width: 307px;
+    height: 36px;
+    left: 80%;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0 auto;
         }
         .user{
             position: absolute;
-width: 49px;
+width: 49;
 height: 49px;
-left: 1391px;
+left: 94%;
 
 background: url(image.png);
 
@@ -83,7 +76,7 @@ background: url(image.png);
         .dropdown {
                 position: relative;
             display: inline-block;
-            left: 1440px;
+            left: 97%;
             margin-left: 10px;
             color: #FFFFFF;
 
@@ -138,10 +131,10 @@ margin-right: 10px;
         }
         .trainer-container {
             position: absolute;
-width: 1470px;
+width: 100%;
 height: 156px;
-left: calc(50% - 1470px/2 + 0.5px);
-top: calc(51% - 33px/2 - 167px);
+left: 0%;
+top: 19%;
 
 background: #D9D9D9;
     font-family: 'DM Sans', sans-serif;
@@ -171,13 +164,13 @@ background: #D9D9D9;
             background: #D9D9D9;
             position: absolute;
 
-           left: calc(50% - 1470px/2 + 0.5px);
+           left:0%;
         top: calc(58% - 30px/2 - 78px);
 
 
-        width: 1470px;
+        width: 100%;
         height: 38px;
-left: 15px;
+top: 33.5%;
 
 font-family: 'DM Sans', sans-serif;
 font-style: normal;
@@ -194,7 +187,7 @@ color: #000000;
             position: absolute;
 width: 1024px;
 height: 471px;
-left: 50 px;
+left: 10%;
 top: 391px;
 
 background: url(lineatiempo.png);
@@ -202,10 +195,10 @@ background: url(lineatiempo.png);
 
         .blog-container {
             position: absolute;
-            width: 343px;
+            width: 20%;
             height: 419px;
-            left: calc(50% - 343px/2 + 564px);
-            top: calc(59% - 515px/2 + 219.5px);
+            left: 78%;
+            top: 40.5%;
             background: #D9D9D9;
             padding: 20px;
             box-sizing: border-box; 

@@ -54,7 +54,7 @@ class RegisterController extends Controller
         $roleRoutes = [
             'superadmin' => 'superadmin.home',
             'administrator' => 'administrator.home',
-            'trainer' => 'trainer.home',
+            'trainer' => 'icon',
             'apprentice' => 'apprentice.home',
         ];
 

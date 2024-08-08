@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>SuperAdmin Home</title>
     <style>
+        /* BARRA AZUL */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                 Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
@@ -51,18 +53,52 @@
             top: -35px; /* Ajustar la posición desde la parte superior */
         }
         
+        .logo {
+            position: absolute;
+            top: -65px; 
+            left: 20px; 
+            width: 50px; 
+            height: auto;
+        }
+
+        .logo-sena {
+            position: absolute;
+            top: -55px; 
+            right: 20px; 
+            width: 50px; 
+            height: auto;
+        }
+        #notifButton {
+            position: absolute; /* Cambiado a absoluto para colocarlo en la barra azul */
+            top: 10px; /* alto */
+            right: 1450px; /* lado */
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            
+        }
+
+        .notifications {
+            display: block;
+            width: 54px; /* tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            filter: invert(1); /* Invierte los colores de la imagen */
+        }
+
+        /* FIN BARRA AZUL */
 
 
-        
+        /* MENU */
         #header {
             margin: auto;
             font-family: 'DM Sans', sans-serif;
-            background-color: #e0e0e0;
-            padding: 20px;
+            background-color: #D9D9D9;
             border-radius: 8px;
             width: 250px;
-            text-align: center;
-            position: relative;
+            position: absolute;
+            margin-left: 1200px; /* lados */
+            margin-top: 0px; /* altura */
         }
         .profile-info {
             margin-bottom: 20px;
@@ -72,13 +108,17 @@
             width: 50px;
             height: 50px;
             margin-bottom: 10px;
+            margin-left: 14px; /* lados */
+            margin-top: 1px; /* altura */
         }
         .username {
             font-weight: bold;
+            margin-left: -120px; /* lados */
         }
         .role {
             display: block;
             margin-bottom: 10px;
+            margin-left: -80px; /* lados */
         }
         .profile-link {
             display: block;
@@ -107,21 +147,25 @@
         .icon-flecha {
             width: 100%;
             height: 100%;
+            margin-left: -1100px; /* lados */
+            margin-top: 0px; /* altura */
         }
+        
         .nav {
             list-style: none;
-            padding: 0;
+            padding: 20PX;
             display: none; /* Ocultamos el menú inicialmente */
+            
         }
         .nav > li {
             margin-bottom: 10px;
+            position: relative;
         }
         .nav li a {
             color: #1E1E1E;
             text-decoration: none;
             padding: 10px 15px;
             display: block;
-            background-color: white;
             border-radius: 5px;
         }
         .nav li a:hover {
@@ -129,16 +173,19 @@
             color: white;
         }
         .nav li ul {
+            list-style: none;
             display: none;
             position: absolute;
-            left: 100%;
+            left: -130%;
             top: 0;
             min-width: 200px;
             background-color: #e0e0e0;
             border-radius: 8px;
             padding: 10px;
             margin-left: -10px;
+            z-index: 100; /* Para que quede encima de otros objetos */
         }
+        
         .nav li:hover > ul {
             display: block;
         }
@@ -163,7 +210,7 @@
             background-color: #b7d3b3;
         }
 
-
+        /* FIN MENU */
 
 
 
@@ -201,39 +248,9 @@
             border-radius: 10px; /* Borde redondeado */
         }
 
-        .logo {
-            position: absolute;
-            top: -65px; 
-            left: 20px; 
-            width: 50px; 
-            height: auto;
-        }
+        
 
-        .logo-sena {
-            position: absolute;
-            top: -55px; 
-            right: 20px; 
-            width: 50px; 
-            height: auto;
-        }
-
-        #notifButton {
-            position: absolute; /* Cambiado a absoluto para colocarlo en la barra azul */
-            top: 10px; /* alto */
-            right: 1450px; /* lado */
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-            
-        }
-
-        .notifications {
-            display: block;
-            width: 54px; /* tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-            filter: invert(1); /* Invierte los colores de la imagen */
-        }
+        
 
 
         .button {
@@ -280,13 +297,17 @@
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
         </form>
-        <button id="notifButton">
+        <button id="notifButton" onclick="navigateTo('{{ route('administrator.notificaciones') }}')">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
         
         
+        
     </header>
         {{-- Termina barra azul --}}
+
+
+        {{-- MENU --}}
     <div id="header">
         <button id="menu-toggle">
             <img class="icon-flecha" src="{{ asset('administrator/_.png') }}" alt="Icon-flecha">
@@ -297,25 +318,25 @@
                 <img class="icon" src="{{ asset('administrator/user-icon.png') }}" alt="Icono">
                 <span class="username">Nombre usuario</span><br>
                 <span class="role">Administrador</span><br>
-                <a href="{{ route('administrator.home')}}" class="profile-link">Ver Perfil</a>
+                <a href="{{ route('administrator.Administrator-perfil')}}" class="profile-link">Ver Perfil</a>
             </div>
             <li><a href="{{ route('administrator.home')}}">Inicio</a></li>
             <li><a href="{{ route('administrator.settings')}}">Configuración</a></li>
             <li><a href="{{ route('administrator.apprentice')}}">Aprendices</a>
                 <ul>
-                    <li><a href="{{ route('administrator.apprentice')}}">Lista de Aprendices que inician etapa productiva</a></li>
-                    <li><a href="{{ route('administrator.apprentice')}}">Agregar Aprendices</a></li>
+                    <li>APRENDICES<a href="{{ route('administrator.apprentice')}}">Lista de Aprendices que inician etapa productiva</a></li>
+                    <li><a href="{{ route('administrator.Agregar-aprendiz')}}">Agregar Aprendices</a></li>
                 </ul>
             </li>
             <li><a href="{{ route('administrator.instructor')}}">Instructores</a></li>
             <li><a href="{{ route('administrator.template')}}">Plantillas</a>
                 <ul>
-                    <li><a href="{{ route('administrator.template')}}">Pasantía</a></li>
+                    <li>MODALIDAD<a href="{{ route('administrator.template')}}">Pasantía</a></li>
                     <li><a href="{{ route('administrator.template')}}">Vinculo Laboral</a></li>
                     <li><a href="{{ route('administrator.template')}}">Contrato de Aprendizaje</a>
                         <ul>
                             <li><a href="{{ route('administrator.template')}}">Ver Plantilla</a></li>
-                            <li><a href="{{ route('administrator.template')}}">Añadir Plantilla</a></li>
+                            <li><a href="{{ route('administrator.template')}}">+ Añadir Plantilla</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('administrator.template')}}">Unidad Productiva Familiar</a></li>
@@ -339,7 +360,7 @@
         });
     </script>
     
-    
+    {{-- FIN MENU --}}
     
     
 

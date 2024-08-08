@@ -13,6 +13,9 @@
             top: 100%;
             margin-top: 0.5rem;
         }
+        .table-container {
+            overflow-x: auto;
+        }
     </style>
 </head>
 
@@ -32,7 +35,6 @@
         </div>
         <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
     </header>
-
 
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
@@ -105,23 +107,70 @@
         </a>
     </div>
 
-    <div class="w-auto flex justify-start m-2 pl-56 items-center">
-        <button type="submit" class="bg-red-600 hover:bg-red-800 text-white p-1 rounded">Redactar</button>
-    </div>
     <div class="flex justify-center">
         <main class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
-            <h1 class="text-2xl font-bold mb-4">Reporte</h1>
-            <form class="mb-4">
-                <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
-                <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
-                <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
-                <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Enviar Reporte</a>
-                <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded">Cancelar</a>
-            </form>
-                </div>
-                    </div>
+            <h2 class="text-2xl font-bold mb-4">Gestión de Permisos</h2>
+
+            <div class="table-container mb-6">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Permiso</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Permiso 1</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Asignado</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900">Revocar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Permiso 2</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No Asignado</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900">Asignar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Permiso 3</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No Asignado</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900">Asignar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Permiso 4</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No Asignado</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900">Asignar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Permiso 5</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No Asignado</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900">Asignar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Permiso 6</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No Asignado</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900">Asignar</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </main>
     </div>
+
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>
 

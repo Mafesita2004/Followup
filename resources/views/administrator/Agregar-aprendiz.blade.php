@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SuperAdmin Home</title>
     <style>
-       /* BARRA AZUL */
-       body {
+        /* BARRA AZUL */
+        body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                 Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
                 "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
@@ -115,6 +115,7 @@
             position: absolute;
             margin-left: 1200px; /* lados */
             margin-top: 0px; /* altura */
+            z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
         }
         .profile-info {
             margin-bottom: 20px;
@@ -226,79 +227,174 @@
         }
 
         /* FIN MENU */
-        main {
-            padding: 20px;
-        }
+        /* Main container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+}
 
-        .text-apprentice {
-            font-family: "DM Serif Text";
-            margin-left: 60px; /* lados */
-            margin-top: -10px; /* altura */
-        }
+/* Top bar */
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+/* Home link */
+.home-link {
+    margin-left: 1rem;
+}
 
-        .search-bar input {
-            padding: 10px;
-            width: 80%;
-            max-width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px;
-        }
+/* Search form */
+.search-form {
+    display: flex;
+    align-items: center;
+}
 
-        .search-bar button {
-            background: none;
-            border: none;
-            padding: 10px;
-            border-left: 1px solid #ccc;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
+.search-input {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid black;
+    border-radius: 9999px;
+    width: 24rem;
+}
 
-        .search-bar button img {
-            height: 20px;
-        }
+.search-button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: -2.5rem;
+}
+
+.search-icon {
+    width: 1rem;
+    height: auto;
+}
+
+/* Add form */
+.add-form {
+    margin-right: 2rem;
+}
+
+.add-button {
+    background-color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.add-icon {
+    width: 1.25rem;
+    height: auto;
+}
+
+/* Content container */
+.content-container {
+    width: 100%;
+    max-width: 72rem;
+    background-color: rgba(47, 62, 76, 0.078);
+    border: 2px solid #04324D;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin-top: 0.25rem;
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid-container {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+/* User card */
+.user-card {
+    width: 120px;
+    height: 150px;
+    background-color: #BDBDBD;
+    border: 2px solid #009E00;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.user-card:hover {
+    background-color: #f0fff4;
+}
+
+.user-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.user-info {
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.3rem;
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto en color negro */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    margin-bottom: 0.2rem; /* Espacio entre cada línea de información */
+}
+
+/* Footer */
+.footer {
+    margin-top: 1rem;
+    text-align: center;
+    margin: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
 
         
 
-        .apprentice {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            margin: 1px 0;
-            border-radius: 5px;
-            background-color: #f1f1f1;
-            font-family: 'DM Sans', sans-serif;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-
-        }
-
-        .apprentice img {
-            height: 50px;
-            width: 50px;
-            margin-right: 20px;
-        }
-
-        .apprentice div {
-            display: ;
-            flex-direction: column;
-            
-        }
-        
-        
-        
 
     </style>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
 </head>
 <body>
-    
     {{-- Inicio barra azul --}}
     <header>
         
@@ -312,7 +408,7 @@
             
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
-            <h2 class="text-ventana">Aprendices</h2> 
+            <h2 class="text-ventana">Base de Datos</h2> 
         </form>
         <button id="notifButton" onclick="navigateTo('{{ route('administrator.notificaciones') }}')">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
@@ -379,75 +475,52 @@
     </script>
     
     {{-- FIN MENU --}}
-    
-    <main>
-        <h2 class="text-apprentice">Aprendices que inician etapa productiva</h2>
-        <div class="search-bar">
-            <input type="text" placeholder="Número de Ficha">
-            <button>
-                <button>🔍</button>
-            </button>
-        </div>
-        <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 1]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Maria Fernanda Calvache</p>
-                    <p><strong>Número de ficha:</strong> 2711891</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Pasantía</p>
-                    <p><strong>Empresa:</strong> MOP</p>
-                </div>
-            </div>
+    <main class="main-container">
+        <div class="top-bar">
+            <a href="{{ route('administrator.home') }}" class="home-link"></a>
 
-            <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 2]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Laura Camila Orozco</p>
-                    <p><strong>Número de ficha:</strong> 2721581</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Contrato Laboral</p>
-                    <p><strong>Empresa:</strong> MNN</p>
-                </div>
+            <form action="#" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Buscar..." class="search-input">
+                <button type="submit" aria-label="Buscar" class="search-button">
+                    <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="search-icon">
+                </button>
+            </form>
+
+            <form action="#" method="GET" class="add-form">
+                <button type="button" class="add-button">
+                    <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="add-icon">
+                </button>
+            </form>
+        </div>
+        <div class="content-container">
+            <div class="grid-container">
+                @php
+                    $contador = 0;
+                @endphp
+                @for ($i = 0; $i < 24; $i++)
+                    <div class="user-card" onclick="redirectToAddLearner()">
+                        <img src="{{ asset('img/user-icon.png') }}" alt="User" class="user-icon">
+                        <span class="user-info">Nombre Completo</span>
+                        <span class="user-info">Cédula</span>
+                        <span class="user-info">Sede</span>
+                        <span class="user-info">Rol</span>
+                    </div>
+                    <script>
+                        function redirectToAddLearner() {
+                            window.location.href = "{{ route('administrator.Añadir-aprendiz') }}";
+                        }
+                    </script>
+                    @php
+                        $contador++;
+                    @endphp
+                @endfor
             </div>
-            <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 3]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Jodier</p>
-                    <p><strong>Número de ficha:</strong> 2549637</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Pasantía</p>
-                    <p><strong>Empresa:</strong> JHU</p>
-                </div>
-            </div>
-            <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 4]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Astrid Dayana</p>
-                    <p><strong>Número de ficha:</strong> 3568741</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Contrato Laboral</p>
-                    <p><strong>Empresa:</strong> OPK</p>
-                </div>
-            </div>
+        </div>
+        <div class="footer">
+            Total de cuadros: {{ $contador }}
         </div>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Selecciona todas las tarjetas
-            const cards = document.querySelectorAll('.apprentice');
-            
-            // Agrega el evento de clic a cada tarjeta
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    // Obtén el enlace del data-href
-                    const href = this.getAttribute('data-href');
-                    
-                    // Redirige a la URL especificada en data-href
-                    window.location.href = href;
-                });
-            });
-        });
-    </script>
+    
+
 </body>
 </html>
-

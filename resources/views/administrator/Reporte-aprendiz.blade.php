@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SuperAdmin Home</title>
     <style>
-       /* BARRA AZUL */
-       body {
+        /* BARRA AZUL */
+        body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                 Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
                 "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
@@ -226,79 +226,93 @@
         }
 
         /* FIN MENU */
-        main {
+        .container {
+            background-color: #aaa;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;  /* Reduce el ancho del contenedor */
+            max-width: 100%;
+            margin: 20px auto;  /* Centro el contenedor y añado margen superior e inferior */
         }
 
-        .text-apprentice {
-            font-family: "DM Serif Text";
-            margin-left: 60px; /* lados */
-            margin-top: -10px; /* altura */
-        }
-
-        .search-bar {
+        .form-group {
             display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            width: 80%;
-            max-width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .search-bar button {
-            background: none;
-            border: none;
-            padding: 10px;
-            border-left: 1px solid #ccc;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-
-        .search-bar button img {
-            height: 20px;
-        }
-
-        
-
-        .apprentice {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            margin: 1px 0;
-            border-radius: 5px;
-            background-color: #f1f1f1;
+            flex-wrap: wrap;
+            justify-content: space-between;
             font-family: 'DM Sans', sans-serif;
-            border: none;
-            cursor: pointer;
+            background-color: #D9D9D9;
+            align-items: center;
+            height: auto;
+            width: 800px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-left: 350px; /* lados */
+            margin-top: 50px; /* altura */
+        }
+
+        .form-group label {
+            flex: 0 0 22%;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            text-align: left;
-
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        .apprentice img {
-            height: 50px;
-            width: 50px;
-            margin-right: 20px;
+        .form-group .full-width {
+            flex: 0 0 100%;
         }
 
-        .apprentice div {
-            display: ;
-            flex-direction: column;
-            
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px; /* Espacio entre los botones */
         }
+
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .buttons .cancel {
+            background-color: #D9D9D9;
+            border-radius: 10px; /* Borde redondeado */
+            border: 1px solid #000000; /* Borde de 2px de grosor con color #009E00 */
+            margin-left: 250px; /* lados */
+            margin-top: 0px; /* altura */
+        }
+
+        .buttons .confirm {
+            background-color: #009E00;
+            color: white;
+            margin-left: 10px; /* lados */
+            margin-top: 0px; /* altura */
+        }
+
         
-        
-        
+
 
     </style>
+        
+
+
+    </style>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
 </head>
 <body>
-    
     {{-- Inicio barra azul --}}
     <header>
         
@@ -312,9 +326,9 @@
             
             <h2 class="text-1">Etapa</h2>
             <h2 class="text-2">Seguimiento</h2>
-            <h2 class="text-ventana">Aprendices</h2> 
+            <h2 class="text-ventana">Reporte Aprendiz</h2> 
         </form>
-        <button id="notifButton" onclick="navigateTo('{{ route('administrator.notificaciones') }}')">
+        <button id="notifButton">
             <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
         </button> 
         <a href="{{ route('administrator.home') }}" alt="flecha">
@@ -379,75 +393,26 @@
     </script>
     
     {{-- FIN MENU --}}
+    <div class="form-group">
+            Correo
+            <input type="email" name="correo">
+        </label>
+        <label>
+            Asunto
+            <input type="text" name="direccion">
+        </label>
+        
+        <label class="full-width">
+            Descripción
+            <textarea name="documentos" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+        </label>
+        <div class="buttons">
+            <button type="button" class="cancel" onclick="window.location.href='{{ route('administrator.Añadir-aprendiz') }}'">CANCELAR</button>
+            <button type="submit" class="confirm">CONFIRMAR</button>
+        </div>
+    </div>
     
-    <main>
-        <h2 class="text-apprentice">Aprendices que inician etapa productiva</h2>
-        <div class="search-bar">
-            <input type="text" placeholder="Número de Ficha">
-            <button>
-                <button>🔍</button>
-            </button>
-        </div>
-        <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 1]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Maria Fernanda Calvache</p>
-                    <p><strong>Número de ficha:</strong> 2711891</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Pasantía</p>
-                    <p><strong>Empresa:</strong> MOP</p>
-                </div>
-            </div>
+    
 
-            <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 2]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Laura Camila Orozco</p>
-                    <p><strong>Número de ficha:</strong> 2721581</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Contrato Laboral</p>
-                    <p><strong>Empresa:</strong> MNN</p>
-                </div>
-            </div>
-            <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 3]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Jodier</p>
-                    <p><strong>Número de ficha:</strong> 2549637</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Pasantía</p>
-                    <p><strong>Empresa:</strong> JHU</p>
-                </div>
-            </div>
-            <div class="apprentice" data-href="{{ route('administrator.Apprentice-perfil', ['id' => 4]) }}">
-                <img src="user-icon.png" alt="User-icon">
-                <div>
-                    <p><strong>Nombre Aprendiz:</strong> Astrid Dayana</p>
-                    <p><strong>Número de ficha:</strong> 3568741</p>
-                    <p><strong>Programa de formación:</strong> Análisis y desarrollo de software</p>
-                    <p><strong>Tipo de contrato:</strong> Contrato Laboral</p>
-                    <p><strong>Empresa:</strong> OPK</p>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Selecciona todas las tarjetas
-            const cards = document.querySelectorAll('.apprentice');
-            
-            // Agrega el evento de clic a cada tarjeta
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    // Obtén el enlace del data-href
-                    const href = this.getAttribute('data-href');
-                    
-                    // Redirige a la URL especificada en data-href
-                    window.location.href = href;
-                });
-            });
-        });
-    </script>
 </body>
 </html>
-
