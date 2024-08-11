@@ -126,6 +126,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
+    
 
 
     Route::get('/trainer/icon', function () {
