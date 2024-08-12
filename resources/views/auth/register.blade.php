@@ -12,13 +12,12 @@
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
             <h1>Etapa Seguimiento</h1>
         </div>
-        <img src="{{ asset('img/logo-sena.png') }}" alt="SENA Logo" class="logo-sena">
     </header>
 
     <main>
         <div class="content">
             <div class="welcome-text">
-                <h2>¡Regístrate en<br>Etapa de<br>Seguimiento!</h2>
+                <h2>¡Regístrate en Etapa de<br>Seguimiento!</h2>
                 <p>Completa el formulario para unirte.</p>
             </div>
             <img src="{{ asset('img/persona.png') }}" alt="Persona" class="persona-img">
@@ -40,7 +39,7 @@
 
                 <!-- Email Address -->
                 <div class="input-group">
-                    <img src="{{ asset('img/mail-icon.png') }}" alt="Correo electrónico" class="input-icon">
+                    <img src="{{ asset('img/mail.png.png') }}" alt="Correo electrónico" class="input-icon">
                     <input id="email" type="email" name="email" placeholder="Correo electrónico" value="{{ old('email') }}" required autocomplete="email">
                 </div>
                 @error('email')
@@ -67,7 +66,7 @@
 
                 <!-- Role -->
                 <div class="input-group">
-                    <img src="{{ asset('img/role-icon.png') }}" alt="Rol" class="input-icon">
+                    <img src="{{ asset('img/roles.png') }}" alt="Rol" class="input-icon">
                     <select id="role" name="role" required>
                         <option value="superadmin">Superadmin</option>
                         <option value="administrator">Administrator</option>

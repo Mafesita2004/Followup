@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <title>Etapa Seguimiento</title> 
+    <title>Etapa Seguimiento</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
 </head>
 <body>
     <header>
@@ -12,7 +13,7 @@
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
             <h1>Etapa Seguimiento</h1>
         </div>
-        <img src="{{ asset('img/logo-sena.png') }}" alt="SENA Logo" class="logo-sena">
+       
     </header>
 
     <main>
@@ -38,7 +39,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
             </form>
-            <a href="{{ route('register') }}" class="register-link">¿No tienes cuenta? Regístrate aquí.</a>
+            <a href="{{ route('register') }}" class="register-link">¿Olvidaste tu contraseña?</a>
         </div>
     </main>
 </body>
