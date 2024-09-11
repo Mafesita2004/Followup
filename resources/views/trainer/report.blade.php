@@ -11,6 +11,95 @@
             top: 100%;
             margin-top: 0.5rem;
         }
+        /* reporte*/
+        .container {
+            width: 1500px;
+            max-width: 1200px;
+            height: 560px; /* Altura fija para alargar el contenedor verticalmente */
+            background-color: #e0e0e0;
+            border: 3px solid #04324d8b;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-left: -10px; /* lados */
+            margin-top: 30px; /* altura */
+            font-family: 'DM Sans', sans-serif;
+        }
+        .email-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #212121;
+
+        }
+        .email-item img {
+            width: 50px;
+            height: 45px;
+            margin-right: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .header-item {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .content {
+            height: 400px; /* Ajusta esta altura según sea necesario */
+            background-color: #d4d4d4;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            justify-content: flex-end; /* Alinea los botones a la derecha */
+
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+
+
+        .buttons .confirm {
+            background-color: #D9D9D9;
+            border: 1px solid #000000; /* Borde de 2px de grosor con color #009E00 */
+            margin-right: 10px; /* Espacio a la derecha del botón */
+            border-radius: 10px;
+        }
+
+        .buttons .actual {
+            background-color: #009E00;
+            border-radius: 10px;
+
+        }
+
+
+
+
+    </style>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
     </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
@@ -90,19 +179,94 @@
     <div class="w-auto flex justify-start m-2 pl-56 items-center"></div>
     <div class="flex justify-center">
 
-        <main class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
-            <h1 class="text-2xl font-bold mb-4">Reporte</h1>
-            <form class="mb-4">
-                <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
-                <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
-                <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
-                <a href="{{ route('notification') }}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Enviar Reporte</a>
-                <a href="{{ route('notification') }}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded">Cancelar</a>
-            </form>
+        <main >
+            <div class="container">
+                <div class="header">
+                    <div class="header-item" onclick="showContent('recibidos')">Recibidos</div>
+                    <div class="header-item" onclick="showContent('enviados')">Enviados</div>
                 </div>
-                    </div>
-        </main>
-    </div>
+                <div class="content" id="content"></div>
+                <div class="buttons">
+                    <button type="submit" class="confirm" onclick="window.location.href='{{ route('administrator.home') }}'">CONFIRMAR</button>
+                    <button type="button" class="actual">ACTUALIZAR</button>
+                </div>
+            </div>
+            <script>
+                function showContent(type) {
+                    const contentDiv = document.getElementById('content');
+                    contentDiv.innerHTML = ''; // Limpiar contenido actual
+
+                    if (type === 'recibidos') {
+                        contentDiv.innerHTML = `
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="img/user-icon.png" alt="Email Icon">
+                                    <span>Email recibido 1</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email recibido 2</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email recibido 3</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email recibido 4</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email recibido 5</span>
+                                </a>
+                            </div>
+
+
+                        `;
+                    } else if (type === 'enviados') {
+                        contentDiv.innerHTML = `
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email enviado 1</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email enviado 2</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email enviado 3</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email enviado 4</span>
+                                </a>
+                            </div>
+                            <div class="email-item">
+                                <a href="/administrator/email/">
+                                    <img src="icon-email.png" alt="Email Icon">
+                                    <span>Email enviado 5</span>
+                                </a>
+                            </div>
+                        `;
+                    }
+                }
+            </script>
     <script src="{{ asset('js/Trainer.js') }}"></script>
 
 </body>
