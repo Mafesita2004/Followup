@@ -162,7 +162,7 @@
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="{{ route('username') }}" class="block text-black hover:bg-white p-2 rounded-lg">Perfil</a></li>
+                    
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf

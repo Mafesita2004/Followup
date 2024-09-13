@@ -82,7 +82,7 @@
         </div>
     </div></nav>
     <div class="w-full flex justify-between items-center mt-4">
-        <a href="http://127.0.0.1:8000/trainer/apprentice" class="ml-4">
+        <a href="http://127.0.0.1:8000/trainer/perfilapre" class="ml-4">
             <img src="http://127.0.0.1:8000/img/flecha.png" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
@@ -120,6 +120,8 @@
                         <option selected="">Selecciona Opción</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                     </select>
                 </div>
                 <div class="flex flex-col">

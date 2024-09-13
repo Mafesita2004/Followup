@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu{
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }
+       
     </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
@@ -88,7 +89,7 @@
         </a>
     </div>
         <div class="flex justify-center">
-    <main class=" bg-white m-2 p-2 rounded-lg  shadow-[0_0_10px_rgba(0,0,0,0.8)]  border-[#2F3E4C] w-2/3 items-center ">
+    <main class=" bg-gray-100 m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
 
 
         <div class="container  mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg">
@@ -130,10 +131,6 @@
                         <input type="text" id="municipio" value="POPAYAN" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                     </div>
                     <div class="w-full">
-                        <label for="fecha_nacimiento" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
-                        <input type="text" id="fecha_nacimiento" value="12/SEP/1995" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
-                    </div>
-                    <div class="w-full">
                         <label for="genero" class="block text-sm font-medium text-gray-700">Género</label>
                         <input type="text" id="genero" value="FEMENINO" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                     </div>
@@ -149,55 +146,34 @@
                 <div class="md:col-span-2 flex flex-col items-center space-y-4">
                     <div class="flex justify-between items-center w-full">
                         <div>
-                            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Bitacoras</button>
-                            <img src="{{ asset('img/Bitacor.png') }}" alt="">
+                            <a href="{{ route('bitacora') }}" class="text-white px-4 py-2 rounded-md">
+                                <img src="{{ asset('img/Bitacor.png') }}" alt="Bitacora" class="text-white px-4 py-2 rounded-md">
+                            </a>
 
                         </div>
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Visitas</button>
-                        <button class="bg-green-500 text-white px-4 py-2 rounded-md">ACTIVO</button>
-                    </div>
-                    <div class="bg-gray-100 p-4 rounded-md w-full">
-                        <h4 class="font-bold text-lg mb-4">Seguimiento</h4>
-                        <div class="grid grid-cols-4 gap-2">
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-purple-500 text-white p-2 rounded-full">29-12-2023</span>
-                                <span class="mt-2">ASIGNACION</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-green-500 text-white p-2 rounded-full">01-01-2024</span>
-                                <span class="mt-2">INICIO ETAPA PRODUCTIVA</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 1</span>
-                                <span class="mt-2">PRIMERA VISITA</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 2</span>
-                                <span class="mt-2">SEGUNDA VISITA</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 3</span>
-                                <span class="mt-2">MES 3</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 4</span>
-                                <span class="mt-2">MES 4</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-blue-500 text-white p-2 rounded-full">MES 5</span>
-                                <span class="mt-2">MES 5</span>
-                            </div>
-                            <div class="col-span-1 flex flex-col items-center">
-                                <span class="bg-green-500 text-white p-2 rounded-full">01-07-2023</span>
-                                <span class="mt-2">FINALIZACION DE ETAPA PRODUCTIVA</span>
-                            </div>
+                        <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
+                            <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Visita" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                        </a>
+                        <div>
+                    <select class="border border-gray-400 p-4 rounded-md w-48 bg-white">
+                        <option selected="" disabled selected>Selecciona Opción</option>
+                        <option value="ACTIVO" data-color="green">ACTIVO </option>
+                        <option value="NOVEDAD" data-color="orange">NOVEDAD</option>
+                        <option value="FINALIZADA" data-color="red">FINALIZADA</option>
+                    </select>
                         </div>
+                    </div>
+                    <div></div>
+                    <div class="bg-gray-100 p-4 rounded-md w-full">
+                        <h3>LINEA TEMPORAL (Etapa de seguimiento)</h3>
+                        <img src="{{asset('img/lineatiempo.png')}}" alt="timeline" class='timeline'>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    </main>
+ </main>
 </div>
 <script src="{{ asset('js/Trainer.js') }}"></script>
 <script>
@@ -211,7 +187,18 @@
     const userMenu = document.getElementById('userMenu');
     menuButton.addEventListener('click', () => {
         userMenu.classList.toggle('hidden');
+    
     });
+
+    const selectElement = document.getElementById('status');
+
+        // Función para cambiar el color de fondo según la opción seleccionada
+        selectElement.addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex]; 
+            const selectedColor = selectedOption.getAttribute('data-color');  
+            this.style.backgroundColor = selectedColor;  
+            this.style.color = 'white'; 
+        });
 </script>
 </body>
 </html>
