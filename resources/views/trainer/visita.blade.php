@@ -79,8 +79,9 @@
                         <input type="hidden" name="_token" value="RAzJ9SXlUqD5RAsIJ6pjZFVFGizRGqYNsXVEygN8" autocomplete="off">                        <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
                     </form>
             </div>
+            </div>
         </div>
-    </div></nav>
+    </nav>
     <div class="w-full flex justify-between items-center mt-4">
         <a href="http://127.0.0.1:8000/trainer/perfilapre" class="ml-4">
             <img src="http://127.0.0.1:8000/img/flecha.png" alt="Flecha" class="w-5 h-auto">
