@@ -73,7 +73,6 @@
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
-                        <li class="mt-2"><a href="{{ route('username') }}" class="block text-black hover:bg-white p-2 rounded-lg">Perfil</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
@@ -110,16 +109,12 @@
                             <span class="text-xs text-center p-1">Nombre Completo</span>
                             <span class="text-xs text-center p-1">Cédula</span>
                             <span class="text-xs text-center p-1">Ficha</span>
-                            <span class="text-xs text-center p-1">Programa</span>
+                            <span class="text-xs text-center p-1">Tipo de seguimineto</span>
                         </a>
                         @php
                             $contador++;
                         @endphp
                     @endfor
-                </div>
-                <div class="flex justify-end mt-6 space-x-4">
-                    <a type="submit" href="{{ route('perfilapre')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
-                    <a href="{{ route('perfilapre') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                 </div>
             </div>
             <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
