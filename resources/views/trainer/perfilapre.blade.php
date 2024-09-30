@@ -50,6 +50,7 @@
                 </ul>
             </div>
         </div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil Aprendiz</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">Nombre Usuario</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -93,10 +94,6 @@
 
 
         <div class="container  mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg">
-
-            <div class="flex items-center justify-center space-x-4 mb-6">
-                <h3 class="text-xl text-center 8-2 font-bold">Aprendiz</h3>
-            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="md:col-span-1 flex flex-col items-center space-y-4">
                     <div class="bg-gray-200 rounded-full p-6  border-4 border-black">

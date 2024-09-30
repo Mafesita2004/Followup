@@ -49,6 +49,7 @@
                 </ul>
             </div>
         </div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Bitacoras</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">Nombre Usuario</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="http://127.0.0.1:8000/img/user-icon.png" alt="User Icon">
@@ -109,55 +110,55 @@
         </div>
     <div class="flex flex-cols-3">
         <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] border-2 border-black rounded-2xl">
-            <div class="flex flex-col">
-                <label class="font-semibold ">Bitacoras</label>
+            <label class="font-semibold text-center ">Bitacoras</label>
+            <div class="flex flex-col text-center items-center">
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="1">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">1</span>
+                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">1</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="2">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">2</span>
+                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">2</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="3">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">3</span>
+                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">3</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="4">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">4</span>
+                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">4</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="5">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">5</span>
+                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">5</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="6">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">6</span>
+                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">6</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="7">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">7</span>
+                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">7</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="8">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">8</span>
+                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">8</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="9">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">9</span>
+                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">9</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="10">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">10</span>
+                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">10</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="11">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">11</span>
+                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">11</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="12">
-                    <span class="block px-4 py-2 border border-gray-300 rounded-md text-gray-700">12</span>
+                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">12</span>
                 </label>
             </div>
 
@@ -165,7 +166,7 @@
         {{-- Contenedor Fantasma --}}
         <div class=" w-1/5  ">
         </div>
-        <div class=" w-2/5 border-2 rounded-2xl border-black h-80 mt-8">
+        <div class=" w-2/5 border-2 rounded-2xl border-black h-86 mt-8">
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Tipo de Modalidad de Etapa Productiva</label>
                 <p type="text" class="border border-black  p-2 rounded-md bg-white">Pasantia</p>
@@ -176,7 +177,7 @@
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-bold">Fecha</label>
-                <input type="date" class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                <input type="date" class="border border-black -400 p-2 rounded-md w-48 bg-white ml-36">
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>
@@ -196,10 +197,10 @@
                 checkbox.addEventListener('change', function() {
                     if (checkbox.checked) {
                         checkbox.nextElementSibling.classList.add('bg-green-500', 'text-white');
-                        checkbox.nextElementSibling.classList.remove('border-gray-300', 'text-gray-700');
+                        checkbox.nextElementSibling.classList.remove('border-black', 'text-gray-700');
                     } else {
                         checkbox.nextElementSibling.classList.remove('bg-green-500', 'text-white');
-                        checkbox.nextElementSibling.classList.add('border-gray-300', 'text-gray-700');
+                        checkbox.nextElementSibling.classList.add('border-black', 'text-gray-700');
                     }
                 });
             });

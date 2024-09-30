@@ -48,6 +48,7 @@
                 </ul>
             </div>
         </div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Perfil Instructor</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">Nombre Usuario</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
@@ -101,23 +102,23 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Mariani</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Dorado</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">3135457458</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">mariaidorado@gmail.com</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">12/diciembre/1989</p>
                     </div>
                 </div>
 
@@ -125,38 +126,38 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Colombia</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Cauca</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Popayan</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">bellavista</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Calle 4# 3-20</p>
                     </div>
 
                 <h3 class="font-bold mb-4 mt-6">Aprendiz</h3>
                 <div class="space-y-4">
                     <a>
                         <label class="block text-sm font-medium text-gray-700">Numero de horas seguimineto :</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">60</p>
                     </a>
                     <a>
                         <label class="block text-sm font-medium text-gray-700">Mes:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">junio</p>
                     </a>
                     <a>
                         <label class="block text-sm font-medium text-gray-700">Numero De Aprendices Asignados:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md"></p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">23</p>
                     </a>
                 </div>
 

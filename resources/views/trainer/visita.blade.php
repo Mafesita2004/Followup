@@ -49,6 +49,7 @@
                 </ul>
             </div>
         </div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Consertacion</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">Nombre Usuario</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="http://127.0.0.1:8000/img/user-icon.png" alt="User Icon">
