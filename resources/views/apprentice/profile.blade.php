@@ -2,129 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    @vite('resources/css/app.css')
     <title>Etapa Seguimiento</title>
     <style>
-        #userMenu {
-            top: 100%;
-            margin-top: 0.5rem;
-        }
-        #notifButton {
-            position: absolute; /* Cambiado a absoluto para colocarlo en la barra azul */
-            top: 10px; /* alto */
-            right: 1450px; /* lado */
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-            
+        /* Aquí se pueden agregar estilos personalizados si es necesario */
+        #userMenu, #notifMenu {
+            display: none;
+            position: absolute;
+            z-index: 20;
         }
 
-        .notifications {
+        #userMenu.show, #notifMenu.show {
             display: block;
-            width: 54px; /* tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-            filter: invert(1); /* Invierte los colores de la imagen */
         }
-        .Flecha {
-            display: block;
-            position: absolute;
-            width: 24px; /* tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-            margin-left: 10px; /* lados */
-            margin-top: 40px; /* altura */
+
+        #userMenu {
+            right: 0;
+            top: 100%;
         }
-        .text-ventana {
-            color: #ffffff; /* Color del texto para que contraste con el fondo */
-            font-size: 20px; /* Tamaño del texto para que sea visible */
-            position: absolute;
-            font-family: 'DM Sans', sans-serif;
-            left: 50%; /* Ajusta la posición horizontal según sea necesario */
-            transform: translateX(-50%); /* Centra el texto horizontalmente */
-            top: 85px; /* Ajusta la posición vertical según sea necesario */
-            z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-        }
-        .Linea-Tiempo {
-            display: block;
+
+        #notifMenu {
+            left: 0;
+            top: 100%;
         }
     </style>
 </head>
-<body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
-    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
+<body class="font-sans bg-white m-0 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-white border-b border-b-[#e0e0e0]">
         <div class="flex items-center">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
             <div class="flex flex-col">
                 <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
-                <h2 class="text-sm m-0 text-[#009e00]">Seguimiento</h2>
+                <h2 class="text-sm m-0 text-[#009e00]">Productivo</h2>
             </div>
-            <h2 class="text-ventana">Perfil Aprendiz</h2> 
         </div>
-        <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
+        <div class="text-center absolute left-1/2 transform -translate-x-1/2">
+            <h1 class="text-lg m-0 text-[#009e00] font-bold">APRENDIZ</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
     </header>
-    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-between items-center relative z-10">
-        <button id="notifButton">
-            <img class="notifications" src="{{ asset('administrator/notificaciones.png') }}" alt="notificaciones">
+
+    <!-- Navbar -->
+    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
+        <!-- Notification Button -->
+        <button id="notifButton" class="relative">
+            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span>
         </button>
-        <a href="{{ route('administrator.home') }}" alt="flecha">
-            <img class="Flecha" src="{{ asset('img/flecha.png') }}" alt="Flecha">
-        </a>
-        <div class="relative">
-            <button id="notifButton" class="relative">
-                <img class="w-[35px] h-auto filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-                <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span>
-            </button>
-            <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-                <div class="p-4">
-                    <h2 class="text-sm font-bold">Notificaciones</h2>
-                    <ul>
-                        <li class="mt-2">
-                            <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
-                        </li>
-                    </ul>
-                </div>
+
+        <!-- Notification Dropdown -->
+        <div id="notifMenu" class="absolute bg-white border border-gray-300 rounded-lg shadow-lg w-64 hidden z-20">
+            <div class="p-4">
+                <h2 class="text-sm font-bold">Notificaciones</h2>
+                <ul>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="relative flex items-center">
+
+        <!-- Central Button -->
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Inicio</div>
+
+        <!-- User Menu -->
+        <div class="relative ml-auto flex items-center">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
-            <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-[3px] border-[#00324d]" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
             <button id="menuButton" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2 ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
-            <div id="userMenu" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
+
+            <!-- User Dropdown -->
+            <div id="userMenu" class="bg-gray-200 border border-gray-300 rounded-lg shadow-lg w-64 hidden">
                 <div class="p-4">
-                    <div class="flex items-center mb-4">
-                        <div>
-                            <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                            <p class="text-sm mt-2">Super administrador</p>
-                        </div>
-                        <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
+                            <p class="text-sm mb-2 font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+                            <p class="text-sm">Aprendiz</p>
+                            <p class="text-sm">Programa: ADSO</p>
+                            <p class="text-sm">Ficha: 2711891</p>
                     </div>
                     <ul>
-                        <a href="{{ route('administrator.home')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a>
-                        <li class="mt-2"><a href="{{ route('administrator.home')}}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                        <li class="mt-2"><a href="{{ route('administrator.apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
-                        <li class="mt-2"><a href="{{ route('administrator.instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructores</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Plantillas</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Gráficas</a></li>
+                        <li><a href="{{ route('apprentice.profile') }}" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                        <li><a href="{{ route('apprentice.index') }}" class="block text-black hover:bg-white p-4 rounded-lg">Inicio</a></li>
+                        <li><a href="{{ route('apprentice.calendar') }}" class="block text-black hover:bg-white p-4 rounded-lg">Calendario</a></li>
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
-                        <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                        <button type="submit" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-2 w-56">Cerrar sesión</button>
                     </form>
                 </div>
             </div>
@@ -139,31 +115,13 @@
                     </svg>
                     <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
                 </div>
-                
-                <h3 class="font-bold mb-4 mt-6">Información Modalidad</h4>
-                <div class="space-y-4">
-                        
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Tipo de Modalidad:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha Inicio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div> 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha Final:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div> 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Proceso:</label>
-                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                     </div> 
-                     <img class="Linea-Tiempo" src="{{ asset('administrator/linea-tiempo.png') }}" alt="linea-tiempo">
-                </div>
-                
+
                 <h3 class="font-bold mb-4 mt-6">Datos básicos</h3>
                 <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Identificacion:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Identificacion }}</p>
+                    </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Nombres:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
@@ -173,87 +131,73 @@
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->email }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Programa:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Cuenta Soy SENA:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->sena_account }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Ficha:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Ficha }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->department }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Telefono }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Correo:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Correo }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->birthdate }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Inicio de Contrato:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->InicioContrato }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Tipo de sangre:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->blood_type }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Fin de Contrato:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->FinContrato }}</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">EPS:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->eps }}</p>
+                        <label class="block text-sm font-medium text-gray-700">Nit. Empresa:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Nit_Empresa }}</p>
                     </div>
-                </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Razon social:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Razon_Social }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Direccion:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Direccion }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Telefono de Empresa:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Telefono_Empresa }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombre de Instructor:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Nombre_Instructor }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Correo Instructor:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Correo_Instructor }}</p>
+                    </div>
 
-                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->department }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Zona:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->zone }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->neighborhood }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->address }}</p>
-                    </div>
-                </div>
-
-                <h3 class="font-bold mb-4 mt-6">Información Académica</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Primaria:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->primary_education }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Secundaria:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->secondary_education }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Educación Superior:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->higher_education }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombre:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->institution_name }}</p>
-                    </div>
-                </div>
-
-                
-
-                <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('administrator.reports') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>
-                    <a href="{{ route('administrator.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-                </div>
             </div>
         </main>
     </div>
+    <script>
+        document.getElementById('menuButton').addEventListener('click', function() {
+            document.getElementById('userMenu').classList.toggle('show');
+        });
+
+        document.getElementById('notifButton').addEventListener('click', function() {
+            document.getElementById('notifMenu').classList.toggle('show');
+        });
+
+        // Close dropdowns when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.closest('#menuButton') && !event.target.closest('#notifButton')) {
+                document.getElementById('userMenu').classList.remove('show');
+                document.getElementById('notifMenu').classList.remove('show');
+            }
+        };
+    </script>
 </body>
 </html>
