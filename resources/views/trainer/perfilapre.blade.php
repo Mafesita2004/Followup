@@ -143,18 +143,18 @@
                 <div class="md:col-span-2 flex flex-col items-center space-y-4">
                     <div class="flex justify-between items-center w-full">
                         <div>
-                            <a href="{{ route('bitacora') }}" class="text-white px-4 py-2 rounded-md">
-                                <img src="{{ asset('img/Bitacor.png') }}" alt="Bitacora" class="text-white px-4 py-2 rounded-md">
+                            <a href="{{ route('bitacora') }}" class="m-2.5 py-8 rounded-[15%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
+                                <img src="{{ asset('img/aprendiz.png') }}" alt="Bitacora" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
                             </a>
 
                         </div>
                         <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                            <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Visita" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                            <img src="{{ asset('img/informe.png') }}" alt="Visita" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-4 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
                         </a>
                         <div>
-                    <select class="border border-gray-400 p-4 rounded-md w-48 bg-white">
-                        <option selected="" disabled selected>Selecciona Opción</option>
-                        <option value="ACTIVO" data-color="green">ACTIVO </option>
+                    <select id="statusSelect" class="border border-gray-400 p-4 rounded-md w-48 bg-white">
+                        <option selected="" disabled>Selecciona Opción</option>
+                        <option value="ACTIVO" data-color="green">ACTIVO</option>
                         <option value="NOVEDAD" data-color="orange">NOVEDAD</option>
                         <option value="FINALIZADA" data-color="red">FINALIZADA</option>
                     </select>
@@ -187,15 +187,13 @@
 
     });
 
-    const selectElement = document.getElementById('status');
 
-        // Función para cambiar el color de fondo según la opción seleccionada
-        selectElement.addEventListener('change', function() {
-            const selectedOption = this.options[this.selectedIndex];
-            const selectedColor = selectedOption.getAttribute('data-color');
-            this.style.backgroundColor = selectedColor;
-            this.style.color = 'white';
-        });
+    const selectElement = document.getElementById('statusSelect');
+    selectElement.addEventListener('change', function() {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    const selectedColor = selectedOption.getAttribute('data-color');
+    selectElement.style.backgroundColor = selectedColor;
+});
 </script>
 </body>
 </html>

@@ -117,6 +117,7 @@
                                 <th class="py-3 px-6 text-left">Ficha</th>
                                 <th class="py-3 px-6 text-left">Teléfono</th>
                                 <th class="py-3 px-6 text-left">Correo</th>
+                                <th class="py-3 px-6 text-left">Tipo de Contrato</th>
                                 <th class="py-3 px-6 text-left">Inicio Contrato</th>
                                 <th class="py-3 px-6 text-left">Fin Contrato</th>
                                 <th class="py-3 px-6 text-left">NIT Empresa</th>
@@ -140,6 +141,15 @@
                                 <td class="py-3 px-6 text-left">Ficha1</td>
                                 <td class="py-3 px-6 text-left">555-1234</td>
                                 <td class="py-3 px-6 text-left">correo1@example.com</td>
+                                <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                                    <option selected="">Selecciona Opción</option>
+                                    <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                                    <option value="Pasantia">Pasantia</option>
+                                    <option value="Vinculo laboral">Vinculo laboral</option>
+                                    <option value="Patrocinio">Patrocinio</option>
+                                    <option value="Unidad Productiva">Unidad Productiva</option>
+                                    <option value="Proyecto Productivo">Proyecto Productivo</option>
+                                </select></td>
                                 <td class="py-3 px-6 text-left">01/01/2022</td>
                                 <td class="py-3 px-6 text-left">01/01/2023</td>
                                 <td class="py-3 px-6 text-left">987654</td>
@@ -162,6 +172,15 @@
                                 <td class="py-3 px-6 text-left">Ficha2</td>
                                 <td class="py-3 px-6 text-left">585-1234</td>
                                 <td class="py-3 px-6 text-left">correo2@example.com</td>
+                                <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                                    <option selected="">Selecciona Opción</option>
+                                    <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                                    <option value="Pasantia">Pasantia</option>
+                                    <option value="Vinculo laboral">Vinculo laboral</option>
+                                    <option value="Patrocinio">Patrocinio</option>
+                                    <option value="Unidad Productiva">Unidad Productiva</option>
+                                    <option value="Proyecto Productivo">Proyecto Productivo</option>
+                                </select></td>
                                 <td class="py-3 px-6 text-left">01/01/2022</td>
                                 <td class="py-3 px-6 text-left">01/08/2024</td>
                                 <td class="py-3 px-6 text-left">13123123</td>
@@ -184,6 +203,15 @@
                                 <td class="py-3 px-6 text-left">Ficha3</td>
                                 <td class="py-3 px-6 text-left">5454-876867</td>
                                 <td class="py-3 px-6 text-left">correo3@example.com</td>
+                                <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                                    <option selected="">Selecciona Opción</option>
+                                    <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                                    <option value="Pasantia">Pasantia</option>
+                                    <option value="Vinculo laboral">Vinculo laboral</option>
+                                    <option value="Patrocinio">Patrocinio</option>
+                                    <option value="Unidad Productiva">Unidad Productiva</option>
+                                    <option value="Proyecto Productivo">Proyecto Productivo</option>
+                                </select></td>
                                 <td class="py-3 px-6 text-left">01/03/2023</td>
                                 <td class="py-3 px-6 text-left">01/05/2024</td>
                                 <td class="py-3 px-6 text-left">1232112</td>

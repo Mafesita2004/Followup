@@ -10,7 +10,7 @@
             top: 100%;
             margin-top: 0.5rem;
         }
-        
+
     </style>
 
 </head>
@@ -116,7 +116,7 @@
             }
         }
     </script>
-    
+
         {{-- FIN Menu --}}
         <div>
             <div class="form-group flex flex-wrap justify-between bg-[#BDBDBD] border:2 rounded-lg p-5 mt-2 mx-auto" style="width: 800px;">
@@ -158,10 +158,16 @@
                     Teléfono
                     <input type="text" name="telefono" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
                 </label>
-                <label class="flex-shrink-0 w-[22%] mb-2">
+                <label class="flex-shrink-0 w-[24%] mb-2">
                     Modalidad
                     <select name="modalidad" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
-                        <option value="">Seleccione</option>
+                    <option value="">Seleccionar opcion</option>
+                    <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                    <option value="Pasantia">Pasantia</option>
+                    <option value="Vinculo laboral">Vinculo laboral</option>
+                    <option value="Patrocinio">Patrocinio</option>
+                    <option value="Unidad Productiva">Unidad Productiva</option>
+                    <option value="Proyecto Productivo">Proyecto Productivo</option>
                     </select>
                 </label>
                 <label class="flex-shrink-0 w-[22%] mb-2">
@@ -191,13 +197,13 @@
                 <div class="buttons flex justify-center gap-4 mt-4 ml-auto">
                     <button type="button" class="bg-gray-300 border border-black p-2 rounded-md text-sm" onclick="window.location.href='{{ route('administrator.Agregar-aprendiz') }}'">CANCELAR</button>
                     <button type="submit" class="bg-green-700 text-white p-2 rounded-md text-sm">CONFIRMAR</button>
-                    
+
                 </div>
                 <button type="button" class="bg-[#838383] flex justify-center gap-4 mt-4 text-white p-2 rounded-md text-sm ml-auto" onclick="window.location.href='{{ route('administrator.Reporte-aprendiz') }}'">CORREO</button>
             </div>
         </div>
-        
-        
+
+
 <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>
