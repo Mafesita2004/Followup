@@ -143,14 +143,17 @@
                 <div class="md:col-span-2 flex flex-col items-center space-y-4">
                     <div class="flex justify-between items-center w-full">
                         <div>
-                            <a href="{{ route('bitacora') }}" class="m-2.5 py-8 rounded-[15%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
+                            <a href="{{ route('bitacora') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
                                 <img src="{{ asset('img/aprendiz.png') }}" alt="Bitacora" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
                             </a>
-
+                            <h2 class="text-center font-weight:200">Bitacora</h2>
                         </div>
-                        <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                            <img src="{{ asset('img/informe.png') }}" alt="Visita" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-4 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
+                        <div>
+                        <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
+                            <img src="{{ asset('img/informe.png') }}" alt="Visita" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-2.5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
                         </a>
+                        <h2 class="text-center font-weight:200">Visita</h2>
+                    </div>
                         <div>
                     <select id="statusSelect" class="border border-gray-400 p-4 rounded-md w-48 bg-white">
                         <option selected="" disabled>Selecciona Opción</option>
