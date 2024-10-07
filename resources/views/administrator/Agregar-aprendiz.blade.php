@@ -141,6 +141,7 @@
                     <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Cédula</span>
                     <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Ficha</span>
                     <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Programa</span>
+
                 </a>
                 @php
                     $contador++;
