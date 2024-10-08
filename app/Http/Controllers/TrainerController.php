@@ -57,6 +57,12 @@ class TrainerController extends Controller
     {
         return view('trainer.visita');
     }
+    //icono visita
+    public function email()
+    {
+        return view('trainer.email');
+    }
+
 
 
 

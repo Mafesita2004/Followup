@@ -156,5 +156,6 @@ Route::get('/trainer/Bitacora',[TrainerController::class,'bitacora'])->name('bit
 Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita');
 Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('perfilapre');
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
+Route::get('/trainer/emailTrainer',[TrainerController::class,'email'])->name('email');
 
 
