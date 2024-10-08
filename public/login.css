@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'DM Serif Text';
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -13,7 +13,7 @@ body {
 header {
     background-color: #00324d;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +36,7 @@ header {
 }
 
 h1 {
+    font:'DM Sans';
     font-size: 1.2em;
     margin: 0;
 }
@@ -46,6 +47,8 @@ main {
     align-items: center;
     flex-grow: 1;
     padding: 20px 50px;
+    padding: 20px 50px;
+    position: relative;
 }
 
 .content {
@@ -55,36 +58,50 @@ main {
 }
 
 .welcome-text {
-    max-width: 400px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: #000;
+    text-align: center;
+    z-index: 12;
 }
 
 h2 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: #333;
-    line-height: 1.2;
+    font-size: 3rem; /* Ajusta el tamaño de fuente */
+    font-weight: bold; /* Ajusta el peso de la fuente */
+    color: #000; /* Ajusta el color del texto */
+    margin: 0; /* Elimina los márgenes */
+    line-height: 1.2; /* Ajusta el espacio entre líneas */
 }
 
 p {
-    color: #666;
-    font-size: 1.1em;
+    font-size: 1rem; /* Ajusta el tamaño de fuente */
+    font-weight: normal; /* Ajusta el peso de la fuente */
+    color: #000000; /* Ajusta el color del texto */
+    margin: 0; /* Elimina los márgenes */
+    margin-top: 10px; /* Espacio superior */
 }
 
 .persona-img {
-    width: 300px;
+    width: 500px;
     height: auto;
-    margin-left: 50px;
+    margin-left: 70px;
+    opacity: 0.3;
+    transform: scaleX(-1);
+    z-index: 1;
 }
 
 .login-container {
     background-color: #00324d;
     color: white;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
-    width: 300px;
+    width: 350px;
+
 }
 
 h3 {
+    font-family: DM Sans;
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.5em;
@@ -134,4 +151,8 @@ button {
 
 button:hover {
     background-color: #008000;
+}
+.register-link {
+    color:#ffffff;
+    padding-left: 80px;
 }

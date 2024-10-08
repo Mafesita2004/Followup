@@ -89,7 +89,7 @@
         <div class="grid grid-cols-3 gap-10 bg-[#f0f0f0]  border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
 
             <a href="{{ route('apprentice') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/Triner Aprendices.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
+                <img src="{{ asset('img/aprendiz.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
                 <span class="text-sm p-8 ">Aprendices</span>
             </a>
             <a class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 cursor-default">
@@ -97,7 +97,7 @@
                 <span class="text-sm p-8 "></span>
             </a>
             <a href="{{ route('report') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
+                <img src="{{ asset('img/informe.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
                 <span class="text-sm p-8 ">Reportes</span>
             </a>
         </div>

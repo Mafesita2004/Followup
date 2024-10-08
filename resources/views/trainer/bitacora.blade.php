@@ -186,7 +186,7 @@
         </div>
     </div>
     <div class=" pt-2 px-[44%]">
-        <button class="bg-[#009E00] h-8 w-44 rounded-2xl text-white mb-6">REGISTRAR</button>
+        <button class="bg-[#009E00] h-8 w-44 rounded-2xl text-white mb-6"  id="registrar-btn">REGISTRAR</button>
       </div>
     </main>
     <script>
@@ -205,6 +205,17 @@
                 });
             });
         });
+        // Esperar a que el DOM se cargue
+    document.addEventListener("DOMContentLoaded", function() {
+    // Obtener el botón por su ID
+    const registrarBtn = document.getElementById("registrar-btn");
+
+    // Agregar el evento de click
+    registrarBtn.addEventListener("click", function() {
+        // Mostrar un mensaje cuando el botón sea presionado
+        alert("Bitacora Registrada");
+    });
+});
     </script>
 
 </body>

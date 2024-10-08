@@ -13,7 +13,7 @@
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
             <h1>Etapa Seguimiento</h1>
         </div>
-       
+
     </header>
 
     <main>
@@ -44,3 +44,4 @@
     </main>
 </body>
 </html>
+

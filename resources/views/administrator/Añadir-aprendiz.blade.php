@@ -10,7 +10,7 @@
             top: 100%;
             margin-top: 0.5rem;
         }
-        
+
     </style>
 
 </head>
@@ -116,7 +116,7 @@
             }
         }
     </script>
-    
+
         {{-- FIN Menu --}}
         <div>
             <div class="form-group flex flex-wrap justify-between bg-[#BDBDBD] border:2 rounded-lg p-5 mt-2 mx-auto" style="width: 800px;">
@@ -139,7 +139,11 @@
                 <label class="flex-shrink-0 w-[22%] mb-2">
                     Tipo de documento de Identidad
                     <select name="tipo-documento" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
-                        <option value="">Seleccione</option>
+                        <option value="">Cedula de ciudadania</option>
+                        <option value="">Pasaporte</option>
+                        <option value="">Cedula de extranjeria</option>
+                        <option value="">TI</option>
+
                     </select>
                 </label>
                 <label class="flex-shrink-0 w-[22%] mb-2">
@@ -148,7 +152,69 @@
                 </label>
                 <label class="flex-shrink-0 w-[22%] mb-2">
                     Programa
-                    <input type="text" name="programa" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
+                    <select name="programa" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
+                        <option value="GESTION ADMINISTRATIVA DEL SECTOR SALUD">GESTION ADMINISTRATIVA DEL SECTOR SALUD</option>
+                        <option value="GESTION DE MERCADOS">GESTION DE MERCADOS</option>
+                        <option value="ASISTENCIA ADMINISTRATIVA">ASISTENCIA ADMINISTRATIVA</option>
+                        <option value="GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD">GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD</option>
+                        <option value="GESTION EMPRESARIAL">GESTION EMPRESARIAL</option>
+                        <option value="GUIANZA TURISTICA">GUIANZA TURISTICA</option>
+                        <option value="GESTION CONTABLE Y FINANCIERA">GESTION CONTABLE Y FINANCIERA</option>
+                        <option value="ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION">ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION</option>
+                        <option value="GESTION LOGISTICA">GESTION LOGISTICA</option>
+                        <option value="NEGOCIACION INTERNACIONAL">NEGOCIACION INTERNACIONAL</option>
+                        <option value="GESTION DEL TALENTO HUMANO">GESTION DEL TALENTO HUMANO</option>
+                        <option value="GESTION DOCUMENTAL">GESTION DOCUMENTAL</option>
+                        <option value="CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS">CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS</option>
+                        <option value="GESTION BANCARIA Y DE ENTIDADES FINANCIERAS">GESTION BANCARIA Y DE ENTIDADES FINANCIERAS</option>
+                        <option value="PELUQUERIA">PELUQUERIA</option>
+                        <option value="PANIFICACION">PANIFICACION</option>
+                        <option value="COCINA">COCINA</option>
+                        <option value="SERVICIOS FARMACEUTICOS">SERVICIOS FARMACEUTICOS</option>
+                        <option value="SALUD PUBLICA">SALUD PUBLICA</option>
+                        <option value="APOYO ADMINISTRATIVO EN SALUD">APOYO ADMINISTRATIVO EN SALUD</option>
+                        <option value="OPERACION TURISTICA LOCAL">OPERACION TURISTICA LOCAL</option>
+                        <option value="ANIMACION 3D">ANIMACION 3D</option>
+                        <option value="ANIMACION DIGITAL">ANIMACION DIGITAL</option>
+                        <option value="PROMOCION DE PRODUCTOS">PROMOCION DE PRODUCTOS</option>
+                        <option value="SERVICIOS Y OPERACIONES MICROFINANCIERAS">SERVICIOS Y OPERACIONES MICROFINANCIERAS</option>
+                        <option value="CUIDADO ESTETICO DE MANOS Y PIES">CUIDADO ESTETICO DE MANOS Y PIES</option>
+                        <option value="CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL</option>
+                        <option value="ENFERMERIA">ENFERMERIA</option>
+                        <option value="SISTEMAS">SISTEMAS</option>
+                        <option value="DISTRIBUCION FISICA INTERNACIONAL">DISTRIBUCION FISICA INTERNACIONAL</option>
+                        <option value="ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS">ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS</option>
+                        <option value="ATENCION INTEGRAL A LA PRIMERA INFANCIA">ATENCION INTEGRAL A LA PRIMERA INFANCIA</option>
+                        <option value="ASISTENCIA EN ORGANIZACION DE ARCHIVOS">ASISTENCIA EN ORGANIZACION DE ARCHIVOS</option>
+                        <option value="DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO">DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO</option>
+                        <option value="SERVICIO DE RESTAURANTE Y BAR">SERVICIO DE RESTAURANTE Y BAR</option>
+                        <option value="OPERACIONES DE COMERCIO EXTERIOR">OPERACIONES DE COMERCIO EXTERIOR</option>
+                        <option value="DISEÑO E INTEGRACION DE MULTIMEDIA">DISEÑO E INTEGRACION DE MULTIMEDIA</option>
+                        <option value="INFORMACION Y SERVICIO AL CLIENTE">INFORMACION Y SERVICIO AL CLIENTE</option>
+                        <option value="SERVICIOS DE AGENCIAS DE VIAJES">SERVICIOS DE AGENCIAS DE VIAJES</option>
+                        <option value="ASESORIA COMERCIAL">ASESORIA COMERCIAL</option>
+                        <option value="PROCESOS DE PANADERIA">PROCESOS DE PANADERIA</option>
+                        <option value="GESTION COMUNITARIA DEL RIESGO DE DESASTRES">GESTION COMUNITARIA DEL RIESGO DE DESASTRES</option>
+                        <option value="PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE">PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE</option>
+                        <option value="PROGRAMACION DE SOFTWARE">PROGRAMACION DE SOFTWARE</option>
+                        <option value="SERVICIOS DE BARISMO">SERVICIOS DE BARISMO</option>
+                        <option value="GESTION CONTABLE Y DE INFORMACION FINANCIERA">GESTION CONTABLE Y DE INFORMACION FINANCIERA</option>
+                        <option value="INTEGRACION DE OPERACIONES LOGISTICAS">INTEGRACION DE OPERACIONES LOGISTICAS</option>
+                        <option value="INTEGRACION DE CONTENIDOS DIGITALES">INTEGRACION DE CONTENIDOS DIGITALES</option>
+                        <option value="AUXILIAR EN COCINA">AUXILIAR EN COCINA</option>
+                        <option value="PROGRAMACION PARA ANALITICA DE DATOS">PROGRAMACION PARA ANALITICA DE DATOS</option>
+                        <option value="AGENTE DE TRANSITO Y TRANSPORTE">AGENTE DE TRANSITO Y TRANSPORTE</option>
+                        <option value="ANALISIS Y DESARROLLO DE SOFTWARE">ANALISIS Y DESARROLLO DE SOFTWARE</option>
+                        <option value="ATENCION INTEGRAL AL CLIENTE">ATENCION INTEGRAL AL CLIENTE</option>
+                        <option value="CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL</option>
+                        <option value="DESARROLLO DE PROCESOS DE MERCADEO">DESARROLLO DE PROCESOS DE MERCADEO</option>
+                        <option value="DESARROLLO PUBLICITARIO">DESARROLLO PUBLICITARIO</option>
+                        <option value="GESTION INTEGRAL DEL TRANSPORTE">GESTION INTEGRAL DEL TRANSPORTE</option>
+                        <option value="ORGANIZACION DE ARCHIVO">ORGANIZACION DE ARCHIVO</option>
+                        <option value="PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC">PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC</option>
+                        <option value="SERVICIOS EN CONTACT CENTER Y BPO">SERVICIOS EN CONTACT CENTER Y BPO</option>
+                        <option value="COORDINACION DE PROCESOS LOGISTICOS">COORDINACION DE PROCESOS LOGISTICOS</option>
+                        </select>
                 </label>
                 <label class="flex-shrink-0 w-[22%] mb-2">
                     Ficha
@@ -158,10 +224,16 @@
                     Teléfono
                     <input type="text" name="telefono" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
                 </label>
-                <label class="flex-shrink-0 w-[22%] mb-2">
+                <label class="flex-shrink-0 w-[24%] mb-2">
                     Modalidad
                     <select name="modalidad" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
-                        <option value="">Seleccione</option>
+                    <option value="">Seleccionar opcion</option>
+                    <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                    <option value="Pasantia">Pasantia</option>
+                    <option value="Vinculo laboral">Vinculo laboral</option>
+                    <option value="Patrocinio">Patrocinio</option>
+                    <option value="Unidad Productiva">Unidad Productiva</option>
+                    <option value="Proyecto Productivo">Proyecto Productivo</option>
                     </select>
                 </label>
                 <label class="flex-shrink-0 w-[22%] mb-2">
@@ -184,20 +256,20 @@
                     Razón social
                     <input type="text" name="razon-social" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm">
                 </label>
-                <label class="flex-shrink-0 w-full mb-2">
+                <label class="flex-shrink-0 w-[22%] mb-2">
                     Documentos
                     <textarea name="documentos" rows="4" class="w-full p-2 border border-gray-300 rounded-md mt-1 text-sm"></textarea>
                 </label>
                 <div class="buttons flex justify-center gap-4 mt-4 ml-auto">
                     <button type="button" class="bg-gray-300 border border-black p-2 rounded-md text-sm" onclick="window.location.href='{{ route('administrator.Agregar-aprendiz') }}'">CANCELAR</button>
                     <button type="submit" class="bg-green-700 text-white p-2 rounded-md text-sm">CONFIRMAR</button>
-                    
+
                 </div>
                 <button type="button" class="bg-[#838383] flex justify-center gap-4 mt-4 text-white p-2 rounded-md text-sm ml-auto" onclick="window.location.href='{{ route('administrator.Reporte-aprendiz') }}'">CORREO</button>
             </div>
         </div>
-        
-        
+
+
 <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>
