@@ -1,12 +1,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    @vite('resources/css/app.css')
+    <title>Etapa Seguimiento</title>
+    <style>
+        /* Aquí se pueden agregar estilos personalizados si es necesario */
+        #userMenu, #notifMenu {
+            display: none;
+            position: absolute;
+            z-index: 20;
+        }
+
+        #userMenu.show, #notifMenu.show {
+            display: block;
+        }
+
+        #userMenu {
+            right: 0;
+            top: 100%;
+        }
+
+        #notifMenu {
+            left: 0;
+            top: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white m-0 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-white border-b border-b-[#e0e0e0]">
+        <div class="flex items-center">
+            <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
+            <div class="flex flex-col">
+                <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
+                <h2 class="text-sm m-0 text-[#009e00]">Productivo</h2>
+            </div>
+        </div>
+        <div class="text-center absolute left-1/2 transform -translate-x-1/2">
+            <h1 class="text-lg m-0 text-[#009e00] font-bold">APRENDIZ</h1>
+        </div>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
+        <!-- Notification Button -->
+        <button id="notifButton" class="relative">
+            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span>
+        </button>
+
+        <!-- Notification Dropdown -->
+        <div id="notifMenu" class="absolute bg-white border border-gray-300 rounded-lg shadow-lg w-64 hidden z-20">
+            <div class="p-4">
+                <h2 class="text-sm font-bold">Notificaciones</h2>
+                <ul>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Central Button -->
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Inicio</div>
+
+        <!-- User Menu -->
+        <div class="relative ml-auto flex items-center">
+            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
+            <button id="menuButton" class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+            </button>
+
+            <!-- User Dropdown -->
+            <div id="userMenu" class="bg-gray-200 border border-gray-300 rounded-lg shadow-lg w-64 hidden">
+                <div class="p-4">
+
+                            <p class="text-sm mb-2 font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+                            <p class="text-sm">Aprendiz</p>
+                            <p class="text-sm">Programa: ADSO</p>
+                            <p class="text-sm">Ficha: 2711891</p>
+
+                    </div>
+                    <ul>
+                        <li><a href="{{ route('apprentice.profile') }}" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                        <li><a href="{{ route('apprentice.index') }}" class="block text-black hover:bg-white p-4 rounded-lg">Inicio</a></li>
+                        <li><a href="{{ route('apprentice.calendar') }}" class="block text-black hover:bg-white p-4 rounded-lg">Calendario</a></li>
+                    </ul>
+                    <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
+                        @csrf
+                        <button type="submit" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1 w-56">Cerrar sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {{-- <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet"> --}}
+
     <style>
+<<<<<<< HEAD
          header{
+=======
+         /* header{
+>>>>>>> 211ed841be84a7c08e156e97bb9635c5db7ab1df
             background: none;
             background-color: transparent;
         }
@@ -130,13 +242,13 @@ top: 98px;
 background: url(image);
 margin-right: 10px;
 
-        }
-        .calendar-container {
+        } */
+         .calendar-container {
     position: absolute;
     width: 100%;
     height: 38px;
     left: 0%;
-    top: 24.5%;
+    top: 20%;
     background: #D9D9D9;
     display: flex;
     align-items: center;
@@ -151,7 +263,7 @@ margin-right: 10px;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 36px;
     display: flex;
     align-items: center;
@@ -179,8 +291,8 @@ margin-right: 10px;
     position: absolute;
     width: 1054px;
     height: 600px;
-    left: 15%;
-    top: 30.5%;
+    left: 10%;
+    top: 28%;
     background: #D9D9D9;
     margin: 0 auto;
 }
@@ -422,7 +534,7 @@ margin-right: 10px;
     </style>
 </head>
 <body>
-    <header>
+    {{-- <header>
         <div class="logo-container">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
             <h1>Etapa Seguimiento</h1>
@@ -453,10 +565,10 @@ margin-right: 10px;
             <a href="#option3">Cerrar Sesión</a>
              </div>
         </div>
-    </div>
+    </div> --}}
     <div class="calendar-container">
         <h3>Calendario (Agenda)</h3>
-        <a href="{{ route('apprentice.index') }}" class="back-button">&#60; </a>
+        {{-- <a href="{{ route('apprentice.index') }}" class="back-button">&#60; </a> --}}
 
     </div>
     <div id="calendar"></div>
