@@ -127,67 +127,39 @@
                     </form>
             </div>
         </div>
-    </nav>
-    <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{route('superadmin.SuperAdmin-InstructorPerfil') }}" class="ml-4">
-            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-        </a>
-    </div>
+    </nav> </nav>
     <div class="flex justify-center">
         <main class="bg-white m-4 p-4 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-2xl font-bold">Cronograma</h2>
                 <div class="flex items-center">
-                    <button id="prevMonth" class="bg-[#009e00] text-white px-3 py-1 rounded-l">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                        </svg>
-                    </button>
-                    <span id="currentMonth" class="bg-[#00324d] text-white px-4 py-1">Julio 2024</span>
-                    <button id="nextMonth" class="bg-[#009e00] text-white px-3 py-1 rounded-r">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
+                    <button id="prevMonth" class="bg-[#009e00] text-white px-3 py-1 rounded-l"><</button>
+                    <span id="currentMonth" class="bg-[#00324d] text-white px-4 py-1">Mes Actual</span>
+                    <button id="nextMonth" class="bg-[#009e00] text-white px-3 py-1 rounded-r">></button>
                 </div>
             </div>
-
-            <!-- Sección del cronograma -->
-    <section class="p-4">
-        <h2 class="text-2xl mb-4">Cronograma</h2>
-        <div class="flex justify-between items-center mb-4">
-            <button id="prevMonth" class="px-4 py-2 bg-gray-300 rounded">Anterior</button>
-            <span id="currentMonth" class="text-xl font-bold"></span>
-            <button id="nextMonth" class="px-4 py-2 bg-gray-300 rounded">Siguiente</button>
-        </div>
-        <!-- Días de la semana -->
-        <div class="grid grid-cols-7 gap-2 text-center font-bold">
-            <div>Dom</div>
-            <div>Lun</div>
-            <div>Mar</div>
-            <div>Mié</div>
-            <div>Jue</div>
-            <div>Vie</div>
-            <div>Sáb</div>
-        </div>
-        <!-- Contenedor para los días del mes -->
-        <div id="calendarDays" class="calendar"></div>
-    </section>
-
+            <section class="p-4">
+                <div class="grid grid-cols-7 gap-2 text-center font-bold">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                </div>
+                <div id="calendarDays" class="calendar"></div>
+            </section>
             <div class="mt-4">
                 <button id="addEvent" class="bg-[#009e00] text-white px-4 py-2 rounded">Agregar Evento</button>
             </div>
 
-            <!-- Modal for adding events -->
-            <div id="notifMenu" class="absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-                <!-- Contenido del menú de notificaciones -->
-            </div>
-
-            <!-- Modal para agregar eventos -->
+            <!-- Modal para agregar/actualizar eventos -->
             <div id="eventModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
                 <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-                    <h3 class="text-lg font-bold mb-4">Agregar Evento</h3>
+                    <h3 id="modalTitle" class="text-lg font-bold mb-4">Agregar Evento</h3>
                     <form id="eventForm">
+                        <input type="hidden" id="eventId">
                         <div class="mb-4">
                             <label for="eventDate" class="block text-sm font-medium text-gray-700">Fecha</label>
                             <input type="date" id="eventDate" name="eventDate" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
@@ -207,10 +179,6 @@
                     </form>
                 </div>
             </div>
-            <div class="flex justify-end mt-6 space-x-4">
-                <a type="submit" href="{{ route('superadmin.SuperAdmin-InstructorPerfil')}}" class="bg-[#009e00] hover:bg-green-700 text-white py-2 px-4 rounded">Confirmar</a>
-                <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-            </div>
         </main>
     </div>
     <script>
@@ -223,6 +191,8 @@
             const addEventButton = document.getElementById("addEvent");
             const cancelEventButton = document.getElementById("cancelEvent");
             const eventForm = document.getElementById("eventForm");
+            const eventIdInput = document.getElementById("eventId");
+            const modalTitle = document.getElementById("modalTitle");
 
             let currentMonth = new Date().getMonth();
             let currentYear = new Date().getFullYear();
@@ -233,25 +203,21 @@
                 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
             ];
 
-            // Función para obtener el número de días en un mes
             function daysInMonth(month, year) {
                 return new Date(year, month + 1, 0).getDate();
             }
 
-            // Función para obtener el día de la semana del primer día del mes
             function firstDayOfMonth(month, year) {
                 return new Date(year, month, 1).getDay();
             }
 
-            // Función para renderizar el calendario
             function renderCalendar() {
-                calendarDays.innerHTML = ''; // Limpiar calendario
+                calendarDays.innerHTML = '';
                 currentMonthSpan.textContent = `${months[currentMonth]} ${currentYear}`;
 
                 const totalDays = daysInMonth(currentMonth, currentYear);
                 const startDay = firstDayOfMonth(currentMonth, currentYear);
 
-                // Rellenar los días del calendario
                 for (let i = 0; i < startDay; i++) {
                     const emptyCell = document.createElement('div');
                     calendarDays.appendChild(emptyCell);
@@ -261,7 +227,6 @@
                     const dayCell = document.createElement('div');
                     dayCell.textContent = day;
 
-                    // Mostrar eventos en el día correspondiente
                     const dayEvents = events.filter(event => {
                         const eventDate = new Date(event.date);
                         return eventDate.getDate() === day && eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
@@ -271,6 +236,9 @@
                         const eventDiv = document.createElement('div');
                         eventDiv.classList.add('event');
                         eventDiv.textContent = event.title;
+                        eventDiv.addEventListener("click", () => {
+                            openEditEvent(event);
+                        });
                         dayCell.appendChild(eventDiv);
                     });
 
@@ -278,7 +246,6 @@
                 }
             }
 
-            // Funciones de cambio de mes
             prevMonthButton.addEventListener('click', function() {
                 currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
                 if (currentMonth === 11) currentYear--;
@@ -291,34 +258,53 @@
                 renderCalendar();
             });
 
-            // Mostrar el modal para agregar eventos
             addEventButton.addEventListener("click", function() {
+                modalTitle.textContent = "Agregar Evento";
+                eventIdInput.value = ''; // Limpiar ID
                 eventModal.classList.remove("hidden");
             });
 
-            // Ocultar el modal de agregar eventos
             cancelEventButton.addEventListener("click", function() {
                 eventModal.classList.add("hidden");
             });
 
-            // Agregar evento al calendario
             eventForm.addEventListener("submit", function(e) {
                 e.preventDefault();
                 const eventDate = document.getElementById("eventDate").value;
                 const eventTitle = document.getElementById("eventTitle").value;
                 const eventDescription = document.getElementById("eventDescription").value;
 
-                if (eventDate && eventTitle) {
-                    events.push({ date: eventDate, title: eventTitle, description: eventDescription });
-                    eventModal.classList.add("hidden");
-                    renderCalendar();
+                if (eventIdInput.value) {
+                    // Actualizar evento
+                    const eventIndex = events.findIndex(event => event.id === eventIdInput.value);
+                    if (eventIndex !== -1) {
+                        events[eventIndex] = { id: eventIdInput.value, date: eventDate, title: eventTitle, description: eventDescription };
+                    }
                 } else {
-                    alert("Por favor, complete todos los campos.");
+                    // Agregar nuevo evento
+                    const newEvent = {
+                        id: Date.now().toString(), // Usar timestamp como ID
+                        date: eventDate,
+                        title: eventTitle,
+                        description: eventDescription
+                    };
+                    events.push(newEvent);
                 }
+
+                eventModal.classList.add("hidden");
+                renderCalendar();
             });
 
-            // Inicializar calendario
-            renderCalendar();
+            function openEditEvent(event) {
+                modalTitle.textContent = "Actualizar Evento";
+                eventIdInput.value = event.id; // Establecer ID del evento
+                document.getElementById("eventDate").value = event.date;
+                document.getElementById("eventTitle").value = event.title;
+                document.getElementById("eventDescription").value = event.description;
+                eventModal.classList.remove("hidden");
+            }
+
+            renderCalendar(); // Renderizar el calendario al cargar la página
         });
     </script>
 </body>

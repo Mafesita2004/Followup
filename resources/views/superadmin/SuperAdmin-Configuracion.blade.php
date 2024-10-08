@@ -145,26 +145,7 @@
                 </form>
             </div>
 
-            <!-- Sección de Configuración General -->
-            <div class="settings-card">
-                <h2 class="text-lg font-bold mb-4">Configuración General</h2>
-                <form action="#" method="#">
-                    @csrf
-                    <div class="mb-4">
-                        <label for="siteName" class="block text-sm font-medium text-gray-700">Nombre del Sitio</label>
-                        <input type="text" id="siteName" name="siteName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" value="" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="timezone" class="block text-sm font-medium text-gray-700">Zona Horaria</label>
-                        <select id="timezone" name="timezone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
-                            <!-- Opciones de zona horaria -->
-                            <option value="America/Bogota">Bogotá</option>
-                            <!-- Añadir más opciones según sea necesario -->
-                        </select>
-                    </div>
-                    <a href="{{ route('administrator.home') }}" type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Guardar Cambios</a>
-                </form>
-            </div>
+           
         </main>
     </div>
 
