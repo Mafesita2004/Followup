@@ -33,8 +33,10 @@
             <h1 class="text-lg m-0 text-[#009e00] font-bold">SUPER</h1>
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>    </header>
 
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">

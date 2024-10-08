@@ -27,8 +27,10 @@
             <h1 class="text-lg m-0 text-[#009e00] font-bold">SUPER</h1>
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>    </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -98,23 +100,23 @@
         <main class="flex flex-col items-center p-4 mt-4 relative w-full max-w-7xl">
             <div class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h2 class="text-2xl font-bold mb-4 text-center">Asunto: Asignación de Instructor para Contrato de Aprendizaje</h2>
-                
+
                 <p class="mb-4">Estimada Yuliana Andrea Gomez Manquillo,</p>
-                
+
                 <p class="mb-4">Me complace informarte que te ha sido asignado un instructor para el seguimiento de tu contrato de aprendizaje. La persona designada como tu instructor es Sofía Méndez.</p>
-                
+
                 <p class="mb-4">Sofía Méndez cuenta con una amplia experiencia en el área y estoy seguro/a de que será de gran ayuda en tu proceso de aprendizaje. Estará a cargo de brindarte la orientación necesaria para que puedas aprovechar al máximo esta oportunidad de crecimiento profesional.</p>
-                
+
                 <p class="mb-4">Te invito a ponerte en contacto con Sofía lo antes posible para coordinar los detalles iniciales y establecer una comunicación fluida durante el desarrollo de tu contrato de aprendizaje.</p>
-                
+
                 <p class="mb-4">Si tienes alguna pregunta o necesitas más información, no dudes en comunicarte conmigo.</p>
-                
+
                 <p class="mb-4">¡Mucho éxito en esta nueva etapa!</p>
-                
+
                 <p class="mb-2">Saludos cordiales,</p>
                 <p class="font-bold">Nombre Administrador</p>
                 <p class="mb-6">Cargo Administrador</p>
-    
+
                 <div class="flex justify-end space-x-4">
                     <a href="{{ route('superadmin.SuperAdmin-Aprendiz')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
                     <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>

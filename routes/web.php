@@ -139,7 +139,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
 });
 
 //RUTAS APRENDIZ
-Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
+    Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
 Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');
 Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');

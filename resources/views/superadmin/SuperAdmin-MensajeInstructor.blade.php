@@ -27,8 +27,10 @@
             <h1 class="text-lg m-0 text-[#009e00] font-bold">SUPER</h1>
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>    </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -98,19 +100,19 @@
         <main class="flex flex-col items-center p-4 mt-4 relative">
             <div class="w-full max-w-7xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h2 class="text-2xl font-bold mb-4">Asunto: Asignación de Aprendiz para Seguimiento en modalidad de Contrato de Aprendizaje</h2>
-                
+
                 <p class="mb-4">Estimada Sofía Méndez,</p>
-                
+
                 <p class="mb-4">Me complace informarte que te ha sido asignado un aprendiz para el seguimiento en la modalidad de contrato de aprendizaje. La persona asignada es Yuliana Andrea Gomez Manquillo.</p>
-                
+
                 <p class="mb-4">Yuliana ha mostrado un gran interés en aprender y desarrollarse en el área, y confiamos en que tu experiencia y conocimientos serán de gran valor para su formación. Te agradecemos de antemano por tu disposición para acompañar y guiar a Yuliana durante este proceso.</p>
-                
+
                 <p class="mb-4">Te invito a ponerte en contacto con Yuliana lo antes posible para iniciar el proceso de seguimiento y establecer una comunicación efectiva.</p>
-                
+
                 <p class="mb-4">Si necesitas más información o tienes alguna pregunta, no dudes en comunicarte conmigo.</p>
-                
+
                 <p class="mb-4">Agradecemos tu compromiso y dedicación en esta labor.</p>
-                
+
                 <p class="mb-2">Saludos cordiales,</p>
                 <p class="font-bold">Nombre Administrador</p>
                 <p>Cargo Administrador</p>
@@ -119,7 +121,7 @@
                     <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                 </div>
             </div>
-            
+
         </main>
     </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>

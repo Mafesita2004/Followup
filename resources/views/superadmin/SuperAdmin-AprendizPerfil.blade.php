@@ -27,8 +27,10 @@
             <h1 class="text-lg m-0 text-[#009e00] font-bold">SUPER</h1>
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>    </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -152,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-4">
                             <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">3/3</div>
@@ -164,28 +166,28 @@
                             <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil')}}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Instructor</a>
                         </div>
                     </div>
-        
+
                     <div class="space-y-4">
                         <h3 class="font-semibold text-lg">Visitas:</h3>
                         <div class="border rounded-lg p-4 h-64">
                             <canvas id="visitasChart"></canvas>
                         </div>
                     </div>
-        
+
                     <div class="space-y-4">
                         <h3 class="font-semibold text-lg">Bitácoras:</h3>
                         <div class="border rounded-lg p-4 h-64">
                             <canvas id="bitacorasChart"></canvas>
                         </div>
                     </div>
-        
+
                     <div class="space-y-4">
                         <h3 class="font-semibold text-lg">Timeline:</h3>
                         <div class="border rounded-lg p-4 h-64">
                             <canvas id="timelineChart"></canvas>
                         </div>
                     </div>
-        
+
                     <div class="flex justify-end space-x-4">
                         <a href="{{ route('superadmin.SuperAdmin-AprendizPerfilActualizar')}}" class="bg-[#009e00] hover:bg-green-700 text-white py-2 px-6 rounded-lg">Actualizar</a>
                         <a href="{{ route('superadmin.SuperAdmin-AprendizPerfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-lg">Cancelar</a>

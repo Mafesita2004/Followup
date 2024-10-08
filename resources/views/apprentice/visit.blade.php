@@ -1,12 +1,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    @vite('resources/css/app.css')
+    <title>Etapa Seguimiento</title>
+    <style>
+        /* Aquí se pueden agregar estilos personalizados si es necesario */
+        #userMenu, #notifMenu {
+            display: none;
+            position: absolute;
+            z-index: 20;
+        }
+
+        #userMenu.show, #notifMenu.show {
+            display: block;
+        }
+
+        #userMenu {
+            right: 0;
+            top: 100%;
+        }
+
+        #notifMenu {
+            left: 0;
+            top: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white m-0 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-white border-b border-b-[#e0e0e0]">
+        <div class="flex items-center">
+            <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
+            <div class="flex flex-col">
+                <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
+                <h2 class="text-sm m-0 text-[#009e00]">Productivo</h2>
+            </div>
+        </div>
+        <div class="text-center absolute left-1/2 transform -translate-x-1/2">
+            <h1 class="text-lg m-0 text-[#009e00] font-bold">APRENDIZ</h1>
+        </div>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
+        <!-- Notification Button -->
+        <button id="notifButton" class="relative">
+            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span>
+        </button>
+
+        <!-- Notification Dropdown -->
+        <div id="notifMenu" class="absolute bg-white border border-gray-300 rounded-lg shadow-lg w-64 hidden z-20">
+            <div class="p-4">
+                <h2 class="text-sm font-bold">Notificaciones</h2>
+                <ul>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                    </li>
+                    <li class="mt-2">
+                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Central Button -->
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Inicio</div>
+
+        <!-- User Menu -->
+        <div class="relative ml-auto flex items-center">
+            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
+            <button id="menuButton" class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+            </button>
+
+            <!-- User Dropdown -->
+            <div id="userMenu" class="bg-gray-200 border border-gray-300 rounded-lg shadow-lg w-64 hidden">
+                <div class="p-4">
+
+                            <p class="text-sm mb-2 font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+                            <p class="text-sm">Aprendiz</p>
+                            <p class="text-sm">Programa: ADSO</p>
+                            <p class="text-sm">Ficha: 2711891</p>
+
+                    </div>
+                    <ul>
+                        <li><a href="{{ route('apprentice.profile') }}" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                        <li><a href="{{ route('apprentice.index') }}" class="block text-black hover:bg-white p-4 rounded-lg">Inicio</a></li>
+                        <li><a href="{{ route('apprentice.calendar') }}" class="block text-black hover:bg-white p-4 rounded-lg">Calendario</a></li>
+                    </ul>
+                    <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
+                        @csrf
+                        <button type="submit" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1 w-56">Cerrar sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {{-- <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}"> --}}
     <style>
+<<<<<<< HEAD
           header{
-            background: none; 
+=======
+          /* header{
+>>>>>>> 211ed841be84a7c08e156e97bb9635c5db7ab1df
+            background: none;
             background-color: transparent;
         }
         .head-container{
@@ -20,7 +131,7 @@ top: 98px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 10px; 
+            padding: 0 10px;
             box-sizing: border-box;
         }
  .logo-container h2 {
@@ -45,7 +156,7 @@ top: 98px;
 
         }
         .logo-container h1 {
-            margin-right: 100px; 
+            margin-right: 100px;
             color: #009E00;
         }
         .head-container p{
@@ -71,8 +182,8 @@ top: 98px;
     top: 50%;
     transform: translateY(-50%);
     background: url(image.png) no-repeat center / contain;
-    
-         
+
+
         }
         .dropdown {
                 position: relative;
@@ -90,10 +201,10 @@ top: 98px;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            right: 0; 
+            right: 0;
     left: auto;
-            
-            
+
+
         }
 
         .dropdown-content a {
@@ -112,7 +223,7 @@ top: 98px;
             font-size: 16px;
             border: none;
             cursor: pointer;
-            
+
         }
 
         .show {
@@ -125,7 +236,7 @@ top: 98px;
             height: 42px;
            left: 21px;
            margin: 0 10px;
-      
+
 
 background: url(image);
 margin-right: 10px;
@@ -157,7 +268,7 @@ margin-right: 10px;
     align-items: center;
     color: #000000;
     margin: 0 10px;
-}
+} */
 
 .back-button {
     background-color: transparent;
@@ -217,7 +328,7 @@ margin-right: 10px;
     }
 }
 @media (max-width: 1024px) {
-    
+
 
     .notification-container h3 {
         width: 70%;
@@ -226,7 +337,7 @@ margin-right: 10px;
 }
 
 @media (max-width: 768px) {
-    
+
 
     .notification-container h3 {
         width: 80%;
@@ -261,11 +372,11 @@ margin-right: 10px;
 }
 /*olj*/
         .trainer-container{
-            
+
 position: absolute;
 width: 100%;
 height: 38px;
-top: 30%;
+top: 20%;
 display: flex;
   justify-content: space-between;
   align-items: center;
@@ -277,7 +388,7 @@ background: #D9D9D9;
 font-family:'DM Sans', sans-serif;
 font-style: normal;
 font-weight: 400;
-font-size: 20px;
+font-size: 15px;
 line-height: 31px;
 display: flex;
 align-items: center;
@@ -293,7 +404,7 @@ color: #000000;
 font-family: 'DM Sans', sans-serif;
 font-style: normal;
 font-weight: 400;
-font-size: 20px;
+font-size: 15px;
 line-height: 31px;
 display: inline-flex;
 align-items: center;
@@ -310,8 +421,8 @@ color: #000000;
 position: absolute;
 width: 792px;
 height: 334px;
-left: 25%;
-top: 36%;
+left: 10%;
+top: 30%;
 background: #FFFEFE;
 border: 1px solid rgba(0, 0, 0, 0.53);
 border-radius: 3px;
@@ -326,44 +437,44 @@ border-radius: 3px;
     background: #04324D;
     border-radius: 3px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content:center;
-    padding-right: 7px; 
+    padding-right: 7px;
 }
 
 .name h5 {
-    margin: 0; 
+    margin: 0;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     color: #FFFFFF;
 }
         .visit-container p{
             position: relative;
     width: 373px;
-    height: auto; 
+    height: auto;
     left: 12px;
     top: -5%;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     color: #000000;
 }
         .line {
   width: 666px;
-  height: 1px; 
-  background-color: #000; 
+  height: 1px;
+  background-color: #000;
   position: absolute;
-  top: 60%; 
+  top: 60%;
 }
 .buttons {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     padding: 40px;
-    
+
 }
 a {
     padding: 10px 20px;
@@ -378,7 +489,7 @@ a.reject {
     background-color:#D9D9D9;
     font-family: 'DM Sans', sans-serif;
 font-style: normal;
-font-size: 20px;
+font-size: 15px;
 display: flex;
 align-items: center;
 text-align: center;
@@ -389,10 +500,10 @@ border: 1px solid #000000;
 }
 
 a.accept {
-    background-color: #009E00; 
+    background-color: #009E00;
     font-family: 'DM Sans', sans-serif;
 font-style: normal;
-font-size: 20px;
+font-size: 15px;
 display: flex;
 align-items: center;
 text-align: center;
@@ -405,11 +516,11 @@ border: 1px solid #000000;
 @media (max-width: 1024px) {
     .visit-container {
         width: 90%;
-        left: 5%; 
+        left: 5%;
     }
 
     .name {
-        width: 100%; 
+        width: 100%;
     }
 
     .trainer-container {
@@ -420,7 +531,7 @@ border: 1px solid #000000;
 
     .trainer-container h4,
     .trainer-container p {
-        font-size: 18px; 
+        font-size: 18px;
         padding: 10px;
     }
 }
@@ -428,11 +539,11 @@ border: 1px solid #000000;
 @media (max-width: 768px) {
     .visit-container {
         width: 95%;
-        left: 2.5%; 
+        left: 2.5%;
     }
 
     .name {
-        height: auto; 
+        height: auto;
         padding: 15px;
     }
 
@@ -472,14 +583,17 @@ border: 1px solid #000000;
     </style>
 </head>
 <body>
-    <header>
+    {{-- <header>
         <div class="logo-container">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
             <h1>Etapa Seguimiento</h1>
             <h2>APRENDIZ</h2>
         </div>
-        <img src="{{ asset('img/logo-sena.png') }}" alt="SENA Logo" class="logo-sena">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+        </header>
     <div class="head-container">
         <img src="{{asset('img/notificaciones.png')}}" alt="notification" class='notification'>
         <p>Nombre de Usuario</p>
@@ -504,7 +618,7 @@ border: 1px solid #000000;
         <h3>Notificaciones</h3>
         <a href="{{ route('apprentice.index') }}" class="back-button">&#60; </a>
 
-    </div>
+    </div> --}}
     <div class="trainer-container">
         <h4>Instructor</h4>
         <p>08:39am. 30 mar</p>
@@ -524,12 +638,12 @@ border: 1px solid #000000;
         </div>
     </div>
 
-    <script> 
+    <script>
         document.querySelector('.dropbtn').addEventListener('click', function() {
           document.querySelector('.dropdown-content').classList.toggle('show');
        });
-               
-       
+
+
        window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -542,6 +656,6 @@ border: 1px solid #000000;
            }
         }
          </script>
-       
+
 </body>
 </html>

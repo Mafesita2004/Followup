@@ -10,13 +10,13 @@
             top: 100%;
             margin-top: 0.5rem;
         }
-        
-        
-        
+
+
+
 
 
     </style>
-    
+
 </head>
 <body>
     <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
@@ -31,8 +31,11 @@
             <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
                 <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
             </div>
-            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-        </header>
+            <div class="flex items-center">
+                <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+                <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+            </div>
+                </header>
         <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
             <button id="notifButton" class="relative">
                 <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -72,7 +75,7 @@
                                 <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
                                 <p class="text-sm mt-2">Administrador</p>
                             </div>
-    
+
                             <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                         </div>
                         <ul>
@@ -139,12 +142,12 @@
                     <button type="button" class="actual bg-green-700 text-white rounded-lg px-4 py-2 text-sm font-medium">ACTUALIZAR</button>
                 </div>
             </div>
-            
+
             <script>
                 function showContent(type) {
                     const contentDiv = document.getElementById('content');
                     contentDiv.innerHTML = ''; // Limpiar contenido actual
-            
+
                     const emails = {
                         recibidos: [
                             'Email recibido 1',
@@ -161,7 +164,7 @@
                             'Email enviado 5'
                         ]
                     };
-            
+
                     emails[type].forEach((email, index) => {
                         contentDiv.innerHTML += `
                             <div class="email-item flex items-center justify-between p-2 border-b border-gray-800">
@@ -174,7 +177,7 @@
                     });
                 }
             </script>
-            
+
     <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>
