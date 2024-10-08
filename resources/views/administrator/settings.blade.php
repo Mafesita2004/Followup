@@ -26,7 +26,7 @@
         }
 
     </style>
-    
+
 </head>
 {{-- Barra Azul --}}
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
@@ -41,8 +41,11 @@
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+        </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -131,17 +134,17 @@
         }
     </script>
         {{-- FIN Menu --}}
-    
+
         <div class="w-full flex justify-between items-center mt-6">
             <a href="{{ route('administrator.home') }}" class="ml-4">
                 <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
             </a>
         </div>
-    
+
         <div class="flex justify-center">
             <main class="bg-white m-4 p-6 rounded-lg shadow-lg border border-[#e0e0e0] w-2/3">
                 <h1 class="section-header">Configuración</h1>
-    
+
                 <!-- Sección de Cambio de Contraseña -->
                 <div class="settings-card">
                     <h2 class="text-lg font-bold mb-4">Cambio de Contraseña</h2>
@@ -162,7 +165,7 @@
                         <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Actualizar Contraseña</button>
                     </form>
                 </div>
-    
+
                 <!-- Sección de Configuración General -->
                 <div class="settings-card">
                     <h2 class="text-lg font-bold mb-4">Configuración General</h2>
@@ -185,9 +188,9 @@
                 </div>
             </main>
         </div>
-    
+
     <script src="{{ asset('js/Administrator.js') }}"></script>
-    
+
 
 </body>
 </html>

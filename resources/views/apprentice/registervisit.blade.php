@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <style>
       header{
-            background: none; 
+            background: none;
             background-color: transparent;
         }
         .head-container{
@@ -21,7 +21,7 @@ top: 98px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 10px; 
+            padding: 0 10px;
             box-sizing: border-box;
         }
  .logo-container h2 {
@@ -46,7 +46,7 @@ top: 98px;
 
         }
         .logo-container h1 {
-            margin-right: 100px; 
+            margin-right: 100px;
             color: #009E00;
         }
         .head-container p{
@@ -72,8 +72,8 @@ top: 98px;
     top: 50%;
     transform: translateY(-50%);
     background: url(image.png) no-repeat center / contain;
-    
-         
+
+
         }
         .dropdown {
                 position: relative;
@@ -91,10 +91,10 @@ top: 98px;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            right: 0; 
+            right: 0;
     left: auto;
-            
-            
+
+
         }
 
         .dropdown-content a {
@@ -113,7 +113,7 @@ top: 98px;
             font-size: 16px;
             border: none;
             cursor: pointer;
-            
+
         }
 
         .show {
@@ -126,7 +126,7 @@ top: 98px;
             height: 42px;
            left: 21px;
            margin: 0 10px;
-      
+
 
 background: url(image);
 margin-right: 10px;
@@ -434,14 +434,14 @@ margin-right: 10px;
     transform: translate(-50%, -50%);
     box-sizing:border-box;
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
-    
+
 
         }
         .background p {
-            
+
             position: relative;
             top: 5%;
             left: 24.5%;
@@ -457,11 +457,11 @@ margin-right: 10px;
             height: 59px;
             width: 100%;
             display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content:center;
         }
         .register-container h2 {
-            margin: 0; 
+            margin: 0;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -473,7 +473,7 @@ margin-right: 10px;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 2%;
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 .checkbox-option input[type="checkbox"] {
@@ -483,13 +483,13 @@ margin-right: 10px;
 .checkbox-option label {
     font-size: 20px;
 }
-        
+
         .line {
   width: 72%;
-  height: 1px; 
-  background-color: #000; 
+  height: 1px;
+  background-color: #000;
   position: absolute;
-  top: 60%; 
+  top: 60%;
         }
         @media screen and (max-width: 768px) {
     .background {
@@ -523,7 +523,7 @@ margin-right: 10px;
         margin-left: 10px;
     }
 }
-      
+
     </style>
 </head>
 <body>
@@ -533,8 +533,11 @@ margin-right: 10px;
             <h1>Etapa Seguimiento</h1>
             <h2>APRENDIZ</h2>
         </div>
-        <img src="{{ asset('img/logo-sena.png') }}" alt="SENA Logo" class="logo-sena">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+        </header>
 
     <div class="head-container">
         <img src="{{asset('img/notificaciones.png')}}" alt="notification" class='notification'>
@@ -580,9 +583,9 @@ margin-right: 10px;
                     <label for="no-realizado">No Realizado</label>
                 </div>
             </form>
-       
+
     </div>
-   
+
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js"></script>
 <script>
@@ -595,24 +598,24 @@ margin-right: 10px;
                 center: 'title',
                 right: 'dayGridMonth'
             },
-            locale: 'es', 
+            locale: 'es',
             events: [
             ],
-            editable: true, 
-                selectable: true, 
-                dayMaxEvents: true, 
-                fixedWeekCount: false 
+            editable: true,
+                selectable: true,
+                dayMaxEvents: true,
+                fixedWeekCount: false
         });
         calendar.render();
     });
 </script>
 
 
-    <script>  
+    <script>
         document.querySelector('.dropbtn').addEventListener('click', function() {
           document.querySelector('.dropdown-content').classList.toggle('show');
        });
-               
+
        // Close the dropdown if the user clicks outside of it
        window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {

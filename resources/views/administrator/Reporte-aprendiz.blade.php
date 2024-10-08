@@ -14,7 +14,7 @@
 
 
     </style>
-      
+
 </head>
 <body>
     {{-- Barra Azul --}}
@@ -30,8 +30,11 @@
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+        </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -124,7 +127,7 @@
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
-    
+
         {{-- FIN Menu --}}
 
 
@@ -139,22 +142,22 @@
                     Asunto
                     <input type="text" name="direccion" class="w-full p-3 border border-gray-300 rounded-md mt-1 text-sm">
                 </label>
-                
+
                 <label class="flex-shrink-0 w-full mb-4">
                     Descripción
                     <textarea name="documentos" rows="6" class="w-full p-3 border border-gray-300 rounded-md mt-1 text-sm"></textarea>
                 </label>
-                
+
                 <div class="buttons flex justify-center gap-4 mt-4 w-full">
                     <button type="button" class="bg-gray-300 border border-black p-3 rounded-md text-sm" onclick="window.location.href='{{ route('administrator.Añadir-aprendiz') }}'">CANCELAR</button>
                     <button type="submit" class="bg-green-700 text-white p-3 rounded-md text-sm">CONFIRMAR</button>
                 </div>
             </div>
         </div>
-        
-        
-    
-    
+
+
+
+
     <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>

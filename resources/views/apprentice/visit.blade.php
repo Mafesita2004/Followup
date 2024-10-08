@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <style>
           header{
-            background: none; 
+            background: none;
             background-color: transparent;
         }
         .head-container{
@@ -20,7 +20,7 @@ top: 98px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 10px; 
+            padding: 0 10px;
             box-sizing: border-box;
         }
  .logo-container h2 {
@@ -45,7 +45,7 @@ top: 98px;
 
         }
         .logo-container h1 {
-            margin-right: 100px; 
+            margin-right: 100px;
             color: #009E00;
         }
         .head-container p{
@@ -71,8 +71,8 @@ top: 98px;
     top: 50%;
     transform: translateY(-50%);
     background: url(image.png) no-repeat center / contain;
-    
-         
+
+
         }
         .dropdown {
                 position: relative;
@@ -90,10 +90,10 @@ top: 98px;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            right: 0; 
+            right: 0;
     left: auto;
-            
-            
+
+
         }
 
         .dropdown-content a {
@@ -112,7 +112,7 @@ top: 98px;
             font-size: 16px;
             border: none;
             cursor: pointer;
-            
+
         }
 
         .show {
@@ -125,7 +125,7 @@ top: 98px;
             height: 42px;
            left: 21px;
            margin: 0 10px;
-      
+
 
 background: url(image);
 margin-right: 10px;
@@ -217,7 +217,7 @@ margin-right: 10px;
     }
 }
 @media (max-width: 1024px) {
-    
+
 
     .notification-container h3 {
         width: 70%;
@@ -226,7 +226,7 @@ margin-right: 10px;
 }
 
 @media (max-width: 768px) {
-    
+
 
     .notification-container h3 {
         width: 80%;
@@ -261,7 +261,7 @@ margin-right: 10px;
 }
 /*olj*/
         .trainer-container{
-            
+
 position: absolute;
 width: 100%;
 height: 38px;
@@ -326,13 +326,13 @@ border-radius: 3px;
     background: #04324D;
     border-radius: 3px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content:center;
-    padding-right: 7px; 
+    padding-right: 7px;
 }
 
 .name h5 {
-    margin: 0; 
+    margin: 0;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -342,7 +342,7 @@ border-radius: 3px;
         .visit-container p{
             position: relative;
     width: 373px;
-    height: auto; 
+    height: auto;
     left: 12px;
     top: -5%;
     font-family: 'DM Sans';
@@ -353,17 +353,17 @@ border-radius: 3px;
 }
         .line {
   width: 666px;
-  height: 1px; 
-  background-color: #000; 
+  height: 1px;
+  background-color: #000;
   position: absolute;
-  top: 60%; 
+  top: 60%;
 }
 .buttons {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     padding: 40px;
-    
+
 }
 a {
     padding: 10px 20px;
@@ -389,7 +389,7 @@ border: 1px solid #000000;
 }
 
 a.accept {
-    background-color: #009E00; 
+    background-color: #009E00;
     font-family: 'DM Sans', sans-serif;
 font-style: normal;
 font-size: 20px;
@@ -405,11 +405,11 @@ border: 1px solid #000000;
 @media (max-width: 1024px) {
     .visit-container {
         width: 90%;
-        left: 5%; 
+        left: 5%;
     }
 
     .name {
-        width: 100%; 
+        width: 100%;
     }
 
     .trainer-container {
@@ -420,7 +420,7 @@ border: 1px solid #000000;
 
     .trainer-container h4,
     .trainer-container p {
-        font-size: 18px; 
+        font-size: 18px;
         padding: 10px;
     }
 }
@@ -428,11 +428,11 @@ border: 1px solid #000000;
 @media (max-width: 768px) {
     .visit-container {
         width: 95%;
-        left: 2.5%; 
+        left: 2.5%;
     }
 
     .name {
-        height: auto; 
+        height: auto;
         padding: 15px;
     }
 
@@ -478,8 +478,11 @@ border: 1px solid #000000;
             <h1>Etapa Seguimiento</h1>
             <h2>APRENDIZ</h2>
         </div>
-        <img src="{{ asset('img/logo-sena.png') }}" alt="SENA Logo" class="logo-sena">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+        </header>
     <div class="head-container">
         <img src="{{asset('img/notificaciones.png')}}" alt="notification" class='notification'>
         <p>Nombre de Usuario</p>
@@ -524,12 +527,12 @@ border: 1px solid #000000;
         </div>
     </div>
 
-    <script> 
+    <script>
         document.querySelector('.dropbtn').addEventListener('click', function() {
           document.querySelector('.dropdown-content').classList.toggle('show');
        });
-               
-       
+
+
        window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -542,6 +545,6 @@ border: 1px solid #000000;
            }
         }
          </script>
-       
+
 </body>
 </html>

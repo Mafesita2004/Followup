@@ -20,7 +20,7 @@
             border: none;
             cursor: pointer;
             z-index: 1000;
-            
+
         }
 
         .notifications {
@@ -65,8 +65,11 @@
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
             <h1 class="text-lg m-0 text-[#009e00] font-bold">ADMINISTRADOR</h1>
         </div>
-        <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-    </header>
+        <div class="flex items-center">
+            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
+            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+        </div>
+        </header>
     <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -171,10 +174,10 @@
                     </svg>
                     <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
                 </div>
-                
+
                 <h3 class="font-bold mb-4 mt-6">Información Modalidad</h4>
                 <div class="space-y-4">
-                        
+
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Tipo de Modalidad:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
@@ -182,18 +185,18 @@
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha Inicio:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div> 
+                    </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha Final:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div> 
+                    </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Proceso:</label>
                          <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                     </div> 
+                     </div>
                      <img class="Linea-Tiempo" src="{{ asset('administrator/linea-tiempo.png') }}" alt="linea-tiempo">
                 </div>
-                
+
                 <h3 class="font-bold mb-4 mt-6">Datos básicos</h3>
                 <div class="space-y-4">
                     <div>
@@ -278,7 +281,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="flex justify-end mt-6 space-x-4">
                     <a href="{{ route('administrator.home') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>
