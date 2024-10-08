@@ -133,13 +133,14 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
         return view('trainer.icon');
     })->name('icon');
 
-    Route::get('/apprentice/home', function () {
-        return view('apprentice.home');
-    })->name('apprentice.index');
+  // Rutas de aprendiz (cambiada la duplicación del nombre)
+  Route::get('/apprentice/home', function () {
+    return view('apprentice.home');
+})->name('apprentice.home');
 });
 
-//RUTAS APRENDIZ
-    Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
+// RUTAS APRENDIZ (fuera del middleware 'auth')
+Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
 Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');
 Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
