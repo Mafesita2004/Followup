@@ -140,7 +140,14 @@
                     <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Nombre Completo</span>
                     <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Cédula</span>
                     <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Ficha</span>
-                    <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Programa</span>
+                    <div class="dropdown">
+                         <span class="text-xs text-center p-1 bg-white text-black rounded-md w-full box-border mb-1">Programa</span>
+                         <div id="dropdownMenu" class="dropdown-content hidden">
+                            <a href="#">GESTION ADMINISTRATIVA DEL SECTOR SALUD</a>
+                            <a href="#">GESTION DE MERCADOS</a>
+                            <a href="#">ASISTENCIA ADMINISTRATIVA</a>
+                          </div>
+                        </div>
                 </a>
                 @php
                     $contador++;
