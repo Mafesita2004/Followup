@@ -52,7 +52,7 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Consertacion</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Visita</div>
         <div class="relative ml-auto flex items-center ">
             <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">Nombre Usuario</div>
             <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="http://127.0.0.1:8000/img/user-icon.png" alt="User Icon">
@@ -121,7 +121,7 @@
             <div class="w-full flex space-x-4 items-center justify-between text-center">
                 <div class="flex flex-col">
                     <label class="font-bold">N° Visita</label>
-                    <select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                    <select class="border border-gray-400 p-2 rounded-md w-48 bg-white text-center">
                         <option selected="">Selecciona Opción</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -157,7 +157,7 @@
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>
-                <p type="text" class="border border-black  p-2 rounded-md h-28 bg-white"></p>
+                <textarea id="observacion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
             </div>
         </div>
     </div>

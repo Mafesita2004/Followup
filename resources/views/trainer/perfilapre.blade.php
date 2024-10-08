@@ -76,7 +76,6 @@
                         <a href="{{ route('username')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">ver perfil</a>
                         <li class="mt-2"><a href="{{ route('icon')}}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
                         <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                        <li class="mt-2"><a href="#" class="block text-black hover:bg-white p-2 rounded-lg">Permisos</a></li>
                         <li class="mt-2"><a href="{{ route('apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">lista Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('report') }}" class="block text-black hover:bg-white p-2 rounded-lg">Reportes</a></li>
                     </ul>
@@ -147,23 +146,23 @@
                     <div class="flex justify-between items-center w-full">
                         <div>
                             <a href="{{ route('bitacora') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                                <img src="{{ asset('img/aprendiz.png') }}" alt="Bitacora" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
+                                <img src="{{ asset('img/aprendiz.png') }}" alt="Bitacora" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
                             </a>
                             <h2 class="text-center font-weight:200">Bitacora</h2>
                         </div>
                         <div>
                         <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                            <img src="{{ asset('img/informe.png') }}" alt="Visita" class="m-2.5 py-8 rounded-[10%] flex flex-col items-center text-center p-2.5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
+                            <img src="{{ asset('img/informe.png') }}" alt="Visita" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
                         </a>
                         <h2 class="text-center font-weight:200">Visita</h2>
                     </div>
                         <div>
-                    <select id="statusSelect" class="border border-gray-400 p-4 rounded-md w-48 bg-white">
-                        <option selected="" disabled>Selecciona Opción</option>
-                        <option value="ACTIVO" data-color="green">ACTIVO</option>
-                        <option value="NOVEDAD" data-color="orange">NOVEDAD</option>
-                        <option value="FINALIZADA" data-color="red">FINALIZADA</option>
-                    </select>
+                            <select id="statusSelect" class="border border-gray-400 p-4 rounded-md w-48 bg-white">
+                                <option selected disabled>Selecciona Opción</option>
+                                <option value="ACTIVO" data-color="green">ACTIVO</option>
+                                <option value="NOVEDAD" data-color="orange">NOVEDAD</option>
+                                <option value="FINALIZADA" data-color="red">FINALIZADA</option>
+                            </select>
                         </div>
                     </div>
                     <div></div>
@@ -194,12 +193,30 @@
     });
 
 
+    document.addEventListener('DOMContentLoaded', function() {
     const selectElement = document.getElementById('statusSelect');
+
     selectElement.addEventListener('change', function() {
-    const selectedOption = selectElement.options[selectElement.selectedIndex];
-    const selectedColor = selectedOption.getAttribute('data-color');
-    selectElement.style.backgroundColor = selectedColor;
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+
+        // Depuración: Verifica si el evento se dispara correctamente
+        console.log('Opción seleccionada:', selectedOption.value);
+
+        const selectedColor = selectedOption.getAttribute('data-color');
+
+        // Depuración: Verifica si el atributo 'data-color' está presente
+        console.log('Color seleccionado:', selectedColor);
+
+        if (selectedColor) {
+            // Cambia el color de fondo del select
+            selectElement.style.backgroundColor = selectedColor;
+        } else {
+            // Restablece el color de fondo si no hay color
+            selectElement.style.backgroundColor = '';
+        }
+    });
 });
+
 </script>
 </body>
 </html>
