@@ -109,54 +109,54 @@
                 </div>
         </div>
     <div class="flex flex-cols-3">
-        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] border-2 border-black rounded-2xl">
+        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[60] border-2 border-black rounded-2xl">
             <label class="font-semibold text-center ">Bitacoras</label>
             <div class="flex flex-col text-center items-center">
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="1">
                     <span class="block px-4 py-2 border border-black rounded-md text-gray-700">1</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="2">
                     <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">2</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="3">
                     <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">3</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="4">
                     <span class="block px-4 py-2 border border-black rounded-md text-gray-700">4</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="5">
                     <span class="block px-4 py-2 border border-black rounded-md text-gray-700">5</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="6">
                     <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">6</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="7">
                     <span class="block px-4 py-2 border border-black rounded-md text-gray-700">7</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="8">
                     <span class="block px-4 py-2 border border-black rounded-md text-gray-700">8</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3 ">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="9">
                     <span class="block px-4 py-2 border border-black rounded-md text-gray-700">9</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="10">
                     <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">10</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="11">
                     <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">11</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2">
+                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="12">
                     <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">12</span>
                 </label>
@@ -166,14 +166,18 @@
         {{-- Contenedor Fantasma --}}
         <div class=" w-1/5  ">
         </div>
-        <div class=" w-2/5 border-2 rounded-2xl border-black h-86 mt-8">
+        <div class=" w-2/5 border-2 rounded-2xl border-black h-86 mt-2">
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Tipo de Modalidad de Etapa Productiva</label>
                 <p type="text" class="border border-black  p-2 rounded-md bg-white">Pasantia</p>
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Descripcion De La Actividad</label>
-                <p type="text" class="border border-black  p-2 rounded-md h-28 bg-white"></p>
+                <textarea id="descripcion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
+            </div>
+            <div class="flex flex-col p-6 text-center">
+                <label class="font-semibold ">Bitacoras</label>
+                <input type="file" class="border border-black p-2 rounded-md bg-white" name="fileUpload" id="fileUpload">
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-bold">Fecha</label>
@@ -181,7 +185,7 @@
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>
-                <p type="text" class="border border-black  p-2 rounded-md h-28 bg-white"></p>
+                <textarea id="observacion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
             </div>
         </div>
     </div>

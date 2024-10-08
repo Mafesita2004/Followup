@@ -122,28 +122,7 @@
                     </div>
                 </div>
 
-                <h3 class="font-bold mb-4 mt-6">Lugar Residenciade </h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Pais:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Colombia</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Cauca</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Popayan</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Barrio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">bellavista</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Dirección:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">Calle 4# 3-20</p>
-                    </div>
+
 
                 <h3 class="font-bold mb-4 mt-6">Aprendiz</h3>
                 <div class="space-y-4">
@@ -153,7 +132,20 @@
                     </a>
                     <a>
                         <label class="block text-sm font-medium text-gray-700">Mes:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">junio</p>
+                        <select id="mes" name="mes" class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">
+                            <option value="enero" selected>Enero</option>
+                            <option value="febrero">Febrero</option>
+                            <option value="marzo">Marzo</option>
+                            <option value="abril">Abril</option>
+                            <option value="mayo">Mayo</option>
+                            <option value="junio">Junio</option>
+                            <option value="julio">Julio</option>
+                            <option value="agosto">Agosto</option>
+                            <option value="septiembre">Septiembre</option>
+                            <option value="octubre">Octubre</option>
+                            <option value="noviembre">Noviembre</option>
+                            <option value="diciembre">Diciembre</option>
+                        </select>
                     </a>
                     <a>
                         <label class="block text-sm font-medium text-gray-700">Numero De Aprendices Asignados:</label>
@@ -162,13 +154,27 @@
                 </div>
 
                 <div class="flex justify-end mt-6 space-x-4">
-                    <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actializar</button>
+                    <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded" id="registrar-btn" >Actualizar</button>
                     <a href="{{ route('icon') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                 </div>
         </div>
     </main>
 </div>
-<script src="{{ asset('js/Trainer.js') }}"></script>
+<script src="{{ asset('js/Trainer.js') }}">
+
+  // Esperar a que el DOM se cargue
+  document.addEventListener("DOMContentLoaded", function() {
+    // Obtener el botón por su ID
+    const registrarBtn = document.getElementById("registrar-btn");
+
+    // Agregar el evento de click
+    registrarBtn.addEventListener("click", function() {
+        // Mostrar un mensaje cuando el botón sea presionado
+        alert(" Visita Registrada");
+    });
+});
+
+</script>
 </body>
 </html>
 </html>
