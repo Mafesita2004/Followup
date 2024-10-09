@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
-    <title>Etapa Seguimiento</title>
+    <title>Etapa Productiva</title>
     <style>
         /* Aquí se pueden agregar estilos personalizados si es necesario */
         #userMenu, #notifMenu {
