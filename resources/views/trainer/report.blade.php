@@ -186,48 +186,57 @@
         <main >
             <div class="container">
                 <div class="header">
-                    <div class="header-item" onclick="showContent('recibidos')">Recibidos</div>
-                    <div class="header-item" onclick="showContent('enviados')">Enviados</div>
+                    <div class="header-item" onclick="showContent('recibidos', this)">Recibidos</div>
+                    <div class="header-item" onclick="showContent('enviados', this)">Enviados</div>
                 </div>
                 <div class="content" id="content"></div>
                 <div class="buttons">
-                    <button type="submit" class="confirm" onclick="window.location.href='{{ route('administrator.home') }}'">CONFIRMAR</button>
+                    <button type="submit" class="confirm" onclick="window.location.href='{{ route('report') }}'">CONFIRMAR</button>
                     <button type="button" class="actual">ACTUALIZAR</button>
                 </div>
             </div>
             <script>
-                function showContent(type) {
-                    const contentDiv = document.getElementById('content');
-                    contentDiv.innerHTML = ''; // Limpiar contenido actual
+               function showContent(type, element) {
+        const contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = ''; // Limpiar contenido actual
+
+        // Remover la sombra verde y el fondo verde de todos los elementos
+        const headerItems = document.querySelectorAll('.header-item');
+        headerItems.forEach(item => {
+            item.classList.remove('bg-green-600', 'text-white', 'shadow-green'); // Quita las clases de fondo y sombra
+        });
+
+        // Añadir la sombra y el fondo verde al elemento clicado
+        element.classList.add('bg-green-600', 'text-white', 'shadow-green')
 
                     if (type === 'recibidos') {
                         contentDiv.innerHTML = `
                             <div class="email-item">
-                                <a href="/administrator/email/">
-                                    <img src="img/user-icon.png" alt="Email Icon">
+                                <a href="/trainer/emailTrainer">
+                                    <img src="img/mail.png" alt="Email Icon">
                                     <span>Email recibido 1</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email recibido 2</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email recibido 3</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email recibido 4</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email recibido 5</span>
                                 </a>
@@ -238,31 +247,31 @@
                     } else if (type === 'enviados') {
                         contentDiv.innerHTML = `
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email enviado 1</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email enviado 2</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email enviado 3</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="/trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email enviado 4</span>
                                 </a>
                             </div>
                             <div class="email-item">
-                                <a href="/administrator/email/">
+                                <a href="//trainer/emailTrainer">
                                     <img src="icon-email.png" alt="Email Icon">
                                     <span>Email enviado 5</span>
                                 </a>
@@ -270,6 +279,7 @@
                         `;
                     }
                 }
+
             </script>
     <script src="{{ asset('js/Trainer.js') }}"></script>
 
