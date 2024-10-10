@@ -42,13 +42,13 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
                     </li>
                 </ul>
             </div>
@@ -146,15 +146,17 @@
                     <div class="flex justify-between items-center w-full">
                         <div>
                             <a href="{{ route('bitacora') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                                <img src="{{ asset('img/aprendiz.png') }}" alt="Bitacora" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
+                                <img src="{{ asset('img/trainer/bitacoras.jpg') }}" alt="Bitacora" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-44 h-40 hover:border-green-600 object-cover">
+                                <h2 class="text-center font-weight:300">Bitacora</h2>
                             </a>
-                            <h2 class="text-center font-weight:200">Bitacora</h2>
+
                         </div>
                         <div>
                         <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                            <img src="{{ asset('img/informe.png') }}" alt="Visita" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600 object-cover">
+                            <img src="{{ asset('img/trainer/visita.jpg') }}" alt="Visita" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-44 h-40 hover:border-green-600 object-cover">
+                            <h2 class="text-center font-weight:300">Visita</h2>
                         </a>
-                        <h2 class="text-center font-weight:200">Visita</h2>
+
                     </div>
                         <div>
                             <select id="statusSelect" class="border border-gray-400 p-4 rounded-md w-48 bg-white">
@@ -179,18 +181,7 @@
 </div>
 <script src="{{ asset('js/Trainer.js') }}"></script>
 <script>
-    const notifButton = document.getElementById('notifButton');
-    const notifMenu = document.getElementById('notifMenu');
-    notifButton.addEventListener('click', () => {
-        notifMenu.classList.toggle('hidden');
-    });
 
-    const menuButton = document.getElementById('menuButton');
-    const userMenu = document.getElementById('userMenu');
-    menuButton.addEventListener('click', () => {
-        userMenu.classList.toggle('hidden');
-
-    });
 
 
     document.addEventListener('DOMContentLoaded', function() {
