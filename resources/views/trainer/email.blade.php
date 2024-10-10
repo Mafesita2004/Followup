@@ -20,7 +20,7 @@
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
             <div class="flex flex-col">
                 <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
-                <h2 class="text-sm m-0 text-[#009e00]">Seguimiento</h2>
+                <h2 class="text-sm m-0 text-[#009e00]">Productiva</h2>
             </div>
         </div>
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
