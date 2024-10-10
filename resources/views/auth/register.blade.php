@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Etapa Seguimiento</title>
+    <title>Registro - Etapa Productiva</title>
     <link rel="stylesheet" href="{{ asset('css/registro.css') }}">
 </head>
 <body>
     <header>
         <div class="logo-container">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
-            <h1>Etapa Seguimiento</h1>
+            <h1>Etapa Productiva</h1>
         </div>
     </header>
 
     <main>
         <div class="content">
             <div class="welcome-text">
-                <h2>¡Regístrate en Etapa de<br>Seguimiento!</h2>
+                <h2>¡Regístrate en Etapa de<br>Productiva!</h2>
                 <p>Completa el formulario para unirte.</p>
             </div>
             <img src="{{ asset('img/persona.png') }}" alt="Persona" class="persona-img">
