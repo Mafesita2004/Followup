@@ -48,7 +48,7 @@
     </header>
 
     <!-- Navbar -->
-    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
+    <nav class="bg-[#00324d]  px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <!-- Notification Button -->
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
