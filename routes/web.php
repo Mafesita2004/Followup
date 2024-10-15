@@ -129,10 +129,6 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
 
 
 
-    Route::get('/trainer/icon', function () {
-        return view('trainer.icon');
-    })->name('icon');
-
   // Rutas de aprendiz (cambiada la duplicación del nombre)
   Route::get('/apprentice/home', function () {
     return view('apprentice.home');
@@ -147,8 +143,12 @@ Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisi
 Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
 
 
+Route::get('/trainer/apprentice', function () {
+    return view('trainer.apprentice');
+})->name('apprentice');
+
 //rutas intructor
-Route::get('/trainer/icon',[TrainerController::class,'icon']);
+//Route::get('/trainer/icon',[TrainerController::class,'icon']);
 Route::get('/trainer/apprentice',[TrainerController::class,'apprentice'])->name('apprentice');
 Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
 Route::get('/trainer/report',[TrainerController::class,'report'])->name('report');
