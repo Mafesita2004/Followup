@@ -67,30 +67,30 @@
                                  <p class="text-sm mt-2">Administrador</p>
                              </div>
 
-                             <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
+
                          </div>
                          <ul>
                              <li class="mt-2"><a href="{{ route('administrator.Administrator-perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
-                             <li class="mt-2"><a href="{{ route('administrator.home') }}" class="block text-black hover:bg-white p-2 rounded-lg">Inicio</a></li>
+
                              <li class="mt-2"><a href="{{ route('administrator.settings') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                             <li class="mt-2"><a href="{{ route('administrator.apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Aprendices</a>
-                                 <ul class="hidden ml-4 mt-2 bg-[#EEEEEE] p-2 rounded-lg">
-                                     <li class="mt-2 font-bold text-black border-b border-gray-300 pb-2">APRENDICES</li>
-                                     <li class="mt-2"><a href="{{ route('administrator.apprentice')}}" class="block text-black hover:bg-white p-2 rounded-lg ">Lista de Aprendices que inician etapa productiva</a></li>
-                                     <li class="mt-2"><a href="{{ route('administrator.Agregar-aprendiz')}}" class="block text-black hover:bg-white p-2 rounded-lg ">Agregar Aprendices</a></li>
-                                 </ul></li>
-                             <li class="mt-2"><a href="{{ route('administrator.instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructores</a></li>
+
+
                              <li class="mt-2"><a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Plantillas</a>
                                  <ul class="hidden ml-4 mt-2 bg-[#EEEEEE] p-2 rounded-lg">
                                      <li class="mt-2 font-bold text-black border-b border-gray-300 pb-2">MODALIDAD</li>
                                      <li class="mt-2"><a href="{{ route('administrator.template')}}"class="block text-black hover:bg-white p-2 rounded-lg">Pasantía</a></li>
                                      <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a></li>
-                                     <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Contrato de Aprendizaje</a>
-                                         <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg">
-                                             <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a></li>
-                                             <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a></li>
-                                         </ul>
-                                     </li>
+                                     <li>
+                                        <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Contrato de Aprendizaje</a>
+                                        <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
+                                            <li class="mt-2">
+                                                <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
+                                            </li>
+                                            <li class="mt-2">
+                                                <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                      <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a></li>
                                      <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a></li>
                                  </ul></li>
@@ -156,106 +156,85 @@
 
     {{-- HOME --}}
     <main class="flex-nowrap p-10 flex justify-center items-center bg-white">
-        <div class="grid grid-cols-3 gap-20 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-
-
-            <a href="{{ route('administrator.instructor') }}" class="m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/instructor.png') }}" alt="Instructores" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Instructores</span>
+        <div class="grid grid-cols-4 gap-20 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            <a href="{{ route('administrator.instructor') }}" class="m-2.5 py-4 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                <img src="{{ asset('img/administrador/instructor.png') }}" alt="Instructores" class="w-[160px] h-[150px] mb-0">
+                <span class="text-sm p-2">Instructores</span>
             </a>
+
 
             <!-- Botón de Aprendices -->
-            <div class="relative m-2.5 py-10 rounded-[15%] flex flex-col items-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <a href="javascript:void(0);" id="toggleMenu1" class="relative z-10 flex flex-col items-center text-center">
-                    <img src="{{ asset('img/aprendices.png') }}" alt="Aprendices" class="w-[80px] h-[80px] mb-2.5">
-                    <span class="text-sm p-8">Aprendices</span>
-                </a>
-                <ul id="menu1" class="hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-[#D3D3D3] p-4 rounded-lg shadow-lg z-20 w-[300px]">
-                    <li class="mt-2 font-bold text-black border-b border-gray-500 pb-2">APRENDICES</li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.apprentice') }}" class="block text-black hover:bg-white p-2 rounded-lg">Lista de Aprendices que inician etapa productiva</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.Agregar-aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Agregar Aprendices</a>
-                    </li>
-                </ul>
-            </div>
 
-          
+                <a href="{{ route('administrator.apprentice') }}" class="m-2.5 py-4 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                    <img src="{{ asset('img/administrador/aprendiz.png') }}" alt="Aprendices" class="w-[130px] h-[120px] mb-0">
+                    <span class="text-sm p-4">Aprendices</span>
+                </a>
 
             <a href="{{ route('administrator.graphic') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/grafica.png') }}" alt="Graficas" class="w-[80px] h-[80px] mb-2.5">
-                <span class="text-sm p-8">Graficas</span>
+                <img src="{{ asset('img/administrador/graficas.png') }}" alt="Graficas" class="w-[120px] h-[110px] mb-2.5">
+                <span class="text-sm p-4">Graficas</span>
             </a>
+<!-- Botón de Plantillas -->
+<div class="relative m-2.5 py-10 rounded-[15%] flex flex-col items-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+    <a href="javascript:void(0);" id="toggleMenu2" class="relative z-10 flex flex-col items-center text-center">
+        <img src="{{ asset('img/plantilla.png') }}" alt="Plantilla" class="w-[120px] h-[110px] mb-2.5">
+        <span class="text-sm p-4">Plantilla</span>
+    </a>
+    <ul id="menu2" class="hidden absolute top-12 left-1/2 transform -translate-x-1/2 bg-[#D3D3D3] p-4 rounded-lg shadow-lg z-20 w-[300px]">
+        <li class="mt-2 font-bold text-black border-b border-gray-500 pb-2">MODALIDAD</li>
+        <li class="mt-2">
+            <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Pasantía</a>
+        </li>
+        <li class="mt-2">
+            <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Contrato de Aprendizaje</a>
+            <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
+                <li class="mt-2">
+                    <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
+                </li>
+                <li class="mt-2">
+                    <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a>
+                </li>
+            </ul>
+        </li>
+        <li class="mt-2">
+            <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a>
+        </li>
+        <li class="mt-2">
+            <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a>
+        </li>
+    </ul>
+</div>
 
-            <!-- Botón de Plantillas -->
-            <div class="relative m-2.5 py-10 rounded-[15%] flex flex-col items-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <a href="javascript:void(0);" id="toggleMenu2" class="relative z-10 flex flex-col items-center text-center">
-                    <img src="{{ asset('img/plantilla.png') }}" alt="Plantilla" class="w-[80px] h-[80px] mb-2.5">
-                    <span class="text-sm p-8">Plantilla</span>
-                </a>
-                <ul id="menu2" class="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-[#D3D3D3] p-4 rounded-lg shadow-lg z-20 w-[300px]">
-                    <li class="mt-2 font-bold text-black border-b border-gray-500 pb-2">MODALIDAD</li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Pasantía</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Contrato de Aprendizaje</a>
-                        <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
-                            <li class="mt-2">
-                                <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a>
-                    </li>
-                </ul>
-            </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Evento para el toggle del menú 2
+    document.getElementById('toggleMenu2').addEventListener('click', function() {
+        console.log('toggleMenu2 clicked'); // Verificar si se activa el evento
+        var menu = document.getElementById('menu2');
+        menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
+    });
 
-
-        </div>
-    </main>
-    {{-- FIN HOME --}}
-    <script>
-        function toggleSublist(event) {
-            event.preventDefault();
-            const sublist = event.target.nextElementSibling;
-            if (sublist.classList.contains('hidden')) {
-                sublist.classList.remove('hidden');
-            } else {
-                sublist.classList.add('hidden');
-            }
+    // Función para alternar sublistas
+    function toggleSublist(event) {
+        event.preventDefault(); // Evitar el comportamiento por defecto
+        var sublist = event.target.nextElementSibling; // Obtener el siguiente elemento
+        if (sublist) {
+            sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
         }
-    </script>
-    <script>
-        document.getElementById('toggleMenu1').addEventListener('click', function() {
-            var menu = document.getElementById('menu1');
-            menu.classList.toggle('hidden');
-        });
+    }
 
-        document.getElementById('toggleMenu2').addEventListener('click', function() {
-            var menu = document.getElementById('menu2');
-            menu.classList.toggle('hidden');
-        });
+    // Registro del evento para la opción "Contrato de Aprendizaje"
+    var contratoLink = document.querySelector('a[onclick="toggleSublist(event)"]');
+    if (contratoLink) {
+        contratoLink.addEventListener('click', toggleSublist);
+    }
+});
 
-        function toggleSublist(event) {
-            event.preventDefault();
-            var sublist = event.target.nextElementSibling;
-            if (sublist) {
-                sublist.classList.toggle('hidden');
-            }
-        }
-    </script>
-    <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-</body>
-</html>
+</script>
+
+<script src="{{ asset('js/SuperAdmin.js') }}"></script>
+
+
