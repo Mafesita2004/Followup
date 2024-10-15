@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
-    <title>Etapa Seguimiento</title>
+    <title>Etapa Productiva</title>
     <style>
         /* Aquí se pueden agregar estilos personalizados si es necesario */
         #userMenu, #notifMenu {
@@ -43,7 +43,11 @@
     </header>
 
     <!-- Navbar -->
+<<<<<<< HEAD
     <nav class="bg-[#5eb319] h-16 px-2.5 py-1.5 flex justify-start items-center relative z-10">
+=======
+    <nav class="bg-[#00324d]  px-2.5 py-1.5 flex justify-start items-center relative z-10">
+>>>>>>> 8b342e0fa0dadd0d8240b1d2590730a953657e37
         <!-- Notification Button -->
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">

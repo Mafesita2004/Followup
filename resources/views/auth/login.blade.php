@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <title>Etapa Seguimiento</title>
+    <title>Etapa Productiva</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
 </head>
@@ -11,7 +11,7 @@
     <header>
         <div class="logo-container">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="logo">
-            <h1>Etapa Seguimiento</h1>
+            <h1>Etapa Productiva</h1>
         </div>
 
     </header>
@@ -19,7 +19,7 @@
     <main>
         <div class="content">
             <div class="welcome-text">
-                <h2>¡Bienvenidos a<br>Etapa de<br>Seguimiento!</h2>
+                <h2>¡Bienvenidos a<br>Etapa de<br>Productiva!</h2>
                 <p>Se enfoca en aprendices e instructores en etapa productiva.</p>
             </div>
             <img src="{{ asset('img/persona.png') }}" alt="Persona" class="persona-img">

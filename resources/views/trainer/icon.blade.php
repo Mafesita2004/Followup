@@ -21,7 +21,7 @@
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
             <div class="flex flex-col">
                 <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
-                <h2 class="text-sm m-0 text-[#009e00]">Seguimiento</h2>
+                <h2 class="text-sm m-0 text-[#009e00]">Productiva</h2>
             </div>
         </div>
         <div class="text-[8px] flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2">
@@ -45,10 +45,10 @@
                         <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
                     </li>
                 </ul>
             </div>
@@ -89,19 +89,18 @@
     </nav>
     <main class=" flex-nowrap p-10 flex justify-center items-center bg-white ">
 
-        <div class="grid grid-cols-3 bg-[#f0f0f0]  border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-
-            <a href="{{ route('apprentice') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/aprendiz.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
-                <span class="text-sm p-6 ">Aprendices</span>
+        <div class="grid grid-cols-3 bg-[#f0f0f0] border-2 border-[#2F3E4C] p-[72px] rounded-[20px] max-w-[100%] mx-auto shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            <a href="{{ route('apprentice') }}" class="m-0.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                <img src="{{ asset('img/trainer/aprendiz.jpg') }}" alt="Trainner" class="w-[150px] h-[150px] mb-2.5">
+                <span class="text-sm p-6">Aprendices</span>
             </a>
-            <a class=" m-1 py-5 rounded-[15%] flex flex-col items-center text-center p-2cursor-default">
-                {{-- <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5  "> --}}
-                <span class="text-sm p-6 "></span>
+            <a class="m-0 py-5 rounded-[15%] flex flex-col items-center text-center cursor-default">
+                {{-- <img src="{{ asset('img/Reportes Triner.jpeg') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5"> --}}
+                <span class="text-sm p-6"></span>
             </a>
-            <a href="{{ route('report') }}" class=" m-2.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
-                <img src="{{ asset('img/informe.png') }}" alt="Trainner" class="w-[90px] h-[80px] mb-2.5">
-                <span class="text-sm p-6 ">Reportes</span>
+            <a href="{{ route('report') }}" class="m-0.5 py-10 rounded-[15%] flex flex-col items-center text-center p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+                <img src="{{ asset('img/trainer/reportes.jpg') }}" alt="Trainner" class="w-[150px] h-[130px] mb-2.5">
+                <span class="text-sm p-2.5">Reportes</span>
             </a>
         </div>
     </main>
