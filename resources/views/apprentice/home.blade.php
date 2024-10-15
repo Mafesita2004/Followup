@@ -48,7 +48,7 @@
     </header>
 
     <!-- Navbar -->
-    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
+    <nav class="bg-[#00324d] h-14  px-2.5 py-1.5 flex justify-start items-center relative z-10">
         <!-- Notification Button -->
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -124,16 +124,16 @@
     </div>
 
     <!-- Timeline and Blog Section -->
-    <div class="flex flex-col md:flex-row w-full bg-gray-300 px-2 py-4 md:px-10 md:py-0 space-y-4 md:space-y-0 md:space-x-4">
+    <div class="flex flex-col md:flex-row w-full px-2 py-4 md:px-10 md:py-0 space-y-4 md:space-y-0 md:space-x-4">
         <!-- Timeline Section -->
         <div class="w-full md:flex-1">
-            <h3 class="text-xl font-bold mb-2 md:text-2xl">Línea Temporal (Etapa de seguimiento)</h3>
+            <h3 class="text-xl font-bold  bg-gray-300 mb-2 md:text-2xl">Línea Temporal (Etapa de seguimiento)</h3>
             <img src="{{ asset('img/lineatiempo.png') }}" alt="timeline" class="w-full h-60 md:h-80 object-cover">
         </div>
 
         <!-- Blog Section -->
-        <div class="w-full md:w-[25%] bg-gray-300 p-4 md:p-6">
-            <h4 class="text-center text-lg font-bold md:text-xl">Bitácoras</h4>
+        <div class="w-full md:w-[25%] p-4 md:p-6">
+            <h4 class="text-center text-lg font-bold  bg-gray-300 md:text-xl">Bitácoras</h4>
             <div class="w-60 h-60 mx-auto bg-center bg-cover" style="background-image: url('{{ asset('img/bitacora.png') }}')"></div>
         </div>
     </div>
