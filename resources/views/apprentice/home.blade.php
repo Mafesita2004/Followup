@@ -28,27 +28,26 @@
         }
     </style>
 </head>
-<body class="font-sans bg-white m-0 flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-white border-b border-b-[#e0e0e0]">
-        <div class="flex items-center">
+<body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
+    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
+        <div class="flex items-center justify-start">
+            <img class="w-[45px] h-[45px] m-0" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+            <h2 class="text-sm m-0 text-[#009e00] m-2">Centro de Comercio y Servicios</h2>
+
+        </div>
+        <div class="flex items-center ml-[10%]">
             <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
-            <div class="flex flex-col">
-                <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
-                <h2 class="text-sm m-0 text-[#009e00]">Productivo</h2>
-            </div>
-        </div>
-        <div class="text-center absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-lg m-0 text-[#009e00] font-bold">APRENDIZ</h1>
-        </div>
-        <div class="flex items-center">
-            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
-            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+                <h2 class="text-[12px] m-0 text-[#009e00]" >Etapa <br>Productiva</h2>
+
         </div>
     </header>
 
     <!-- Navbar -->
+<<<<<<< HEAD
+    <nav class="bg-[#5eb319] h-16 px-2.5 py-1.5 flex justify-start items-center relative z-10">
+=======
     <nav class="bg-[#00324d]  px-2.5 py-1.5 flex justify-start items-center relative z-10">
+>>>>>>> 8b342e0fa0dadd0d8240b1d2590730a953657e37
         <!-- Notification Button -->
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
@@ -78,7 +77,7 @@
 
         <!-- User Menu -->
         <div class="relative ml-auto flex items-center">
-            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
+            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2"></div>
             <button id="menuButton" class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -89,7 +88,7 @@
             <div id="userMenu" class="bg-gray-200 border border-gray-300 rounded-lg shadow-lg w-64 hidden">
                 <div class="p-4">
 
-                            <p class="text-sm mb-2 font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+                            <p class="text-sm mb-2 font-bold"></p>
                             <p class="text-sm">Aprendiz</p>
                             <p class="text-sm">Programa: ADSO</p>
                             <p class="text-sm">Ficha: 2711891</p>
@@ -124,16 +123,16 @@
     </div>
 
     <!-- Timeline and Blog Section -->
-    <div class="flex flex-col md:flex-row w-full bg-gray-300 px-2 py-4 md:px-10 md:py-0 space-y-4 md:space-y-0 md:space-x-4">
+    <div class="flex flex-col md:flex-row w-full px-2 p-[2%] py-4 md:px-10 md:py-0 space-y-4 md:space-y-0 md:space-x-4">
         <!-- Timeline Section -->
-        <div class="w-full md:flex-1">
-            <h3 class="text-xl font-bold mb-2 md:text-2xl">Línea Temporal (Etapa de seguimiento)</h3>
+        <div class="w-full md:flex-1 mt-[0.5%]">
+            <h3 class="text-xl font-bold  bg-gray-300 mb-2 md:text-2xl">Línea Temporal (Etapa de seguimiento)</h3>
             <img src="{{ asset('img/lineatiempo.png') }}" alt="timeline" class="w-full h-60 md:h-80 object-cover">
         </div>
 
         <!-- Blog Section -->
-        <div class="w-full md:w-[25%] bg-gray-300 p-4 md:p-6">
-            <h4 class="text-center text-lg font-bold md:text-xl">Bitácoras</h4>
+        <div class="w-full md:w-[25%] p-4 md:p-6 mt-[3%] ">
+            <h4 class="text-center text-lg font-bold  bg-gray-300 md:text-xl">Bitácoras</h4>
             <div class="w-60 h-60 mx-auto bg-center bg-cover" style="background-image: url('{{ asset('img/bitacora.png') }}')"></div>
         </div>
     </div>

@@ -33,6 +33,9 @@ header {
 .logo-sena {
     width: 80px;
     height: auto;
+     float: left;
+  margin-right: 10px;
+
 }
 
 h1 {
