@@ -146,20 +146,20 @@
                     <div class="flex justify-between items-center w-full">
                         <div>
                             <a href="{{ route('bitacora') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                                <img src="{{ asset('img/trainer/bitacoras.jpg') }}" alt="Bitacora" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-44 h-40 hover:border-green-600 object-cover">
+                                <img src="{{ asset('img/trainer/bitacoras.jpg') }}" alt="Bitacora" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[2px] border-black w-44 h-40 hover:border-green-600 object-cover">
                                 <h2 class="text-center font-weight:300">Bitacora</h2>
                             </a>
 
                         </div>
                         <div>
                         <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
-                            <img src="{{ asset('img/trainer/visita.jpg') }}" alt="Visita" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[3px] border-black w-44 h-40 hover:border-green-600 object-cover">
+                            <img src="{{ asset('img/trainer/visita.jpg') }}" alt="Visita" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[2px] border-black w-44 h-40 hover:border-green-600 object-cover">
                             <h2 class="text-center font-weight:300">Visita</h2>
                         </a>
 
                     </div>
                         <div>
-                            <select id="statusSelect" class="border border-gray-400 p-4 rounded-md w-48 bg-white">
+                            <select id="statusSelect" class="border-[1px] border-black p-4 rounded-md w-48 bg-white">
                                 <option selected disabled>Selecciona Opción</option>
                                 <option value="ACTIVO" data-color="green">ACTIVO</option>
                                 <option value="NOVEDAD" data-color="orange">NOVEDAD</option>
