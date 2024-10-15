@@ -28,10 +28,10 @@ class TrainerController extends Controller
     }
     //aprendiz icono
 
-    public function apprentice()
-    {
-        return view('trainer.apprentice');
-    }
+    // public function apprentice()
+    // {
+    //     return view('trainer.apprentice');
+    // }
      //icono perfil aprendiz
      public function perfilapre()
      {
