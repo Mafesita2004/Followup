@@ -46,8 +46,8 @@
                 </div>
             </div>
             <div class="relative ml-auto flex items-center pt-5">
-                <div class="bg-white w-72 rounded-full px-8 py-1.5 border-2 border-black text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
-                <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/user-icon.png') }}" alt="User Icon">
+
+                <img class="bg-white w-[45px] h-auto rounded-full -ml-8 border-2 border-black" src="{{ asset('img/administrador/mujer.png') }}" alt="User Icon">
                 <button id="menuButton" class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-5 h-5 ml-2 ">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -59,7 +59,7 @@
                         <div class="flex items-center mb-4">
                             <div>
                                 <p class="text-sm text-black font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                                <p class="text-sm mt-2 text-black">Super administrador</p>
+                           <p class="text-sm mt-2 text-black">Super administrador</p>
                             </div>
 
                             <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
@@ -84,9 +84,7 @@
             </div>
         </div>
         <!-- Texto "Super administrador" centrado, justo debajo de la barra de usuario -->
-        <div class="flex justify-end pr-20">
-            <p class="user-status">Super administrador</p>
-        </div>
+
     </header>
 
     <nav class="bg-[#009e00] px-2.5 py-1.5 flex justify-start items-center h-[40px] relative z-10">
