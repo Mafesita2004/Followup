@@ -62,7 +62,6 @@
                            <p class="text-sm mt-2 text-black">Super administrador</p>
                             </div>
 
-                            <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                         </div>
                         <ul>
                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
@@ -87,7 +86,7 @@
 
     </header>
 
-    <nav class="bg-[#009e00] px-2.5 py-1.5 flex justify-start items-center h-[40px] relative z-10">
+    <nav class="bg-[#009e00] px-2.5 py-1.5 flex justify-start items-center h-14 relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
             <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
