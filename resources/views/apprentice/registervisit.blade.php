@@ -1,111 +1,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet"> 
     <title>Etapa Productiva</title>
     <style>
-        /* Aquí se pueden agregar estilos personalizados si es necesario */
-        #userMenu, #notifMenu {
-            display: none;
-            position: absolute;
-            z-index: 20;
-        }
-
-        #userMenu.show, #notifMenu.show {
-            display: block;
-        }
-
         #userMenu {
-            right: 0;
             top: 100%;
+            margin-top: 0.5rem;
         }
-
-        #notifMenu {
-            left: 0;
-            top: 100%;
+        .user-status {
+            text-align: center; /* Centrar el texto */
+            color: #009e00; /* Color verde */
+            margin-top: 5px; /* Espacio superior para alineación */
+            font-size: 12px; /* Ajustar el tamaño de fuente */
+        }
+        .vis-item.completed {
+            background-color: green;
+            color: white;
+        }
+        .vis-item {
+            background-color: #3498db;
+            color: white;
+        }
+        .vis-item.vis-selected {
+            background-color: #2ecc71;
+        }
+        .card {
+            width: 300px; /* Ajusta el ancho según tus necesidades */
+            height: 300px; /* Ajusta la altura según tus necesidades */
+            position: relative; /* Necesario para posicionar el texto en el centro */
+        }
+        #percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem; /* Ajusta el tamaño de la fuente según tus necesidades */
+            font-weight: bold;
+            color: black; /* Color del porcentaje */
         }
     </style>
 </head>
-<body class="font-sans bg-white m-0 flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="bg-white text-[#009e00] px-5 py-2.5 flex justify-between items-center border-t-[5px] border-white border-b border-b-[#e0e0e0]">
-        <div class="flex items-center">
-            <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
-            <div class="flex flex-col">
-                <h2 class="text-sm m-0 text-[#009e00]">Etapa</h2>
-                <h2 class="text-sm m-0 text-[#009e00]">Productivo</h2>
-            </div>
-        </div>
-        <div class="text-center absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-lg m-0 text-[#009e00] font-bold">APRENDIZ</h1>
-        </div>
-        <div class="flex items-center">
-            <h2 class="text-sm m-0 text-[#009e00] mr-5">Centro de Comercio y Servicios</h2>
-            <img class="w-[45px] h-[45px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-        </div>
-    </header>
+<body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
+  <header class="bg-white text-[#009e00] px-5 py-2.5 flex flex-col items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
 
-    <!-- Navbar -->
-    <nav class="bg-[#00324d] px-2.5 py-1.5 flex justify-start items-center relative z-10">
-        <!-- Notification Button -->
+        <div class="flex justify-between w-full">
+            <div class="flex items-center">
+                <!-- Logo de SENA en el lado izquierdo -->
+                <img class="w-[70px] h-[70px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo ">
+
+                <!-- Espaciado entre los dos bloques -->
+                <div class="flex-grow m-2"></div>
+
+                <!-- Logo de Etapa Productiva y texto "Centro de Comercio y Servicios" en el lado derecho -->
+                <div class="text-left">
+                    <!-- Logo de Etapa Seguimiento -->
+                    <a href="{{ route('apprentice') }}" class="flex items-center">
+                        <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
+                        <div class="flex flex-col text-left">
+                            <h2 class="text-[12px] m-0 text-[#009e00]">Etapa</h2>
+                            <h2 class="text-[12px] m-0 text-[#009e00]">Productiva</h2>
+                        </div>
+                    </a>
+
+                    <!-- Texto "Centro de Comercio y Servicios" debajo del logo y el texto de Etapa Productiva -->
+                    <h2 class="text-sm mt-2 text-[#009e00]">Centro de Comercio y Servicios</h2>
+                </div>
+            </div>
+            <div class="relative ml-auto flex items-center">
+                <!-- Contenedor para la imagen y el ícono de los tres puntos -->
+                <div class="relative">
+                    <!-- Imagen de usuario -->
+                    <p class="text-sm font-bold mr-[16px] bg-[#f5f4f4] p-1 rounded-lg  z-20">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+
+                    <!-- Botón de los tres puntos encima de la imagen -->
+                    <button id="menuButton" class="absolute top-[-4px] right-0 bg-transparent p-1 mr-[-15%]">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm0 5.25a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm0 5.25a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" />
+                        </svg>
+                    </button>
+                </div>
+                 {{-- Menu --}}
+                 <div id="userMenu" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
+                     <div class="p-4">
+                         <div class="flex items-center mb-4">
+                             <div>
+                                 <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+                                 <p class="text-sm mt-2">Aprendiz</p>
+                             </div>
+
+
+                         </div>
+                         <ul>
+                             <li class="mt-2"><a href="{{ route('apprentice.profile') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+
+                             <li class="mt-2"><a href="{{ route('apprentice.settings') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                         </ul>
+                         <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
+                             @csrf
+                             <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                         </form>
+                 </div>
+             </div>
+        </header>
+    <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-start items-center relative z-10">
         <button id="notifButton" class="relative">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span>
+            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
         </button>
-
-        <!-- Notification Dropdown -->
-        <div id="notifMenu" class="absolute bg-white border border-gray-300 rounded-lg shadow-lg w-64 hidden z-20">
+    {{-- FIN Barra Azul --}}
+        <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
             <div class="p-4">
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('apprentice.visit') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('administrator.notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('administrator.notificaciones') }}"class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
                     </li>
                 </ul>
             </div>
         </div>
-
-        <!-- Central Button -->
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Inicio</div>
-
-        <!-- User Menu -->
-        <div class="relative ml-auto flex items-center">
-            <div class="bg-white w-72 rounded-full px-8 py-1.5 text-sm text-black mr-2">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</div>
-            <button id="menuButton" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5 ml-2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-            </button>
-
-            <!-- User Dropdown -->
-            <div id="userMenu" class="bg-gray-200 border border-gray-300 rounded-lg shadow-lg w-64 hidden">
-                <div class="p-4">
-
-                            <p class="text-sm mb-2 font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                            <p class="text-sm">Aprendiz</p>
-                            <p class="text-sm">Programa: ADSO</p>
-                            <p class="text-sm">Ficha: 2711891</p>
-
-                    </div>
-                    <ul>
-                        <li><a href="{{ route('apprentice.profile') }}" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1">Ver perfil</a></li>
-                        <li><a href="{{ route('apprentice.index') }}" class="block text-black hover:bg-white p-4 rounded-lg">Inicio</a></li>
-                        <li><a href="{{ route('apprentice.calendar') }}" class="block text-black hover:bg-white p-4 rounded-lg">Calendario</a></li>
-                    </ul>
-                    <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
-                        @csrf
-                        <button type="submit" class="block text-center m-4 text-green-600 font-bold bg-white border hover:bg-green-600 hover:text-white border-green-600 rounded-lg py-1 w-56">Cerrar sesión</button>
-                    </form>
-                </div>
-            </div>
+        <div class="w-full flex justify-center">
+            <ul class="horizontal-list flex space-x-4 justify-center" >
+                <li>
+                    <a href="{{ route('apprentice.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('apprentice.calendar') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                        Calendario
+                    </a>
+                </li>
+            </ul>
         </div>
+        
     </nav>
     {{-- <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
@@ -113,11 +151,11 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet"> --}}
     <style>
-<<<<<<< HEAD
-      header{
-=======
+
+
+
       /* header{
->>>>>>> 211ed841be84a7c08e156e97bb9635c5db7ab1df
+
             background: none;
             background-color: transparent;
         }
@@ -670,10 +708,10 @@ margin-right: 10px;
              </div>
         </div>
     </div> --}}
-    <div class="calendar-container">
-        <h3>Calendario (Agenda)</h3>
-        {{-- <a href="{{ route('apprentice.index') }}" class="back-button">&#60; </a> --}}
-
+    <div class="w-full flex justify-between items-center mt-6">
+        <a href="{{ route('apprentice.home') }}" class="ml-4">
+            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
+        </a>
     </div>
     <div id="calendar"></div>
 
@@ -740,5 +778,33 @@ margin-right: 10px;
            }
         }
       </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Evento para el toggle del menú 2
+          document.getElementById('toggleMenu2').addEventListener('click', function() {
+              console.log('toggleMenu2 clicked'); // Verificar si se activa el evento
+              var menu = document.getElementById('menu2');
+              menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
+          });
+    
+          // Función para alternar sublistas
+          function toggleSublist(event) {
+              event.preventDefault(); // Evitar el comportamiento por defecto
+              var sublist = event.target.nextElementSibling; // Obtener el siguiente elemento
+              if (sublist) {
+                  sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
+              }
+          }
+    
+          // Registro del evento para todos los enlaces que necesitan alternar un submenu
+          document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
+              link.addEventListener('click', toggleSublist);
+          });
+      });
+      </script>
+    
+    
+    <script src="{{ asset('js/SuperAdmin.js') }}"></script>
+
 </body>
 </html>

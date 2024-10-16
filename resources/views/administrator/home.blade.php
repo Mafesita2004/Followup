@@ -21,7 +21,8 @@
     </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
-    <header class="bg-white text-[#009e00] px-5 py-2.5 flex flex-col items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0']">
+  <header class="bg-white text-[#009e00] px-5 py-2.5 flex flex-col items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
+
         <div class="flex justify-between w-full">
             <div class="flex items-center">
                 <!-- Logo de SENA en el lado izquierdo -->
@@ -79,10 +80,9 @@
                                  <ul class="hidden ml-4 mt-2 bg-[#EEEEEE] p-2 rounded-lg">
                                      <li class="mt-2 font-bold text-black border-b border-gray-300 pb-2">MODALIDAD</li>
                                      <li class="mt-2"><a href="{{ route('administrator.template')}}"class="block text-black hover:bg-white p-2 rounded-lg">Pasantía</a></li>
-                                     <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a></li>
                                      <li>
-                                        <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Contrato de Aprendizaje</a>
-                                        <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
+                                        <a href="javascript:void(0)" class="block text-black hover:bg-white p-2 rounded-lg" id="contratoAprendizaje">Contrato de Aprendizaje</a>
+                                        <ul id="sublistContrato" class="ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px] hidden">
                                             <li class="mt-2">
                                                 <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
                                             </li>
@@ -91,6 +91,7 @@
                                             </li>
                                         </ul>
                                     </li>
+                                     <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a></li>
                                      <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a></li>
                                      <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a></li>
                                  </ul></li>
@@ -114,13 +115,13 @@
                 <h2 class="text-sm font-bold">Notificaciones</h2>
                 <ul>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                        <a href="{{ route('administrator.notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                        <a href="{{ route('administrator.notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                        <a href="{{ route('administrator.notificaciones') }}"class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
                     </li>
                 </ul>
             </div>
@@ -208,33 +209,31 @@
     </ul>
 </div>
 
+
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Evento para el toggle del menú 2
-    document.getElementById('toggleMenu2').addEventListener('click', function() {
-        console.log('toggleMenu2 clicked'); // Verificar si se activa el evento
-        var menu = document.getElementById('menu2');
-        menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+      // Evento para el toggle del menú 2
+      document.getElementById('toggleMenu2').addEventListener('click', function() {
+          console.log('toggleMenu2 clicked'); // Verificar si se activa el evento
+          var menu = document.getElementById('menu2');
+          menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
+      });
 
-    // Función para alternar sublistas
-    function toggleSublist(event) {
-        event.preventDefault(); // Evitar el comportamiento por defecto
-        var sublist = event.target.nextElementSibling; // Obtener el siguiente elemento
-        if (sublist) {
-            sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
-        }
-    }
+      // Función para alternar sublistas
+      function toggleSublist(event) {
+          event.preventDefault(); // Evitar el comportamiento por defecto
+          var sublist = event.target.nextElementSibling; // Obtener el siguiente elemento
+          if (sublist) {
+              sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
+          }
+      }
 
-    // Registro del evento para la opción "Contrato de Aprendizaje"
-    var contratoLink = document.querySelector('a[onclick="toggleSublist(event)"]');
-    if (contratoLink) {
-        contratoLink.addEventListener('click', toggleSublist);
-    }
-});
+      // Registro del evento para todos los enlaces que necesitan alternar un submenu
+      document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
+          link.addEventListener('click', toggleSublist);
+      });
+  });
+  </script>
 
-</script>
 
 <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-
-

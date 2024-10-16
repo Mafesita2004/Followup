@@ -146,105 +146,65 @@
         </div>
         
     </nav>
-    <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('apprentice.home') }}" class="ml-4">
-            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-        </a>
-    </div>
-    <div class="flex justify-center mt-6">
-        <main class="bg-white m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <div class="text-center mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
-                    <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
+        {{-- FIN Menu --}}
+
+        <div class="w-full flex justify-between items-center mt-6">
+            <a href="{{ route('apprentice.home') }}" class="ml-4">
+                <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
+            </a>
+        </div>
+
+        <div class="flex justify-center">
+            <main class="bg-white m-4 p-6 rounded-lg shadow-lg border border-[#e0e0e0] w-2/3">
+                <h1 class="section-header">Configuración</h1>
+
+                <!-- Sección de Cambio de Contraseña -->
+                <div class="settings-card">
+                    <h2 class="text-lg font-bold mb-4">Cambio de Contraseña</h2>
+                    <form action="#" method="#">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="currentPassword" class="block text-sm font-medium text-gray-700">Contraseña Actual</label>
+                            <input type="password" id="currentPassword" name="currentPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="newPassword" class="block text-sm font-medium text-gray-700">Nueva Contraseña</label>
+                            <input type="password" id="newPassword" name="newPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar Nueva Contraseña</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+                        </div>
+                        <button type="submit" class="bg-[#009e00] text-white px-4 py-2 rounded-md hover:bg-[#37a837]">Actualizar Contraseña</button>
+                    </form>
                 </div>
 
-                <h3 class="font-bold mb-4 mt-6">Datos básicos</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Identificacion:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Identificacion }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Programa:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Ficha:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Ficha }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Telefono }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Correo }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Inicio de Contrato:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->InicioContrato }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fin de Contrato:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->FinContrato }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nit. Empresa:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Nit_Empresa }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Razon social:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Razon_Social }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Direccion:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Direccion }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono de Empresa:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Telefono_Empresa }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombre de Instructor:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Nombre_Instructor }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo Instructor:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Correo_Instructor }}</p>
-                    </div>
+                <!-- Sección de Configuración General -->
+                <div class="settings-card">
+                    <h2 class="text-lg font-bold mb-4">Configuración General</h2>
+                    <form action="#" method="#">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="siteName" class="block text-sm font-medium text-gray-700">Nombre del Sitio</label>
+                            <input type="text" id="siteName" name="siteName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" value="" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="timezone" class="block text-sm font-medium text-gray-700">Zona Horaria</label>
+                            <select id="timezone" name="timezone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+                                <!-- Opciones de zona horaria -->
+                                <option value="America/Bogota">Bogotá</option>
+                                <!-- Añadir más opciones según sea necesario -->
+                            </select>
+                        </div>
+                        <a href="{{ route('apprentice.home') }}" type="submit" class="bg-[#009e00] text-white px-4 py-2 rounded-md hover:bg-[#37a837]">Guardar Cambios</a>
+                    </form>
+                </div>
+            </main>
+        </div>
 
-            </div>
-        </main>
-    </div>
+    <script src="{{ asset('js/Administrator.js') }}"></script>
+
     <script>
-        document.getElementById('menuButton').addEventListener('click', function() {
-            document.getElementById('userMenu').classList.toggle('show');
-        });
-
-        document.getElementById('notifButton').addEventListener('click', function() {
-            document.getElementById('notifMenu').classList.toggle('show');
-        });
-
-        // Close dropdowns when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.closest('#menuButton') && !event.target.closest('#notifButton')) {
-                document.getElementById('userMenu').classList.remove('show');
-                document.getElementById('notifMenu').classList.remove('show');
-            }
-        };
-    </script>
-     <script>
         document.addEventListener('DOMContentLoaded', function() {
           // Evento para el toggle del menú 2
           document.getElementById('toggleMenu2').addEventListener('click', function() {
@@ -271,6 +231,8 @@
     
     
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
+
+
 
 </body>
 </html>
