@@ -33,6 +33,10 @@ class ApprenticeController extends Controller
     {
         return view('apprentice.profile');
     }
+    public function settings()
+    {
+        return view('apprentice.settings');
+    }
 
 
     /**
