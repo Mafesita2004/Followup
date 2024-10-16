@@ -126,27 +126,7 @@
                 </ul>
             </div>
         </div>
-        <div class="w-full flex justify-center">
-            <ul class="horizontal-list flex space-x-4 justify-center" >
-                <li>
-                    <a href="{{ route('administrator.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                        Inicio
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('administrator.apprentice') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                        Aprendices
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('administrator.instructor') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                        Instructores
-                    </a>
-                </li>
 
-
-            </ul>
-        </div>
 
 
 
@@ -195,9 +175,12 @@
                 <li class="mt-2">
                     <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
                 </li>
-                <li class="mt-2">
-                    <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a>
-                </li>
+                <ul>
+                    <li class="mt-2">
+                        <button id="uploadButton" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</button>
+                        <input type="file" id="fileUpload" class="hidden" name="fileUpload" accept=".txt,.doc,.docx,.pdf" />
+                    </li>
+                </ul>
             </ul>
         </li>
         <li class="mt-2">
@@ -211,28 +194,50 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Evento para el toggle del menú 2
-      document.getElementById('toggleMenu2').addEventListener('click', function() {
-          console.log('toggleMenu2 clicked'); // Verificar si se activa el evento
-          var menu = document.getElementById('menu2');
-          menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
-      });
+   document.addEventListener('DOMContentLoaded', function() {
+    var menu = document.getElementById('menu2');
+    var toggleButton = document.getElementById('toggleMenu2');
 
-      // Función para alternar sublistas
-      function toggleSublist(event) {
-          event.preventDefault(); // Evitar el comportamiento por defecto
-          var sublist = event.target.nextElementSibling; // Obtener el siguiente elemento
-          if (sublist) {
-              sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
-          }
-      }
+    // Evento para el toggle del menú 2
+    toggleButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Evitar que el clic en el botón cierre el menú
+        menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
+    });
 
-      // Registro del evento para todos los enlaces que necesitan alternar un submenu
-      document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
-          link.addEventListener('click', toggleSublist);
-      });
-  });
+    // Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+            menu.classList.add('hidden'); // Cierra el menú
+        }
+    });
+
+    // Función para alternar sublistas
+    function toggleSublist(event) {
+        event.preventDefault(); // Evitar el comportamiento por defecto
+        var sublist = event.target.nextElementSibling; // Obtener el siguiente elemento
+        if (sublist) {
+            sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
+        }
+    }
+
+    // Registro del evento para todos los enlaces que necesitan alternar un submenu
+    document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
+        link.addEventListener('click', toggleSublist);
+    });
+
+    // Al hacer clic en el botón, activa el input file
+    document.getElementById('uploadButton').addEventListener('click', function() {
+        document.getElementById('fileUpload').click();
+    });
+
+    // Puedes manejar el evento change para hacer algo cuando se seleccione un archivo
+    document.getElementById('fileUpload').addEventListener('change', function() {
+        const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+        alert('File selected: ' + fileName);
+    });
+});
+
+
   </script>
 
 

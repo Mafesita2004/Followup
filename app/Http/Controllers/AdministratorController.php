@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
 {
-   
+
     public function settings(){
         return view('administrator.settings');
     }
@@ -41,7 +41,7 @@ class AdministratorController extends Controller
         return view('administrator.Administrator-perfil');
     }
 
-    
+
     public function perfilAprendiz(){
         return view('administrator.Apprentice-perfil');
     }
@@ -54,9 +54,17 @@ class AdministratorController extends Controller
     {
         return view('administrator.Agregar-aprendiz');
     }
-    public function AñadirAprendiz()
+    public function AgregarInstructor()
     {
-        return view('administrator.Añadir-aprendiz');
+        return view('administrator.Agregar-instructor');
+    }
+    public function MensajeAprendiz()
+    {
+        return view('administrator.Mensaje-aprendiz');
+    }
+    public function MensajeInstructor()
+    {
+        return view('administrator.Mensaje-instructor');
     }
     public function ReporteAprendiz()
     {
@@ -66,8 +74,8 @@ class AdministratorController extends Controller
     {
         return view('administrator.email');
     }
-    
 
-    
+
+
 }
 ?>

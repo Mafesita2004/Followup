@@ -239,7 +239,8 @@
         <div class="w-full flex justify-center">
             <ul class="horizontal-list flex space-x-4 justify-center" >
                 <li>
-                    <a href="{{ route('apprentice.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('apprentice.home') }}" class="block text-white text-center px-4 py-2 rounded-lg  hover:bg-green-700 transition font-bold
+                              {{ request()->routeIs('apprentice.home') ? 'bg-green-600' : 'hover:bg-green-600' }}">
                         Inicio
                     </a>
                 </li>
@@ -250,12 +251,13 @@
                 </li>
             </ul>
         </div>
-        
+
     </nav>
         {{-- FIN Menu --}}
 
     <!-- Trainer Container -->
-    <div class="w-full max-w-screen-lg mx-auto p-3 bg-gray-100 rounded-lg shadow flex flex-col mt-[1%] md:mx-4">
+ <div class="flex flex-col md:flex-row w-full px-2 p-[2%] py-4 md:px-10 md:py-0 space-y-4 md:space-y-0 md:space-x-4">
+    <div class="w-full max-w-screen-lg mx-auto p-3 bg-gray-100 rounded-lg shadow flex flex-col mt-[1%] ">
         <h2 class="text-lg font-bold">Instructor Asignado</h2>
         <ul class="mt-7 space-y-2 md:space-y-4 text-sm">
             <li><span class="font-semibold">Nombre:</span> Mariany Dorado</li>
@@ -266,22 +268,21 @@
             <hr class="border-white">
         </ul>
     </div>
-
-    <!-- Timeline and Blog Section -->
-    <div class="flex flex-col md:flex-row w-full px-2 p-[2%] py-4 md:px-10 md:py-0 space-y-4 md:space-y-0 md:space-x-4">
+     <!-- Blog Section -->
+     <div class="card flex flex-col p-3 mb-1 bg-gray-100 rounded-lg shadow w-full md:w-[25%] md:p-6 mt-[0.5%]">
+        <h4 class="text-center text-lg font-bold mb-0">Bitácoras</h4> <!-- Añadido mb-2 para margen inferior -->
+        <div class="w-60 h-60 mx-auto flex justify-center items-center"> <!-- Añadido items-center para centrar verticalmente -->
+            <canvas id="myChart" class="w-full h-full"></canvas> <!-- Añadido w-full h-full para que el canvas ocupe todo el contenedor -->
+        </div>
+    </div>
+</div>
         <!-- Timeline Section -->
-        <div class="w-full md:flex-1 mt-[0.5%] mx-auto card flex p-3 bg-white rounded-lg shadow">
-            <h3 class="text-lg font-bold mb-2">Línea Temporal (Etapa de seguimiento)</h3>
-            <div id="timeline" class="w-full h-60 md:h-80 object-cover"></div>
+        <div class="w-full md:flex-1 mt-[0.5%] bg-gray-100 rounded-lg shadow mx-auto tarjeta flex flex-col items-center p-8 ">
+            <h3 class="text-center text-lg font-bold mb-0">Línea Temporal (Etapa de seguimiento)</h3>
+            <div id="timeline" class="w-full h-60 md:h-80 object-cover "></div>
         </div>
 
-        <!-- Blog Section -->
-        <div class="card flex flex-col p-3 mb-1 bg-white rounded-lg shadow w-full md:w-[25%] md:p-6 mt-[0.5%]">
-            <h4 class="text-center text-lg font-bold mb-2">Bitácoras</h4> <!-- Añadido mb-2 para margen inferior -->
-            <div class="w-60 h-60 mx-auto flex justify-center items-center"> <!-- Añadido items-center para centrar verticalmente -->
-                <canvas id="myChart" class="w-full h-full"></canvas> <!-- Añadido w-full h-full para que el canvas ocupe todo el contenedor -->
-            </div>
-        </div>
+
 
     <!-- Scripts for Dropdowns -->
     <script>
@@ -309,7 +310,7 @@
               var menu = document.getElementById('menu2');
               menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
           });
-    
+
           // Función para alternar sublistas
           function toggleSublist(event) {
               event.preventDefault(); // Evitar el comportamiento por defecto
@@ -318,15 +319,15 @@
                   sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
               }
           }
-    
+
           // Registro del evento para todos los enlaces que necesitan alternar un submenu
           document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
               link.addEventListener('click', toggleSublist);
           });
       });
       </script>
-    
-    
+
+
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
     <script>
         // Función para obtener actividades completadas
@@ -384,43 +385,6 @@
             return JSON.parse(localStorage.getItem('completedActivities')) || [];
         }
 
-        // Crear elementos para la línea de tiempo
-        var items = new vis.DataSet([
-            { id: 1, content: 'Asignación', start: '2024-12-29' },
-            { id: 2, content: 'Inicio Etapa Productiva', start: '2025-01-01' },
-            { id: 3, content: 'Primera Visita', start: '2025-02-01' },
-            { id: 4, content: 'Segunda Visita', start: '2025-04-01' },
-            { id: 5, content: 'Tercera Visita', start: '2025-06-01' },
-            { id: 6, content: 'Finalización Etapa Productiva', start: '2025-07-01' }
-        ]);
-
-        // Opciones de la línea de tiempo
-        var options = {
-            width: '100%',
-            height: '100%', // Ajusta la altura automáticamente
-            start: new Date(),
-            end: '2024-08-01',
-            showCurrentTime: true,  // Mostrar la línea del tiempo actual
-            zoomMin: 1000 * 60 * 60 * 24 * 30,  // Zoom mínimo de 1 mes
-            zoomMax: 1000 * 60 * 60 * 24 * 365,  // Zoom máximo de 1 año
-            orientation: { axis: 'top' }
-        };
-
-        // Crear el contenedor de la línea de tiempo
-        var container = document.getElementById('timeline');
-        var timeline = new vis.Timeline(container, items, options);
-
-        // Función para actualizar el estado de los eventos en la línea de tiempo
-        function updateTimeline() {
-            let completedActivities = getCompletedActivities();
-            completedActivities.forEach(date => {
-                let item = items.get({ filter: function (item) { return item.start === date; } });
-                if (item.length > 0) {
-                    items.update({ id: item[0].id, className: 'completed' });
-        }
-    })};
-
-
         // Crear el contenedor de la línea de tiempo
         var container = document.getElementById('timeline');
         var timeline = new vis.Timeline(container, items, options);
@@ -439,7 +403,7 @@
         // Actualizar la línea de tiempo al cargar la página
         updateTimeline();
     </script>
-    
+
     <script>
         //BITACORAS:  Datos del checklist (ejemplo)
         const totalItems = 8; // Total de actividades
