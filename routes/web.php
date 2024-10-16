@@ -119,7 +119,9 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Apprentice-perfil', [AdministratorController::class, 'perfilAprendiz'])->name('administrator.Apprentice-perfil');
     Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
     Route::get('/administrator/Agregar-aprendiz', [AdministratorController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
-    Route::get('/administrator/Añadir-aprendiz', [AdministratorController::class, 'AñadirAprendiz'])->name('administrator.Añadir-aprendiz');
+    Route::get('/administrator/Agregar-instructor', [AdministratorController::class, 'AgregarInstructor'])->name('administrator.Agregar-instructor');
+    Route::get('/administrator/Mensaje-aprendiz', [AdministratorController::class, 'MensajeAprendiz'])->name('administrator.Mensaje-aprendiz');
+    Route::get('/administrator/Mensaje-instructor', [AdministratorController::class, 'MensajeInstructor'])->name('administrator.Mensaje-instructor');
     Route::get('/administrator/notificaciones', [AdministratorController::class, 'Notificaciones'])->name('administrator.notificaciones');
     Route::get('/administrator/redactar', [AdministratorController::class, 'redactar'])->name('administrator.redactar');
     Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');

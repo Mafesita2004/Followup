@@ -185,12 +185,13 @@
 
 
     <div class="flex justify-center mt-6">
-        <main class="bg-white m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
+        <main class="bg-gray-100 m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
             <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="flex justify-center items-center">
+                    <img src="{{ asset('img/administrador/aprendiz_icono.png') }}" alt="User" class="w-40 h-40 mb-">
+                </div>
+
                 <div class="text-center mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
                     <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
                 </div>
 
@@ -199,19 +200,19 @@
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Tipo de Modalidad:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha Inicio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Fecha Final:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Proceso:</label>
-                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                      </div>
                      <img class="Linea-Tiempo" src="{{ asset('administrator/linea-tiempo.png') }}" alt="linea-tiempo">
                 </div>
@@ -220,30 +221,30 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->name }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->last_name }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->email }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->email }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Cuenta  SENA:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->sena_account }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->sena_account }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->department }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->department }}</p>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
                     </div>
                     <label class="block text-sm font-medium text-gray-700">Nivel academico:</label>
-                    <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->municipality }}</p>
+                    <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
                 </div>
 
 
@@ -252,8 +253,8 @@
 
 
                 <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('administrator.home') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>
-                    <a href="{{ route('administrator.apprentice') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <a href="{{ route('administrator.home') }}" class="bg-[#009e00] hover:bg-[#37a837] text-white py-2 px-4 rounded">Actualizar</a>
+                    <a href="{{ route('administrator.apprentice') }}" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">Cancelar</a>
                 </div>
             </div>
         </main>
