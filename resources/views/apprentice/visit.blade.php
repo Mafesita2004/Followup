@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <title>Etapa Productiva</title>
     <style>
         #userMenu {
@@ -143,9 +143,9 @@
                 </li>
             </ul>
         </div>
-        
+
     </nav>
-    
+
     {{-- <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Seguimiento</title>
@@ -456,7 +456,7 @@ color: #000000;
         }
         .visit-container{
             display: flex; /* Para aplicar el modelo de caja flexible */
-    
+
     background-color: #f7fafc; /* bg-gray-100 en Tailwind */
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* shadow en Tailwind */
             box-sizing: border-box;
@@ -703,6 +703,140 @@ border: 1px solid #000000;
            }
         }
          </script>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+           const currentMonthSpan = document.getElementById('currentMonth');
+           const prevMonthButton = document.getElementById('prevMonth');
+           const nextMonthButton = document.getElementById('nextMonth');
+           const calendarDays = document.getElementById('calendarDays');
+           const eventModal = document.getElementById("eventModal");
+           const addEventButton = document.getElementById("addEvent");
+           const cancelEventButton = document.getElementById("cancelEvent");
+           const eventForm = document.getElementById("eventForm");
+           const eventIdInput = document.getElementById("eventId");
+           const modalTitle = document.getElementById("modalTitle");
+
+           let currentMonth = new Date().getMonth();
+           let currentYear = new Date().getFullYear();
+           let events = JSON.parse(localStorage.getItem('events')) || [];
+
+           const months = [
+               'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+               'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+           ];
+
+           function daysInMonth(month, year) {
+               return new Date(year, month + 1, 0).getDate();
+           }
+
+           function firstDayOfMonth(month, year) {
+               return new Date(year, month, 1).getDay();
+           }
+
+           function renderCalendar() {
+               calendarDays.innerHTML = '';
+               currentMonthSpan.textContent = `${months[currentMonth]} ${currentYear}`;
+
+               const totalDays = daysInMonth(currentMonth, currentYear);
+               const startDay = firstDayOfMonth(currentMonth, currentYear);
+
+               for (let i = 0; i < startDay; i++) {
+                   const emptyCell = document.createElement('div');
+                   calendarDays.appendChild(emptyCell);
+               }
+
+               for (let day = 1; day <= totalDays; day++) {
+                   const dayCell = document.createElement('div');
+                   dayCell.classList.add('day-cell'); // Agregar una clase para estilos adicionales si es necesario
+                   dayCell.textContent = day;
+
+                   const dayEvents = events.filter(event => {
+                       const eventDate = new Date(event.date);
+                       return eventDate.getDate() === day && eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
+                   });
+
+                   dayEvents.forEach(event => {
+                       const eventDiv = document.createElement('div');
+                       eventDiv.classList.add('event');
+                       eventDiv.textContent = event.title;
+                       eventDiv.style.cursor = 'pointer';
+                       eventDiv.classList.add('bg-blue-200', 'rounded', 'mt-1', 'p-1'); // Estilos opcionales
+                       eventDiv.addEventListener("click", () => {
+                           // Redirigir a la página de detalles del evento con el ID en la URL
+                           window.location.href = `event-details.html?id=${event.id}`;
+                       });
+                       dayCell.appendChild(eventDiv);
+                   });
+
+                   calendarDays.appendChild(dayCell);
+               }
+           }
+
+           prevMonthButton.addEventListener('click', function() {
+               currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+               if (currentMonth === 11) currentYear--;
+               renderCalendar();
+           });
+
+           nextMonthButton.addEventListener('click', function() {
+               currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+               if (currentMonth === 0) currentYear++;
+               renderCalendar();
+           });
+
+           addEventButton.addEventListener("click", function() {
+               modalTitle.textContent = "Agregar Evento";
+               eventIdInput.value = ''; // Limpiar ID
+               eventForm.reset(); // Limpiar el formulario
+               eventModal.classList.remove("hidden");
+           });
+
+           cancelEventButton.addEventListener("click", function() {
+               eventModal.classList.add("hidden");
+           });
+
+           eventForm.addEventListener("submit", function(e) {
+               e.preventDefault();
+               const eventDate = document.getElementById("eventDate").value;
+               const eventTitle = document.getElementById("eventTitle").value;
+               const eventDescription = document.getElementById("eventDescription").value;
+
+               if (eventIdInput.value) {
+                   // Actualizar evento
+                   const eventIndex = events.findIndex(event => event.id === eventIdInput.value);
+                   if (eventIndex !== -1) {
+                       events[eventIndex] = { id: eventIdInput.value, date: eventDate, title: eventTitle, description: eventDescription };
+                   }
+               } else {
+                   // Agregar nuevo evento
+                   const newEvent = {
+                       id: Date.now().toString(), // Usar timestamp como ID
+                       date: eventDate,
+                       title: eventTitle,
+                       description: eventDescription
+                   };
+                   events.push(newEvent);
+               }
+
+               // Guardar eventos en localStorage
+               localStorage.setItem('events', JSON.stringify(events));
+
+               eventModal.classList.add("hidden");
+               renderCalendar();
+           });
+
+           function openEditEvent(event) {
+               modalTitle.textContent = "Actualizar Evento";
+               eventIdInput.value = event.id; // Establecer ID del evento
+               document.getElementById("eventDate").value = event.date;
+               document.getElementById("eventTitle").value = event.title;
+               document.getElementById("eventDescription").value = event.description;
+               eventModal.classList.remove("hidden");
+           }
+
+           renderCalendar(); // Renderizar el calendario al cargar la página
+       });
+   </script>
          <script>
             document.addEventListener('DOMContentLoaded', function() {
               // Evento para el toggle del menú 2
@@ -711,7 +845,7 @@ border: 1px solid #000000;
                   var menu = document.getElementById('menu2');
                   menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
               });
-        
+
               // Función para alternar sublistas
               function toggleSublist(event) {
                   event.preventDefault(); // Evitar el comportamiento por defecto
@@ -720,15 +854,15 @@ border: 1px solid #000000;
                       sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
                   }
               }
-        
+
               // Registro del evento para todos los enlaces que necesitan alternar un submenu
               document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
                   link.addEventListener('click', toggleSublist);
               });
           });
           </script>
-        
-        
+
+
         <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 
 </body>
