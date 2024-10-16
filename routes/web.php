@@ -143,6 +143,7 @@ Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name
 Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
 Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
+Route::get('/settingsaprendiz', [ApprenticeController::class, 'settings'])->name('apprentice.settings');
 
 
 Route::get('/trainer/apprentice', function () {
