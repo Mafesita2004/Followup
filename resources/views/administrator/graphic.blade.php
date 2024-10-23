@@ -141,6 +141,15 @@
                           Instructores
                       </a>
                   </li>
+                
+                <li>
+                    <a href="{{ route('administrator.graphic') }}"
+                    class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('administrator.graphic') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
+                      <span class="font-bold">
+                      Graficas
+                      </span>
+                    </a>
+                </li>
 
 
               </ul>

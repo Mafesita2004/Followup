@@ -38,6 +38,11 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Graficas');
     }
 
+    public function SuperAdminemail()
+    {
+        return view('superadmin.email');
+    }
+
     public function SuperAdminRedactar()
     {
         return view('superadmin.SuperAdmin-Redactar');
@@ -69,10 +74,7 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-InstructorPerfil');
     }
 
-    public function SuperAdminInstructorActualizarPerfil()
-    {
-        return view('superadmin.SuperAdmin-InstructorActualizarPerfil');
-    }
+
 
     public function SuperAdminAprendiz()
     {
@@ -103,21 +105,14 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-AprendizPerfil');
     }
 
-    public function SuperAdminAprendizPerfilActualizar()
-    {
-        return view('superadmin.SuperAdmin-AprendizPerfilActualizar');
-    }
 
-    public function SuperAdminPerfilActualizar()
-    {
-        return view('superadmin.SuperAdmin-PerfilActualizar');
-    }
 
+   
     public function SuperAdminMensajeInstructor()
     {
         return view('superadmin.SuperAdmin-MensajeInstructor');
     }
- 
+
     public function SuperAdminMensajeAprendiz()
     {
         return view('superadmin.SuperAdmin-MensajeAprendiz');
