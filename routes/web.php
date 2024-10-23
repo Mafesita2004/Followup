@@ -159,5 +159,6 @@ Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name(
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 Route::get('/trainer/emailTrainer',[TrainerController::class,'email'])->name('email');
 Route::get('/trainer/configuracion',[TrainerController::class,'configuracion'])->name('configuracion');
+Route::get('/trainer/cronograma',[TrainerController::class,'cronograma'])->name('cronograma');
 
 
