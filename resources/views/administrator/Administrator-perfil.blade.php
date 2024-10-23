@@ -12,7 +12,7 @@
             top: 100%;
             margin-top: 0.5rem;
         }
-     
+
 
         .notifications {
             display: block;
@@ -164,6 +164,11 @@
                               Instructores
                           </a>
                       </li>
+                      <li>
+                        <a href="{{ route('administrator.graphic') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                           Graficas
+                        </a>
+                    </li>
 
 
                   </ul>
@@ -176,14 +181,13 @@
         {{-- FIN Menu --}}
 
 
-
-    <div class="flex justify-center mt-6">
-        <main class="bg-white m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <div class="text-center mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
+        <div class="flex justify-center mt-6">
+            <main class="bg-gray-100  m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <div class="text-center mb-6">
+                        <div class="flex justify-center items-center">
+                            <img src="{{ asset('img/administrador/mujer.png') }}" alt="User" class="w-40 h-40 mb-">
+                        </div>
                     <h1 class="text-lg m-0 text-black font-bold">ADMINISTRADOR</h1>
                 </div>
                 <h3 class="font-bold mb-4">Datos básicos</h3>
