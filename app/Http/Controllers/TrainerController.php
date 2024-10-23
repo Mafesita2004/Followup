@@ -28,15 +28,20 @@ class TrainerController extends Controller
     }
     //aprendiz icono
 
-    // public function apprentice()
-    // {
-    //     return view('trainer.apprentice');
-    // }
+    public function configuracion()
+    {
+        return view('trainer.configuracion');
+    }
      //icono perfil aprendiz
      public function perfilapre()
      {
          return view('trainer.perfilapre');
      }
+     //icono cronograma
+    public function cronograma()
+    {
+        return view('trainer.cronograma');
+    }
     //icono reportes
     public function report()
     {
@@ -57,11 +62,12 @@ class TrainerController extends Controller
     {
         return view('trainer.visita');
     }
-    //icono visita
+    //icono email
     public function email()
     {
         return view('trainer.email');
     }
+
 
 
 

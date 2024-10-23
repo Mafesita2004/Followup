@@ -143,13 +143,12 @@ Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('
 Route::get('/settingsaprendiz', [ApprenticeController::class, 'settings'])->name('apprentice.settings');
 
 
-Route::get('/trainer/apprentice', function () {
-    return view('trainer.apprentice');
-})->name('apprentice');
+Route::get('/trainer/icon', function () {
+    return view('trainer.icon');
+})->name('icon');
 
 //rutas intructor
-//Route::get('/trainer/icon',[TrainerController::class,'icon']);
-Route::get('/trainer/apprentice',[TrainerController::class,'apprentice'])->name('apprentice');
+Route::get('/trainer/icon',[TrainerController::class,'icon']);
 Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
 Route::get('/trainer/report',[TrainerController::class,'report'])->name('report');
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
@@ -158,5 +157,7 @@ Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita'
 Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('perfilapre');
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 Route::get('/trainer/emailTrainer',[TrainerController::class,'email'])->name('email');
+Route::get('/trainer/configuracion',[TrainerController::class,'configuracion'])->name('configuracion');
+Route::get('/trainer/cronograma',[TrainerController::class,'cronograma'])->name('cronograma');
 
 
