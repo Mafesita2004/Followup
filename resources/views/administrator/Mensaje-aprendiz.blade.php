@@ -128,11 +128,8 @@
                       </a>
                   </li>
                   <li>
-                      <a href="{{ route('administrator.apprentice') }}"
-                      class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('administrator.apprentice') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
-                        <span class="font-bold">
+                      <a href="{{ route('administrator.apprentice') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                           Aprendices
-                        </span>
                       </a>
                   </li>
                   <li>
@@ -149,54 +146,37 @@
 
 
       </nav>
+
+
         {{-- FIN Menu --}}
+        <div class="flex justify-center">
+            <main class="flex flex-col items-center p-4 mt-4 relative w-full max-w-7xl">
+                <div class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Asunto: Asignación de Instructor para Contrato de Aprendizaje</h2>
 
+                    <p class="mb-4">Estimada Yuliana Andrea Gomez Manquillo,</p>
 
-        <main class="flex flex-col items-center mt-4 relative">
-            <div class="w-full flex justify-between items-center mb-4">
-                <a href="{{ route('administrator.home') }}" class="ml-4">
-                    <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-                </a>
+                    <p class="mb-4">Me complace informarte que te ha sido asignado un instructor para el seguimiento de tu contrato de aprendizaje. La persona designada como tu instructor es Sofía Méndez.</p>
 
+                    <p class="mb-4">Sofía Méndez cuenta con una amplia experiencia en el área y estoy seguro/a de que será de gran ayuda en tu proceso de aprendizaje. Estará a cargo de brindarte la orientación necesaria para que puedas aprovechar al máximo esta oportunidad de crecimiento profesional.</p>
 
-                <form action="#" method="GET" class="flex items-center">
-                    <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
-                    <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
-                        <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
-                    </button>
-                </form>
+                    <p class="mb-4">Te invito a ponerte en contacto con Sofía lo antes posible para coordinar los detalles iniciales y establecer una comunicación fluida durante el desarrollo de tu contrato de aprendizaje.</p>
 
-                <form action="#" method="GET" class="mr-1 -ml-28">
-                    <a href="{{ route('administrator.Agregar-aprendiz') }}" type="button" class="bg-white border-none p-2 cursor-pointer">
-                        <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
-                    </a>
-                </form>
+                    <p class="mb-4">Si tienes alguna pregunta o necesitas más información, no dudes en comunicarte conmigo.</p>
 
-                <a href="#" class="-ml-96">
-                    <img src="{{ asset('img/Descarga.webp') }}" alt="descarga" class="w-8 mr-12 h-auto">
-                </a>
-            </div>
-            <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-                    @php
-                        $contador = 0;
-                    @endphp
-                    @for ($i = 0; $i < 24; $i++)
-                        <a href='{{ route('administrator.Apprentice-perfil') }}' class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
-                            <img src="{{ asset('img/administrador/aprendiz_icono.png') }}" alt="User" class="w-7 h-8 mb-1">
-                            <span class="text-xs text-center p-1">Nombre Completo</span>
-                            <span class="text-xs text-center p-1">Cédula</span>
-                            <span class="text-xs text-center p-1">Ficha</span>
-                            <span class="text-xs text-center p-1">Programa</span>
-                        </a>
-                        @php
-                            $contador++;
-                        @endphp
-                    @endfor
+                    <p class="mb-4">¡Mucho éxito en esta nueva etapa!</p>
+
+                    <p class="mb-2">Saludos cordiales,</p>
+                    <p class="font-bold">Nombre Administrador</p>
+                    <p class="mb-6">Cargo Administrador</p>
+
+                    <div class="flex justify-end space-x-4">
+                        <a href="{{ route('administrator.apprentice')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
+                        <a href="{{ route('administrator.apprentice') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    </div>
                 </div>
-            </div>
-            <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
-        </main>
+            </main>
+        </div>
         <script src="{{ asset('js/SuperAdmin.js') }}"></script>
     </body>
 

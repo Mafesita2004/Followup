@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <title>Etapa Productiva</title>
     <style>
         #userMenu {
@@ -143,7 +143,7 @@
                 </li>
             </ul>
         </div>
-        
+
     </nav>
     {{-- <meta charset="UTF-8">
     <link rel="logo-icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
@@ -281,59 +281,32 @@ background: url(image);
 margin-right: 10px;
 
         } */
-        .calendar-container {
-    position: absolute;
-    width: 100%;
-    height: 38px;
-    left: 0%;
-    top: 20%;
-    background: #D9D9D9;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
 
-.calendar-container h3 {
-    position: relative;
-    width: 476px;
-    height: 26px;
-    left: 84px;
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    margin: 0 10px;
-}
 
-.back-button {
-    background-color: transparent;
-    color: #000000;
-    font-style: normal;
-    position: absolute;
-    width: 27px;
-    height: 27px;
-    left: 40px;
-    top: -16px;
-    padding: 15px;
-    text-align: center;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-}
 
-#calendar {
-    position: absolute;
-    width: 1054px;
-    height: 600px;
-    left: 10%;
-    top: 28%;
-    background: #D9D9D9;
-    margin: 0 auto;
-}
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .calendar div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 80px;
+            position: relative;
+        }
+
+        .calendar div .event {
+            background-color: #009e00;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
 
 .fc .fc-daygrid-day {
     height: 150px;
@@ -573,9 +546,9 @@ margin-right: 10px;
     position: absolute;
             background: #FFFEFE;
             border: 1px solid rgba(0, 0, 0, 0.53);
-            border-radius: 3px;
+            border-radius: 20px;
             margin: 20px auto;
-            max-width: 792px;
+            max-width: 600px;
             text-align: left;
             width: 100%;
     top: 50%;
@@ -592,15 +565,16 @@ margin-right: 10px;
         .background p {
 
             position: relative;
-            top: 5%;
-            left: 24.5%;
-            font-size: 20px;
+            padding: 3%;
+            top: 0%;
+            left: 18%;
+            font-size: smaller;
         }
 
         .register-container {
-            background: #04324D;
+            background: #009e00;
             color: white;
-            border-radius: 3px;
+            border-radius: 20px;
             text-align: center;
             margin-bottom: 20px;
             height: 59px;
@@ -614,7 +588,7 @@ margin-right: 10px;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: medium;
     color: #FFFFFF;
         }
         .checkbox-option {
@@ -630,7 +604,7 @@ margin-right: 10px;
 }
 
 .checkbox-option label {
-    font-size: 20px;
+    font-size: small;
 }
 
         .line {
@@ -713,7 +687,186 @@ margin-right: 10px;
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
-    <div id="calendar"></div>
+
+    <div class="flex justify-center">
+        <main class="bg-white m-4 p-4 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold">Cronograma</h2>
+                <div class="flex items-center">
+                    <button id="prevMonth" class="bg-[#009e00] text-white px-3 py-1 rounded-l"><</button>
+                    <span id="currentMonth" class="bg-[#009e00] text-white px-4 py-1">Mes Actual</span>
+                    <button id="nextMonth" class="bg-[#009e00] text-white px-3 py-1 rounded-r">></button>
+                </div>
+            </div>
+            <section class="p-4">
+                <div class="grid grid-cols-7 gap-2 text-center font-bold">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                </div>
+                <div id="calendarDays" class="calendar"></div>
+            </section>
+            <div class="mt-4">
+                <button id="addEvent" class="bg-[#009e00] text-white px-4 py-2 rounded">Agregar Evento</button>
+            </div>
+
+            <!-- Modal para agregar/actualizar eventos -->
+            <div id="eventModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+                <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                    <h3 id="modalTitle" class="text-lg font-bold mb-4">Agregar Evento</h3>
+                    <form id="eventForm">
+                        <input type="hidden" id="eventId">
+                        <div class="mb-4">
+                            <label for="eventDate" class="block text-sm font-medium text-gray-700">Fecha</label>
+                            <input type="date" id="eventDate" name="eventDate" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div class="mb-4">
+                            <label for="eventTitle" class="block text-sm font-medium text-gray-700">Título</label>
+                            <input type="text" id="eventTitle" name="eventTitle" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div class="mb-4">
+                            <label for="eventDescription" class="block text-sm font-medium text-gray-700">Descripción</label>
+                            <textarea id="eventDescription" name="eventDescription" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" id="cancelEvent" class="mr-2 bg-gray-300 text-black px-4 py-2 rounded">Cancelar</button>
+                            <button type="submit" class="bg-[#009e00] text-white px-4 py-2 rounded">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentMonthSpan = document.getElementById('currentMonth');
+            const prevMonthButton = document.getElementById('prevMonth');
+            const nextMonthButton = document.getElementById('nextMonth');
+            const calendarDays = document.getElementById('calendarDays');
+            const eventModal = document.getElementById("eventModal");
+            const addEventButton = document.getElementById("addEvent");
+            const cancelEventButton = document.getElementById("cancelEvent");
+            const eventForm = document.getElementById("eventForm");
+            const eventIdInput = document.getElementById("eventId");
+            const modalTitle = document.getElementById("modalTitle");
+
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
+            let events = [];
+
+            const months = [
+                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ];
+
+            function daysInMonth(month, year) {
+                return new Date(year, month + 1, 0).getDate();
+            }
+
+            function firstDayOfMonth(month, year) {
+                return new Date(year, month, 1).getDay();
+            }
+
+            function renderCalendar() {
+                calendarDays.innerHTML = '';
+                currentMonthSpan.textContent = `${months[currentMonth]} ${currentYear}`;
+
+                const totalDays = daysInMonth(currentMonth, currentYear);
+                const startDay = firstDayOfMonth(currentMonth, currentYear);
+
+                for (let i = 0; i < startDay; i++) {
+                    const emptyCell = document.createElement('div');
+                    calendarDays.appendChild(emptyCell);
+                }
+
+                for (let day = 1; day <= totalDays; day++) {
+                    const dayCell = document.createElement('div');
+                    dayCell.textContent = day;
+
+                    const dayEvents = events.filter(event => {
+                        const eventDate = new Date(event.date);
+                        return eventDate.getDate() === day && eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
+                    });
+
+                    dayEvents.forEach(event => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.classList.add('event');
+                        eventDiv.textContent = event.title;
+                        eventDiv.addEventListener("click", () => {
+                            openEditEvent(event);
+                        });
+                        dayCell.appendChild(eventDiv);
+                    });
+
+                    calendarDays.appendChild(dayCell);
+                }
+            }
+
+            prevMonthButton.addEventListener('click', function() {
+                currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+                if (currentMonth === 11) currentYear--;
+                renderCalendar();
+            });
+
+            nextMonthButton.addEventListener('click', function() {
+                currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+                if (currentMonth === 0) currentYear++;
+                renderCalendar();
+            });
+
+            addEventButton.addEventListener("click", function() {
+                modalTitle.textContent = "Agregar Evento";
+                eventIdInput.value = ''; // Limpiar ID
+                eventModal.classList.remove("hidden");
+            });
+
+            cancelEventButton.addEventListener("click", function() {
+                eventModal.classList.add("hidden");
+            });
+
+            eventForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const eventDate = document.getElementById("eventDate").value;
+                const eventTitle = document.getElementById("eventTitle").value;
+                const eventDescription = document.getElementById("eventDescription").value;
+
+                if (eventIdInput.value) {
+                    // Actualizar evento
+                    const eventIndex = events.findIndex(event => event.id === eventIdInput.value);
+                    if (eventIndex !== -1) {
+                        events[eventIndex] = { id: eventIdInput.value, date: eventDate, title: eventTitle, description: eventDescription };
+                    }
+                } else {
+                    // Agregar nuevo evento
+                    const newEvent = {
+                        id: Date.now().toString(), // Usar timestamp como ID
+                        date: eventDate,
+                        title: eventTitle,
+                        description: eventDescription
+                    };
+                    events.push(newEvent);
+                }
+
+                eventModal.classList.add("hidden");
+                renderCalendar();
+            });
+
+            function openEditEvent(event) {
+                modalTitle.textContent = "Actualizar Evento";
+                eventIdInput.value = event.id; // Establecer ID del evento
+                document.getElementById("eventDate").value = event.date;
+                document.getElementById("eventTitle").value = event.title;
+                document.getElementById("eventDescription").value = event.description;
+                eventModal.classList.remove("hidden");
+            }
+
+            renderCalendar(); // Renderizar el calendario al cargar la página
+        });
+    </script>
 
     <div class="background">
         <div class="register-container">
@@ -734,6 +887,45 @@ margin-right: 10px;
             </form>
 
     </div>
+    {{-- <div class="background">
+
+        <div class="register-container">
+
+
+        <h2 id="eventTitle">Detalles del Evento</h2>
+                    <p id="eventDate">Fecha: </p>
+
+
+        <p id="eventTime">Hora: </p>
+         <div class="line"></div>
+        <div class="checkbox-option">
+        <input type="checkbox" id="realizado" name="realizado">
+             <label for="realizado">Realizado</label>
+        </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="no-realizado" name="no-realizado">
+                        <label for="no-realizado">No Realizado</label>
+                    </div>
+                </div>
+            </div> --}}
+
+            <script>
+                 // Función para obtener parámetros de la URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const pairs = queryString.split("&");
+            pairs.forEach(pair => {
+                const [key, value] = pair.split("=");
+                params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+            });
+            return params;
+        }
+
+
+
+    </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js"></script>
@@ -786,7 +978,7 @@ margin-right: 10px;
               var menu = document.getElementById('menu2');
               menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
           });
-    
+
           // Función para alternar sublistas
           function toggleSublist(event) {
               event.preventDefault(); // Evitar el comportamiento por defecto
@@ -795,15 +987,15 @@ margin-right: 10px;
                   sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
               }
           }
-    
+
           // Registro del evento para todos los enlaces que necesitan alternar un submenu
           document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
               link.addEventListener('click', toggleSublist);
           });
       });
       </script>
-    
-    
+
+
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 
 </body>
