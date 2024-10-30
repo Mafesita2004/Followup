@@ -156,166 +156,84 @@
                 <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
             </a>
         </div>
-        <div class="flex justify-center">
-            <main class="m-4 p-6 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-full max-w-7xl">
-                <div class="w-full space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="space-y-4">
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Nombre:</label>
-                                <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Nombre">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Apellido:</label>
-                                <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Apellido">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Tipo de contrato:</label>
-                                <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Tipo de contrato">
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Celular:</label>
-                                <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Celular">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Cédula:</label>
-                                <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Cédula">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Correo:</label>
-                                <input type="email" class="w-full border rounded-lg px-3 py-2" placeholder="Correo">
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Fecha de inicio:</label>
-                                <input type="date" class="w-full border rounded-lg px-3 py-2">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Fecha de fin:</label>
-                                <input type="date" class="w-full border rounded-lg px-3 py-2">
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Fecha de inicio:</label>
-                                <input type="date" class="w-full border rounded-lg px-3 py-2">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-semibold block">Fecha de fin:</label>
-                                <input type="date" class="w-full border rounded-lg px-3 py-2">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4">
-                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">3/3</div>
-                            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold">2/3</div>
-                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">0/0</div>
-                        </div>
-                        <div class="space-x-2">
-                            <a href="{{ route('superadmin.SuperAdmin-Redactar')}}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Reporte</a>
-                            <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil')}}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Instructor</a>
-                        </div>
-                    </div>
 
-                    <div class="space-y-4">
-                        <h3 class="font-semibold text-lg">Visitas:</h3>
-                        <div class="border rounded-lg p-4 h-64">
-                            <canvas id="visitasChart"></canvas>
-                        </div>
-                    </div>
 
-                    <div class="space-y-4">
-                        <h3 class="font-semibold text-lg">Bitácoras:</h3>
-                        <div class="border rounded-lg p-4 h-64">
-                            <canvas id="bitacorasChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h3 class="font-semibold text-lg">Timeline:</h3>
-                        <div class="border rounded-lg p-4 h-64">
-                            <canvas id="timelineChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-end space-x-4">
-                        <a href="{{ route('superadmin.SuperAdmin-AprendizPerfil')}}" class="bg-[#009e00] hover:bg-green-700 text-white py-2 px-6 rounded-lg">Actualizar</a>
-                        <a href="{{ route('superadmin.SuperAdmin-AprendizPerfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-lg">Cancelar</a>
-                    </div>
+    <div class="flex justify-center mt-6">
+        <main class="bg-gray-100 m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="flex justify-center items-center">
+                    <img src="{{ asset('img/administrador/aprendiz_icono.png') }}" alt="User" class="w-40 h-40 mb-">
                 </div>
-            </main>
-        </div>
+
+                <div class="text-center mb-6">
+                    <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
+                </div>
+
+                <h3 class="font-bold mb-4 mt-6">Información Modalidad</h4>
+                <div class="space-y-4">
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Tipo de Modalidad:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Fecha Inicio:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Fecha Final:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Proceso:</label>
+                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
+                     </div>
+                     <img class="Linea-Tiempo" src="{{ asset('administrator/linea-tiempo.png') }}" alt="linea-tiempo">
+                </div>
+
+                <h3 class="font-bold mb-4 mt-6">Datos básicos</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->name }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->last_name }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->email }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Cuenta  SENA:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->sena_account }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->department }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
+                    </div>
+                    <label class="block text-sm font-medium text-gray-700">Nivel academico:</label>
+                    <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
+                </div>
+
+
+
+
+
+
+                <div class="flex justify-end mt-6 space-x-4">
+                    <a href="{{ route('administrator.home') }}" class="bg-[#009e00] hover:bg-[#37a837] text-white py-2 px-4 rounded">Actualizar</a>
+                    <a href="{{ route('administrator.apprentice') }}" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">Cancelar</a>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctxVisitas = document.getElementById('visitasChart').getContext('2d');
-        const visitasChart = new Chart(ctxVisitas, {
-            type: 'bar',
-            data: {
-                labels: ['1 Bitácora', '2 Bitácoras', '3 Bitácoras', 'Total'],
-                datasets: [{
-                    label: 'Visitas',
-                    data: [3, 2, 0, 5],
-                    backgroundColor: ['#36a2eb', '#ff6384', '#ff9f40', '#4bc0c0'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        const ctxBitacoras = document.getElementById('bitacorasChart').getContext('2d');
-        const bitacorasChart = new Chart(ctxBitacoras, {
-            type: 'bar',
-            data: {
-                labels: ['Aprendices en 1 visita', 'Aprendices en 2 visitas', 'Aprendices en 3 visitas'],
-                datasets: [{
-                    label: 'Bitácoras',
-                    data: [2, 3, 5],
-                    backgroundColor: ['#36a2eb', '#ff6384', '#ff9f40'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
-        const timelineChart = new Chart(ctxTimeline, {
-            type: 'line',
-            data: {
-                labels: ['Mes 1', 'Mes 2', 'Mes 3', 'Mes 4', 'Mes 5', 'Mes 6'],
-                datasets: [{
-                    label: 'Eventos',
-                    data: [0, 1, 2, 3, 4, 5],
-                    borderColor: '#4bc0c0',
-                    borderWidth: 1,
-                    fill: false
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>

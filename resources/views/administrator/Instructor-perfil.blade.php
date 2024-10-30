@@ -235,3 +235,4 @@
     <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>
+ 
