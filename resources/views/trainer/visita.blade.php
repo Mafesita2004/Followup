@@ -125,7 +125,7 @@
             </div>
             <div class="w-full flex space-x-4 items-center justify-between text-center">
                 <div class="flex flex-col">
-                    <label class="font-bold">N° Visita</label>
+                    <label class="font-bold">Tipo de Concertación</label>
                     <select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
                         <option selected="">Selecciona Opción</option>
                         <option value="Inicial">Inicial</option>
