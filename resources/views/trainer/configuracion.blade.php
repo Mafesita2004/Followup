@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <script src="{{ asset('js/Trainer.js') }}"></script>
     <title>Etapa Seguimiento</title>
     <style>
-  #userMenuTri {
+        #userMenuTri {
             top: 100%;
             margin-top: 0.5rem;
         }
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-bottom: 2px solid #009e00;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+        }
+        .settings-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
+
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
     <header class="bg-white text-[#009e00] px-5 py-2.5 flex flex-col items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0']">
         <div class="flex justify-between w-full">
@@ -53,9 +69,9 @@
                     </button>
                 </div>
     </header>
-      <!--Notificaciones -->
-      <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex items-center relative z-10">
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Email</div>
+       <!--Notificaciones -->
+       <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex items-center relative z-10">
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Configuración</div>
 
         <div class="relative ml-auto flex items-center">
             <button id="notifButton" class="relative">
@@ -73,9 +89,9 @@
                         <div>
                             <p class="text-sm font-bold">Nombre Usuario<p>
                             <p class="text-sm mt-2">Instructor</p>
-                        </div>
 
-                        <img src="{{ asset('img/user-icon.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
+                        </div>
+                        <img src="{{ asset('img/administrador/mujer.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
                     <ul>
                         <a href="{{ route('username')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a>
@@ -91,46 +107,43 @@
             </div>
         </div>
     </nav>
-    <script>
-        function toggleSublist(event) {
-            event.preventDefault();
-            const sublist = event.target.nextElementSibling;
-            if (sublist.classList.contains('hidden')) {
-                sublist.classList.remove('hidden');
-            } else {
-                sublist.classList.add('hidden');
-            }
-        }
-    </script>
-    <div class="w-full flex items-center mt-6">
-        <a href="{{ route('notification') }}" class="mr-4 ml-8">
+    <div class="w-full flex justify-between items-center mt-6">
+        <a href="{{ route('icon') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
-        {{-- FIN Menu --}}
 
 
-        <div class="flex flex-col border-2 border-[#D9D9D9] bg-[#ffffff] w-[900px] h-[500px] p-5 mx-auto my-5 rounded-lg shadow-md">
-            <label class="flex flex-col">
-                <div class="flex items-center mb-2">
-                    <img src="{{ asset('administrator/icon-email.png') }}" alt="Email" class="w-10 h-10 mr-3">
-                    <div class="mr-4">
-                        <span class="block">Asunto: xxxxxx</span>
-                        <span class="block">Para: xxxxxx</span>
+    <div class="flex justify-center">
+        <main class="bg-white m-4 p-6 rounded-lg shadow-lg border border-[#e0e0e0] w-2/3">
+            <h1 class="section-header">Configuración</h1>
+
+            <!-- Sección de Cambio de Contraseña -->
+            <div class="settings-card">
+                <h2 class="text-lg font-bold mb-4">Cambio de Contraseña</h2>
+                <form action="#" method="#">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="currentPassword" class="block text-sm font-medium text-gray-700">Contraseña Actual</label>
+                        <input type="password" id="currentPassword" name="currentPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
                     </div>
-                    <div class="ml-auto">
-                        <span class="block">Fecha: xxxxxxxx</span>
+                    <div class="mb-4">
+                        <label for="newPassword" class="block text-sm font-medium text-gray-700">Nueva Contraseña</label>
+                        <input type="password" id="newPassword" name="newPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
                     </div>
-                </div>
-                <span class="mb-1">Descripción</span>
-                <textarea name="documentos" rows="4" class="w-full h-[300px] p-2 border border-gray-300 bg-[#D9D9D9] rounded-lg resize-none"></textarea>
-            </label>
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar Nueva Contraseña</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm" required>
+                    </div>
+                    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Actualizar Contraseña</button>
+                </form>
+            </div>
 
-        </div>
 
+        </main>
+    </div>
 
-
-
-<script src="{{ asset('js/SuperAdmin.js') }}"></script>
+    <script src="{{ asset('js/Trainer.js') }}"></script>
 </body>
+
 </html>

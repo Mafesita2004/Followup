@@ -137,6 +137,11 @@
                           Instructores
                       </a>
                   </li>
+                  <li>
+                    <a href="{{ route('administrator.graphic') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                       Graficas
+                    </a>
+                </li>
 
 
               </ul>
@@ -230,3 +235,4 @@
     <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>
+ 

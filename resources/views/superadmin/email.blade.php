@@ -58,7 +58,7 @@
                   <!-- Logo de Etapa Productiva y texto "Centro de Comercio y Servicios" en el lado derecho -->
                   <div class="text-left">
                       <!-- Logo de Etapa Seguimiento -->
-                      <a href="{{ route('administrator.home') }}" class="flex items-center">
+                      <a href="{{ route('superadmin.home') }}" class="flex items-center">
                           <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
                           <div class="flex flex-col text-left">
                               <h2 class="text-[12px] m-0 text-[#009e00]">Etapa</h2>
@@ -89,37 +89,17 @@
                            <div class="flex items-center mb-4">
                                <div>
                                    <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                                   <p class="text-sm mt-2">Administrador</p>
+                                   <p class="text-sm mt-2">Super Administrador</p>
                                </div>
 
 
                            </div>
                            <ul>
-                               <li class="mt-2"><a href="{{ route('administrator.Administrator-perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                               <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
 
-                               <li class="mt-2"><a href="{{ route('administrator.settings') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-
-
-                               <li class="mt-2"><a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Plantillas</a>
-                                   <ul class="hidden ml-4 mt-2 bg-[#EEEEEE] p-2 rounded-lg">
-                                       <li class="mt-2 font-bold text-black border-b border-gray-300 pb-2">MODALIDAD</li>
-                                       <li class="mt-2"><a href="{{ route('administrator.template')}}"class="block text-black hover:bg-white p-2 rounded-lg">Pasantía</a></li>
-                                       <li>
-                                          <a href="javascript:void(0)" class="block text-black hover:bg-white p-2 rounded-lg" id="contratoAprendizaje">Contrato de Aprendizaje</a>
-                                          <ul id="sublistContrato" class="ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px] hidden">
-                                              <li class="mt-2">
-                                                  <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
-                                              </li>
-                                              <li class="mt-2">
-                                                  <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a>
-                                              </li>
-                                          </ul>
-                                      </li>
-                                       <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a></li>
-                                       <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a></li>
-                                       <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a></li>
-                                   </ul></li>
-                               <li class="mt-2"><a href="{{ route('administrator.graphic')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
+                               <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                               <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Permisos</a></li>
+                               <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
                            </ul>
                            <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                                @csrf
@@ -139,13 +119,13 @@
                   <h2 class="text-sm font-bold">Notificaciones</h2>
                   <ul>
                       <li class="mt-2">
-                          <a href="{{ route('administrator.notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
+                          <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
                       </li>
                       <li class="mt-2">
-                          <a href="{{ route('administrator.notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
+                          <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
                       </li>
                       <li class="mt-2">
-                          <a href="{{ route('administrator.notificaciones') }}"class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
+                          <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}"class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
                       </li>
                   </ul>
               </div>
@@ -153,25 +133,37 @@
           <div class="w-full flex justify-center">
               <ul class="horizontal-list flex space-x-4 justify-center" >
                   <li>
-                      <a href="{{ route('administrator.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                      <a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                           Inicio
                       </a>
                   </li>
                   <li>
-                      <a href="{{ route('administrator.apprentice') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                      <a href="{{ route('superadmin.SuperAdmin-Administrator') }}"
+                      class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                     Administrador
+
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('superadmin.SuperAdmin-Instructor') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
+                          <span class="font-bold">
+                             Instructor
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                           Aprendices
                       </a>
                   </li>
                   <li>
-                      <a href="{{ route('administrator.instructor') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                          Instructores
+                      <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                         Graficas
                       </a>
                   </li>
-                  <li>
-                    <a href="{{ route('administrator.graphic') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                       Graficas
-                    </a>
-                </li>
+
+
+
 
               </ul>
           </div>
@@ -179,9 +171,10 @@
 
 
 
+
       </nav>
       <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('administrator.notificaciones') }}" class="ml-4">
+        <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>

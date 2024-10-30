@@ -194,7 +194,7 @@
 
 
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var menu = document.getElementById('menu2');
     var toggleButton = document.getElementById('toggleMenu2');
 
@@ -230,7 +230,7 @@
         document.getElementById('fileUpload').click();
     });
 
-    // Puedes manejar el evento change para hacer algo cuando se seleccione un archivo
+    // Manejar el evento change para hacer algo cuando se seleccione un archivo
     document.getElementById('fileUpload').addEventListener('change', function() {
         const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
         alert('File selected: ' + fileName);

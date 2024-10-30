@@ -39,7 +39,7 @@ Route::get('/superadmin/SuperAdmin-Notificaciones', [SuperadminController::class
 
 // Ruta para redactar nuevas notificaciones
 Route::get('/superadmin/SuperAdmin-Redactar', [SuperadminController::class, 'SuperAdminRedactar'])->name('superadmin.SuperAdmin-Redactar');
-
+Route::get('/superadmin/email', [SuperadminController::class, 'SuperAdminemail'])->name('superadmin.email');
 // Ruta para añadir un nuevo administrador
 Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [SuperadminController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
 
@@ -59,8 +59,7 @@ Route::get('/superadmin/SuperAdmin-Instructor', [SuperadminController::class, 'S
 // Ruta para ver el perfil de un instructor específico
 Route::get('/superadmin/SuperAdmin-InstructorPerfil', [SuperadminController::class, 'SuperAdminInstructorPerfil'])->name('superadmin.SuperAdmin-InstructorPerfil');
 
-// Ruta para actualizar el perfil de un instructor
-Route::get('/superadmin/SuperAdmin-InstructorActualizarPerfil', [SuperadminController::class, 'SuperAdminInstructorActualizarPerfil'])->name('superadmin.SuperAdmin-InstructorActualizarPerfil');
+
 
 // Ruta para añadir un nuevo instructor
 Route::get('/superadmin/SuperAdmin-InstructorAñadir', [SuperadminController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
@@ -75,8 +74,7 @@ Route::get('/superadmin/SuperAdmin-Aprendiz', [SuperadminController::class, 'Sup
 // Ruta para ver el perfil de un aprendiz específico
 Route::get('/superadmin/SuperAdmin-AprendizPerfil', [SuperadminController::class, 'SuperAdminAprendizPerfil'])->name('superadmin.SuperAdmin-AprendizPerfil');
 
-// Ruta para actualizar el perfil de un aprendiz
-Route::get('/superadmin/SuperAdmin-AprendizPerfilActualizar', [SuperadminController::class, 'SuperAdminAprendizPerfilActualizar'])->name('superadmin.SuperAdmin-AprendizPerfilActualizar');
+
 
 // Ruta para añadir un nuevo aprendiz
 Route::get('/superadmin/SuperAdmin-AprendizAgregar', [SuperadminController::class, 'SuperAdminAprendizAgregar'])->name('superadmin.SuperAdmin-AprendizAgregar');
@@ -91,8 +89,7 @@ Route::get('/superadmin/SuperAdmin-Cronograma', [SuperadminController::class, 'S
 // Ruta para ver el perfil del superadmin
 Route::get('/superadmin/SuperAdmin-Perfil', [SuperadminController::class, 'SuperAdminPerfil'])->name('superadmin.SuperAdmin-Perfil');
 
-// Ruta para actualizar el perfil del superadmin
-Route::get('/superadmin/SuperAdmin-PerfilActualizar', [SuperadminController::class, 'SuperAdminPerfilActualizar'])->name('superadmin.SuperAdmin-PerfilActualizar');
+
 
 // Rutas para manejar mensajes a instructores y aprendices
 // Ruta para enviar un mensaje a un instructor
@@ -128,7 +125,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
-
+    Route::get('/administrator/web', [AdministratorController::class, 'Web'])->name('administrator.web');
 
 
   // Rutas de aprendiz (cambiada la duplicación del nombre)
@@ -149,13 +146,12 @@ Route::get('/notificacionaprendiz', [ApprenticeController::class, 'notification'
 
 
 
-Route::get('/trainer/apprentice', function () {
-    return view('trainer.apprentice');
-})->name('apprentice');
+Route::get('/trainer/icon', function () {
+    return view('trainer.icon');
+})->name('icon');
 
 //rutas intructor
-//Route::get('/trainer/icon',[TrainerController::class,'icon']);
-Route::get('/trainer/apprentice',[TrainerController::class,'apprentice'])->name('apprentice');
+Route::get('/trainer/icon',[TrainerController::class,'icon']);
 Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
 Route::get('/trainer/report',[TrainerController::class,'report'])->name('report');
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
@@ -164,5 +160,7 @@ Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita'
 Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('perfilapre');
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 Route::get('/trainer/emailTrainer',[TrainerController::class,'email'])->name('email');
+Route::get('/trainer/configuracion',[TrainerController::class,'configuracion'])->name('configuracion');
+Route::get('/trainer/cronograma',[TrainerController::class,'cronograma'])->name('cronograma');
 
 
