@@ -53,28 +53,17 @@
                     </button>
                 </div>
     </header>
-    <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-start items-center relative z-10">
-        <button id="notifButton" class="relative">
-            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
-        </button>
-        <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-            <div class="p-4">
-                <h2 class="text-sm font-bold">Notificaciones</h2>
-                <ul>
-                    <li class="mt-2">
-                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('notification') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Bitacoras</div>
+      <!--Notificaciones -->
+      <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex items-center relative z-10">
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Bitacora</div>
+
+        <div class="relative ml-auto flex items-center">
+            <button id="notifButton" class="relative">
+                <a href="{{ route('notification') }}">
+                <img class="w-[50px] h-auto mr-3.0 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+
+            </button>
+
         <div class="relative ml-auto flex items-center ">
 
 
@@ -89,7 +78,7 @@
                         <img src="{{ asset('img/administrador/mujer.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
                     </div>
                     <ul>
-                        <a href="{{ route('username')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">ver perfil</a>
+                        <a href="{{ route('username')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a>
                         <li class="mt-2"><a href="{{ route('configuracion')}}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
                         <li class="mt-2"><a href="{{ route('icon') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
                         <li class="mt-2"><a href="{{ route('cronograma') }}" class="block text-black hover:bg-white p-2 rounded-lg">Cronograma</a></li>
@@ -120,12 +109,12 @@
                     <p type="text" class="bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">Marian Diaz</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
-                    <label class="font-bold">N° Ficha</label>
-                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">2654013</p>
+                    <label class="font-bold">Programa</label>
+                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">ADSO</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
-                    <label class="font-bold">N° Identificación</label>
-                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">1060435627</p>
+                    <label class="font-bold">N° Ficha</label>
+                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">2654013</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">Correo Electrónico</label>
@@ -190,7 +179,7 @@
         {{-- Contenedor Fantasma --}}
         <div class=" w-1/5  ">
         </div>
-        <div class=" w-2/5 border-2 rounded-2xl border-black h-86 mt-2">
+        <div class=" w-2/5 border-2 rounded-2xl border-black h-82 mt-2">
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Tipo de Modalidad de Etapa Productiva</label>
                 <p type="text" class="border border-black  p-2 rounded-md bg-white">Pasantia</p>
@@ -200,12 +189,8 @@
                 <textarea id="descripcion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
             </div>
             <div class="flex flex-col p-6 text-center">
-                <label class="font-semibold ">Bitacoras</label>
-                <input type="file" class="border border-black p-2 rounded-md bg-white" name="fileUpload" id="fileUpload">
-            </div>
-            <div class="flex flex-col p-6 text-center">
                 <label class="font-bold">Fecha</label>
-                <input type="date" class="border border-black -400 p-2 rounded-md w-48 bg-white ml-36">
+                <input type="date" class="border border-black -400 p-2 rounded-md w-48 bg-white ml-36 text-center">
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>

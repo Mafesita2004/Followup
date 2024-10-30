@@ -154,106 +154,83 @@
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
+
+
     <div class="flex justify-center mt-6">
         <main class="bg-gray-100  m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
             <div class="bg-gray-100 p-6 rounded-lg">
-                <div class="text-center mb-6">
                     <div class="flex justify-center items-center">
                         <img src="{{ asset('img/administrador/instructor-icon.png') }}" alt="User" class="w-40 h-40 mb-">
                     </div>
+                    <div class="text-center mb-6">
                     <h1 class="text-lg m-0 text-black font-bold">INSTRUCTOR</h1>
+                </div>
+                <h3 class="font-bold mb-4">Datos básicos</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->name }}</p>
                     </div>
-            <div class="max-w-screen-lg mx-auto p-4 rounded-lg ">
-                <div class="flex items-center mb-6">
-                    <a href="{{ route('superadmin.SuperAdmin-ListaAprendiz')}}" class="bg-[#009e00] hover:bg-green-700 text-white px-4 py-2 rounded-lg mr-4">Aprendices</a>
-                    <a class="bg-white text-black  border-gray-300 px-4 py-2 rounded-lg mr-4">24/100</a>
-                    <a href="{{ route('superadmin.SuperAdmin-Redactar')}}" class="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg">Correo</a>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->last_name }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->email }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Cuenta Soy SENA:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->sena_account }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->department }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
+                    </div>
+
                 </div>
 
-                <div class="grid grid-cols-3 gap-4 mb-6">
+                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
+                <div class="space-y-4">
                     <div>
-                        <label class="block text-gray-700">Nombre</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Nombre">
+                        <label class="block text-sm font-medium text-gray-700">Departamento:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->department }}</p>
                     </div>
                     <div>
-                        <label class="block text-gray-700">Apellido</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Apellido">
+                        <label class="block text-sm font-medium text-gray-700">Municipio:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
+                    </div>
+
+                </div>
+
+
+
+                <h3 class="font-bold mb-4 mt-6">Información Seguimiento</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Aprendices Asignados:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                     </div>
                     <div>
-                        <label class="block text-gray-700">Cedula</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula">
+                        <label class="block text-sm font-medium text-gray-700">Horas:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                     </div>
                     <div>
-                        <label class="block text-gray-700">Correo</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo">
+                        <label class="block text-sm font-medium text-gray-700">Horas realizadas:</label>
+                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->modality }}</p>
                     </div>
-                    <div>
-                        <label class="block text-gray-700">Celular</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700">Programa</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Programa">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700">Total de horas</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Total de horas">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700">Horas realizadas</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Horas realizadas">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700">Fecha de inicio</label>
-                        <input type="date" class="w-full border border-gray-300 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700">Fecha de fin</label>
-                        <input type="date" class="w-full border border-gray-300 rounded-lg p-2.5">
-                    </div>
+
+                </div>
+
+                <div class="flex justify-end mt-6 space-x-4">
+                    <a href="{{ route('administrator.home') }}"class="bg-[#009e00] hover:bg-[#37a837] text-white py-2 px-4 rounded">Actualizar</a>
+                    <a href="{{ route('administrator.instructor') }}" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">Cancelar</a>
                 </div>
             </div>
-            <div class="flex mb-6">
-                <div class="w-1/2 p-4 bg-white rounded-lg shadow">
-                    <h3 class="text-lg font-bold mb-4">Aprendices asignados</h3>
-                    <div class="flex justify-between mb-4">
-                        <span>Aprendices en 1 visita</span>
-                        <span class="text-right">[23]</span>
-                    </div>
-                    <div class="flex justify-between mb-4">
-                        <span>Aprendices en 2 visita</span>
-                        <span class="text-right">[43]</span>
-                    </div>
-                    <div class="flex justify-between mb-4">
-                        <span>Aprendices en 3 visita</span>
-                        <span class="text-right">[52]</span>
-                    </div>
-                    <div class="flex justify-between mb-4">
-                        <span>Aprendices aprobados</span>
-                        <span class="text-right">[12]</span>
-                    </div>
-                    <div class="flex justify-between mb-4">
-                        <span>Aprendices en mora</span>
-                        <span class="text-right">[33]</span>
-                    </div>
-                    <canvas id="doughnutChart" class="w-full"></canvas>
-                </div>
-                <a href='{{ route('superadmin.SuperAdmin-Cronograma')}}' class="w-1/2 p-4 bg-white rounded-lg shadow ml-4">
-                    <h3 class="text-lg font-bold mb-4">Cronograma</h3>
-
-                    <img src="{{ asset('img/calendario.png') }}" alt="Cronograma" class="w-full">
-                </a>
-            </div>
-
-            <div class="p-4 bg-white rounded-lg shadow mb-6">
-                <canvas id="barChart" class="w-full"></canvas>
-            </div>
-
-            <div class="flex justify-end mt-6 space-x-4">
-                <a type="submit" href="{{ route('superadmin.SuperAdmin-InstructorPerfil')}}" class="bg-[#009e00] hover:bg-green-700 text-white py-2 px-4 rounded">Actualizar</a>
-                <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-            </div>
-        </div>
         </main>
     </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
