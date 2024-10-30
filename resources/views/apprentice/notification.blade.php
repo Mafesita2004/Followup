@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +43,7 @@
             font-weight: bold;
             color: black; /* Color del porcentaje */
         }
+
     </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
@@ -128,88 +128,43 @@
         </div>
 
     </nav>
-    <div class="w-full flex justify-between items-center mt-6">
-        <a href="{{ route('apprentice.home') }}" class="ml-4">
-            <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
-        </a>
+
+  <!-- Search Bar -->
+  <div class="container mx-auto p-4">
+    <div class="flex items-center space-x-4">
+        <button class="bg-gray-200 p-2 rounded">
+            <img src="{{ asset('img/menu1.png') }}" alt="Menu" class="w-8 h-8">
+        </button>
+        <input type="text" placeholder="Buscar..." class="w-full bg-gray-100 p-2 rounded border border-gray-300">
+        <button class="bg-gray-200 p-2 rounded">
+            <img src="{{ asset('img/mas.png') }}" alt="Nuevo" class="w-8 h-8">
+        </button>
     </div>
-    <div class="flex justify-center mt-6">
-        <main class="bg-white m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <div class="text-center mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
-                    <h1 class="text-lg m-0 text-black font-bold">APRENDIZ</h1>
+</div>
+
+<!-- Notifications List -->
+<div class="container mx-auto p-4">
+    <div class="bg-white shadow rounded-lg divide-y divide-gray-200">
+        @foreach($notificaciones as $index => $notificacion)
+            <div class="flex items-center justify-between p-4 hover:bg-gray-50 cursor-pointer" onclick="window.location='{{ route('apprentice.visit', $index) }}'">
+                <div>
+                    <h3 class="text-lg font-semibold">{{ $notificacion['titulo'] }}</h3>
+                    <p class="text-sm text-gray-500">{{ $notificacion['asunto'] }}</p>
+                    <p class="text-xs text-gray-400">{{ $notificacion['fecha'] }}</p>
                 </div>
-
-                <h3 class="font-bold mb-4 mt-6">Datos básicos</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Identificacion:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Identificacion }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Programa:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->last_name }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Ficha:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Ficha }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Telefono }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Correo }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Inicio de Contrato:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->InicioContrato }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fin de Contrato:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->FinContrato }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nit. Empresa:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Nit_Empresa }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Razon social:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Razon_Social }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Direccion:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Direccion }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Telefono de Empresa:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Telefono_Empresa }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombre de Instructor:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Nombre_Instructor }}</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo Instructor:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->Correo_Instructor }}</p>
-                    </div>
-
+                <button class="text-red-600 hover:text-red-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
-        </main>
+        @endforeach
     </div>
-    <script>
+</div>
+
+
+     <!-- Scripts for Dropdowns -->
+     <script>
         document.getElementById('menuButton').addEventListener('click', function() {
             document.getElementById('userMenu').classList.toggle('show');
         });
@@ -226,7 +181,7 @@
             }
         };
     </script>
-     <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
           // Evento para el toggle del menú 2
           document.getElementById('toggleMenu2').addEventListener('click', function() {
@@ -253,6 +208,5 @@
 
 
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-
 </body>
 </html>

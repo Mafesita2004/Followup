@@ -144,6 +144,9 @@ Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('appr
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
 Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
 Route::get('/settingsaprendiz', [ApprenticeController::class, 'settings'])->name('apprentice.settings');
+Route::get('/notificationaprendiz', [ApprenticeController::class, 'notification'])->name('apprentice.notification');
+Route::get('/notificacionaprendiz', [ApprenticeController::class, 'notification'])->name('notificacionaprendiz');
+
 
 
 Route::get('/trainer/apprentice', function () {
