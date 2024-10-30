@@ -116,9 +116,18 @@
     </div>
 
     <!-- Secciones de contenido -->
-    <div id="queEsEtapa" class="mt-10">
-        <h2>¿Qué es Etapa Productiva?</h2>
-        <p>Contenido sobre la etapa productiva...</p>
+    <div id="queEsEtapa" class="mt-10 p-4 border border-black bg-white rounded-lg flex items-start">
+        <div class="flex-1">
+            <h2 class="text-2xl font-bold font-serif mb-2">¿Qué es Etapa Productiva?</h2>
+            <p>La "Etapa Productiva" es una fase del proceso formativo en la que los aprendices aplican
+                en un entorno laboral real los conocimientos adquiridos durante la "Etapa Lectiva" o teórica.
+                Esta etapa, similar a una práctica o pasantía, permite que el aprendiz gane experiencia directa
+                en su campo de estudio bajo supervisión. Su objetivo es desarrollar competencias laborales,
+                adquirir experiencia en el entorno real de trabajo, contribuir a la productividad de la empresa y facilitar
+                la inserción laboral, ya que en muchos casos las empresas terminan contratando a los aprendices. La duración
+                varía según el programa, pero representa una parte significativa de la formación total.</p>
+        </div>
+        <img src="C:\xampp\htdocs\Followup\public\img\trainer\etapa.jpg" alt="Descripción de la imagen" class="w-1/4 ml-4 rounded-lg">
     </div>
 
     <div id="tiposModalidad" class="mt-10">
