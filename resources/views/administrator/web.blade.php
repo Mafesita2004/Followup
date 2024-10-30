@@ -6,18 +6,33 @@
     @vite('resources/css/app.css')
     <title>Etapa Productiva</title>
     <style>
-        #userMenu {
-            top: 100%;
-            margin-top: 0.5rem;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav {
+            position: sticky;
+            top: 70px; /* Ajusta según la altura del header */
+            z-index: 999;
+            background-color: #009e00;
         }
 
         /* Estilos para el carrusel */
         .carousel-container {
-            max-width: 20%; /* Ajusta el ancho del carrusel */
-            margin: 0 auto; /* Centrar el carrusel */
-            margin-top: 40px; /* Ajusta este valor según lo que necesites */
-            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4); /* Sombra más fuerte y con mayor desenfoque */
-            border-radius: 10px; /* Bordes redondeados opcionales */
+            max-width: 20%;
+            margin: 40px auto 0;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
             overflow: hidden;
         }
 
@@ -42,11 +57,10 @@
             color: #009e00;
         }
 
-        /* Estilo para reducir y centrar las imágenes */
         .carousel-item img {
-            width: 20%; /* Cambia este valor para ajustar el tamaño de las imágenes */
-            margin: 0 auto; /* Centrar las imágenes */
-            display: block; /* Asegura que las imágenes se comporten como bloques */
+            width: 20%;
+            margin: 0 auto;
+            display: block;
         }
     </style>
 
@@ -55,17 +69,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
 </head>
 
-<body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
-    <header class="bg-white text-[#009e00] px-5 py-2.5 flex flex-col items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
+<body class="flex flex-col min-h-screen">
+    <header class="text-[#009e00] px-5 py-2.5 flex flex-col items-center">
         <div class="flex justify-between w-full">
             <div class="flex items-center">
-                <!-- Logo de SENA en el lado izquierdo -->
                 <img class="w-[70px] h-[70px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-
-                <!-- Espaciado entre los dos bloques -->
                 <div class="flex-grow m-2"></div>
-
-                <!-- Logo de Etapa Productiva y texto "Centro de Comercio y Servicios" en el lado derecho -->
                 <div class="text-left">
                     <div class="flex items-center">
                         <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
@@ -80,31 +89,28 @@
         </div>
     </header>
 
-    <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-start items-center relative z-10">
-        <div class="w-full flex justify-center">
-            <ul class="horizontal-list flex space-x-4 justify-center">
-                <li>
-                    <a href="#queEsEtapa" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                       ¿Qué es Etapa Productiva?
-                    </a>
-                </li>
-                <li>
-                    <a href="#tiposModalidad" class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('administrator.apprentice') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
-                        <span class="font-bold">
-                           Tipos de modalidad
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#mision" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                       Misión
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <nav class="h-14 py-1.5 flex justify-center items-center">
+        <ul class="flex space-x-4">
+            <li>
+                <a href="#queEsEtapa" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                   ¿Qué es Etapa Productiva?
+                </a>
+            </li>
+            <li>
+                <a href="#tiposModalidad" class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('administrator.apprentice') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
+                    <span class="font-bold">
+                       Tipos de modalidad
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#mision" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                   Misión
+                </a>
+            </li>
+        </ul>
     </nav>
 
-    <!-- Carrusel de imágenes -->
     <div class="container carousel-container mt-5">
         <div id="carouselImages">
             <div><img src="{{ asset('img/webpng/carrusel5.jpg') }}" alt="Imagen 1" class="d-block w-100"></div>
@@ -115,7 +121,6 @@
         </div>
     </div>
 
-    <!-- Secciones de contenido -->
     <div id="queEsEtapa" class="mt-10">
         <h2>¿Qué es Etapa Productiva?</h2>
         <p>Contenido sobre la etapa productiva...</p>
@@ -169,7 +174,6 @@
         </table>
     </div>
 
-
     <div id="mision" class="mt-10">
         <h2>Misión</h2>
         <p>Contenido sobre la misión...</p>
@@ -178,36 +182,16 @@
     <!-- jQuery y Slick JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-
-    <!-- Script para el carrusel -->
-    <script type="text/javascript">
+    <script>
         $(document).ready(function(){
-            // Configuración del carrusel de imágenes
             $('#carouselImages').slick({
-                dots: true, // Mostrar indicadores de puntos
-                infinite: true, // Desplazamiento infinito
-                speed: 500, // Velocidad de transición
-                slidesToShow: 1, // Mostrar una imagen a la vez
-                slidesToScroll: 1, // Desplazar una imagen a la vez
-                prevArrow: '<button class="slick-prev"><i class="fas fa-chevron-left"></i></button>', // Flecha izquierda personalizada
-                nextArrow: '<button class="slick-next"><i class="fas fa-chevron-right"></i></button>', // Flecha derecha personalizada
-                autoplay: true, // Desplazamiento automático
-                autoplaySpeed: 2000 // Velocidad de desplazamiento automático
-            });
-
-            // Suavizar el desplazamiento al hacer clic en los enlaces
-            $('a[href^="#"]').on('click', function(event) {
-                var target = this.hash;
-                var $target = $(target);
-                if ($target.length) {
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: $target.offset().top
-                    }, 500);
-                }
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1
             });
         });
     </script>
-
 </body>
 </html>
