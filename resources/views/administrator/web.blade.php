@@ -177,7 +177,11 @@
 
     <div id="mision" class="mt-10">
         <h2>Misión</h2>
-        <p>Contenido sobre la misión...</p>
+        <p>Nuestra misión es ser un puente efectivo entre la educación y el ámbito laboral, facilitando el seguimiento y control
+           de la etapa productiva de los aprendices SENA. Nos comprometemos a ofrecer una herramienta que permita a los aprendices
+           cumplir con sus prácticas profesionales de manera organizada y efectiva, contribuyendo así a su formación técnica
+           o tecnológica. A través de este sistema, buscamos apoyar tanto a los aprendices como a instructores y administradores, brindando
+           una plataforma integral que optimiza el monitoreo de su progreso y facilita el cumplimiento de los objetivos de formación.</p>
     </div>
 
     <!-- jQuery y Slick JS -->
