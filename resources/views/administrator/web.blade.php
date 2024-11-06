@@ -238,99 +238,58 @@
         <img src="{{ asset('img/trainer/etapa.jpg') }}" alt="Descripción de la imagen" class="w-1/3 ml-4 rounded-lg">
     </div>
 
+<!-- Sección Tipos de Modalidad -->
+<section id="tiposModalidad" class="section-content mt-16 bg-white p-8 border border-gray-200 rounded-lg shadow-sm relative">
+    <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">Tipos de Modalidad</h2>
+    <p class="text-gray-700 mb-6">Cada modalidad de la etapa productiva está diseñada para adaptarse a las distintas necesidades de formación y las características del entorno laboral, permitiendo que los aprendices adquieran experiencia según sus intereses y las oportunidades disponibles. A continuación, se describen las modalidades más comunes, cada una con sus beneficios y características principales:</p>
 
-<<<<<<< HEAD
-    <div id="tiposModalidad" class="section-content">
-        <h2 class="section-title">Tipos de Modalidad</h2>
-        <p>En esta sección se describen los diferentes tipos de modalidades disponibles.</p>
-        <table class="table">
+    <!-- Contenedor centrado y tabla pequeña -->
+    <div class="flex justify-center">
+        <table class="text-gray-700 text-sm bg-white rounded-lg shadow w-auto">
             <thead>
-                <tr>
-                    <th>Modalidad</th>
-                    <th>Descripción</th>
-                    <th>Duración</th>
-                    <th>Requisitos</th>
+                <tr class="bg-[#009e00] text-white">
+                    <th class="py-3 px-4">Modalidad</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Pasantía</td>
-                    <td>Experiencia práctica en un entorno laboral.</td>
-                    <td>3 meses</td>
-                    <td>Estudiante de último año.</td>
+            <tbody class="divide-y divide-gray-200">
+                <tr onclick="showInfo('pasantia')">
+                    <td class="py-3 px-4 cursor-pointer">Pasantía</td>
                 </tr>
-                <tr>
-                    <td>Contrato de Aprendizaje</td>
-                    <td>Formación práctica y teórica en una empresa.</td>
-                    <td>6 meses</td>
-                    <td>Menores de 25 años.</td>
+                <tr onclick="showInfo('contrato')">
+                    <td class="py-3 px-4 cursor-pointer">Contrato de Aprendizaje</td>
                 </tr>
-                <tr>
-                    <td>Vínculo Laboral</td>
-                    <td>Relación laboral formal con una empresa.</td>
-                    <td>Indefinido</td>
-                    <td>Cumplimiento de requisitos del empleador.</td>
+                <tr onclick="showInfo('vinculo')">
+                    <td class="py-3 px-4 cursor-pointer">Vínculo Laboral</td>
+                </tr>
+                <tr onclick="showInfo('unidad')">
+                    <td class="py-3 px-4 cursor-pointer">Unidad Productiva Familiar</td>
+                </tr>
+                <tr onclick="showInfo('proyecto')">
+                    <td class="py-3 px-4 cursor-pointer">Proyecto Productivo Empresarial</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
-=======
-        <!-- Sección Tipos de Modalidad -->
-<section id="tiposModalidad" class="mt-16 bg-white p-8 border border-gray-200 rounded-lg shadow-sm">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6">Tipos de Modalidad</h2>
-    <p class="text-gray-700 mb-6">Cada modalidad de la etapa productiva está diseñada para adaptarse a las distintas necesidades de formación y las características del entorno laboral, permitiendo que los aprendices adquieran experiencia según sus intereses y las oportunidades disponibles. A continuación, se describen las modalidades más comunes, cada una con sus beneficios y características principales:</p>
-    <table class="w-full text-gray-700 text-sm bg-white rounded-lg shadow">
-        <thead>
-            <tr class="bg-[#009e00] text-white">
-                <th class="py-3 px-4">Modalidad</th>
-                <th class="py-3 px-4">Descripción</th>
-                <th class="py-3 px-4">Duración</th>
-                <th class="py-3 px-4">Requisitos</th>
-            </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200">
-            <tr>
-                <td class="py-3 px-4">Pasantía</td>
-                <td class="py-3 px-4">El aprendiz realiza prácticas en una empresa para aplicar lo aprendido en su formación académica. Es ideal para estudiantes que desean experimentar el entorno laboral y poner en práctica sus conocimientos en un contexto real.</td>
-                <td class="py-3 px-4">3 a 6 meses</td>
-                <td class="py-3 px-4">Estudiante de último año con disponibilidad para aprender y aportar, con un enfoque teórico sólido y ganas de integrarse en un equipo profesional.</td>
-            </tr>
-            <tr>
-                <td class="py-3 px-4">Contrato de Aprendizaje</td>
-                <td class="py-3 px-4">Combina la formación teórica con la práctica laboral, donde el aprendiz se convierte en un colaborador activo dentro de una empresa. Además, recibe una remuneración acorde al tipo de contrato.</td>
-                <td class="py-3 px-4">6 meses a 2 años</td>
-                <td class="py-3 px-4">Menores de 25 años con formación técnica o tecnológica, con disposición para aprender y comprometerse a tiempo completo con la empresa.</td>
-            </tr>
-            <tr>
-                <td class="py-3 px-4">Vínculo Laboral</td>
-                <td class="py-3 px-4">El aprendiz trabaja directamente en una empresa bajo un contrato formal de trabajo, con un salario acorde a las normativas laborales. Esta modalidad permite una inmersión total en el entorno laboral, con el aprendizaje directo de tareas profesionales.</td>
-                <td class="py-3 px-4">Indefinido</td>
-                <td class="py-3 px-4">Cumplimiento de los requisitos específicos establecidos por la empresa, que generalmente incluyen experiencia previa o habilidades específicas relacionadas con el puesto.</td>
-            </tr>
-            <tr>
-                <td class="py-3 px-4">Unidad Productiva Familiar</td>
-                <td class="py-3 px-4">El aprendiz se involucra en el desarrollo de un emprendimiento familiar, aplicando sus conocimientos para fortalecer y expandir el negocio. En esta modalidad, los aprendices ayudan a mejorar la gestión y operatividad de una unidad familiar productiva.</td>
-                <td class="py-3 px-4">Variable, según el plan de negocio</td>
-                <td class="py-3 px-4">Viabilidad del proyecto, apoyo familiar y compromiso con los objetivos empresariales, especialmente en términos de la expansión y sostenibilidad del emprendimiento.</td>
-            </tr>
-            <tr>
-                <td class="py-3 px-4">Proyecto Productivo Empresarial</td>
-                <td class="py-3 px-4">Esta modalidad permite a los aprendices participar en proyectos innovadores dentro de las empresas, fomentando su creatividad y capacidad de resolver problemas. Se busca que los aprendices generen soluciones prácticas y aplicables para las necesidades de la empresa.</td>
-                <td class="py-3 px-4">Variable, dependiendo del proyecto</td>
-                <td class="py-3 px-4">Viabilidad y factibilidad del proyecto, habilidades en investigación, desarrollo e innovación, y capacidad para trabajar de forma independiente y colaborativa en equipos multidisciplinarios.</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <!-- Mensaje de Alerta con la Información -->
+    <div id="infoAlert" class="hidden absolute inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full relative">
+            <button onclick="closeAlert()" class="absolute top-0 right-0 p-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <p id="alertText" class="text-lg"></p>
+        </div>
+    </div>
+
     <p class="text-gray-700 leading-relaxed mt-4">
         Cada modalidad tiene un enfoque específico que busca no solo el desarrollo profesional de los aprendices, sino también la aportación de valor a las empresas o iniciativas productivas con las que se colaboran. Así, se genera un entorno de aprendizaje mutuamente beneficioso. Al participar en estas modalidades, los aprendices no solo adquieren conocimientos prácticos que aumentan su empleabilidad, sino que también se convierten en parte integral de procesos productivos reales, contribuyendo al éxito de las organizaciones.
     </p>
-    <p class="text-gray-700 leading-relaxed mt-4">
-        Además, estas modalidades ofrecen flexibilidad para adaptarse a las diferentes necesidades de los aprendices y las empresas. Algunas pueden requerir un mayor compromiso a largo plazo, como el contrato de aprendizaje o el vínculo laboral, mientras que otras, como las pasantías, ofrecen oportunidades más breves pero igualmente valiosas. Por esta razón, es importante elegir la modalidad que mejor se adapte a los objetivos profesionales de los aprendices y a las capacidades de las empresas.
-    </p>
+   
 </section>
 
->>>>>>> 3952b8f79cfc3f803e873c28644ffe68929d3b28
+
 
     <!-- Sección Misión -->
     <div id="mision" class="section-content">
@@ -391,6 +350,42 @@
             adaptiveHeight: true           // Efecto de desvanecimiento entre las imágenes
         });
     });
+    function showInfo(modalidad) {
+        let alertText = '';
+
+        switch(modalidad) {
+            case 'pasantia':
+                alertText = "La pasantía permite al aprendiz realizar prácticas en una empresa, poniendo en práctica lo aprendido en su formación académica. Ideal para estudiantes que desean experimentar el entorno laboral y aplicar sus conocimientos.";
+                break;
+            case 'contrato':
+                alertText = "El contrato de aprendizaje combina la formación teórica con la práctica laboral, donde el aprendiz es un colaborador activo en la empresa, y recibe una remuneración acorde al tipo de contrato.";
+                break;
+            case 'vinculo':
+                alertText = "En el vínculo laboral, el aprendiz trabaja directamente en una empresa con un contrato formal de trabajo y salario acorde a las normativas laborales, permitiendo una inmersión total en el entorno laboral.";
+                break;
+            case 'unidad':
+                alertText = "En la modalidad de unidad productiva familiar, el aprendiz se involucra en el desarrollo de un emprendimiento familiar, aplicando sus conocimientos para fortalecer y expandir el negocio.";
+                break;
+            case 'proyecto':
+                alertText = "El proyecto productivo empresarial permite a los aprendices participar en proyectos innovadores dentro de las empresas, generando soluciones prácticas para las necesidades de la empresa.";
+                break;
+            default:
+                alertText = "Información no disponible.";
+        }
+
+        // Mostrar el mensaje en la alerta
+        document.getElementById('alertText').innerText = alertText;
+        document.getElementById('infoAlert').classList.remove('hidden');
+
+        // Desenfocar el resto del contenido con un desenfoque más suave
+        document.querySelector('.section-content').style.filter = 'blur(4px)';
+    }
+
+    function closeAlert() {
+        // Ocultar la alerta y quitar el desenfoque
+        document.getElementById('infoAlert').classList.add('hidden');
+        document.querySelector('.section-content').style.filter = 'none';
+    }
     </script>
 </body>
 </html>
