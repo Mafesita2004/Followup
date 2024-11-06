@@ -92,7 +92,7 @@ p {
 }
 
 .login-container {
-    background-color: #00324d;
+    background-color: #009e00;
     color: white;
     padding: 40px;
     border-radius: 10px;
@@ -140,8 +140,8 @@ input {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #009e00;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -150,9 +150,10 @@ button {
 }
 
 button:hover {
-    background-color: #008000;
+    background-color: #537a53;
 }
 .register-link {
     color:#ffffff;
     padding-left: 80px;
+    align-items: center;
 }
