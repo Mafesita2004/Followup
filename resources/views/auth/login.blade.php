@@ -212,11 +212,11 @@
         </div>
 
         <div class="login-container">
-            <h3>LOGIN</h3>
+            <h3>USUARIO</h3>
             <form id="loginform" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="input-group">
-                    <img src="{{ asset('img/user-icon.png') }}" alt="Usuario" class="input-icon">
+                    <img src="{{ asset('img/mail.png.png') }}" alt="Usuario" class="input-icon">
                     <input type="email" name="email" placeholder="Correo electrónico" required>
                 </div>
                 <div class="input-group">
