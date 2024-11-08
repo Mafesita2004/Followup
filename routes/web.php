@@ -13,10 +13,11 @@ use App\Http\Controllers\TrainerController;
 
 // Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
-    return view('auth.login');
+    return view('administrator.web');
 });
 
 // Rutas para el inicio de sesión y registro
+
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
