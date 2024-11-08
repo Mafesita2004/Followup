@@ -22,7 +22,7 @@
 
         nav {
             position: sticky;
-            top: 70px; /* Ajusta según la altura del header */
+            top: 92px; /* Ajusta según la altura del header */
             z-index: 999;
             background-color: #009e00;
         }
@@ -286,7 +286,7 @@
     <p class="text-gray-700 leading-relaxed mt-4">
         Cada modalidad tiene un enfoque específico que busca no solo el desarrollo profesional de los aprendices, sino también la aportación de valor a las empresas o iniciativas productivas con las que se colaboran. Así, se genera un entorno de aprendizaje mutuamente beneficioso. Al participar en estas modalidades, los aprendices no solo adquieren conocimientos prácticos que aumentan su empleabilidad, sino que también se convierten en parte integral de procesos productivos reales, contribuyendo al éxito de las organizaciones.
     </p>
-   
+
 </section>
 
 
