@@ -74,7 +74,10 @@ class AdministratorController extends Controller
     {
         return view('administrator.email');
     }
-
+    public function Web()
+    {
+        return view('administrator.web');
+    }
 
 
 }

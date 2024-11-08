@@ -13,10 +13,11 @@ use App\Http\Controllers\TrainerController;
 
 // Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
-    return view('auth.login');
+    return view('administrator.web');
 });
 
 // Rutas para el inicio de sesión y registro
+
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
@@ -125,7 +126,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
-
+    Route::get('/administrator/web', [AdministratorController::class, 'Web'])->name('administrator.web');
 
 
   // Rutas de aprendiz (cambiada la duplicación del nombre)
@@ -141,6 +142,9 @@ Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('appr
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
 Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
 Route::get('/settingsaprendiz', [ApprenticeController::class, 'settings'])->name('apprentice.settings');
+Route::get('/notificationaprendiz', [ApprenticeController::class, 'notification'])->name('apprentice.notification');
+Route::get('/notificacionaprendiz', [ApprenticeController::class, 'notification'])->name('notificacionaprendiz');
+
 
 
 Route::get('/trainer/icon', function () {

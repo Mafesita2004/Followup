@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <title>Etapa Productiva</title>
     <style>
         #userMenu {
@@ -60,7 +60,7 @@
                 <!-- Logo de Etapa Productiva y texto "Centro de Comercio y Servicios" en el lado derecho -->
                 <div class="text-left">
                     <!-- Logo de Etapa Seguimiento -->
-                    <a href="{{ route('apprentice') }}" class="flex items-center">
+                    <a href="{{ route('apprentice.home') }}" class="flex items-center">
                         <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
                         <div class="flex flex-col text-left">
                             <h2 class="text-[12px] m-0 text-[#009e00]">Etapa</h2>
@@ -109,27 +109,9 @@
              </div>
         </header>
     <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-start items-center relative z-10">
-        <button id="notifButton" class="relative">
+        <a href="{{ route('apprentice.notification') }}" id="notifButton" class="absolute right-0">
             <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
-        </button>
-    {{-- FIN Barra Azul --}}
-        <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-            <div class="p-4">
-                <h2 class="text-sm font-bold">Notificaciones</h2>
-                <ul>
-                    <li class="mt-2">
-                        <a href="{{ route('apprentice.visit') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('administrator.notificaciones') }}"class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        </a>
         <div class="w-full flex justify-center">
             <ul class="horizontal-list flex space-x-4 justify-center" >
                 <li>
@@ -144,7 +126,7 @@
                 </li>
             </ul>
         </div>
-        
+
     </nav>
     <div class="w-full flex justify-between items-center mt-6">
         <a href="{{ route('apprentice.home') }}" class="ml-4">
@@ -252,7 +234,7 @@
               var menu = document.getElementById('menu2');
               menu.classList.toggle('hidden'); // Alternar la clase 'hidden'
           });
-    
+
           // Función para alternar sublistas
           function toggleSublist(event) {
               event.preventDefault(); // Evitar el comportamiento por defecto
@@ -261,15 +243,15 @@
                   sublist.classList.toggle('hidden'); // Alternar la clase 'hidden' de la sublista
               }
           }
-    
+
           // Registro del evento para todos los enlaces que necesitan alternar un submenu
           document.querySelectorAll('a[onclick="toggleSublist(event)"]').forEach(function(link) {
               link.addEventListener('click', toggleSublist);
           });
       });
       </script>
-    
-    
+
+
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 
 </body>
