@@ -124,10 +124,10 @@
                                <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Registrar </a>
             <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
                 <li class="mt-2">
-                    <a href="{{ route('administrator.register-Instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructor</a>
+                    <a href="{{ route('register') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructor</a>
                 </li>
                     <li class="mt-2">
-                        <a href="{{ route('register-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendiz</a>
+                        <a href="{{ route('register') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendiz</a>
                     </li>
                 </ul>
 
