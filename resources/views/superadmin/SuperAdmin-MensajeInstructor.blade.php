@@ -86,27 +86,12 @@
 
     </header>
 
-    <nav class="bg-[#009e00] px-2.5 py-1.5 flex justify-start items-center h-14 relative z-10">
-        <button id="notifButton" class="relative">
-            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
+    <nav class="bg-[#009e00] px-2.5 py-1.5 flex justify-end items-center h-14 relative z-10">
+        <button id="notifButton" class="absolute right-0 mr-4">
+            <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}">
+                <img class="w-[50px] h-auto filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+            </a>
         </button>
-        <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-            <div class="p-4">
-                <h2 class="text-sm font-bold">Notificaciones</h2>
-                <ul>
-                    <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="#" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Inicio</div>
 
     </nav>
