@@ -13,10 +13,31 @@
             margin-top: 0.5rem;
         }
         .user-status {
-            text-align: center; /* Centrar el texto */
-            color: #009e00; /* Color verde */
-            margin-top: 5px; /* Espacio superior para alineación */
-            font-size: 12px; /* Ajustar el tamaño de fuente */
+            text-align: center;
+            color: #009e00;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        #registerMenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #D9D9D9;
+            padding: 8px 0;
+            border-radius: 4px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            z-index: 10;
+        }
+        #registerMenu li a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: black;
+        }
+        #registerMenu li a:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
@@ -82,23 +103,36 @@
                                    <ul class="hidden ml-4 mt-2 bg-[#EEEEEE] p-2 rounded-lg">
                                        <li class="mt-2 font-bold text-black border-b border-gray-300 pb-2">MODALIDAD</li>
                                        <li class="mt-2"><a href="{{ route('administrator.template')}}"class="block text-black hover:bg-white p-2 rounded-lg">Pasantía</a></li>
-                                       <li>
-                                          <a href="javascript:void(0)" class="block text-black hover:bg-white p-2 rounded-lg" id="contratoAprendizaje">Contrato de Aprendizaje</a>
-                                          <ul id="sublistContrato" class="ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px] hidden">
-                                              <li class="mt-2">
-                                                  <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
-                                              </li>
-                                              <li class="mt-2">
-                                                  <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</a>
-                                              </li>
-                                          </ul>
-                                      </li>
+                                       <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Contrato de Aprendizaje</a>
+                                       <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
+                                           <li class="mt-2">
+                                               <a href="{{ route('administrator.template') }}" class="block text-black hover:bg-white p-2 rounded-lg">Ver Plantilla</a>
+                                           </li>
+                                           <ul>
+                                               <li class="mt-2">
+                                                   <button id="uploadButton" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</button>
+                                                   <input type="file" id="fileUpload" class="hidden" name="fileUpload" accept=".txt,.doc,.docx,.pdf" />
+                                               </li>
+                                           </ul>
+                                       </ul>
+                                   </li>
                                        <li class="mt-2"><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Vinculo Laboral</a></li>
                                        <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a></li>
                                        <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a></li>
                                    </ul></li>
                                <li class="mt-2"><a href="{{ route('administrator.graphic')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
-                               <li class="mt-2"><a href="{{ route('register')}}" class="block text-black hover:bg-white p-2 rounded-lg">Registrar</a></li>
+                               <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Registrar </a>
+            <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
+                <li class="mt-2">
+                    <a href="{{ route('administrator.register-Instructor') }}" class="block text-black hover:bg-white p-2 rounded-lg">Instructor</a>
+                </li>
+                    <li class="mt-2">
+                        <a href="{{ route('register-Aprendiz') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendiz</a>
+                    </li>
+                </ul>
+
+        </li>
+
                            </ul>
                            <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                                @csrf
@@ -207,7 +241,67 @@
         </li>
     </ul>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Alternar visibilidad del menú de usuario
+        document.getElementById('menuButton').addEventListener('click', function(event) {
+            event.stopPropagation();
+            const userMenu = document.getElementById('userMenu');
+            userMenu.classList.toggle('hidden');
+        });
 
-<script src="{{ asset('js/SuperAdmin.js') }}"></script>
+        // Alternar visibilidad del menú "Plantilla"
+        document.getElementById('toggleMenu2').addEventListener('click', function(event) {
+            event.preventDefault();
+            const menu2 = document.getElementById('menu2');
+            menu2.classList.toggle('hidden');
+        });
+
+        // Alternar visibilidad del submenú "Contrato de Aprendizaje"
+        function toggleSublist(event) {
+            event.preventDefault();
+            const sublist = event.target.nextElementSibling;
+            if (sublist) {
+                sublist.classList.toggle('hidden');
+            }
+        }
+
+        // Asignar eventos para los submenús
+        const sublistButtons = document.querySelectorAll('a[onclick="toggleSublist(event)"]');
+        sublistButtons.forEach(button => {
+            button.addEventListener('click', toggleSublist);
+        });
+
+        // Mostrar el cuadro de diálogo para seleccionar archivo al hacer clic en el botón "Añadir Plantilla"
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            document.getElementById('fileUpload').click();
+        });
+
+        // Ocultar menús al hacer clic fuera de ellos
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById('userMenu');
+            const menu2 = document.getElementById('menu2');
+            const registerMenu = document.getElementById('registerMenu');
+
+            // Ocultar el menú de usuario si se hace clic fuera de él
+            if (!userMenu.contains(event.target) && !document.getElementById('menuButton').contains(event.target)) {
+                userMenu.classList.add('hidden');
+            }
+
+            // Ocultar el menú "Plantilla" si se hace clic fuera de él
+            if (!menu2.contains(event.target) && !document.getElementById('toggleMenu2').contains(event.target)) {
+                menu2.classList.add('hidden');
+            }
+
+            // Ocultar el menú "Registrar" si se hace clic fuera de él
+            if (!registerMenu.contains(event.target) && !document.getElementById('registerButton').contains(event.target)) {
+                registerMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+
+
 </body>
 </html>
