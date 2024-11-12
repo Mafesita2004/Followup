@@ -642,54 +642,18 @@ margin-right: 10px;
                 </div>
                 <div id="calendarDays" class="calendar"></div>
             </section>
-            <div class="mt-4">
-                <button id="addEvent" class="bg-[#009e00] text-white px-4 py-2 rounded">Agregar Evento</button>
-            </div>
-
-            <!-- Modal para agregar/actualizar eventos -->
-            <div id="eventModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-                <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-                    <h3 id="modalTitle" class="text-lg font-bold mb-4">Agregar Evento</h3>
-                    <form id="eventForm">
-                        <input type="hidden" id="eventId">
-                        <div class="mb-4">
-                            <label for="eventDate" class="block text-sm font-medium text-gray-700">Fecha</label>
-                            <input type="date" id="eventDate" name="eventDate" class="mt-1 block w-full p-5 border-gray-300 rounded-md shadow-sm">
-                        </div>
-                        <div class="mb-4">
-                            <label for="eventTitle" class="block text-sm font-medium text-gray-700">Título</label>
-                            <input type="text" id="eventTitle" name="eventTitle" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                        </div>
-                        <div class="mb-4">
-                            <label for="eventDescription" class="block text-sm font-medium text-gray-700">Descripción</label>
-                            <textarea id="eventDescription" name="eventDescription" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
-                        </div>
-                        <div class="flex justify-end">
-                            <button type="button" id="cancelEvent" class="mr-2 bg-gray-300 text-black px-4 py-2 rounded">Cancelar</button>
-                            <button type="submit" class="bg-[#009e00] text-white px-4 py-2 rounded">Guardar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </main>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const currentMonthSpan = document.getElementById('currentMonth');
             const prevMonthButton = document.getElementById('prevMonth');
             const nextMonthButton = document.getElementById('nextMonth');
             const calendarDays = document.getElementById('calendarDays');
-            const eventModal = document.getElementById("eventModal");
-            const addEventButton = document.getElementById("addEvent");
-            const cancelEventButton = document.getElementById("cancelEvent");
-            const eventForm = document.getElementById("eventForm");
-            const eventIdInput = document.getElementById("eventId");
-            const modalTitle = document.getElementById("modalTitle");
 
             let currentMonth = new Date().getMonth();
             let currentYear = new Date().getFullYear();
-            let events = [];
-
             const months = [
                 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
                 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
@@ -718,20 +682,12 @@ margin-right: 10px;
                 for (let day = 1; day <= totalDays; day++) {
                     const dayCell = document.createElement('div');
                     dayCell.textContent = day;
+                    dayCell.classList.add('cursor-pointer');
 
-                    const dayEvents = events.filter(event => {
-                        const eventDate = new Date(event.date);
-                        return eventDate.getDate() === day && eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
-                    });
-
-                    dayEvents.forEach(event => {
-                        const eventDiv = document.createElement('div');
-                        eventDiv.classList.add('event');
-                        eventDiv.textContent = event.title;
-                        eventDiv.addEventListener("click", () => {
-                            openEditEvent(event);
-                        });
-                        dayCell.appendChild(eventDiv);
+                    dayCell.addEventListener("click", () => {
+                        // Redirigir a la interfaz apprentice.registervisit con la fecha como parámetro
+                        window.location.href = `registervisitaprendiz`;
+                        // =${currentYear}-${currentMonth + 1}-${day}`;
                     });
 
                     calendarDays.appendChild(dayCell);
@@ -750,53 +706,7 @@ margin-right: 10px;
                 renderCalendar();
             });
 
-            addEventButton.addEventListener("click", function() {
-                modalTitle.textContent = "Agregar Evento";
-                eventIdInput.value = ''; // Limpiar ID
-                eventModal.classList.remove("hidden");
-            });
-
-            cancelEventButton.addEventListener("click", function() {
-                eventModal.classList.add("hidden");
-            });
-
-            eventForm.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const eventDate = document.getElementById("eventDate").value;
-                const eventTitle = document.getElementById("eventTitle").value;
-                const eventDescription = document.getElementById("eventDescription").value;
-
-                if (eventIdInput.value) {
-                    // Actualizar evento
-                    const eventIndex = events.findIndex(event => event.id === eventIdInput.value);
-                    if (eventIndex !== -1) {
-                        events[eventIndex] = { id: eventIdInput.value, date: eventDate, title: eventTitle, description: eventDescription };
-                    }
-                } else {
-                    // Agregar nuevo evento
-                    const newEvent = {
-                        id: Date.now().toString(), // Usar timestamp como ID
-                        date: eventDate,
-                        title: eventTitle,
-                        description: eventDescription
-                    };
-                    events.push(newEvent);
-                }
-
-                eventModal.classList.add("hidden");
-                renderCalendar();
-            });
-
-            function openEditEvent(event) {
-                modalTitle.textContent = "Actualizar Evento";
-                eventIdInput.value = event.id; // Establecer ID del evento
-                document.getElementById("eventDate").value = event.date;
-                document.getElementById("eventTitle").value = event.title;
-                document.getElementById("eventDescription").value = event.description;
-                eventModal.classList.remove("hidden");
-            }
-
-            renderCalendar(); // Renderizar el calendario al cargar la página
+            renderCalendar();
         });
     </script>
       <script>

@@ -165,3 +165,7 @@ Route::get('/trainer/configuracion',[TrainerController::class,'configuracion'])-
 Route::get('/trainer/cronograma',[TrainerController::class,'cronograma'])->name('cronograma');
 
 
+Route::get('/test-react', function () {
+    return view('test');
+});
+
