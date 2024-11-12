@@ -6,7 +6,8 @@ use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdministratorController;
-
+use App\Http\Controllers\RegistrarController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
 
@@ -39,10 +40,10 @@ Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class,
 Route::get('/superadmin/SuperAdmin-Notificaciones', [SuperadminController::class, 'SuperAdminNotificaciones'])->name('superadmin.SuperAdmin-Notificaciones');
 
 // Ruta para redactar nuevas notificaciones
-Route::get('/superadmin/SuperAdmin-Redactar', [SuperadminController::class, 'SuperAdminRedactar'])->name('superadmin.SuperAdmin-Redactar');
+Route::get('/superadmin/SuperAdmin-Redactar', [ReportController::class, 'SuperAdminRedactar'])->name('superadmin.SuperAdmin-Redactar');
 Route::get('/superadmin/email', [SuperadminController::class, 'SuperAdminemail'])->name('superadmin.email');
 // Ruta para añadir un nuevo administrador
-Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [SuperadminController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
+Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [RegistrarController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
 
 // Ruta para ver el perfil de un administrador específico
 Route::get('/superadmin/SuperAdmin-AdministratorPerfil', [SuperadminController::class, 'SuperAdminAdministratorPerfil'])->name('superadmin.SuperAdmin-AdministratorPerfil');
@@ -63,7 +64,7 @@ Route::get('/superadmin/SuperAdmin-InstructorPerfil', [SuperadminController::cla
 
 
 // Ruta para añadir un nuevo instructor
-Route::get('/superadmin/SuperAdmin-InstructorAñadir', [SuperadminController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
+Route::get('/superadmin/SuperAdmin-InstructorAñadir', [RegistrarController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
 
 // Ruta para configuración general del superadmin
 Route::get('/superadmin/SuperAdmin-Configuracion', [SuperadminController::class, 'SuperAdminConfiguracion'])->name('superadmin.SuperAdmin-Configuracion');
@@ -78,7 +79,7 @@ Route::get('/superadmin/SuperAdmin-AprendizPerfil', [SuperadminController::class
 
 
 // Ruta para añadir un nuevo aprendiz
-Route::get('/superadmin/SuperAdmin-AprendizAgregar', [SuperadminController::class, 'SuperAdminAprendizAgregar'])->name('superadmin.SuperAdmin-AprendizAgregar');
+Route::get('/superadmin/SuperAdmin-AprendizAgregar', [RegistrarController::class, 'SuperAdminAprendizAgregar'])->name('superadmin.SuperAdmin-AprendizAgregar');
 
 // Ruta para ver la lista de aprendices
 Route::get('/superadmin/SuperAdmin-ListaAprendiz', [SuperadminController::class, 'SuperAdminListaAprendiz'])->name('superadmin.SuperAdmin-ListaAprendiz');
@@ -110,14 +111,14 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/settings', [AdministratorController::class, 'settings'])->name('administrator.settings');
     Route::get('/administrator/instructor', [AdministratorController::class, 'instructor'])->name('administrator.instructor');
     Route::get('/administrator/apprentice', [AdministratorController::class, 'apprentice'])->name('administrator.apprentice');
-    Route::get('/administrator/reports', [AdministratorController::class, 'reports'])->name('administrator.reports');
+    Route::get('/administrator/reports', [ReportController::class, 'reports'])->name('administrator.reports');
     Route::get('/administrator/graphic', [AdministratorController::class, 'graphic'])->name('administrator.graphic');
     Route::get('/administrator/template', [AdministratorController::class, 'template'])->name('administrator.template');
     Route::get('/administrator/Administrator-perfil', [AdministratorController::class, 'Adminperfil'])->name('administrator.Administrator-perfil');
     Route::get('/administrator/Apprentice-perfil', [AdministratorController::class, 'perfilAprendiz'])->name('administrator.Apprentice-perfil');
     Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
-    Route::get('/administrator/Agregar-aprendiz', [AdministratorController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
-    Route::get('/administrator/Agregar-instructor', [AdministratorController::class, 'AgregarInstructor'])->name('administrator.Agregar-instructor');
+    Route::get('/administrator/Agregar-aprendiz', [RegistrarController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
+    Route::get('/administrator/Agregar-instructor', [RegistrarController::class, 'AgregarInstructor'])->name('administrator.Agregar-instructor');
     Route::get('/administrator/Mensaje-aprendiz', [AdministratorController::class, 'MensajeAprendiz'])->name('administrator.Mensaje-aprendiz');
     Route::get('/administrator/Mensaje-instructor', [AdministratorController::class, 'MensajeInstructor'])->name('administrator.Mensaje-instructor');
     Route::get('/administrator/notificaciones', [AdministratorController::class, 'Notificaciones'])->name('administrator.notificaciones');
@@ -154,7 +155,7 @@ Route::get('/trainer/icon', function () {
 //rutas intructor
 Route::get('/trainer/icon',[TrainerController::class,'icon']);
 Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
-Route::get('/trainer/report',[TrainerController::class,'report'])->name('report');
+Route::get('/trainer/report',[ReportController::class,'report'])->name('report');
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
 Route::get('/trainer/Bitacora',[TrainerController::class,'bitacora'])->name('bitacora');
 Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita');

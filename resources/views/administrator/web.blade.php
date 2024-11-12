@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Productiva</title>
     <style>
         body {
@@ -286,7 +287,7 @@
     <p class="text-gray-700 leading-relaxed mt-4">
         Cada modalidad tiene un enfoque específico que busca no solo el desarrollo profesional de los aprendices, sino también la aportación de valor a las empresas o iniciativas productivas con las que se colaboran. Así, se genera un entorno de aprendizaje mutuamente beneficioso. Al participar en estas modalidades, los aprendices no solo adquieren conocimientos prácticos que aumentan su empleabilidad, sino que también se convierten en parte integral de procesos productivos reales, contribuyendo al éxito de las organizaciones.
     </p>
-   
+
 </section>
 
 
