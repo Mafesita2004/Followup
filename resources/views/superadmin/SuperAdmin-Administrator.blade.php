@@ -84,30 +84,10 @@
                  </div>
              </div>
         </header>
-    <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-start items-center relative z-10">
-        <button id="notifButton" class="relative">
-            <img class="w-[35px] h-auto mr-2.5 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-            <span class="absolute top-0 right-0 w-4 h-4 bg-red-600 text-white text-xs rounded-full flex items-center justify-center">5</span> <!-- Ejemplo de contador de notificaciones -->
-        </button>
-    {{-- FIN Barra Azul --}}
-        <div id="notifMenu" class="hidden absolute top-full mt-2 left-0 w-64 bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-            <div class="p-4">
-                <h2 class="text-sm font-bold">Notificaciones</h2>
-                <ul>
-                    <li class="mt-2">
-                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 1</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 2</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}"class="block text-gray-700 hover:bg-gray-100 p-2 rounded-lg">Notificación 3</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="w-full flex justify-center">
-            <ul class="horizontal-list flex space-x-4 justify-center" >
+    <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-end items-center relative z-10">
+
+        <div class="w-full flex justify-center items-center">
+            <ul class="horizontal-list flex space-x-4 justify-center items-center" >
                 <li>
                     <a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                         Inicio
@@ -136,17 +116,17 @@
                        Graficas
                     </a>
                 </li>
-
+                 <!-- Botón de notificaciones alineado a la derecha -->
+                 <button id="notifButton" class="absolute right-0 mr-4 items-center">
+                    <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}">
+                        <img class="w-[50px] h-auto filter invert items-center " src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+                    </a>
+                </button>
 
 
 
             </ul>
         </div>
-
-
-
-
-
     </nav>
     <main class="flex flex-col items-center mt-4 relative">
         <div class="w-full flex justify-between items-center mb-4">

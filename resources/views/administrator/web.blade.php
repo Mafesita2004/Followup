@@ -23,7 +23,7 @@
 
         nav {
             position: sticky;
-            top: 70px; /* Ajusta según la altura del header */
+            top: 92px; /* Ajusta según la altura del header */
             z-index: 999;
             background-color: #009e00;
         }
