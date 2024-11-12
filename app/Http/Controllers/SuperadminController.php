@@ -43,16 +43,16 @@ class SuperadminController extends Controller
         return view('superadmin.email');
     }
 
-    public function SuperAdminRedactar()
-    {
-        return view('superadmin.SuperAdmin-Redactar');
-    }
+    // public function SuperAdminRedactar()
+    // {
+    //     return view('superadmin.SuperAdmin-Redactar');
+    // }
 
 
-    public function SuperAdminAdministratorAñadir()
-    {
-        return view('superadmin.SuperAdmin-AdministratorAñadir');
-    }
+    // public function SuperAdminAdministratorAñadir()
+    // {
+    //     return view('superadmin.SuperAdmin-AdministratorAñadir');
+    // }
 
     public function SuperAdminAdministratorPerfil()
     {
@@ -64,10 +64,10 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Instructor');
     }
 
-    public function SuperAdminInstructorAñadir()
-    {
-        return view('superadmin.SuperAdmin-InstructorAñadir');
-    }
+    // public function SuperAdminInstructorAñadir()
+    // {
+    //     return view('superadmin.SuperAdmin-InstructorAñadir');
+    // }
 
     public function SuperAdminInstructorPerfil()
     {
@@ -81,10 +81,10 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Aprendiz');
     }
 
-    public function SuperAdminAprendizAgregar()
-    {
-        return view('superadmin.SuperAdmin-AprendizAgregar');
-    }
+    // public function SuperAdminAprendizAgregar()
+    // {
+    //     return view('superadmin.SuperAdmin-AprendizAgregar');
+    // }
     public function SuperAdminCronograma()
     {
         return view('superadmin.SuperAdmin-Cronograma');
@@ -107,7 +107,7 @@ class SuperadminController extends Controller
 
 
 
-   
+
     public function SuperAdminMensajeInstructor()
     {
         return view('superadmin.SuperAdmin-MensajeInstructor');

@@ -43,10 +43,10 @@ class TrainerController extends Controller
         return view('trainer.cronograma');
     }
     //icono reportes
-    public function report()
-    {
-        return view('trainer.report');
-    }
+    // public function report()
+    // {
+    //     return view('trainer.report');
+    // }
     //icono nombre usuario instructor
     public function username()
     {

@@ -17,9 +17,6 @@ class AdministratorController extends Controller
     public function apprentice(){
         return view('administrator.apprentice');
     }
-    public function reports(){
-        return view('administrator.reports');
-    }
     public function graphic(){
         return view('administrator.graphic');
     }
@@ -50,14 +47,15 @@ class AdministratorController extends Controller
         return view('administrator.Instructor-perfil');
     }
 
-    public function AgregarAprendiz()
-    {
-        return view('administrator.Agregar-aprendiz');
-    }
-    public function AgregarInstructor()
-    {
-        return view('administrator.Agregar-instructor');
-    }
+    // public function AgregarAprendiz()
+    // {
+    //     return view('administrator.Agregar-aprendiz');
+    // }
+    // public function AgregarInstructor()
+    // {
+    //     return view('administrator.Agregar-instructor');
+    // }
+    
     public function MensajeAprendiz()
     {
         return view('administrator.Mensaje-aprendiz');
