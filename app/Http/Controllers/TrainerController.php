@@ -22,10 +22,10 @@ class TrainerController extends Controller
     }
 
     //icono notificaciones
-    public function notification()
-    {
-        return view('trainer.notification');
-    }
+    // public function notification()
+    // {
+    //     return view('trainer.notification');
+    // }
     //aprendiz icono
 
     public function configuracion()

@@ -18,10 +18,10 @@ class SuperadminController extends Controller
         return view('superadmin.SuperAdmin-Administrator');
     }
 
-    public function SuperAdminNotificaciones()
-    {
-        return view('superadmin.SuperAdmin-Notificaciones');
-    }
+    // public function SuperAdminNotificaciones()
+    // {
+    //     return view('superadmin.SuperAdmin-Notificaciones');
+    // }
 
     public function SuperAdminConfiguracion()
     {
