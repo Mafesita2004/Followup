@@ -37,16 +37,16 @@ class ApprenticeController extends Controller
     {
         return view('apprentice.settings');
     }
-    public function notification()
-    {
-        $notificaciones = [
-            ['titulo' => 'Notificación 1', 'asunto' => 'Asunto 1', 'fecha' => '2023-10-30'],
-            ['titulo' => 'Notificación 2', 'asunto' => 'Asunto 2', 'fecha' => '2023-10-31'],
-            // Agrega más notificaciones aquí
-        ];
+    // public function notification()
+    // {
+    //     $notificaciones = [
+    //         ['titulo' => 'Notificación 1', 'asunto' => 'Asunto 1', 'fecha' => '2023-10-30'],
+    //         ['titulo' => 'Notificación 2', 'asunto' => 'Asunto 2', 'fecha' => '2023-10-31'],
+    //         // Agrega más notificaciones aquí
+    //     ];
 
-        return view('apprentice.notification', compact('notificaciones'));
-    }
+    //     return view('apprentice.notification', compact('notificaciones'));
+    // }
 
 
     /**

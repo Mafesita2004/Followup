@@ -6,6 +6,7 @@ use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/superadmin/SuperAdmin-Administrator', [SuperadminController::class, 'SuperAdminAdministrator'])->name('superadmin.SuperAdmin-Administrator');
 
 // Ruta para ver notificaciones de superadmin
-Route::get('/superadmin/SuperAdmin-Notificaciones', [SuperadminController::class, 'SuperAdminNotificaciones'])->name('superadmin.SuperAdmin-Notificaciones');
+Route::get('/superadmin/SuperAdmin-Notificaciones', [NotificationController::class, 'SuperAdminNotificaciones'])->name('superadmin.SuperAdmin-Notificaciones');
 
 // Ruta para redactar nuevas notificaciones
 Route::get('/superadmin/SuperAdmin-Redactar', [ReportController::class, 'SuperAdminRedactar'])->name('superadmin.SuperAdmin-Redactar');
@@ -121,7 +122,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Agregar-instructor', [RegistrarController::class, 'AgregarInstructor'])->name('administrator.Agregar-instructor');
     Route::get('/administrator/Mensaje-aprendiz', [AdministratorController::class, 'MensajeAprendiz'])->name('administrator.Mensaje-aprendiz');
     Route::get('/administrator/Mensaje-instructor', [AdministratorController::class, 'MensajeInstructor'])->name('administrator.Mensaje-instructor');
-    Route::get('/administrator/notificaciones', [AdministratorController::class, 'Notificaciones'])->name('administrator.notificaciones');
+    Route::get('/administrator/notificaciones', [NotificationController::class, 'Notificaciones'])->name('administrator.notificaciones');
     Route::get('/administrator/redactar', [AdministratorController::class, 'redactar'])->name('administrator.redactar');
     Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
@@ -143,7 +144,7 @@ Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('appr
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
 Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
 Route::get('/settingsaprendiz', [ApprenticeController::class, 'settings'])->name('apprentice.settings');
-Route::get('/notificationaprendiz', [ApprenticeController::class, 'notification'])->name('apprentice.notification');
+Route::get('/notificationaprendiz', [NotificationController::class, 'notification'])->name('apprentice.notification');
 Route::get('/notificacionaprendiz', [ApprenticeController::class, 'notification'])->name('notificacionaprendiz');
 
 
@@ -154,7 +155,7 @@ Route::get('/trainer/icon', function () {
 
 //rutas intructor
 Route::get('/trainer/icon',[TrainerController::class,'icon']);
-Route::get('/trainer/notification',[TrainerController::class, 'notification'])->name('notification');
+Route::get('/trainer/notification',[NotificationController::class, 'notificationtrainer'])->name('notificationtrainer');
 Route::get('/trainer/report',[ReportController::class,'report'])->name('report');
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
 Route::get('/trainer/Bitacora',[TrainerController::class,'bitacora'])->name('bitacora');

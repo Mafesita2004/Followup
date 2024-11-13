@@ -23,10 +23,10 @@ class AdministratorController extends Controller
     public function template(){
         return view('administrator.template');
     }
-    public function Notificaciones()
-    {
-        return view('administrator.notificaciones');
-    }
+    // public function Notificaciones()
+    // {
+    //     return view('administrator.notificaciones');
+    // }
     public function redactar()
     {
         return view('administrator.redactar');
@@ -55,7 +55,7 @@ class AdministratorController extends Controller
     // {
     //     return view('administrator.Agregar-instructor');
     // }
-    
+
     public function MensajeAprendiz()
     {
         return view('administrator.Mensaje-aprendiz');
