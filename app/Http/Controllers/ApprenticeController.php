@@ -16,10 +16,10 @@ class ApprenticeController extends Controller
         return view('apprentice.home');
     }
 
-    public function calendar()
-    {
-        return view('apprentice.calendar');
-    }
+    // public function calendar()
+    // {
+    //     return view('apprentice.calendar');
+    // }
 
     public function visit()
     {

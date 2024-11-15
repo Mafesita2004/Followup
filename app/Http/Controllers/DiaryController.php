@@ -7,9 +7,19 @@ use Illuminate\Http\Request;
 
 class DiaryController extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     */
+
+    //instructor
+    public function cronograma()
+    {
+        return view('trainer.cronograma');
+    }
+    //aprendiz
+    public function calendar()
+    {
+        return view('apprentice.calendar');
+    }
+
+
     public function index()
     {
         // Recupera agendas, aplicando los scopes incluidos y de ordenamiento

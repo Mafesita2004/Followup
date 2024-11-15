@@ -6,6 +6,7 @@ use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\ReportController;
@@ -139,7 +140,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
 
 // RUTAS APRENDIZ (fuera del middleware 'auth')
 Route::get('/homeaprendiz', [ApprenticeController::class, 'index'])->name('apprentice.index');
-Route::get('/calendaraprendiz', [ApprenticeController::class, 'calendar'])->name('apprentice.calendar');
+Route::get('/calendaraprendiz', [DiaryController::class, 'calendar'])->name('apprentice.calendar');
 Route::get('/visitaprendiz', [ApprenticeController::class, 'visit'])->name('apprentice.visit');
 Route::get('/registervisitaprendiz', [ApprenticeController::class, 'registervisit'])->name('apprentice.registervisit');
 Route::get('/profileaprendiz', [ApprenticeController::class, 'profile'])->name('apprentice.profile');
@@ -164,7 +165,7 @@ Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name(
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 Route::get('/trainer/emailTrainer',[TrainerController::class,'email'])->name('email');
 Route::get('/trainer/configuracion',[TrainerController::class,'configuracion'])->name('configuracion');
-Route::get('/trainer/cronograma',[TrainerController::class,'cronograma'])->name('cronograma');
+Route::get('/trainer/cronograma',[DiaryController::class,'cronograma'])->name('cronograma');
 
 
 Route::get('/test-react', function () {
