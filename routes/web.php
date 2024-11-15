@@ -12,7 +12,8 @@ use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
-
+use App\Http\Controllers\UserRegisterController;
+use App\Models\User_register;
 
 // Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
@@ -45,7 +46,7 @@ Route::get('/superadmin/SuperAdmin-Notificaciones', [NotificationController::cla
 Route::get('/superadmin/SuperAdmin-Redactar', [ReportController::class, 'SuperAdminRedactar'])->name('superadmin.SuperAdmin-Redactar');
 Route::get('/superadmin/email', [SuperadminController::class, 'SuperAdminemail'])->name('superadmin.email');
 // Ruta para añadir un nuevo administrador
-Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [RegistrarController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
+Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [UserRegisterController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
 
 // Ruta para ver el perfil de un administrador específico
 Route::get('/superadmin/SuperAdmin-AdministratorPerfil', [SuperadminController::class, 'SuperAdminAdministratorPerfil'])->name('superadmin.SuperAdmin-AdministratorPerfil');
@@ -66,7 +67,7 @@ Route::get('/superadmin/SuperAdmin-InstructorPerfil', [SuperadminController::cla
 
 
 // Ruta para añadir un nuevo instructor
-Route::get('/superadmin/SuperAdmin-InstructorAñadir', [RegistrarController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
+Route::get('/superadmin/SuperAdmin-InstructorAñadir', [UserRegisterController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
 
 // Ruta para configuración general del superadmin
 Route::get('/superadmin/SuperAdmin-Configuracion', [SuperadminController::class, 'SuperAdminConfiguracion'])->name('superadmin.SuperAdmin-Configuracion');
@@ -81,7 +82,7 @@ Route::get('/superadmin/SuperAdmin-AprendizPerfil', [SuperadminController::class
 
 
 // Ruta para añadir un nuevo aprendiz
-Route::get('/superadmin/SuperAdmin-AprendizAgregar', [RegistrarController::class, 'SuperAdminAprendizAgregar'])->name('superadmin.SuperAdmin-AprendizAgregar');
+Route::get('/superadmin/SuperAdmin-AprendizAgregar', [UserRegisterController::class, 'SuperAdminAprendizAgregar'])->name('superadmin.SuperAdmin-AprendizAgregar');
 
 // Ruta para ver la lista de aprendices
 Route::get('/superadmin/SuperAdmin-ListaAprendiz', [SuperadminController::class, 'SuperAdminListaAprendiz'])->name('superadmin.SuperAdmin-ListaAprendiz');
@@ -119,8 +120,8 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/Administrator-perfil', [AdministratorController::class, 'Adminperfil'])->name('administrator.Administrator-perfil');
     Route::get('/administrator/Apprentice-perfil', [AdministratorController::class, 'perfilAprendiz'])->name('administrator.Apprentice-perfil');
     Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
-    Route::get('/administrator/Agregar-aprendiz', [RegistrarController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
-    Route::get('/administrator/Agregar-instructor', [RegistrarController::class, 'AgregarInstructor'])->name('administrator.Agregar-instructor');
+    Route::get('/administrator/Agregar-aprendiz', [UserRegisterController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
+    Route::get('/administrator/Agregar-instructor', [UserRegisterController::class, 'AgregarInstructor'])->name('administrator.Agregar-instructor');
     Route::get('/administrator/Mensaje-aprendiz', [AdministratorController::class, 'MensajeAprendiz'])->name('administrator.Mensaje-aprendiz');
     Route::get('/administrator/Mensaje-instructor', [AdministratorController::class, 'MensajeInstructor'])->name('administrator.Mensaje-instructor');
     Route::get('/administrator/notificaciones', [NotificationController::class, 'Notificaciones'])->name('administrator.notificaciones');

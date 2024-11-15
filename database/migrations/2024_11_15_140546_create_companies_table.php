@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('followups', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string('progress_evaluation');
-            $table->integer('activities_carriedout');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->string('practical_stage');
-            $table->integer('log');
-            $table->date('agreement_report');
+            $table->integer('nit');
+            $table->string('name');
+            $table->string('email');
+            $table->integer('telephone');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('followups');
+        Schema::dropIfExists('companies');
     }
 };
