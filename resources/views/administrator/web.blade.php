@@ -7,15 +7,24 @@
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>Etapa Productiva</title>
     <style>
+
+html, body {
+            width: 100%;
+            overflow-x: hidden; /* Previene el desbordamiento horizontal */
+        }
+
         body {
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
             background-color: white;
+            overflow-x: hidden; /* Evita que se desplace horizontalmente */
         }
 
         header {
             position: sticky;
             top: 0;
+            padding: 0;
             z-index: 1000;
             background-color: white;
             border-bottom: 1px solid #e0e0e0;
@@ -171,6 +180,14 @@
     line-height: 1.8;
     color: black;
 }
+.custom-login-button {
+        background-color: #009e00;
+        height: 40px;
+        line-height: 30px;
+    }
+    .custom-login-button:hover {
+        background-color: #41bd41; /* Cambia este valor al color que prefieras para el hover */
+    }
 
     </style>
 
@@ -182,21 +199,27 @@
 <body class="flex flex-col min-h-screen">
     <header class="text-[#009e00] px-5 py-2.5 flex flex-col items-center">
         <div class="flex justify-between w-full">
-            <div class="flex items-center">
-                <img class="w-[70px] h-[70px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
-                <div class="flex-grow m-2"></div>
-                <div class="text-left">
-                    <div class="flex items-center">
-                        <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
-                        <div class="flex flex-col text-left">
-                            <h2 class="text-[12px] m-0 text-[#009e00]">Etapa</h2>
-                            <h2 class="text-[12px] m-0 text-[#009e00]">Productiva</h2>
+            <div class="flex items-center justify-between w-full">
+                <div class="flex items-center">
+                    <img class="w-[70px] h-[70px]" src="{{ asset('img/logo-sena.png') }}" alt="Sena Logo">
+                    <div class="flex-grow m-2"></div>
+                    <div class="text-left">
+                        <div class="flex items-center">
+                            <img src="{{ asset('img/logo.png') }}" alt="Etapa Seguimiento Logo" class="w-10 h-auto mr-1.5">
+                            <div class="flex flex-col text-left">
+                                <h2 class="text-[12px] m-0 text-[#009e00]">Etapa</h2>
+                                <h2 class="text-[12px] m-0 text-[#009e00]">Productiva</h2>
+                            </div>
                         </div>
+                        <h2 class="text-sm mt-2 text-[#009e00]">Centro de Comercio y Servicios</h2>
                     </div>
-                    <h2 class="text-sm mt-2 text-[#009e00]">Centro de Comercio y Servicios</h2>
                 </div>
+
+  <!-- Botón de Iniciar Sesión alineado en el centro -->
+<a href="{{ route('login') }}" class="custom-login-button text-white text-sm px-4 py-2 rounded-md transition self-center flex items-center justify-center">
+    Iniciar Sesión
+</a>
             </div>
-        </div>
     </header>
 
     <nav class="h-14 py-1.5 flex justify-between items-center px-4 bg-[#009e00]">
@@ -212,23 +235,27 @@
                 Misión
             </a>
         </div>
-
-        <!-- Botón de Iniciar Sesión alineado a la derecha -->
-        <a href="{{ route('login') }}" class="text-white text-sm bg-green-500 hover:bg-green-800 px-4 py-2 rounded-md transition ml-auto flex items-center justify-center w-32">
-            Iniciar Sesión
-        </a>
-
-
     </nav>
-    <div class="container carousel-container mt-5">
-        <div id="carouselImages">
-            <div><img src="{{ asset('img/webpng/carrusel5.jpg') }}" alt="Imagen 1" class="d-block w-100"></div>
-            <div><img src="{{ asset('img/webpng/carrusel1.png') }}" alt="Imagen 1" class="d-block w-100"></div>
-            <div><img src="{{ asset('img/webpng/carrusel2.png') }}" alt="Imagen 2" class="d-block w-100"></div>
-            <div><img src="{{ asset('img/webpng/carrusel3.png') }}" alt="Imagen 3" class="d-block w-100"></div>
-            <div><img src="{{ asset('img/webpng/carrusel4.png') }}" alt="Imagen 4" class="d-block w-100"></div>
+
+    <div class="container-fluid p-0 mt-2"> <!-- Añadí el margin-top aquí -->
+        <div class="container-fluid p-0">
+            <div id="carouselImages">
+                <div>
+                    <img src="{{ asset('img/webpng/carrusel0.jpg') }}" alt="Imagen 1" class="d-block w-100 h-100">
+                </div>
+                <div>
+                    <img src="{{ asset('img/webpng/carrusel6.png') }}" alt="Imagen 1" class="d-block w-100 h-100">
+                </div>
+                <div>
+                    <img src="{{ asset('img/webpng/carrusel7.png') }}" alt="Imagen 2" class="d-block w-100 h-100">
+                </div>
+                <div>
+                    <img src="{{ asset('img/webpng/carrusel8.png') }}" alt="Imagen 2" class="d-block w-100 h-100">
+                </div>
+            </div>
         </div>
     </div>
+
 
     <!-- Secciones de contenido -->
     <div id="queEsEtapa" class="section-content flex items-center justify-between">
@@ -315,7 +342,7 @@
                     <img src="{{ asset('img/webpng/image copy 2.png') }}" alt="Imagen 3" style="width: 100%; height: auto;">
                     <img src="{{ asset('img/webpng/image2.png') }}" alt="Imagen 3" style="width: 100%; height: auto;">
                     <img src="{{ asset('img/webpng/image3.png') }}" alt="Imagen 3" style="width: 100%; height: auto;">
-                    <img src="{{ asset('img/webpng/image.png') }}" alt="Imagen 3" style="width: 100%; height: auto;">
+                    <img src="{{ asset('img/webpng/image4.png') }}" alt="Imagen 3" style="width: 100%; height: auto;">
 
                     <!-- Agrega más imágenes aquí si lo deseas -->
                 </div>
@@ -336,7 +363,7 @@
         arrows: true,
         dots: true,
         autoplay: true,  // Activa el autoplay
-        autoplaySpeed: 1000,  // Duración de 3 segundos entre cada imagen
+        autoplaySpeed: 2000,  // Duración de 3 segundos entre cada imagen
     });
 });
 
