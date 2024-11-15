@@ -6,23 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
-class notification extends Model
+class KnowledgeNetwork extends Model
 {
     use HasFactory;
-    public function Notification(){
-        return $this->hasMany('App\Models\Notification');
-
-    }
-
-
-    protected $fillable = [
-        'fecha_envio',
-        'contenido',
-    ];
+    protected $fillable = ['name'];
 
     protected $allowIncluded = [];
-    protected $allowFilter = ['id', 'fecha_envio', 'contenido'];
-    protected $allowSort = ['id', 'fecha_envio', 'contenido'];
+
+    protected $allowFilter = ['id', 'name'];
+
+    protected $allowSort = ['id', 'name'];
 
     public function scopeIncluded(Builder $query)
     {
@@ -51,9 +44,9 @@ class notification extends Model
         $filters = request('filter');
         $allowFilter = collect($this->allowFilter);
 
-        foreach ($filters as $filter => $value) {
-            if ($allowFilter->contains($filter)) {
-                $query->where($filter, 'LIKE', '%' . $value . '%');
+        foreach ($filters as $field => $value) {
+            if ($allowFilter->contains($field)) {
+                $query->where($field, $value);
             }
         }
     }
@@ -81,8 +74,7 @@ class notification extends Model
         }
     }
 
-    public function scopeGetOrPaginate(Builder $query)
-    {
+    public function scopeGetOrPaginate(Builder $query) {
         if (request('perPage')) {
             $perPage = intval(request('perPage'));
 

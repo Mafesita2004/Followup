@@ -38,10 +38,10 @@ class TrainerController extends Controller
          return view('trainer.perfilapre');
      }
      //icono cronograma
-    public function cronograma()
-    {
-        return view('trainer.cronograma');
-    }
+    // public function cronograma()
+    // {
+    //     return view('trainer.cronograma');
+    // }
     //icono reportes
     // public function report()
     // {

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('knowledge_networks', function (Blueprint $table) {
             $table->id();
-            $table->date("fecha_envio");
-            $table->string("contenido");
+            $table->string("name");
+            $table->timestamps();
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('knowledge_networks');
     }
 };
