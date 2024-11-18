@@ -124,10 +124,7 @@
                         <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">mariaidorado@gmail.com</p>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">12/diciembre/1989</p>
-                    </div>
+
                 </div>
 
 

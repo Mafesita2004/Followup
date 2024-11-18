@@ -103,7 +103,7 @@
         }
     </script>
     <div class="w-full flex items-center mt-6">
-        <a href="{{ route('notification') }}" class="mr-4 ml-8">
+        <a href="{{ route('notificationtrainer') }}" class="mr-4 ml-8">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
