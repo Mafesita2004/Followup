@@ -171,8 +171,41 @@
                             <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
                         </div>
                         <div>
-                            <label class="block text-gray-700">Programa</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Programa">
+                            <label for="programa" class="block text-gray-700">Red de conocimiento</label>
+                            <select id="programa" name="programa" class="w-full border border-gray-300 rounded-lg p-2.5">
+                                <option value="" disabled selected>Seleccione una red de conocimiento</option>
+                                <option value="actividad-fisica">Red de Actividad física, recreación y deporte</option>
+                                <option value="acuicola-pesca">Red de Acuícola y pesca</option>
+                                <option value="aeroespacial">Red de Aeroespacial</option>
+                                <option value="agricola">Red de Agrícola</option>
+                                <option value="ambiental">Red de Ambiental</option>
+                                <option value="artes-graficas">Red de Artes gráficas</option>
+                                <option value="artesanias">Red de Artesanías</option>
+                                <option value="automotor">Red de Automotor</option>
+                                <option value="biotecnologia">Red de Biotecnología</option>
+                                <option value="comercio-ventas">Red de Comercio y ventas</option>
+                                <option value="construccion">Red de Construcción</option>
+                                <option value="cuero-calzado">Red de Cuero, calzado y marroquinería</option>
+                                <option value="cultura">Red de Cultura</option>
+                                <option value="electronica-automatizacion">Red de Electrónica y automatización</option>
+                                <option value="energia-electrica">Red de Energía eléctrica</option>
+                                <option value="gestion-administrativa">Red de Gestión administrativa y financiera</option>
+                                <option value="hidrocarburos">Red de Hidrocarburos</option>
+                                <option value="hoteleria-turismo">Red de Hotelería y turismo</option>
+                                <option value="informatica-software">Red de Informática, diseño y desarrollo de software</option>
+                                <option value="infraestructura">Red de Infraestructura</option>
+                                <option value="logistica-produccion">Red de Logística, gestión de la producción</option>
+                                <option value="materiales-industria">Red de Materiales para la industria</option>
+                                <option value="mecanica-industrial">Red de Mecánica industrial</option>
+                                <option value="mineria">Red de Minería</option>
+                                <option value="pecuaria">Red de Pecuaria</option>
+                                <option value="quimica-aplicada">Red de Química aplicada</option>
+                                <option value="salud">Red de Salud</option>
+                                <option value="servicios-personales">Red de Servicios personales</option>
+                                <option value="telecomunicaciones">Red de Telecomunicaciones</option>
+                                <option value="textil-confeccion">Red de Textil, confección, diseño y moda</option>
+                                <option value="transporte">Red de Transporte</option>
+                            </select>
                         </div>
                         <div>
                             <label class="block text-gray-700">Total de horas</label>
