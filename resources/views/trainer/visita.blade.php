@@ -55,7 +55,7 @@
     </header>
      <!--Notificaciones -->
     <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex items-center relative z-10">
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Concentración</div>
+        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Seguimiento</div>
 
         <div class="relative ml-auto flex items-center">
             <button id="notifButton" class="relative">
@@ -97,38 +97,38 @@
         </a>
     </div>
 
-    <main class=" bg-gray-100 m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
+    <main class=" bg-white m-2 px-2 rounded-lg max-height-100% w-5/7">
 
         <div class="flex flex-cols-4 gap-12 pb-4  items-between text-center mt-2">
                 <div class="flex flex-col w-1/4 ">
                     <label class="font-bold">Nombre Del Aprendiz</label>
-                    <p type="text" class="bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">Marian Diaz</p>
+                    <p type="text" class="bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">Marian Diaz</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">Programa</label>
-                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">ADSO</p>
+                    <p type="text" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">ADSO</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">N° Ficha</label>
-                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">2654013</p>
+                    <p type="text" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">2654013</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">Correo Electrónico</label>
-                    <p type="email" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">mariandiaz@gmail.com</p>
+                    <p type="email" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">mariandiaz@gmail.com</p>
                 </div>
         </div>
     <div class="flex flex-cols-3">
-        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] border-2 border-black rounded-2xl">
+        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl">
             <div class="flex flex-col">
                 <label class="font-bold">Nombre De La Empresa</label>
-                <p type="text" class="border border-black  p-2 rounded-md bg-white">FREETIME</p>
+                <p type="text" class="border border-gray-400  p-2 rounded-md bg-white">FREETIME</p>
             </div>
             <div class="w-full flex space-x-4 items-center justify-between text-center">
                 <div class="flex flex-col">
-                    <label class="font-bold">Tipo de Concertación</label>
+                    <label class="font-bold">Tipo de Seguimiento</label>
                     <select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
                         <option selected="">Selecciona Opción</option>
-                        <option value="Inicial">Inicial</option>
+                        <option value="Inicial">Concertación</option>
                         <option value="Parcial">Parcial</option>
                         <option value="Final">Final</option>
                         <option value="Mejoramiento">Mejoramiento</option>
@@ -141,28 +141,28 @@
             </div>
             <div class="flex flex-col ">
                 <label class="font-bold">Nombre del Jefe Inmediato</label>
-                <p class="border border-gray-400 p-2 rounded-md bg-white ">Juan Velazco Suarez</p>
+                <input type="text" id="jefe_inmediato" value="" class="border border-gray-400 p-2 rounded-md bg-white text-center ">
             </div>
             <div class="flex flex-col ">
                 <label class="font-bold">Correo</label>
-                <p class="border border-gray-400 p-2 rounded-md  bg-white">user@example.com</p>
+                <input type="text" id="correo_empresa" value="" class="border border-gray-400 p-2 rounded-md bg-white text-center ">
             </div>
             <div class="flex flex-col ">
                 <label class="font-bold">Telefono de contacto</label>
-                <p class="border border-gray-400 p-2 rounded-md bg-white">1234567890</p>
+                <input type="text" id="telefono_contacto" value="" class="border border-gray-400 p-2 rounded-md bg-white text-center ">
             </div>
         </div>
         {{-- Contenedor Fantasma --}}
         <div class=" w-1/5  ">
         </div>
-        <div class=" w-2/5 border-2 rounded-2xl border-black h-80 mt-8">
+        <div class="w-2/5 border-2 rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 h-80 mt-8">
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Tipo de Modalidad de Etapa Productiva</label>
-                <p type="text" class="border border-black  p-2 rounded-md bg-white">Pasantia</p>
+                <p type="text" class="border border-gray-400  p-2 rounded-md bg-white">Pasantia</p>
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>
-                <textarea id="observacion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
+                <textarea id="observacion" class="border border-gray-400 p-2 rounded-md h-28 bg-white"></textarea>
             </div>
         </div>
     </div>
