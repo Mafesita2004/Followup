@@ -58,7 +58,7 @@
 
         <div class="relative ml-auto flex items-center">
             <button id="notifButton" class="relative">
-                <a href="{{ route('notification') }}">
+                <a href="{{ route('notificationtrainer') }}">
                 <img class="w-[50px] h-auto mr-3.0 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
 
             </button>
@@ -124,10 +124,7 @@
                         <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
                         <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">mariaidorado@gmail.com</p>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha de nacimiento:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">12/diciembre/1989</p>
-                    </div>
+
                 </div>
 
 

@@ -61,7 +61,7 @@
 
         <div class="relative ml-auto flex items-center">
             <button id="notifButton" class="relative">
-                <a href="{{ route('notification') }}">
+                <a href="{{ route('notificationtrainer') }}">
                 <img class="w-[50px] h-auto mr-3.0 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
 
             </button>
@@ -98,7 +98,7 @@
         </div>
 </nav>
     <div class="w-full flex justify-between items-center mt-4">
-        <a href="http://127.0.0.1:8000/trainer/notification" class="ml-4">
+        <a href="http://127.0.0.1:8000/trainer/notificationtrainer" class="ml-4">
             <img src="http://127.0.0.1:8000/img/flecha.png" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
@@ -112,8 +112,8 @@
                 <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
                 <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
                 <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
-                <a href="{{ route('notification') }}" type="submit" class="bg-[#009e00] ] text-white p-2 rounded">Enviar Reporte</a>
-                <a href="{{ route('notification') }}" type="submit" class="bg-gray-300 hover:bg-gray-400 text-black p-2 rounded">Cancelar</a>
+                <a href="{{ route('notificationtrainer') }}" type="submit" class="bg-[#009e00] ] text-white p-2 rounded">Enviar Reporte</a>
+                <a href="{{ route('notificationtrainer') }}" type="submit" class="bg-gray-300 hover:bg-gray-400 text-black p-2 rounded">Cancelar</a>
             </form>
                 </div>
                     </div>

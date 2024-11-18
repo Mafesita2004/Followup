@@ -58,7 +58,7 @@
 
         <div class="relative ml-auto flex items-center">
             <button id="notifButton" class="relative">
-                <a href="{{ route('notification') }}">
+                <a href="{{ route('notificationtrainer') }}">
                 <img class="w-[50px] h-auto mr-3.0 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
 
             </button>

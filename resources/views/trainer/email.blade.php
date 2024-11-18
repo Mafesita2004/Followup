@@ -59,7 +59,7 @@
 
         <div class="relative ml-auto flex items-center">
             <button id="notifButton" class="relative">
-                <a href="{{ route('notification') }}">
+                <a href="{{ route('notificationtrainer') }}">
                 <img class="w-[50px] h-auto mr-3.0 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
 
             </button>
@@ -103,7 +103,7 @@
         }
     </script>
     <div class="w-full flex items-center mt-6">
-        <a href="{{ route('notification') }}" class="mr-4 ml-8">
+        <a href="{{ route('notificationtrainer') }}" class="mr-4 ml-8">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>

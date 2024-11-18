@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Faker\Provider\ar_EG\Company;
+use App\Models\company;
 use Illuminate\Http\Request;
+
 
 class CompanyController extends Controller
 {

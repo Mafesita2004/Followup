@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\User_register;
 use Illuminate\Http\Request;
 
-class RegistrarController extends Controller
+class UserRegisterController extends Controller
 {
     //administrador
 
@@ -76,7 +76,7 @@ class RegistrarController extends Controller
         ]);
 
         // Creación del nuevo registro de usuario
-        $userRegister = Register::create($request->all());
+        $userRegister = User_register::create($request->all());
 
         return response()->json($userRegister, 201); // Respuesta con código 201
     }
@@ -90,7 +90,7 @@ class RegistrarController extends Controller
     public function show($id)
     {
         // Recupera un registro de usuario específico
-        $userRegister = Register::findOrFail($id);
+        $userRegister = User_register::findOrFail($id);
 
         return response()->json($userRegister);
     }
@@ -102,7 +102,7 @@ class RegistrarController extends Controller
      * @param  \App\Models\User_register  $user_register
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, Register $user_register)
+    public function update(Request $request, User_register $user_register)
     {
         // Validación de los datos de entrada
         $request->validate([
