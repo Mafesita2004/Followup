@@ -117,8 +117,8 @@
                     <p type="email" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">mariandiaz@gmail.com</p>
                 </div>
         </div>
-    <div class="flex flex-cols-3">
-        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl">
+    <div class="flex flex-cols-5">
+        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl ml-4">
             <div class="flex flex-col">
                 <label class="font-bold">Nombre De La Empresa</label>
                 <p type="text" class="border border-gray-400  p-2 rounded-md bg-white">FREETIME</p>
@@ -153,7 +153,7 @@
             </div>
         </div>
         {{-- Contenedor Fantasma --}}
-        <div class=" w-1/5  ">
+        <div class=" w-60 ">
         </div>
         <div class="w-2/5 border-2 rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 h-80 mt-8">
             <div class="flex flex-col p-6 text-center">
@@ -167,7 +167,7 @@
         </div>
     </div>
     <div class=" pt-2 px-[44%]">
-        <button class="bg-[#009E00] h-8 w-44 rounded-2xl text-white mb-6"  id="registrar-btn">REGISTRAR</button>
+        <button class="bg-[#009E00] h-8 w-44 rounded-2xl ml-3 text-white mb-8 "  id="registrar-btn">REGISTRAR</button>
       </div>
     </main>
     <script>
