@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <input type="file" id="fileUpload" class="hidden" name="fileUpload" accept=".txt,.doc,.docx,.pdf,.xls,.xlsx" />
     <title>Etapa Productiva</title>
     <style>
         #userMenu {
@@ -298,6 +299,28 @@
                 registerMenu.classList.add('hidden');
             }
         });
+    });
+</script>
+<script>
+    // Mostrar el selector de archivos al hacer clic en el botón
+    document.getElementById('uploadButton').addEventListener('click', function () {
+        document.getElementById('fileUpload').click();
+    });
+
+    // Manejar el archivo cargado
+    document.getElementById('fileUpload').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+
+        // Validar que el archivo sea un documento Excel
+        if (file && (file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' || file.type === 'application/vnd.ms-excel')) {
+            alert(`Archivo "${file.name}" cargado correctamente.`);
+            
+            // Aquí puedes añadir lógica para procesar el archivo,
+            // como subirlo al servidor mediante un formulario o AJAX.
+        } else {
+            alert('Por favor selecciona un archivo válido (.xls o .xlsx).');
+            event.target.value = ''; // Resetear el campo de entrada
+        }
     });
 </script>
 

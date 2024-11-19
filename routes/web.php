@@ -15,6 +15,22 @@ use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\UserRegisterController;
 use App\Models\User_register;
 
+//CONEXION DE RUTAS API
+use App\Http\Controllers\FollowupController;
+
+Route::get('/followups/create', [FollowupController::class, 'create'])->name('followups.create');
+
+
+
+
+
+
+
+
+
+
+
+
 // Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
     return view('administrator.web');
