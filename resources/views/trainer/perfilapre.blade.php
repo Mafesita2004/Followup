@@ -101,7 +101,7 @@
         </a>
     </div>
         <div class="flex justify-center">
-    <main class=" bg-gray-100 m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
+    <main class=" bg-white m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
 
 
         <div class="container  mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg">
@@ -137,10 +137,6 @@
                     <div class="w-full">
                         <label for="municipio" class="block text-sm font-medium text-gray-700">Municipio</label>
                         <input type="text" id="municipio" value="Popayán" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
-                    </div>
-                    <div class="w-full">
-                        <label for="genero" class="block text-sm font-medium text-gray-700">Género</label>
-                        <input type="text" id="genero" value="Femenino" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                     </div>
                     <div class="w-full">
                         <label for="nivel_formacion" class="block text-sm font-medium text-gray-700">Nivel de Formación</label>
