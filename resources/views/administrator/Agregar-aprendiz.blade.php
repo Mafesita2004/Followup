@@ -147,6 +147,7 @@
                                     <th class="py-3 px-6 text-left">Apellido</th>
                                     <th class="py-3 px-6 text-left">Nombre</th>
                                     <th class="py-3 px-6 text-left">Programa</th>
+                                    <th class="py-3 px-6 text-left">Nivel Academico</th>
                                     <th class="py-3 px-6 text-left">Ficha</th>
                                     <th class="py-3 px-6 text-left">Teléfono</th>
                                     <th class="py-3 px-6 text-left">Correo</th>
@@ -232,6 +233,14 @@
                                         <option value="PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC">PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC</option>
                                         <option value="SERVICIOS EN CONTACT CENTER Y BPO">SERVICIOS EN CONTACT CENTER Y BPO</option>
                                         <option value="COORDINACION DE PROCESOS LOGISTICOS">COORDINACION DE PROCESOS LOGISTICOS</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-3 px-6 text-left">
+                                        <select id="academic-level" class="form-select" class=" border border-gray-400 p-2 rounded-md w-48 bg-white" onchange="saveAcademicLevel(this)">
+                                            <option value="" disabled selected>Seleccione Nivel Académico</option>
+                                            <option value="tecnologo">Tecnólogo</option>
+                                            <option value="tecnico">Técnico</option>
+                                            <option value="operario">Operario</option>
                                         </select>
                                     </td>
                                     <td class="py-3 px-6 text-left">Ficha1</td>
