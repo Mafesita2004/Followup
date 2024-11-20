@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\followup;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class FollowupController extends Controller
 {
-    public function index()
+    // En FollowupController.php
+    public function create()
     {
-        $followups = Followup::included()->filter()->sort()->get();
-        return response()->json($followups);
+        return view('followups.create');
     }
 
-    public function store(Request $request)
+
+    public function submitForm(Request $request)
     {
         $request->validate([
             'progress_evaluation' => 'required|max:255',
@@ -22,38 +23,36 @@ class FollowupController extends Controller
             'end_date' => 'required|date',
             'practical_stage' => 'required|max:255',
             'log' => 'required|integer',
-            'agreement_report' => 'required|date', // Corrigiendo el nombre del campo
+            'agreement_report' => 'required|date',
         ]);
 
-        $followup = Followup::create($request->all());
-        return response()->json($followup, 201);
+        $apiUrl = config('app.url_server_api') . '/api/followups'; // URL de la API
+        $client = new Client();
+
+        try {
+            $response = $client->post($apiUrl, [
+                'json' => $request->all(),
+            ]);
+
+            if ($response->getStatusCode() == 201) {
+                return redirect()->back()->with('success', 'Seguimiento creado con éxito.');
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error al enviar los datos: ' . $e->getMessage());
+        }
     }
 
-    public function show($id)
+    public function listFollowups()
     {
-        $followup = Followup::included()->findOrFail($id);
-        return response()->json($followup);
-    }
+        $apiUrl = config('app.url_server_api') . '/api/followups'; // URL de la API
+        $client = new Client();
 
-    public function update(Request $request, Followup $followup)
-    {
-        $request->validate([
-            'progress_evaluation' => 'required|max:255',
-            'activities_carriedout' => 'required|integer',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
-            'practical_stage' => 'required|max:255',
-            'log' => 'required|integer',
-            'agreement_report' => 'required|date', // Corrigiendo el nombre del campo
-        ]);
-
-        $followup->update($request->all());
-        return response()->json($followup);
-    }
-
-    public function destroy(Followup $followup)
-    {
-        $followup->delete();
-        return response()->json(null, 204);
+        try {
+            $response = $client->get($apiUrl);
+            $followups = json_decode($response->getBody(), true);
+            return view('followup_list', compact('followups'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error al obtener los datos: ' . $e->getMessage());
+        }
     }
 }

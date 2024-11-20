@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="bg-[#009E00] border-2 border-[black] rounded-lg p-2 mb-2">
-                <div class="text-center text-sm text-black">Total de cuadros: {{ $contador }}</div>
+                <div class="text-center text-sm text-black">Total de Aprendices: {{ $contador }}</div>
             </div>
         </main>
         <script src="{{ asset('js/Trainer.js') }}"></script>

@@ -136,7 +136,7 @@
                     <h2 id="currentMonth" class="text-lg font-bold mx-4"></h2>
                     <button id="nextMonth" class="bg-[#009e00] text-white p-2 rounded-r-lg">→</button>
                 </div>
-                <button id="addEvent" class="bg-[#009e00] text-white px-4 py-2 rounded-lg">Agregar Evento</button>
+                <button id="addEvent" class=""></button>
             </div>
 
             <div id="calendarDays" class="calendar"></div>
