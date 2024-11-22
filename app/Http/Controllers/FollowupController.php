@@ -7,11 +7,7 @@ use GuzzleHttp\Client;
 
 class FollowupController extends Controller
 {
-    // En FollowupController.php
-    public function create()
-    {
-        return view('followups.create');
-    }
+    
 
 
     public function submitForm(Request $request)

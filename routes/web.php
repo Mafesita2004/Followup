@@ -18,8 +18,6 @@ use App\Models\User_register;
 //CONEXION DE RUTAS API
 use App\Http\Controllers\FollowupController;
 
-Route::get('/followups/create', [FollowupController::class, 'create'])->name('followups.create');
-
 
 
 
