@@ -29,7 +29,6 @@ return new class extends Migration
             $table->foreignId('id_contract')->references('id')->on('contracts')->onDelete('cascade');
             $table->foreignId('id_followup')->references('id')->on('followups')->onDelete('cascade');
             $table->foreignId('id_company')->references('id')->on('companies')->onDelete('cascade');
-            $table->foreignId('id_contract_type')->references('id')->on('contract_types')->onDelete('cascade');
             $table->timestamps();
         });
     }
