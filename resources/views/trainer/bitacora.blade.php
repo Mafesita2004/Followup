@@ -174,6 +174,58 @@
                     <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">12</span>
                 </label>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const checkboxes = document.querySelectorAll('.bitacora-checkbox');
+                    const registrarBtn = document.getElementById('registrar-btn');
+
+                    // Arreglo para almacenar los valores seleccionados
+                    let selectedBitacoras = [];
+
+                    // Actualizar estilos al seleccionar/desmarcar
+                    checkboxes.forEach(function (checkbox) {
+                        checkbox.addEventListener('change', function () {
+                            if (checkbox.checked) {
+                                checkbox.nextElementSibling.classList.add('bg-green-500', 'text-white');
+                                checkbox.nextElementSibling.classList.remove('border-black', 'text-gray-700');
+                                selectedBitacoras.push(checkbox.value); // Agregar al arreglo
+                            } else {
+                                checkbox.nextElementSibling.classList.remove('bg-green-500', 'text-white');
+                                checkbox.nextElementSibling.classList.add('border-black', 'text-gray-700');
+                                selectedBitacoras = selectedBitacoras.filter(val => val !== checkbox.value); // Eliminar del arreglo
+                            }
+                        });
+                    });
+
+                    // Evento al presionar el botón registrar
+                    registrarBtn.addEventListener('click', function () {
+                        if (selectedBitacoras.length > 0) {
+                            // Enviar datos al servidor
+                            fetch('/guardar-bitacoras', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Para Laravel
+                                },
+                                body: JSON.stringify({ bitacoras: selectedBitacoras })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    alert('Bitácoras registradas correctamente');
+                                    window.location.href = '/apprentice/home'; // Redirigir a la vista
+                                } else {
+                                    alert('Error al registrar las bitácoras');
+                                }
+                            });
+                        } else {
+                            alert('Por favor selecciona al menos una bitácora.');
+                        }
+                    });
+                });
+            </script>
+            <button id="registrar-btn" class="bg-blue-500 text-white p-2 rounded">Registrar</button>
+
 
         </div>
         {{-- Contenedor Fantasma --}}
