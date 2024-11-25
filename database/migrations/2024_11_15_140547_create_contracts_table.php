@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trainers', function (Blueprint $table) {
+        Schema::create('contracts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last_name');
+            $table->integer("codigo");
+            $table->string("tipo");
+            $table->date("fecha_inicio");
+            $table->date("fecha_fin");
+            $table->foreignId('id_company')->constrained('companies')->onDelete('cascade'); // Asegúrate de que 'companies' es el nombre correcto
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trainers');
+        Schema::dropIfExists('contracts');
     }
 };

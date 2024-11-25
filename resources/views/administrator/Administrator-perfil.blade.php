@@ -202,17 +202,21 @@
 
 
 
-                <h3 class="font-bold mb-4 mt-6">Modalidad que maneja</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Modalidad:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
+                    <h3 class="font-bold mb-4 mt-6">Modalidad que maneja</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700" for="modality">Modalidad:</label>
+                            <select id="modality" name="modality" class="text-sm text-black bg-white mt-1 w-full h-10 p-2 rounded-md">
+                                <option value="contrato_aprendizaje">Contrato de Aprendizaje</option>
+                                <option value="pasantia">Pasantía</option>
+                                <option value="vinculo_laboral">Vínculo Laboral</option>
+                                <option value="patrocinio">Patrocinio</option>
+                                <option value="unidad_productiva">Unidad Productiva</option>
+                                <option value="proyecto_productivo">Proyecto Productivo</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Modalidad:</label>
-                        <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md">{{ auth()->user()->modality }}</p>
-                    </div>
-                </div>
+
 
                 <div class="flex justify-end mt-6 space-x-4">
                     <a href="{{ route('administrator.Administrator-perfil') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>

@@ -101,7 +101,7 @@
         </a>
     </div>
         <div class="flex justify-center">
-    <main class=" bg-gray-100 m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
+    <main class=" bg-white m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
 
 
         <div class="container  mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg">
@@ -139,10 +139,6 @@
                         <input type="text" id="municipio" value="Popayán" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                     </div>
                     <div class="w-full">
-                        <label for="genero" class="block text-sm font-medium text-gray-700">Género</label>
-                        <input type="text" id="genero" value="Femenino" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
-                    </div>
-                    <div class="w-full">
                         <label for="nivel_formacion" class="block text-sm font-medium text-gray-700">Nivel de Formación</label>
                         <input type="text" id="nivel_formacion" value="Tecnologo" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                     </div>
@@ -163,7 +159,7 @@
                         <div>
                         <a href="{{ route('visita') }}" class="m-2.5 py-10 rounded-[10%] flex flex-col items-center text-center p-5 w-56 h-56 hover:border-green-600">
                             <img src="{{ asset('img/trainer/visitas_1.png') }}" alt="Visita" class="m-2.5 py-5 rounded-[10%] flex flex-col items-center text-center p-2 bg-white border-[2px] border-black w-40 h-40 hover:border-green-600 object-cover">
-                            <h2 class="text-center font-weight:300">Concertación</h2>
+                            <h2 class="text-center font-weight:300">Seguimiento</h2>
                         </a>
 
                     </div>

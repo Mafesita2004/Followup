@@ -50,19 +50,22 @@
             margin: 0;
         }
 
-        main {
-            margin-top: 10px;
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background-image: url('{{ asset('img/login/image.png') }}');
-            background-size: 40%;
-            background-position: left top;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        body {
+        overflow: hidden; /* Elimina cualquier desplazamiento */
+        margin: 0;        /* Asegura que no haya márgenes que causen scroll */
+    }
+
+    main {
+        width: 100%;
+        height: 100vh; /* Ocupa exactamente toda la ventana */
+        background-image: url('{{ asset('img/login/image.png') }}');
+        background-size: 40%;
+        background-position: left top;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra el contenido dentro de main */
+    }
 
         .content {
             position: absolute;
@@ -86,27 +89,29 @@
         }
 
         .etapa-productiva {
-            font-size: 4rem;
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-        }
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos de manera horizontal */
+    text-align: center;  /* Asegura que el texto esté centrado */
+    margin-top: -50px; /* Ajusta el valor según lo necesario */
+}
 
-        .etapa-productiva .etapa {
-            color: #009e00;
-            padding-left: 210px;
-        }
+.etapa-productiva .etapa {
+    color: #009e00;
+    /* Se eliminó padding-left para evitar desplazamientos */
+}
 
-        .etapa-productiva .productiva {
-            color: #003366;
-        }
+.etapa-productiva .productiva {
+    color: #003366;
+}
+
 
         .login-container {
             position: absolute;
-            top: 70%;
-            left: 70%;
+            top: 73%;
+            left: 74%;
             transform: translate(-50%, -50%);
             z-index: 2;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
@@ -121,7 +126,7 @@
             font-family: 'DM Sans', sans-serif;
             text-align: center;
             margin-bottom: 20px;
-            font-size: 1.8em;
+            font-size: 1.3em;
             color: #003366;
         }
 

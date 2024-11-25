@@ -101,77 +101,77 @@
         </a>
     </div>
 
-    <main class=" bg-gray-100 m-2 px-2 rounded-lg max-height-100% w-5/7 border-2 border-black">
+    <main class=" bg-white m-2 px-2 rounded-lg max-height-100% w-5/7">
 
         <div class="flex flex-cols-4 gap-12 pb-4  items-between text-center mt-2">
                 <div class="flex flex-col w-1/4 ">
                     <label class="font-bold">Nombre Del Aprendiz</label>
-                    <p type="text" class="bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">Marian Diaz</p>
+                    <p type="text" class="bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">Marian Diaz</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">Programa</label>
-                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">ADSO</p>
+                    <p type="text" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">ADSO</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">N° Ficha</label>
-                    <p type="text" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">2654013</p>
+                    <p type="text" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">2654013</p>
                 </div>
                 <div class="flex flex-col  w-1/4">
                     <label class="font-bold">Correo Electrónico</label>
-                    <p type="email" class=" bg-[#009E00] bg-opacity-60 p-2 rounded-full text-white font-semibold">mariandiaz@gmail.com</p>
+                    <p type="email" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">mariandiaz@gmail.com</p>
                 </div>
         </div>
     <div class="flex flex-cols-3">
-        <div class="flex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[60] border-2 border-black rounded-2xl">
+        <div class="lex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl ml-4">
             <label class="font-semibold text-center ">Bitacoras</label>
             <div class="flex flex-col text-center items-center">
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="1">
-                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">1</span>
+                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">1</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="2">
-                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">2</span>
+                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">2</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="3">
-                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">3</span>
+                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">3</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="4">
-                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">4</span>
+                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">4</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="5">
-                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">5</span>
+                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">5</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="6">
-                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">6</span>
+                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">6</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="7">
-                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">7</span>
+                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">7</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="8">
-                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">8</span>
+                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">8</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3 ">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="9">
-                    <span class="block px-4 py-2 border border-black rounded-md text-gray-700">9</span>
+                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">9</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="10">
-                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">10</span>
+                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">10</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="11">
-                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">11</span>
+                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">11</span>
                 </label>
                 <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
                     <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="12">
-                    <span class="block px-4 py-2 border border-black  rounded-md text-gray-700">12</span>
+                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">12</span>
                 </label>
             </div>
             <script>
@@ -229,29 +229,29 @@
 
         </div>
         {{-- Contenedor Fantasma --}}
-        <div class=" w-1/5  ">
+        <div class=" w-60 ">
         </div>
-        <div class=" w-2/5 border-2 rounded-2xl border-black h-82 mt-2">
+        <div class=" lex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl ml-4">
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Tipo de Modalidad de Etapa Productiva</label>
-                <p type="text" class="border border-black  p-2 rounded-md bg-white">Pasantia</p>
+                <p type="text" class="border  border-gray-400  p-2 rounded-md bg-white">Pasantia</p>
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Descripcion De La Actividad</label>
-                <textarea id="descripcion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
+                <textarea id="descripcion" class="border  border-gray-400 p-2 rounded-md h-28 bg-white"></textarea>
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-bold">Fecha</label>
-                <input type="date" class="border border-black -400 p-2 rounded-md w-48 bg-white ml-36 text-center">
+                <input type="date" class="border border-gray-400 p-2 rounded-md w-64 bg-white mx-auto text-center">
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>
-                <textarea id="observacion" class="border border-black p-2 rounded-md h-28 bg-white"></textarea>
+                <textarea id="observacion" class="border border-gray-400 p-2 rounded-md h-28 bg-white"></textarea>
             </div>
         </div>
     </div>
     <div class=" pt-2 px-[44%]">
-        <button class="bg-[#009E00] h-8 w-44 rounded-2xl text-white mb-6"  id="registrar-btn">REGISTRAR</button>
+        <button class="bg-[#009E00] h-8 w-44 rounded-2xl ml-3 text-white mb-8"  id="registrar-btn">REGISTRAR</button>
       </div>
     </main>
     <script>
@@ -262,10 +262,10 @@
                 checkbox.addEventListener('change', function() {
                     if (checkbox.checked) {
                         checkbox.nextElementSibling.classList.add('bg-green-500', 'text-white');
-                        checkbox.nextElementSibling.classList.remove('border-black', 'text-gray-700');
+                        checkbox.nextElementSibling.classList.remove(' border-gray-400', 'text-gray-700');
                     } else {
                         checkbox.nextElementSibling.classList.remove('bg-green-500', 'text-white');
-                        checkbox.nextElementSibling.classList.add('border-black', 'text-gray-700');
+                        checkbox.nextElementSibling.classList.add(' border-gray-400', 'text-gray-700');
                     }
                 });
             });
