@@ -132,6 +132,7 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/graphic', [AdministratorController::class, 'graphic'])->name('administrator.graphic');
     Route::get('/administrator/template', [AdministratorController::class, 'template'])->name('administrator.template');
     Route::get('/administrator/Administrator-perfil', [AdministratorController::class, 'Adminperfil'])->name('administrator.Administrator-perfil');
+    Route::get('/administrator/Administrator-actualizar', [AdministratorController::class, 'Adminactualizar'])->name('administrator.Actualizar-perfil');
     Route::get('/administrator/Apprentice-perfil', [AdministratorController::class, 'perfilAprendiz'])->name('administrator.Apprentice-perfil');
     Route::get('/administrator/Instructor-perfil', [AdministratorController::class, 'perfilInstructor'])->name('administrator.Instructor-perfil');
     Route::get('/administrator/Agregar-aprendiz', [UserRegisterController::class, 'AgregarAprendiz'])->name('administrator.Agregar-aprendiz');
