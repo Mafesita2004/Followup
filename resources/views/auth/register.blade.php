@@ -193,7 +193,16 @@
 
 
         </div>
-
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
         <div class="registro-container">
             <h3>REGISTRO</h3>
             <form method="POST" action="{{ route('register') }}">
@@ -215,7 +224,7 @@
 
                 <div class="input-group">
                     <img src="{{ asset('img/mail.png') }}" alt="departamento" class="input-icon">
-                    <select id="department" name="department" required>
+                    <select id="department" name="department" required onchange="loadMunicipalities()">
                         <option value="" disabled selected>Seleccione un departamento</option>
                         <option value="1">Amazonas</option>
                         <option value="2">Antioquia</option>
@@ -225,11 +234,14 @@
                         <!-- Resto de departamentos -->
                     </select>
                 </div>
+                
+                <!-- Municipio -->
                 <div class="input-group">
                     <select id="municipality" name="municipality" required>
                         <option value="" disabled selected>Seleccione un municipio</option>
                     </select>
                 </div>
+                
 
                 <div class="input-group">
                     <img src="{{ asset('img/lock-icon.png') }}" alt="Contraseña" class="input-icon">
@@ -255,6 +267,34 @@
             </form>
         </div>
     </main>
-   
+   <script>
+    const municipalities = {
+        1: ["Leticia", "Puerto Nariño"], // Amazonas
+        2: ["Medellín", "Envigado", "Rionegro"], // Antioquia
+        3: ["Arauca", "Tame"], // Arauca
+        4: ["Barranquilla", "Soledad", "Malambo"], // Atlántico
+        5: ["Cartagena", "Magangué", "Santa Catalina"], // Bolívar
+        // Añadir más departamentos y municipios aquí
+    };
+
+    function loadMunicipalities() {
+        const departmentId = document.getElementById('department').value;
+        const municipalitySelect = document.getElementById('municipality');
+
+        // Limpiar opciones previas
+        municipalitySelect.innerHTML = '<option value="" disabled selected>Seleccione un municipio</option>';
+
+        if (departmentId && municipalities[departmentId]) {
+            const departmentMunicipalities = municipalities[departmentId];
+            departmentMunicipalities.forEach(municipality => {
+                const option = document.createElement('option');
+                option.value = municipality;
+                option.textContent = municipality;
+                municipalitySelect.appendChild(option);
+            });
+        }
+    }
+</script>
+
 </body>
 </html>

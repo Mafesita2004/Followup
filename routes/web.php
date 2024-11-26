@@ -15,6 +15,7 @@ use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\BitacoraController;
 use App\Models\User_register;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 //CONEXION DE RUTAS API
 use App\Http\Controllers\FollowupController;
@@ -30,10 +31,19 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+//Olvidaste tu contraseña
+Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+
+
+
 
 // Grupo de rutas protegidas por middleware 'auth' (usuarios autenticados)
 Route::middleware(['auth'])->group(function () {
