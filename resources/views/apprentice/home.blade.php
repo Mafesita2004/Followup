@@ -285,28 +285,23 @@
 
     {{-- <script>
         //BITACORAS:  Datos del checklist (ejemplo)
-        const totalItems = 8; // Total de actividades
-        const completedItems = 3; // Actividades completadas (esto debería actualizarse desde tu checklist)
 
-        // Calcular el porcentaje
-        const percentage = (completedItems / totalItems) * 100;
+        document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('myChart').getContext('2d');
 
-        // Colores según el porcentaje
-        const getColor = (percentage) => {
-            if (percentage < 50) return 'red';
-            if (percentage < 75) return 'orange';
-            return 'green';
-        };
+    // Función para actualizar el gráfico con la cantidad de bitácoras seleccionadas
+    function actualizarGrafico(cantidadSeleccionada) {
+        const totalBitacoras = 12; // Total de bitácoras posibles
+        const porcentaje = (cantidadSeleccionada / totalBitacoras) * 100;
 
-        // Crear gráfico circular
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
+        // Crear o actualizar el gráfico
+        new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: ['Completado', 'Pendiente'],
                 datasets: [{
-                    data: [percentage, 100 - percentage],
-                    backgroundColor: [getColor(percentage), '#E0E0E0'], // Color de fondo
+                    data: [porcentaje, 100 - porcentaje],
+                    backgroundColor: [getColor(porcentaje), '#E0E0E0'],
                     borderWidth: 0,
                 }]
             },
@@ -328,6 +323,22 @@
                 }
             }
         });
+<<<<<<< HEAD
+    }
+
+    // Función para obtener color según el porcentaje
+    function getColor(percentage) {
+        if (percentage < 50) return 'red';
+        if (percentage < 75) return 'orange';
+        return 'green';
+    }
+
+    // Obtener el número de bitácoras seleccionadas y actualizar el gráfico
+    const bitacorasSeleccionadas = JSON.parse(localStorage.getItem('bitacorasSeleccionadas')) || [];
+    actualizarGrafico(bitacorasSeleccionadas.length);
+});
+    </script>
+=======
     </script> --}}
     @php
     // Obtener las bitácoras completadas desde el backend

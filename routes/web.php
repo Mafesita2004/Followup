@@ -13,6 +13,7 @@ use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\UserRegisterController;
+use App\Http\Controllers\BitacoraController;
 use App\Models\User_register;
 
 //CONEXION DE RUTAS API
@@ -167,13 +168,14 @@ Route::get('/trainer/icon',[TrainerController::class,'icon']);
 Route::get('/trainer/notification',[NotificationController::class, 'notificationtrainer'])->name('notificationtrainer');
 Route::get('/trainer/report',[ReportController::class,'report'])->name('report');
 Route::get('/trainer/username',[TrainerController::class,'username'])->name('username');
-Route::get('/trainer/Bitacora',[TrainerController::class,'bitacora'])->name('bitacora');
+Route::get('/trainer/Bitacora',[BitacoraController::class,'bitacora'])->name('bitacora');
 Route::get('/trainer/visita',[TrainerController::class,'visita'])->name('visita');
 Route::get('/trainer/perfilapre',[TrainerController::class,'perfilapre'])->name('perfilapre');
 Route::get('/trainer/iconTrainer',[TrainerController::class,'icon'])->name('icon');
 Route::get('/trainer/emailTrainer',[TrainerController::class,'email'])->name('email');
 Route::get('/trainer/configuracion',[TrainerController::class,'configuracion'])->name('configuracion');
 Route::get('/trainer/cronograma',[DiaryController::class,'cronograma'])->name('cronograma');
+Route::post('/registrar-bitacora', [BitacoraController::class, 'registrar'])->name('registrar.bitacora');
 
 
 Route::get('/test-react', function () {

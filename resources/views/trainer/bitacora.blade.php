@@ -253,33 +253,90 @@
     <div class=" pt-2 px-[44%]">
         <button class="bg-[#009E00] h-8 w-44 rounded-2xl ml-3 text-white mb-8"  id="registrar-btn">REGISTRAR</button>
       </div>
+    </div>
     </main>
     <script>
-         document.addEventListener('DOMContentLoaded', function() {
-            const checkboxes = document.querySelectorAll('.bitacora-checkbox');
+document.addEventListener('DOMContentLoaded', function() {
+    // Cargar las bitácoras seleccionadas desde localStorage
+    cargarSeleccionDeBitacoras();
 
-            checkboxes.forEach(function(checkbox) {
-                checkbox.addEventListener('change', function() {
-                    if (checkbox.checked) {
-                        checkbox.nextElementSibling.classList.add('bg-green-500', 'text-white');
-                        checkbox.nextElementSibling.classList.remove(' border-gray-400', 'text-gray-700');
-                    } else {
-                        checkbox.nextElementSibling.classList.remove('bg-green-500', 'text-white');
-                        checkbox.nextElementSibling.classList.add(' border-gray-400', 'text-gray-700');
-                    }
-                });
-            });
+    // Seleccionar todos los checkboxes de las bitácoras
+    const checkboxes = document.querySelectorAll('.bitacora-checkbox');
+
+    // Agregar un listener de cambio para cada checkbox
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            // Cambiar el estilo visual según si está seleccionado o no
+            const label = checkbox.nextElementSibling;
+            if (checkbox.checked) {
+                label.classList.add('bg-green-500', 'text-white');
+                label.classList.remove('border-gray-400', 'text-gray-700');
+            } else {
+                label.classList.remove('bg-green-500', 'text-white');
+                label.classList.add('border-gray-400', 'text-gray-700');
+            }
+
+            // Guardar las bitácoras seleccionadas en localStorage
+            const bitacoras = obtenerBitacorasSeleccionadas();
+            localStorage.setItem('bitacorasSeleccionadas', JSON.stringify(bitacoras));
+
+            // Actualizar el gráfico en tiempo real
+            actualizarGrafico(bitacoras.length);
         });
-        // Esperar a que el DOM se cargue
-    document.addEventListener("DOMContentLoaded", function() {
-    // Obtener el botón por su ID
-    const registrarBtn = document.getElementById("registrar-btn");
-
-    // Agregar el evento de click
-    registrarBtn.addEventListener("click", function() {
-        // Mostrar un mensaje cuando el botón sea presionado
-        alert("Bitacora Registrada");
     });
+
+    // Función para obtener las bitácoras seleccionadas
+    function obtenerBitacorasSeleccionadas() {
+        const seleccionadas = [];
+        checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                seleccionadas.push(checkbox.value);
+            }
+        });
+        return seleccionadas;
+    }
+
+    // Función para manejar el evento de registro
+    document.getElementById("registrar-btn").addEventListener("click", function() {
+        const bitacoras = obtenerBitacorasSeleccionadas();
+        const descripcion = document.getElementById('descripcion').value.trim();
+        const observacion = document.getElementById('observacion').value.trim();
+        const fecha = document.querySelector('input[type="date"]').value.trim();
+
+        if (bitacoras.length === 0 || !descripcion || !observacion || !fecha) {
+            alert("Por favor, complete todos los campos.");
+            return;
+        }
+
+        // Guardar las bitácoras seleccionadas en localStorage
+        localStorage.setItem('bitacorasSeleccionadas', JSON.stringify(bitacoras));
+
+        // Mostrar mensaje de éxito
+        alert('¡Bitácora registrada correctamente!');
+
+        // Actualizar el gráfico con las bitácoras seleccionadas
+        actualizarGrafico(bitacoras.length);
+    });
+
+    // Función para cargar la selección de bitácoras desde localStorage
+    function cargarSeleccionDeBitacoras() {
+        const bitacorasSeleccionadas = JSON.parse(localStorage.getItem('bitacorasSeleccionadas')) || [];
+        const checkboxes = document.querySelectorAll('.bitacora-checkbox');
+
+        checkboxes.forEach(function(checkbox) {
+            if (bitacorasSeleccionadas.includes(checkbox.value)) {
+                checkbox.checked = true;
+                const label = checkbox.nextElementSibling;
+                label.classList.add('bg-green-500', 'text-white');
+                label.classList.remove('border-gray-400', 'text-gray-700');
+            } else {
+                checkbox.checked = false;
+                const label = checkbox.nextElementSibling;
+                label.classList.remove('bg-green-500', 'text-white');
+                label.classList.add('border-gray-400', 'text-gray-700');
+            }
+        });
+    }
 });
     </script>
 
