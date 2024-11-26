@@ -164,7 +164,6 @@
                             <p><strong>Nombres:</strong> {{ auth()->user()->name }}</p>
                             <p><strong>Apellidos:</strong> {{ auth()->user()->last_name }}</p>
                             <p><strong>Correo electrónico:</strong> {{ auth()->user()->email }}</p>
-                            <p><strong>Cuenta SENA:</strong> {{ auth()->user()->sena_account }}</p>
                             <p><strong>Departamento:</strong> {{ auth()->user()->department }}</p>
                             <p><strong>Municipio:</strong> {{ auth()->user()->municipality }}</p>
                         </div>

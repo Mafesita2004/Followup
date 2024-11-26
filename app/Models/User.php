@@ -18,16 +18,22 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_user');
     }
+    // En User.php
+
 
     /**
      * Atributos que se pueden asignar de manera masiva.
      * Estos son los campos que se pueden llenar directamente a través de la asignación masiva.
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+            'name',
+            'last_name', // Asegúrate de que esté incluido aquí
+            'email',
+            'department',
+            'password',
+        ];
+
+
 
     /**
      * Atributos que deben ocultarse en arrays.

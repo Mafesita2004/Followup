@@ -18,17 +18,7 @@ use App\Models\User_register;
 
 //CONEXION DE RUTAS API
 use App\Http\Controllers\FollowupController;
-
-
-
-
-
-
-
-
-
-
-
+use App\Models\Municipality;
 
 // Ruta principal que muestra el formulario de inicio de sesión
 Route::get('/', function () {
@@ -41,6 +31,8 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Grupo de rutas protegidas por middleware 'auth' (usuarios autenticados)

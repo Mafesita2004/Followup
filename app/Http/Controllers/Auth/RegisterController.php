@@ -1,37 +1,38 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Department; // Agregar modelo de Department
+use App\Models\Municipality; // Agregar modelo de Municipality
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
-    // Muestra el formulario de registro
-    public function showRegistrationForm()
-    {
-        return view('auth.register');
-    }
+    
 
     // Maneja la solicitud de registro
     public function register(Request $request)
     {
-        // Valida los datos de la solicitud
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'department' => ['required', 'string', 'max:255'],
+            'municipality' => ['required', 'string', 'max:255'], // Validar el municipio
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'string', 'exists:roles,guard_name'],
         ]);
 
-        // Crea un nuevo usuario con los datos proporcionados
         $user = User::create([
             'name' => $request->name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
+            'department' => $request->department,
+            'municipality' => $request->municipality, // Guardar el municipio
             'password' => Hash::make($request->password),
         ]);
 
@@ -50,24 +51,24 @@ class RegisterController extends Controller
     // Redirige al usuario según su rol
     protected function redirectTo($user)
     {
-        // Define las rutas de redirección basadas en el rol del usuario
         $roleRoutes = [
             'superadmin' => 'superadmin.home',
             'administrator' => 'administrator.home',
-            'trainer' => 'icon',
+            'trainer' => 'trainer.home',
             'apprentice' => 'apprentice.home',
         ];
 
-        // Obtiene el primer rol del usuario
         $userRole = $user->roles->first();
         if ($userRole) {
-            // Determina la ruta de redirección basada en el rol del usuario
             $redirectRoute = $roleRoutes[$userRole->guard_name] ?? '/';
             return redirect()->intended(route($redirectRoute));
         }
 
-        // Si no se encuentra un rol, redirige a la página principal
         return redirect()->intended('/');
     }
+
+    // Obtener los municipios de un departamento
+
+
+
 }
-?>
