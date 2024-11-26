@@ -218,14 +218,9 @@
                                     alert('Error al registrar las bitácoras');
                                 }
                             });
-                        } else {
-                            alert('Por favor selecciona al menos una bitácora.');
-                        }
                     });
                 });
             </script>
-            <button id="registrar-btn" class="bg-blue-500 text-white p-2 rounded">Registrar</button>
-
 
         </div>
         {{-- Contenedor Fantasma --}}
