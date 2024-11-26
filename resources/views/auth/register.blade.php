@@ -203,10 +203,32 @@
                     <img src="{{ asset('img/user-icon.png') }}" alt="Usuario" class="input-icon">
                     <input id="name" type="text" name="name" placeholder="Nombre" value="{{ old('name') }}" required autofocus autocomplete="name">
                 </div>
+                <div class="input-group">
+                    <img src="{{ asset('img/user-icon.png') }}" alt="Usuario" class="input-icon">
+                    <input id="last_name" type="text" name="last_name" placeholder="Apellido" value="{{ old('last_name') }}" required autofocus autocomplete="last_name">
+                </div>
 
                 <div class="input-group">
                     <img src="{{ asset('img/mail.png') }}" alt="Correo electrónico" class="input-icon">
                     <input id="email" type="email" name="email" placeholder="Correo electrónico" value="{{ old('email') }}" required autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                    <img src="{{ asset('img/mail.png') }}" alt="departamento" class="input-icon">
+                    <select id="department" name="department" required>
+                        <option value="" disabled selected>Seleccione un departamento</option>
+                        <option value="1">Amazonas</option>
+                        <option value="2">Antioquia</option>
+                        <option value="3">Arauca</option>
+                        <option value="4">Atlántico</option>
+                        <option value="5">Bolívar</option>
+                        <!-- Resto de departamentos -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select id="municipality" name="municipality" required>
+                        <option value="" disabled selected>Seleccione un municipio</option>
+                    </select>
                 </div>
 
                 <div class="input-group">
@@ -229,9 +251,10 @@
                     </select>
                 </div>
 
-                <button type="submit">Registrarse</button>
+                <button type="submit">Registrar</button>
             </form>
         </div>
     </main>
+   
 </body>
 </html>
