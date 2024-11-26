@@ -283,10 +283,8 @@
     </script>
 
 
-    {{-- <script>
-        //BITACORAS:  Datos del checklist (ejemplo)
-
-        document.addEventListener('DOMContentLoaded', function() {
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
     const ctx = document.getElementById('myChart').getContext('2d');
 
     // Función para actualizar el gráfico con la cantidad de bitácoras seleccionadas
@@ -323,7 +321,6 @@
                 }
             }
         });
-<<<<<<< HEAD
     }
 
     // Función para obtener color según el porcentaje
@@ -337,59 +334,6 @@
     const bitacorasSeleccionadas = JSON.parse(localStorage.getItem('bitacorasSeleccionadas')) || [];
     actualizarGrafico(bitacorasSeleccionadas.length);
 });
-    </script>
-=======
-    </script> --}}
-    @php
-    // Obtener las bitácoras completadas desde el backend
-    $bitacorasCompletadas = [1, 2, 3, 4,5,6,8,9.10,11,12]; // Ejemplo: Esto viene del backend
-    $totalBitacoras = 12;
-    $completadas = count($bitacorasCompletadas);
-    $porcentaje = ($completadas / $totalBitacoras) * 100;
-@endphp
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const totalItems = {{ $totalBitacoras }};
-        const completedItems = {{ $completadas }};
-        const percentage = (completedItems / totalItems) * 100;
-
-        const getColor = (percentage) => {
-            if (percentage < 50) return 'red';
-            if (percentage < 75) return 'orange';
-            return 'green';
-        };
-
-        const ctx = document.getElementById('myChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Completado', 'Pendiente'],
-                datasets: [{
-                    data: [percentage, 100 - percentage],
-                    backgroundColor: [getColor(percentage), '#E0E0E0'],
-                    borderWidth: 0,
-                }]
-            },
-            options: {
-                cutout: '70%',
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    });
 </script>
 
 
