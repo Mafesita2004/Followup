@@ -37,6 +37,10 @@ class AdministratorController extends Controller
     {
         return view('administrator.Administrator-perfil');
     }
+    public function Adminactualizar()
+    {
+        return view('administrator.Actualizar-perfil');
+    }
 
 
     public function perfilAprendiz(){

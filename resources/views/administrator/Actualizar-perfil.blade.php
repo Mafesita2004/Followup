@@ -143,49 +143,69 @@
 
     <div class="flex justify-center mt-6">
         <main class="bg-gray-100 m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
-            <div class="bg-gray-100 p-6 rounded-lg relative">
-                <div class="absolute top-0 left-0 right-0 bg-[#009e00] bg-opacity-60 h-40 rounded-t-lg"></div>
+                @csrf
+                <div class="bg-gray-100 p-6 rounded-lg relative">
+                    <div class="absolute top-0 left-0 right-0 bg-[#009e00] bg-opacity-60 h-40 rounded-t-lg"></div>
 
-                <div class="relative flex items-start pt-8">
-                    <img src="{{ asset('img/administrador/mujer.png') }}" alt="User" class="w-40 h-40 z-10">
-                    <div class="ml-6 flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                            <h1 class="script-font text-4xl font-bold text-black mb-1" style="font-family: 'Times New Roman', serif;">{{ auth()->user()->name }}</h1>
-                            <span class="text-2xl font-light uppercase tracking-wider">{{ auth()->user()->last_name }}</span>
-                        </div>
-                        <p class="text-lg text-black font-light tracking-wide">ADMINISTRADOR</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-6 mt-8">
-                    <div class="w-full md:w-1/2 space-y-4">
-                        <h3 class="font-bold mb-4">Datos básicos</h3>
-                        <div class="space-y-2">
-                            <p><strong>Nombres:</strong> {{ auth()->user()->name }}</p>
-                            <p><strong>Apellidos:</strong> {{ auth()->user()->last_name }}</p>
-                            <p><strong>Correo electrónico:</strong> {{ auth()->user()->email }}</p>
-                            <p><strong>Cuenta SENA:</strong> {{ auth()->user()->sena_account }}</p>
-                            <p><strong>Departamento:</strong> {{ auth()->user()->department }}</p>
-                            <p><strong>Municipio:</strong> {{ auth()->user()->municipality }}</p>
+                    <div class="relative flex items-start pt-8">
+                        <img src="{{ asset('img/administrador/mujer.png') }}" alt="User" class="w-40 h-40 z-10">
+                        <div class="ml-6 flex flex-col items-start">
+                            <div class="flex items-baseline gap-2">
+                                <input type="text" name="name" class="script-font text-4xl font-bold text-black mb-1 bg-white border rounded-lg p-1" value="{{ auth()->user()->name }}">
+                                <input type="text" name="last_name" class="text-2xl font-light uppercase tracking-wider bg-white border rounded-lg p-1" value="{{ auth()->user()->last_name }}">
+                            </div>
+                            <p class="text-lg text-black font-light tracking-wide">ADMINISTRADOR</p>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 space-y-4">
-                        <h3 class="font-bold mb-4 mt-6 md:mt-0">Modalidad que maneja</h3>
-                        <div class="space-y-2">
-                            <p> Contrato de Aprendizaje</p>
+
+                    <div class="flex flex-col md:flex-row gap-6 mt-8">
+                        <div class="w-full md:w-1/2 space-y-4">
+                            <h3 class="font-bold mb-4">Datos básicos</h3>
+                            <div class="space-y-2">
+                                <p><strong>Nombres:</strong> {{ auth()->user()->name }}</p>
+                                <label class="block">
+                                    <strong>Apellidos:</strong>
+                                    <input type="text" name="last_name" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->last_name }}">
+                                </label>
+                                <label class="block">
+                                    <strong>Correo electrónico:</strong>
+                                    <input type="email" name="email" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->email }}">
+                                </label>
+                                <label class="block">
+                                    <strong>Cuenta SENA:</strong>
+                                    <input type="text" name="sena_account" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->sena_account }}">
+                                </label>
+                                <label class="block">
+                                    <strong>Departamento:</strong>
+                                    <input type="text" name="department" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->department }}">
+                                </label>
+                                <label class="block">
+                                    <strong>Municipio:</strong>
+                                    <input type="text" name="municipality" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->municipality }}">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 space-y-4">
+                            <h3 class="font-bold mb-4 mt-6 md:mt-0">Modalidad que maneja</h3>
+                            <div class="space-y-2">
+                                <label class="block">
+                                    <strong>Modalidad:</strong>
+                                    <input type="text" name="modality" class="w-full bg-white border rounded-lg p-1 mt-1" value="Contrato de Aprendizaje">
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('administrator.Actualizar-perfil') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>
-                    <a href="{{ route('administrator.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <div class="flex justify-end mt-6 space-x-4">
+                        <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Guardar Cambios</button>
+                        <a href="{{ route('administrator.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    </div>
                 </div>
-            </div>
+            </form>
         </main>
     </div>
+
     <script src="{{ asset('js/Administrator.js') }}"></script>
 
 </body>
 </html>
-
