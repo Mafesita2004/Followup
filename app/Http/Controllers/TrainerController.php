@@ -53,10 +53,10 @@ class TrainerController extends Controller
         return view('trainer.username');
     }
     //icono bitacora
-    public function bitacora()
-    {
-        return view('trainer.bitacora');
-    }
+    // public function bitacora()
+    // {
+    //     return view('trainer.bitacora');
+    // }
     //icono visita
     public function visita()
     {
