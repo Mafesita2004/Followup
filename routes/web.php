@@ -10,10 +10,8 @@ use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\ReportController;
-use App\Http\Controllers\ReportEmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainerController;
-use App\Http\Controllers\EmailController;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\BitacoraController;
 use App\Models\User_register;
@@ -147,35 +145,10 @@ Route::get('/superadmin/SuperAdmin-MensajeAprendiz', [SuperadminController::clas
     Route::get('/administrator/notificaciones', [NotificationController::class, 'Notificaciones'])->name('administrator.notificaciones');
     Route::get('/administrator/redactar', [AdministratorController::class, 'redactar'])->name('administrator.redactar');
     Route::get('/administrator/email', [AdministratorController::class, 'Email'])->name('administrator.email');
-    
-    
-
-// Ruta para ver la página de redacción de correo
-Route::get('/emails/report', [ReportEmailController::class, 'create'])->name('emails.report');
-
-// Ruta para enviar el correo
-Route::post('/emails/send', [ReportEmailController::class, 'send'])->name('emails.send');
-
-    
     Route::get('/administrator/Reporte-aprendiz', [AdministratorController::class, 'ReporteAprendiz'])->name('administrator.Reporte-aprendiz');
     Route::get('/administrator/perfil', [AdministratorController::class, 'perfil'])->name('administrator.perfil');
     Route::get('/administrator/perfilInstructor', [AdministratorController::class, 'perfilInstructor'])->name('administrator.perfil-instructor');
     Route::get('/administrator/web', [AdministratorController::class, 'Web'])->name('administrator.web');
-
-
-    
-
-    Route::get('/download-excel', function () {
-        $filePath = storage_path('app/public/archivo.xlsx'); // Asegúrate de que la ruta sea correcta
-    
-        if (file_exists($filePath)) {
-            return response()->download($filePath);
-        }
-    
-        return abort(404); // En caso de que el archivo no exista
-    });
-
-
 
 
   // Rutas de aprendiz (cambiada la duplicación del nombre)

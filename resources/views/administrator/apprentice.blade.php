@@ -156,7 +156,7 @@
                     </a>
                 </form>
 
-                <a href="{{ url('/download-excel') }}" class="-ml-96">
+                <a href="#" class="-ml-96">
                     <img src="{{ asset('img/Descarga.webp') }}" alt="descarga" class="w-8 mr-12 h-auto">
                 </a>
             </div>

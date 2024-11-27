@@ -152,9 +152,8 @@
 
 
     <div class="w-auto flex justify-start m-2 pl-56 items-center">
-        <a href="{{ route('emails.report') }}" type="submit" class="bg-gray-300 hover:bg-gray-400 text-black p-1 rounded">Redactar</a>
+        <a href="{{ route('administrator.redactar')}}" type="submit" class="bg-gray-300 hover:bg-gray-400  text-black p-1 rounded">Redactar</a>
     </div>
-    
     <div class="flex justify-center">
         <main class="bg-white m-4 p-4 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
             <div class="flex justify-center">
@@ -173,7 +172,7 @@
                             <a href="{{ route('administrator.email') }}">
                                 <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
                             </a>
-                            <button class="bg-gray-300 text-black p-2 rounded ml-2 delete-btn">Eliminar</button>
+                            <button class="bg-gray-300 text-black p-2 rounded ml-2">Eliminar</button>
                         </div>
                     </div>
                 </li>
@@ -188,7 +187,7 @@
                             <a href="{{ route('administrator.email') }}">
                                 <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
                             </a>
-                            <button class="bg-gray-300 text-black p-2 rounded ml-2 delete-btn">Eliminar</button>
+                            <button class="bg-gray-300 text-black p-2 rounded ml-2">Eliminar</button>
                         </div>
                     </div>
                 </li>
@@ -203,7 +202,7 @@
                             <a href="{{ route('administrator.email') }}">
                                 <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
                             </a>
-                            <button class="bg-gray-300 text-black p-2 rounded ml-2 delete-btn">Eliminar</button>
+                            <button class="bg-gray-300 text-black p-2 rounded ml-2">Eliminar</button>
                         </div>
                     </div>
                 </li>
@@ -218,7 +217,7 @@
                             <a href="{{ route('administrator.email') }}">
                                 <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
                             </a>
-                            <button class="bg-gray-300 text-black p-2 rounded ml-2 delete-btn">Eliminar</button>
+                            <button class="bg-gray-300 text-black p-2 rounded ml-2">Eliminar</button>
                         </div>
                     </div>
                 </li>
@@ -233,7 +232,7 @@
                             <a href="{{ route('administrator.email') }}">
                                 <button class="bg-[#009e00] text-white p-2 rounded ml-2">Ver</button>
                             </a>
-                            <button class="bg-gray-300 text-black p-2 rounded ml-2 delete-btn">Eliminar</button>
+                            <button class="bg-gray-300 text-black p-2 rounded ml-2">Eliminar</button>
                         </div>
                     </div>
                 </li>
@@ -247,24 +246,7 @@
             // Agrega la clase 'active-button' y el color al botón clicado
             button.classList.add('bg-gray-200', 'active-button');
         }
-
-        document.addEventListener('DOMContentLoaded', function () {
-        // Obtener todos los botones de eliminar
-        const deleteButtons = document.querySelectorAll('.delete-btn');
-
-        // Añadir el evento de clic a cada botón de eliminar
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Obtener el contenedor (li) más cercano a este botón
-                const notificationItem = button.closest('li');
-                
-                // Eliminar la notificación
-                notificationItem.remove();
-            });
-        });
-    });
     </script>
-    
     </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>

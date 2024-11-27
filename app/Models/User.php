@@ -30,7 +30,6 @@ class User extends Authenticatable
             'last_name', // Asegúrate de que esté incluido aquí
             'email',
             'department',
-            'municipality',
             'password',
         ];
 

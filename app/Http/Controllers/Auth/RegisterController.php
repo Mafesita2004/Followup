@@ -23,10 +23,7 @@ class RegisterController extends Controller
         // Valida los datos de la solicitud
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'department' => ['nullable', 'string', 'max:255'],
-            'municipality' => ['nullable', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'string', 'exists:roles,guard_name'],
         ]);
@@ -34,10 +31,7 @@ class RegisterController extends Controller
         // Crea un nuevo usuario con los datos proporcionados
         $user = User::create([
             'name' => $request->name,
-            'last_name'=> $request->last_name,
             'email' => $request->email,
-            'department' => $request->department,
-            'municipality' => $request->municipality,
             'password' => Hash::make($request->password),
         ]);
 
