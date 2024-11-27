@@ -128,56 +128,7 @@
         </div>
 
     </nav>
-    <div class="flex justify-center mt-6">
-        <main class="bg-gray-100 m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
-            <div class="bg-gray-100 p-6 rounded-lg relative">
-                <div class="absolute top-0 left-0 right-0 bg-[#009e00] bg-opacity-60 h-40 rounded-t-lg"></div>
-
-                <div class="relative flex items-start pt-8">
-                    <img src="{{ asset('img/administrador/mujer.png') }}" alt="User" class="w-40 h-40 z-10">
-                    <div class="ml-6 flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                            <h1 class="script-font text-4xl font-bold text-black mb-1" style="font-family: 'Times New Roman', serif;">{{ auth()->user()->name }}</h1>
-                            <span class="text-2xl font-light uppercase tracking-wider">{{ auth()->user()->last_name }}</span>
-                        </div>
-                        <p class="text-lg text-black font-light tracking-wide">ADMINISTRADOR</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-6 mt-8">
-                    <div class="w-full md:w-1/2 space-y-4">
-                        <h3 class="font-bold mb-4">Datos básicos</h3>
-                        <div class="space-y-2">
-                            <p><strong>Identificación:</strong>{{ auth()->user()->Identificacion }}</p>
-                            <p><strong>Nombres:</strong> {{ auth()->user()->name }}</p>
-                            <p><strong>Apellidos:</strong> {{ auth()->user()->last_name }}</p>
-                            <p><strong>Correo electrónico:</strong> {{ auth()->user()->email }}</p>
-                            <p><strong>Teléfono:</strong> {{ auth()->user()->Telefono }}</p>
-                            <p><strong>Programa:</strong> {{ auth()->user()->program }}</p>
-                            <p><strong>Ficha:</strong> {{ auth()->user()->ficha }}</p>
-                            <p><strong>Nivel académico:</strong> {{ auth()->user()->academic_level }}</p>
-                            <p><strong>Inicio de contrato:</strong> {{ auth()->user()->InicioContrato }}</p>
-                            <p><strong>Fin de contrato:</strong> {{ auth()->user()->FinContrato }}</p>
-                            <p><strong>Empresa:</strong> {{ auth()->user()->Nit_Empresa }}</p>
-                            <p><strong>Razón social:</strong> {{ auth()->user()->Razon_Social }}</p>
-                            <p><strong>Dirección:</strong> {{ auth()->user()->Direccion }}</p>
-                            <p><strong>Teléfono de Empresa:</strong> {{ auth()->user()->Telefono_Empresa }}</p>
-                            <p><strong>Instructor Asignado:</strong> {{ auth()->user()->Nombre_Instructor }}</p>
-                            <p><strong>Correo instructor:</strong> {{ auth()->user()->Correo_Instructor }}</p>
-                            <p><strong>Departamento:</strong> {{ auth()->user()->department }}</p>
-                            <p><strong>Municipio:</strong> {{ auth()->user()->municipality }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-end mt-6 space-x-4">
-                    <a href="{{ route('apprentice.Actualizar-perfil') }}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Actualizar</a>
-                    <a href="{{ route('apprentice.home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-                </div>
-            </div>
-        </main>
-    </div>
-    {{-- <div class="w-full flex justify-between items-center mt-6">
+    <div class="w-full flex justify-between items-center mt-6">
         <a href="{{ route('apprentice.home') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
@@ -257,7 +208,7 @@
 
             </div>
         </main>
-    </div> --}}
+    </div>
     <script>
         document.getElementById('menuButton').addEventListener('click', function() {
             document.getElementById('userMenu').classList.toggle('show');
