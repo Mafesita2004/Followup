@@ -231,7 +231,7 @@
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
             </form>
             <a href="{{ route('register') }}" class="register-link">¿Registar?</a>
-            <a href="{{ route('password.request') }}" class="register-link">¿Olvidaste tu contraseña?</a>
+           
 
 
         </div>
