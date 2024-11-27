@@ -202,7 +202,7 @@
             </ul>
         </div>
     @endif
-
+    
         <div class="registro-container">
             <h3>REGISTRO</h3>
             <form method="POST" action="{{ route('register') }}">
@@ -218,12 +218,12 @@
                 </div>
 
                 <div class="input-group">
-                    <img src="{{ asset('img/image.png') }}" alt="Correo electrónico" class="input-icon">
+                    <img src="{{ asset('img/mail.png') }}" alt="Correo electrónico" class="input-icon">
                     <input id="email" type="email" name="email" placeholder="Correo electrónico" value="{{ old('email') }}" required autocomplete="email">
                 </div>
 
                 <div class="input-group">
-                    <img src="{{ asset('img/image.png') }}" alt="departamento" class="input-icon">
+                    <img src="{{ asset('img/mail.png') }}" alt="departamento" class="input-icon">
                     <select id="department" name="department" required onchange="loadMunicipalities()">
                         <option value="" disabled selected>Seleccione un departamento</option>
                         <option value="1">Amazonas</option>
@@ -231,44 +231,17 @@
                         <option value="3">Arauca</option>
                         <option value="4">Atlántico</option>
                         <option value="5">Bolívar</option>
-                        <option value="6">Boyacá</option>
-                        <option value="7">Caldas</option>
-                        <option value="8">Caquetá</option>
-                        <option value="9">Casanare</option>
-                        <option value="10">Cauca</option>
-                        <option value="11">Cesar</option>
-                        <option value="12">Chocó</option>
-                        <option value="13">Córdoba</option>
-                        <option value="14">Cundinamarca</option>
-                        <option value="15">Guainía</option>
-                        <option value="16">Guaviare</option>
-                        <option value="17">Huila</option>
-                        <option value="18">La Guajira</option>
-                        <option value="19">Magdalena</option>
-                        <option value="20">Meta</option>
-                        <option value="21">Nariño</option>
-                        <option value="22">Norte de Santander</option>
-                        <option value="23">Putumayo</option>
-                        <option value="24">Quindío</option>
-                        <option value="25">Risaralda</option>
-                        <option value="26">San Andrés y Providencia</option>
-                        <option value="27">Santander</option>
-                        <option value="28">Sucre</option>
-                        <option value="29">Tolima</option>
-                        <option value="30">Valle del Cauca</option>
-                        <option value="31">Vaupés</option>
-                        <option value="32">Vichada</option>
                         <!-- Resto de departamentos -->
                     </select>
                 </div>
-
+                
                 <!-- Municipio -->
                 <div class="input-group">
                     <select id="municipality" name="municipality" required>
                         <option value="" disabled selected>Seleccione un municipio</option>
                     </select>
                 </div>
-
+                
 
                 <div class="input-group">
                     <img src="{{ asset('img/lock-icon.png') }}" alt="Contraseña" class="input-icon">
@@ -295,39 +268,13 @@
         </div>
     </main>
    <script>
-const municipalities = {
+    const municipalities = {
         1: ["Leticia", "Puerto Nariño"], // Amazonas
-    2: ["Medellín", "Envigado", "Itagüí", "Bello", "Apartadó", "Turbo", "Rionegro"], // Antioquia
-    3: ["Arauca", "Tame", "Saravena", "Arauquita"], // Arauca
-    4: ["Barranquilla", "Soledad", "Malambo", "Puerto Colombia", "Sabanalarga"], // Atlántico
-    5: ["Cartagena", "Magangué", "Santa Catalina", "Turbaco", "Mompox"], // Bolívar
-    6: ["Tunja", "Duitama", "Sogamoso", "Chiquinquirá", "Villa de Leyva"], // Boyacá
-    7: ["Manizales", "Chinchiná", "Villamaría", "La Dorada"], // Caldas
-    8: ["Florencia", "Milán", "San Vicente del Caguán"], // Caquetá
-    9: ["Yopal", "Aguazul", "Villanueva", "Tauramena"], // Casanare
-    10: ["Popayán", "Santander de Quilichao", "Guapi"], // Cauca
-    11: ["Valledupar", "Aguachica", "Bosconia"], // Cesar
-    12: ["Quibdó", "Istmina", "Condoto"], // Chocó
-    13: ["Montería", "Cereté", "Lorica"], // Córdoba
-    14: ["Bogotá", "Fusagasugá", "Zipaquirá", "Girardot", "Chía"], // Cundinamarca
-    15: ["Inírida"], // Guainía
-    16: ["San José del Guaviare", "Calamar"], // Guaviare
-    17: ["Neiva", "Garzón", "Pitalito"], // Huila
-    18: ["Riohacha", "Maicao", "Uribia"], // La Guajira
-    19: ["Santa Marta", "Ciénaga", "Aracataca"], // Magdalena
-    20: ["Villavicencio", "Granada", "Acacías"], // Meta
-    21: ["Pasto", "Tumaco", "Ipiales"], // Nariño
-    22: ["Cúcuta", "Ocaña", "Pamplona"], // Norte de Santander
-    23: ["Mocoa", "Puerto Asís", "Orito"], // Putumayo
-    24: ["Armenia", "Calarcá", "Montenegro"], // Quindío
-    25: ["Pereira", "Dosquebradas", "Santa Rosa de Cabal"], // Risaralda
-    26: ["San Andrés", "Providencia"], // San Andrés y Providencia
-    27: ["Bucaramanga", "Barrancabermeja", "Floridablanca"], // Santander
-    28: ["Sincelejo", "Corozal", "Sampués"], // Sucre
-    29: ["Ibagué", "Espinal", "Honda"], // Tolima
-    30: ["Cali", "Palmira", "Buenaventura", "Jamundí"], // Valle del Cauca
-    31: ["Mitú"], // Vaupés
-    32: ["Puerto Carreño"], // Vichada
+        2: ["Medellín", "Envigado", "Rionegro"], // Antioquia
+        3: ["Arauca", "Tame"], // Arauca
+        4: ["Barranquilla", "Soledad", "Malambo"], // Atlántico
+        5: ["Cartagena", "Magangué", "Santa Catalina"], // Bolívar
+        // Añadir más departamentos y municipios aquí
     };
 
     function loadMunicipalities() {
