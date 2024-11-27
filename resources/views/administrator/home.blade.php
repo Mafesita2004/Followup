@@ -229,7 +229,7 @@
                 <ul>
                     <li class="mt-2">
                         <button id="uploadButton" class="block text-black hover:bg-white p-2 rounded-lg">+ Añadir Plantilla</button>
-                        <input type="file" id="fileUpload" class="hidden" name="fileUpload" accept=".txt,.doc" />
+                        <input type="file" id="fileUpload" class="hidden" name="fileUpload" accept=".xls,.xlsx" />
                     </li>
                 </ul>
             </ul>
@@ -253,9 +253,20 @@
 
         // Alternar visibilidad del menú "Plantilla"
         document.getElementById('toggleMenu2').addEventListener('click', function(event) {
-            event.preventDefault();
+            event.stopPropagation();  // Evitar que se cierre el menú al hacer clic en él
             const menu2 = document.getElementById('menu2');
             menu2.classList.toggle('hidden');
+        });
+//IMPORTANTE PLANTILLA SUBIR
+        // Mostrar el cuadro de diálogo para seleccionar archivo al hacer clic en el botón "Añadir Plantilla"
+        document.getElementById('uploadButton').addEventListener('click', function(e) {
+            e.stopPropagation(); // Evitar que se cierre el menú al hacer clic
+            document.getElementById('fileUpload').click();
+        });
+
+        // Evitar que el clic en el contenedor del menú "Plantilla" cierre el menú
+        document.getElementById('menu2').addEventListener('click', function(event) {
+            event.stopPropagation(); // Detiene la propagación para que no se cierre el menú
         });
 
         // Alternar visibilidad del submenú "Contrato de Aprendizaje"
@@ -273,11 +284,7 @@
             button.addEventListener('click', toggleSublist);
         });
 
-        // Mostrar el cuadro de diálogo para seleccionar archivo al hacer clic en el botón "Añadir Plantilla"
-        document.getElementById('uploadButton').addEventListener('click', function() {
-            document.getElementById('fileUpload').click();
-        });
-
+        ////////////////////////
         // Manejar el archivo cargado
         document.getElementById('fileUpload').addEventListener('change', function (event) {
             const file = event.target.files[0];
@@ -306,7 +313,7 @@
             }
 
             // Ocultar el menú "Plantilla" si se hace clic fuera de él
-            if (!menu2.contains(event.target) && !document.getElementById('toggleMenu2').contains(event.target)) {
+            if (!menu2.contains(event.target) && !document.getElementById('toggleMenu2').contains(event.target) && !document.getElementById('uploadButton').contains(event.target)) {
                 menu2.classList.add('hidden');
             }
 
@@ -317,6 +324,11 @@
         });
     });
 </script>
+
+
+
+
+
 
 
 

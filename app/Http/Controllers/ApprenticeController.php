@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\apprentice;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ApprenticesExport; // Crearemos esta clase más adelante
 
 class ApprenticeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function downloadExcel()
+    {
+        // Llamamos a la clase que exportará los datos
+        return Excel::download(new ApprenticesExport, 'apprentices.xlsx');
+    }
 
     public function index()
     {
