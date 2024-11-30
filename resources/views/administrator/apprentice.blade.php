@@ -165,13 +165,13 @@
                 </form>
 
                 <form action="#" method="GET" class="mr-1 -ml-28">
-                    <a href="{{ route('administrator.Agregar-aprendiz') }}" type="button" class="bg-white border-none p-2 cursor-pointer">
+                    <a href="{{ route('administrator.Agregar-aprendiz2') }}" type="button" class="bg-white border-none p-2 cursor-pointer">
                         <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
                     </a>
                 </form>
 
-                <a href="#" class="-ml-96">
-                    <img src="{{ asset('img/Descarga.webp') }}" alt="descarga" class="w-8 mr-12 h-auto">
+                <a href="{{ route('administrator.Agregar-aprendiz') }}" class="-ml-96">
+                    <img src="{{ asset('img/administrador/image.png') }}" alt="descarga" class="w-8 mr-12 h-auto">
                 </a>
             </div>
             <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">

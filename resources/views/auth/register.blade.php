@@ -102,7 +102,8 @@
         .etapa-productiva .productiva {
             color: #003366;
         }
-            .registro-container {
+
+        .registro-container {
             position: absolute;
             top: 50%;
             left: 70%;

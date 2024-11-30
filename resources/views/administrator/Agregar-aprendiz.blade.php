@@ -158,8 +158,8 @@
                             <thead>
                                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                     <th class="py-3 px-6 text-left">Identificación</th>
-                                    <th class="py-3 px-6 text-left">Apellido</th>
                                     <th class="py-3 px-6 text-left">Nombre</th>
+                                    <th class="py-3 px-6 text-left">Apellido</th>
                                     <th class="py-3 px-6 text-left">Programa</th>
                                     <th class="py-3 px-6 text-left">Nivel Academico</th>
                                     <th class="py-3 px-6 text-left">Ficha</th>
@@ -174,8 +174,6 @@
                                     <th class="py-3 px-6 text-left">Teléfono Empresa</th>
                                     <th class="py-3 px-6 text-left">Nombre Instructor</th>
                                     <th class="py-3 px-6 text-left">Correo Instructor</th>
-                                    <th class="py-3 px-6 text-left">Enviar Aprendiz</th>
-                                     <th class="py-3 px-6 text-left">Enviar Instructor</th>
                                     <th class="py-3 px-6 text-left">Editar</th>
                                     <th class="py-3 px-6 text-left">Eliminar</th>
                                 </tr>
@@ -183,79 +181,15 @@
                             <tbody class="text-gray-600 text-sm font-light">
                                 <tr class="border-b border-gray-300">
                                     <td class="py-3 px-6 text-left">123456</td>
-                                    <td class="py-3 px-6 text-left">Apellido1</td>
                                     <td class="py-3 px-6 text-left">Nombre1</td>
-                                    <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
-                                        <option value="GESTION ADMINISTRATIVA DEL SECTOR SALUD">GESTION ADMINISTRATIVA DEL SECTOR SALUD</option>
-                                        <option value="GESTION DE MERCADOS">GESTION DE MERCADOS</option>
-                                        <option value="ASISTENCIA ADMINISTRATIVA">ASISTENCIA ADMINISTRATIVA</option>
-                                        <option value="GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD">GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD</option>
-                                        <option value="GESTION EMPRESARIAL">GESTION EMPRESARIAL</option>
-                                        <option value="GUIANZA TURISTICA">GUIANZA TURISTICA</option>
-                                        <option value="GESTION CONTABLE Y FINANCIERA">GESTION CONTABLE Y FINANCIERA</option>
-                                        <option value="ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION">ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION</option>
-                                        <option value="GESTION LOGISTICA">GESTION LOGISTICA</option>
-                                        <option value="NEGOCIACION INTERNACIONAL">NEGOCIACION INTERNACIONAL</option>
-                                        <option value="GESTION DEL TALENTO HUMANO">GESTION DEL TALENTO HUMANO</option>
-                                        <option value="GESTION DOCUMENTAL">GESTION DOCUMENTAL</option>
-                                        <option value="CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS">CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS</option>
-                                        <option value="GESTION BANCARIA Y DE ENTIDADES FINANCIERAS">GESTION BANCARIA Y DE ENTIDADES FINANCIERAS</option>
-                                        <option value="PELUQUERIA">PELUQUERIA</option>
-                                        <option value="PANIFICACION">PANIFICACION</option>
-                                        <option value="COCINA">COCINA</option>
-                                        <option value="SERVICIOS FARMACEUTICOS">SERVICIOS FARMACEUTICOS</option>
-                                        <option value="SALUD PUBLICA">SALUD PUBLICA</option>
-                                        <option value="APOYO ADMINISTRATIVO EN SALUD">APOYO ADMINISTRATIVO EN SALUD</option>
-                                        <option value="OPERACION TURISTICA LOCAL">OPERACION TURISTICA LOCAL</option>
-                                        <option value="ANIMACION 3D">ANIMACION 3D</option>
-                                        <option value="ANIMACION DIGITAL">ANIMACION DIGITAL</option>
-                                        <option value="PROMOCION DE PRODUCTOS">PROMOCION DE PRODUCTOS</option>
-                                        <option value="SERVICIOS Y OPERACIONES MICROFINANCIERAS">SERVICIOS Y OPERACIONES MICROFINANCIERAS</option>
-                                        <option value="CUIDADO ESTETICO DE MANOS Y PIES">CUIDADO ESTETICO DE MANOS Y PIES</option>
-                                        <option value="CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL</option>
-                                        <option value="ENFERMERIA">ENFERMERIA</option>
-                                        <option value="SISTEMAS">SISTEMAS</option>
-                                        <option value="DISTRIBUCION FISICA INTERNACIONAL">DISTRIBUCION FISICA INTERNACIONAL</option>
-                                        <option value="ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS">ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS</option>
-                                        <option value="ATENCION INTEGRAL A LA PRIMERA INFANCIA">ATENCION INTEGRAL A LA PRIMERA INFANCIA</option>
-                                        <option value="ASISTENCIA EN ORGANIZACION DE ARCHIVOS">ASISTENCIA EN ORGANIZACION DE ARCHIVOS</option>
-                                        <option value="DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO">DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO</option>
-                                        <option value="SERVICIO DE RESTAURANTE Y BAR">SERVICIO DE RESTAURANTE Y BAR</option>
-                                        <option value="OPERACIONES DE COMERCIO EXTERIOR">OPERACIONES DE COMERCIO EXTERIOR</option>
-                                        <option value="DISEÑO E INTEGRACION DE MULTIMEDIA">DISEÑO E INTEGRACION DE MULTIMEDIA</option>
-                                        <option value="INFORMACION Y SERVICIO AL CLIENTE">INFORMACION Y SERVICIO AL CLIENTE</option>
-                                        <option value="SERVICIOS DE AGENCIAS DE VIAJES">SERVICIOS DE AGENCIAS DE VIAJES</option>
-                                        <option value="ASESORIA COMERCIAL">ASESORIA COMERCIAL</option>
-                                        <option value="PROCESOS DE PANADERIA">PROCESOS DE PANADERIA</option>
-                                        <option value="GESTION COMUNITARIA DEL RIESGO DE DESASTRES">GESTION COMUNITARIA DEL RIESGO DE DESASTRES</option>
-                                        <option value="PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE">PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE</option>
-                                        <option value="PROGRAMACION DE SOFTWARE">PROGRAMACION DE SOFTWARE</option>
-                                        <option value="SERVICIOS DE BARISMO">SERVICIOS DE BARISMO</option>
-                                        <option value="GESTION CONTABLE Y DE INFORMACION FINANCIERA">GESTION CONTABLE Y DE INFORMACION FINANCIERA</option>
-                                        <option value="INTEGRACION DE OPERACIONES LOGISTICAS">INTEGRACION DE OPERACIONES LOGISTICAS</option>
-                                        <option value="INTEGRACION DE CONTENIDOS DIGITALES">INTEGRACION DE CONTENIDOS DIGITALES</option>
-                                        <option value="AUXILIAR EN COCINA">AUXILIAR EN COCINA</option>
-                                        <option value="PROGRAMACION PARA ANALITICA DE DATOS">PROGRAMACION PARA ANALITICA DE DATOS</option>
-                                        <option value="AGENTE DE TRANSITO Y TRANSPORTE">AGENTE DE TRANSITO Y TRANSPORTE</option>
-                                        <option value="ANALISIS Y DESARROLLO DE SOFTWARE">ANALISIS Y DESARROLLO DE SOFTWARE</option>
-                                        <option value="ATENCION INTEGRAL AL CLIENTE">ATENCION INTEGRAL AL CLIENTE</option>
-                                        <option value="CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL</option>
-                                        <option value="DESARROLLO DE PROCESOS DE MERCADEO">DESARROLLO DE PROCESOS DE MERCADEO</option>
-                                        <option value="DESARROLLO PUBLICITARIO">DESARROLLO PUBLICITARIO</option>
-                                        <option value="GESTION INTEGRAL DEL TRANSPORTE">GESTION INTEGRAL DEL TRANSPORTE</option>
-                                        <option value="ORGANIZACION DE ARCHIVO">ORGANIZACION DE ARCHIVO</option>
-                                        <option value="PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC">PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC</option>
-                                        <option value="SERVICIOS EN CONTACT CENTER Y BPO">SERVICIOS EN CONTACT CENTER Y BPO</option>
-                                        <option value="COORDINACION DE PROCESOS LOGISTICOS">COORDINACION DE PROCESOS LOGISTICOS</option>
-                                        </select>
+                                    <td class="py-3 px-6 text-left">Apellido1</td>
+                                    <td class="py-3 px-6 text-left">
+                                        <span>GESTION ADMINISTRATIVA DEL SECTOR SALUD</span>
                                     </td>
                                     <td class="py-3 px-6 text-left">
-                                        <select id="academic-level" class="form-select" class=" border border-gray-400 p-2 rounded-md w-48 bg-white" onchange="saveAcademicLevel(this)">
-                                            <option value="" disabled selected>Seleccione Nivel Académico</option>
-                                            <option value="tecnologo">Tecnólogo</option>
-                                            <option value="tecnico">Técnico</option>
-                                            <option value="operario">Operario</option>
-                                        </select>
+                                        <span>Tecnólogo</span>
+                                    </td>
+
                                     </td>
                                     <td class="py-3 px-6 text-left">Ficha1</td>
                                     <td class="py-3 px-6 text-left">555-1234</td>
@@ -277,201 +211,97 @@
                                     <td class="py-3 px-6 text-left">555-5678</td>
                                     <td class="py-3 px-6 text-left">Representante1</td>
                                     <td class="py-3 px-6 text-left">representante1@example.com</td>
-                                    <td class="py-3 px-6 text-left"><a href="{{ route('administrator.Mensaje-aprendiz')}}" class="text-blue-600 hover:underline">Mensaje</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="{{ route('administrator.Mensaje-instructor')}}" class="text-blue-600 hover:underline">Mensaje</a></td>
+
                                     <td class="py-3 px-6 text-left"><a href="#" class="text-blue-600 hover:underline">Editar</a></td>
                                     <td class="py-3 px-6 text-left"><a href="#" class="text-red-600 hover:underline">Eliminar</a></td>
 
                                 </tr>
-                                <tr class="border-b border-gray-300">
-                                    <td class="py-3 px-6 text-left">125536</td>
-                                    <td class="py-3 px-6 text-left">Apellid2</td>
-                                    <td class="py-3 px-6 text-left">Nombre2</td>
-                                    <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
-                                        <option value="GESTION ADMINISTRATIVA DEL SECTOR SALUD">GESTION ADMINISTRATIVA DEL SECTOR SALUD</option>
-                                        <option value="GESTION DE MERCADOS">GESTION DE MERCADOS</option>
-                                        <option value="ASISTENCIA ADMINISTRATIVA">ASISTENCIA ADMINISTRATIVA</option>
-                                        <option value="GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD">GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD</option>
-                                        <option value="GESTION EMPRESARIAL">GESTION EMPRESARIAL</option>
-                                        <option value="GUIANZA TURISTICA">GUIANZA TURISTICA</option>
-                                        <option value="GESTION CONTABLE Y FINANCIERA">GESTION CONTABLE Y FINANCIERA</option>
-                                        <option value="ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION">ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION</option>
-                                        <option value="GESTION LOGISTICA">GESTION LOGISTICA</option>
-                                        <option value="NEGOCIACION INTERNACIONAL">NEGOCIACION INTERNACIONAL</option>
-                                        <option value="GESTION DEL TALENTO HUMANO">GESTION DEL TALENTO HUMANO</option>
-                                        <option value="GESTION DOCUMENTAL">GESTION DOCUMENTAL</option>
-                                        <option value="CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS">CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS</option>
-                                        <option value="GESTION BANCARIA Y DE ENTIDADES FINANCIERAS">GESTION BANCARIA Y DE ENTIDADES FINANCIERAS</option>
-                                        <option value="PELUQUERIA">PELUQUERIA</option>
-                                        <option value="PANIFICACION">PANIFICACION</option>
-                                        <option value="COCINA">COCINA</option>
-                                        <option value="SERVICIOS FARMACEUTICOS">SERVICIOS FARMACEUTICOS</option>
-                                        <option value="SALUD PUBLICA">SALUD PUBLICA</option>
-                                        <option value="APOYO ADMINISTRATIVO EN SALUD">APOYO ADMINISTRATIVO EN SALUD</option>
-                                        <option value="OPERACION TURISTICA LOCAL">OPERACION TURISTICA LOCAL</option>
-                                        <option value="ANIMACION 3D">ANIMACION 3D</option>
-                                        <option value="ANIMACION DIGITAL">ANIMACION DIGITAL</option>
-                                        <option value="PROMOCION DE PRODUCTOS">PROMOCION DE PRODUCTOS</option>
-                                        <option value="SERVICIOS Y OPERACIONES MICROFINANCIERAS">SERVICIOS Y OPERACIONES MICROFINANCIERAS</option>
-                                        <option value="CUIDADO ESTETICO DE MANOS Y PIES">CUIDADO ESTETICO DE MANOS Y PIES</option>
-                                        <option value="CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL</option>
-                                        <option value="ENFERMERIA">ENFERMERIA</option>
-                                        <option value="SISTEMAS">SISTEMAS</option>
-                                        <option value="DISTRIBUCION FISICA INTERNACIONAL">DISTRIBUCION FISICA INTERNACIONAL</option>
-                                        <option value="ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS">ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS</option>
-                                        <option value="ATENCION INTEGRAL A LA PRIMERA INFANCIA">ATENCION INTEGRAL A LA PRIMERA INFANCIA</option>
-                                        <option value="ASISTENCIA EN ORGANIZACION DE ARCHIVOS">ASISTENCIA EN ORGANIZACION DE ARCHIVOS</option>
-                                        <option value="DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO">DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO</option>
-                                        <option value="SERVICIO DE RESTAURANTE Y BAR">SERVICIO DE RESTAURANTE Y BAR</option>
-                                        <option value="OPERACIONES DE COMERCIO EXTERIOR">OPERACIONES DE COMERCIO EXTERIOR</option>
-                                        <option value="DISEÑO E INTEGRACION DE MULTIMEDIA">DISEÑO E INTEGRACION DE MULTIMEDIA</option>
-                                        <option value="INFORMACION Y SERVICIO AL CLIENTE">INFORMACION Y SERVICIO AL CLIENTE</option>
-                                        <option value="SERVICIOS DE AGENCIAS DE VIAJES">SERVICIOS DE AGENCIAS DE VIAJES</option>
-                                        <option value="ASESORIA COMERCIAL">ASESORIA COMERCIAL</option>
-                                        <option value="PROCESOS DE PANADERIA">PROCESOS DE PANADERIA</option>
-                                        <option value="GESTION COMUNITARIA DEL RIESGO DE DESASTRES">GESTION COMUNITARIA DEL RIESGO DE DESASTRES</option>
-                                        <option value="PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE">PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE</option>
-                                        <option value="PROGRAMACION DE SOFTWARE">PROGRAMACION DE SOFTWARE</option>
-                                        <option value="SERVICIOS DE BARISMO">SERVICIOS DE BARISMO</option>
-                                        <option value="GESTION CONTABLE Y DE INFORMACION FINANCIERA">GESTION CONTABLE Y DE INFORMACION FINANCIERA</option>
-                                        <option value="INTEGRACION DE OPERACIONES LOGISTICAS">INTEGRACION DE OPERACIONES LOGISTICAS</option>
-                                        <option value="INTEGRACION DE CONTENIDOS DIGITALES">INTEGRACION DE CONTENIDOS DIGITALES</option>
-                                        <option value="AUXILIAR EN COCINA">AUXILIAR EN COCINA</option>
-                                        <option value="PROGRAMACION PARA ANALITICA DE DATOS">PROGRAMACION PARA ANALITICA DE DATOS</option>
-                                        <option value="AGENTE DE TRANSITO Y TRANSPORTE">AGENTE DE TRANSITO Y TRANSPORTE</option>
-                                        <option value="ANALISIS Y DESARROLLO DE SOFTWARE">ANALISIS Y DESARROLLO DE SOFTWARE</option>
-                                        <option value="ATENCION INTEGRAL AL CLIENTE">ATENCION INTEGRAL AL CLIENTE</option>
-                                        <option value="CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL</option>
-                                        <option value="DESARROLLO DE PROCESOS DE MERCADEO">DESARROLLO DE PROCESOS DE MERCADEO</option>
-                                        <option value="DESARROLLO PUBLICITARIO">DESARROLLO PUBLICITARIO</option>
-                                        <option value="GESTION INTEGRAL DEL TRANSPORTE">GESTION INTEGRAL DEL TRANSPORTE</option>
-                                        <option value="ORGANIZACION DE ARCHIVO">ORGANIZACION DE ARCHIVO</option>
-                                        <option value="PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC">PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC</option>
-                                        <option value="SERVICIOS EN CONTACT CENTER Y BPO">SERVICIOS EN CONTACT CENTER Y BPO</option>
-                                        <option value="COORDINACION DE PROCESOS LOGISTICOS">COORDINACION DE PROCESOS LOGISTICOS</option>
-                                        </select>
-                                    <td class="py-3 px-6 text-left">Ficha2</td>
-                                    <td class="py-3 px-6 text-left">585-1234</td>
-                                    <td class="py-3 px-6 text-left">correo2@example.com</td>
-                                    <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
-                                        <option selected="">Selecciona Opción</option>
-                                        <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
-                                        <option value="Pasantia">Pasantia</option>
-                                        <option value="Vinculo laboral">Vinculo laboral</option>
-                                        <option value="Patrocinio">Patrocinio</option>
-                                        <option value="Unidad Productiva">Unidad Productiva</option>
-                                        <option value="Proyecto Productivo">Proyecto Productivo</option>
-                                    </select></td>
-                                    <td class="py-3 px-6 text-left">01/01/2022</td>
-                                    <td class="py-3 px-6 text-left">01/08/2024</td>
-                                    <td class="py-3 px-6 text-left">13123123</td>
-                                    <td class="py-3 px-6 text-left">Empresa2</td>
-                                    <td class="py-3 px-6 text-left">Calle 123</td>
-                                    <td class="py-3 px-6 text-left">555-5678</td>
-                                    <td class="py-3 px-6 text-left">Representante2</td>
-                                    <td class="py-3 px-6 text-left">representante2@example.com</td>
-                                    <td class="py-3 px-6 text-left"><a href="{{ route('administrator.Mensaje-aprendiz')}}" class="text-blue-600 hover:underline">Mensaje</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="{{ route('administrator.Mensaje-instructor')}}" class="text-blue-600 hover:underline">Mensaje</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="#" class="text-blue-600 hover:underline">Editar</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="#" class="text-red-600 hover:underline">Eliminar</a></td>
+                                <tbody class="text-gray-600 text-sm font-light">
+                                    <tr class="border-b border-gray-300">
+                                        <td class="py-3 px-6 text-left">123456</td>
+                                        <td class="py-3 px-6 text-left">Nombre1</td>
+                                        <td class="py-3 px-6 text-left">Apellido1</td>
+                                        <td class="py-3 px-6 text-left">
+                                            <span>GESTION ADMINISTRATIVA DEL SECTOR SALUD</span>
+                                        </td>
+                                        <td class="py-3 px-6 text-left">
+                                            <span>Tecnólogo</span>
+                                        </td>
 
-                                </tr>
-                                <tr class="border-b border-gray-300">
-                                    <td class="py-3 px-6 text-left">123456</td>
-                                    <td class="py-3 px-6 text-left">Apellido3</td>
-                                    <td class="py-3 px-6 text-left">Nombre3</td>
-                                    <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
-                                        <option value="GESTION ADMINISTRATIVA DEL SECTOR SALUD">GESTION ADMINISTRATIVA DEL SECTOR SALUD</option>
-                                        <option value="GESTION DE MERCADOS">GESTION DE MERCADOS</option>
-                                        <option value="ASISTENCIA ADMINISTRATIVA">ASISTENCIA ADMINISTRATIVA</option>
-                                        <option value="GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD">GESTION DE PROCESOS ADMINISTRATIVOS DE SALUD</option>
-                                        <option value="GESTION EMPRESARIAL">GESTION EMPRESARIAL</option>
-                                        <option value="GUIANZA TURISTICA">GUIANZA TURISTICA</option>
-                                        <option value="GESTION CONTABLE Y FINANCIERA">GESTION CONTABLE Y FINANCIERA</option>
-                                        <option value="ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION">ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION</option>
-                                        <option value="GESTION LOGISTICA">GESTION LOGISTICA</option>
-                                        <option value="NEGOCIACION INTERNACIONAL">NEGOCIACION INTERNACIONAL</option>
-                                        <option value="GESTION DEL TALENTO HUMANO">GESTION DEL TALENTO HUMANO</option>
-                                        <option value="GESTION DOCUMENTAL">GESTION DOCUMENTAL</option>
-                                        <option value="CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS">CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS</option>
-                                        <option value="GESTION BANCARIA Y DE ENTIDADES FINANCIERAS">GESTION BANCARIA Y DE ENTIDADES FINANCIERAS</option>
-                                        <option value="PELUQUERIA">PELUQUERIA</option>
-                                        <option value="PANIFICACION">PANIFICACION</option>
-                                        <option value="COCINA">COCINA</option>
-                                        <option value="SERVICIOS FARMACEUTICOS">SERVICIOS FARMACEUTICOS</option>
-                                        <option value="SALUD PUBLICA">SALUD PUBLICA</option>
-                                        <option value="APOYO ADMINISTRATIVO EN SALUD">APOYO ADMINISTRATIVO EN SALUD</option>
-                                        <option value="OPERACION TURISTICA LOCAL">OPERACION TURISTICA LOCAL</option>
-                                        <option value="ANIMACION 3D">ANIMACION 3D</option>
-                                        <option value="ANIMACION DIGITAL">ANIMACION DIGITAL</option>
-                                        <option value="PROMOCION DE PRODUCTOS">PROMOCION DE PRODUCTOS</option>
-                                        <option value="SERVICIOS Y OPERACIONES MICROFINANCIERAS">SERVICIOS Y OPERACIONES MICROFINANCIERAS</option>
-                                        <option value="CUIDADO ESTETICO DE MANOS Y PIES">CUIDADO ESTETICO DE MANOS Y PIES</option>
-                                        <option value="CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD TRANSPORTE Y SEGURIDAD VIAL</option>
-                                        <option value="ENFERMERIA">ENFERMERIA</option>
-                                        <option value="SISTEMAS">SISTEMAS</option>
-                                        <option value="DISTRIBUCION FISICA INTERNACIONAL">DISTRIBUCION FISICA INTERNACIONAL</option>
-                                        <option value="ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS">ASESORIA COMERCIAL Y OPERACIONES DE ENTIDADES FINANCIERAS</option>
-                                        <option value="ATENCION INTEGRAL A LA PRIMERA INFANCIA">ATENCION INTEGRAL A LA PRIMERA INFANCIA</option>
-                                        <option value="ASISTENCIA EN ORGANIZACION DE ARCHIVOS">ASISTENCIA EN ORGANIZACION DE ARCHIVOS</option>
-                                        <option value="DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO">DESARROLLO DE OPERACIONES LOGISTICA EN LA CADENA DE ABASTECIMIENTO</option>
-                                        <option value="SERVICIO DE RESTAURANTE Y BAR">SERVICIO DE RESTAURANTE Y BAR</option>
-                                        <option value="OPERACIONES DE COMERCIO EXTERIOR">OPERACIONES DE COMERCIO EXTERIOR</option>
-                                        <option value="DISEÑO E INTEGRACION DE MULTIMEDIA">DISEÑO E INTEGRACION DE MULTIMEDIA</option>
-                                        <option value="INFORMACION Y SERVICIO AL CLIENTE">INFORMACION Y SERVICIO AL CLIENTE</option>
-                                        <option value="SERVICIOS DE AGENCIAS DE VIAJES">SERVICIOS DE AGENCIAS DE VIAJES</option>
-                                        <option value="ASESORIA COMERCIAL">ASESORIA COMERCIAL</option>
-                                        <option value="PROCESOS DE PANADERIA">PROCESOS DE PANADERIA</option>
-                                        <option value="GESTION COMUNITARIA DEL RIESGO DE DESASTRES">GESTION COMUNITARIA DEL RIESGO DE DESASTRES</option>
-                                        <option value="PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE">PROGRAMACION DE APLICACIONES Y SERVICIOS PARA LA NUBE</option>
-                                        <option value="PROGRAMACION DE SOFTWARE">PROGRAMACION DE SOFTWARE</option>
-                                        <option value="SERVICIOS DE BARISMO">SERVICIOS DE BARISMO</option>
-                                        <option value="GESTION CONTABLE Y DE INFORMACION FINANCIERA">GESTION CONTABLE Y DE INFORMACION FINANCIERA</option>
-                                        <option value="INTEGRACION DE OPERACIONES LOGISTICAS">INTEGRACION DE OPERACIONES LOGISTICAS</option>
-                                        <option value="INTEGRACION DE CONTENIDOS DIGITALES">INTEGRACION DE CONTENIDOS DIGITALES</option>
-                                        <option value="AUXILIAR EN COCINA">AUXILIAR EN COCINA</option>
-                                        <option value="PROGRAMACION PARA ANALITICA DE DATOS">PROGRAMACION PARA ANALITICA DE DATOS</option>
-                                        <option value="AGENTE DE TRANSITO Y TRANSPORTE">AGENTE DE TRANSITO Y TRANSPORTE</option>
-                                        <option value="ANALISIS Y DESARROLLO DE SOFTWARE">ANALISIS Y DESARROLLO DE SOFTWARE</option>
-                                        <option value="ATENCION INTEGRAL AL CLIENTE">ATENCION INTEGRAL AL CLIENTE</option>
-                                        <option value="CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL">CONTROL DE MOVILIDAD, TRANSPORTE Y SEGURIDAD VIAL</option>
-                                        <option value="DESARROLLO DE PROCESOS DE MERCADEO">DESARROLLO DE PROCESOS DE MERCADEO</option>
-                                        <option value="DESARROLLO PUBLICITARIO">DESARROLLO PUBLICITARIO</option>
-                                        <option value="GESTION INTEGRAL DEL TRANSPORTE">GESTION INTEGRAL DEL TRANSPORTE</option>
-                                        <option value="ORGANIZACION DE ARCHIVO">ORGANIZACION DE ARCHIVO</option>
-                                        <option value="PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC">PRESELECCION DE TALENTO HUMANO MEDIADO POR HERRAMIENTAS TIC</option>
-                                        <option value="SERVICIOS EN CONTACT CENTER Y BPO">SERVICIOS EN CONTACT CENTER Y BPO</option>
-                                        <option value="COORDINACION DE PROCESOS LOGISTICOS">COORDINACION DE PROCESOS LOGISTICOS</option>
-                                        </select>
-                                    <td class="py-3 px-6 text-left">Ficha3</td>
-                                    <td class="py-3 px-6 text-left">5454-876867</td>
-                                    <td class="py-3 px-6 text-left">correo3@example.com</td>
-                                    <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
-                                        <option selected="">Selecciona Opción</option>
-                                        <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
-                                        <option value="Pasantia">Pasantia</option>
-                                        <option value="Vinculo laboral">Vinculo laboral</option>
-                                        <option value="Patrocinio">Patrocinio</option>
-                                        <option value="Unidad Productiva">Unidad Productiva</option>
-                                        <option value="Proyecto Productivo">Proyecto Productivo</option>
-                                    </select></td>
-                                    <td class="py-3 px-6 text-left">01/03/2023</td>
-                                    <td class="py-3 px-6 text-left">01/05/2024</td>
-                                    <td class="py-3 px-6 text-left">1232112</td>
-                                    <td class="py-3 px-6 text-left">Empresa3</td>
-                                    <td class="py-3 px-6 text-left">Calle 12313</td>
-                                    <td class="py-3 px-6 text-left">554355-5678</td>
-                                    <td class="py-3 px-6 text-left">Representante3</td>
-                                    <td class="py-3 px-6 text-left">representante3@example.com</td>
-                                    <td class="py-3 px-6 text-left"><a href="{{ route('administrator.Mensaje-aprendiz')}}" class="text-blue-600 hover:underline">Mensaje</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="{{ route('administrator.Mensaje-instructor')}}" class="text-blue-600 hover:underline">Mensaje</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="#" class="text-blue-600 hover:underline">Editar</a></td>
-                                    <td class="py-3 px-6 text-left"><a href="#" class="text-red-600 hover:underline">Eliminar</a></td>
+                                        </td>
+                                        <td class="py-3 px-6 text-left">Ficha1</td>
+                                        <td class="py-3 px-6 text-left">555-1234</td>
+                                        <td class="py-3 px-6 text-left">correo1@example.com</td>
+                                        <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                                            <option selected="">Selecciona Opción</option>
+                                            <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                                            <option value="Pasantia">Pasantia</option>
+                                            <option value="Vinculo laboral">Vinculo laboral</option>
+                                            <option value="Patrocinio">Patrocinio</option>
+                                            <option value="Unidad Productiva">Unidad Productiva</option>
+                                            <option value="Proyecto Productivo">Proyecto Productivo</option>
+                                        </select></td>
+                                        <td class="py-3 px-6 text-left">01/01/2022</td>
+                                        <td class="py-3 px-6 text-left">01/01/2023</td>
+                                        <td class="py-3 px-6 text-left">987654</td>
+                                        <td class="py-3 px-6 text-left">Empresa1</td>
+                                        <td class="py-3 px-6 text-left">Calle 123</td>
+                                        <td class="py-3 px-6 text-left">555-5678</td>
+                                        <td class="py-3 px-6 text-left">Representante1</td>
+                                        <td class="py-3 px-6 text-left">representante1@example.com</td>
 
-                                </tr>
+                                        <td class="py-3 px-6 text-left"><a href="#" class="text-blue-600 hover:underline">Editar</a></td>
+                                        <td class="py-3 px-6 text-left"><a href="#" class="text-red-600 hover:underline">Eliminar</a></td>
+
+                                    </tr>
+                                    <tbody class="text-gray-600 text-sm font-light">
+                                        <tr class="border-b border-gray-300">
+                                            <td class="py-3 px-6 text-left">123456</td>
+                                            <td class="py-3 px-6 text-left">Nombre1</td>
+                                            <td class="py-3 px-6 text-left">Apellido1</td>
+                                            <td class="py-3 px-6 text-left">
+                                                <span>GESTION ADMINISTRATIVA DEL SECTOR SALUD</span>
+                                            </td>
+                                            <td class="py-3 px-6 text-left">
+                                                <span>Tecnólogo</span>
+                                            </td>
+
+                                            </td>
+                                            <td class="py-3 px-6 text-left">Ficha1</td>
+                                            <td class="py-3 px-6 text-left">555-1234</td>
+                                            <td class="py-3 px-6 text-left">correo1@example.com</td>
+                                            <td class="py-3 px-6 text-left"><select class="border border-gray-400 p-2 rounded-md w-48 bg-white">
+                                                <option selected="">Selecciona Opción</option>
+                                                <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                                                <option value="Pasantia">Pasantia</option>
+                                                <option value="Vinculo laboral">Vinculo laboral</option>
+                                                <option value="Patrocinio">Patrocinio</option>
+                                                <option value="Unidad Productiva">Unidad Productiva</option>
+                                                <option value="Proyecto Productivo">Proyecto Productivo</option>
+                                            </select></td>
+                                            <td class="py-3 px-6 text-left">01/01/2022</td>
+                                            <td class="py-3 px-6 text-left">01/01/2023</td>
+                                            <td class="py-3 px-6 text-left">987654</td>
+                                            <td class="py-3 px-6 text-left">Empresa1</td>
+                                            <td class="py-3 px-6 text-left">Calle 123</td>
+                                            <td class="py-3 px-6 text-left">555-5678</td>
+                                            <td class="py-3 px-6 text-left">Representante1</td>
+                                            <td class="py-3 px-6 text-left">representante1@example.com</td>
+
+                                            <td class="py-3 px-6 text-left"><a href="#" class="text-blue-600 hover:underline">Editar</a></td>
+                                            <td class="py-3 px-6 text-left"><a href="#" class="text-red-600 hover:underline">Eliminar</a></td>
+
+                                        </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div class="w-full max-w-7xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <div class="flex justify-center">
+                            <a href="/ruta/a/tu/plantilla.xlsx" download>
+                                <button class="w-1/3 p-2 rounded-full flex items-center justify-center bg-blue-500 text-white hover:bg-blue-700">
+                                    <!-- Icono de descarga de Font Awesome -->
+                                    <i class="fas fa-download text-3xl"></i>
+                                </button>
                     <div class="flex justify-end mt-6 space-x-4">
                         <a type="submit" href="{{ route('administrator.apprentice')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
                         <a href="{{ route('administrator.apprentice') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>

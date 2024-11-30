@@ -16,6 +16,11 @@ class UserRegisterController extends Controller
     public function AgregarInstructor()
     {
         return view('administrator.Agregar-instructor');
+
+    }
+    public function AgregarAprendiz2()
+    {
+        return view('administrator.Agregar-aprendiz2');
     }
 
     //super administardor

@@ -59,7 +59,7 @@ class AdministratorController extends Controller
     // {
     //     return view('administrator.Agregar-instructor');
     // }
-
+   
     public function MensajeAprendiz()
     {
         return view('administrator.Mensaje-aprendiz');
