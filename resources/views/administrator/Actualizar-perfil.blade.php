@@ -90,9 +90,8 @@
 
     <div class="flex justify-center mt-6">
         <main class="bg-gray-100 m-2 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3">
-            <form id="userForm">
+            <form method="POST" action='/api/user_registers'>
                 @csrf
-                @method('PUT')
                 <div class="bg-gray-100 p-6 rounded-lg relative">
                     <div class="absolute top-0 left-0 right-0 bg-[#009e00] bg-opacity-60 h-40 rounded-t-lg"></div>
 
@@ -113,12 +112,12 @@
                             <div class="space-y-2">
                                 <label class="block">
                                     <strong>Nombre:</strong>
-                                    <input type="text" name="name" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->name }}" required>
+                                    <input type="text" name="name" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->name }}">
                                 </label>
 
                                 <label class="block">
                                     <strong>Correo electrónico:</strong>
-                                    <input type="email" name="email" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->email }}" required>
+                                    <input type="email" name="email" class="w-full bg-white border rounded-lg p-1 mt-1" value="{{ auth()->user()->email }}">
                                 </label>
 
                                 <label class="block">
@@ -147,7 +146,7 @@
                     </div>
 
                     <div class="flex justify-end mt-6 space-x-4">
-                        <button type="button" onclick="submitForm()" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Guardar Cambios</button>
+                        <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Guardar Cambios</button>
                         <a href="{{ route('administrator.Administrator-perfil') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                     </div>
                 </div>
@@ -155,43 +154,6 @@
         </main>
     </div>
 
-    <script>
-       function submitForm() {
-    // Obtener los datos del formulario
-    const formData = new FormData(document.getElementById('userForm'));
-
-    // Obtener el ID del usuario autenticado (esto puede ser pasado desde el backend)
-    const userId = "{{ auth()->user()->id }}"; // O obtén el ID dinámicamente si es necesario
-
-    // Hacer la solicitud PUT para actualizar los datos
-    fetch(`http://Api.seguimiento.test/api/user_registers/${userId}`, {
-        method: 'PUT', // Usar PUT para la actualización
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer {{ auth()->user()->api_token }}' // Si usas autenticación por token
-        },
-        body: JSON.stringify({
-            name: formData.get('name'),
-            email: formData.get('email'),
-            department: formData.get('department'),
-            municipality: formData.get('municipality')
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Datos actualizados correctamente');
-            // Aquí puedes hacer algo, como redirigir o actualizar la UI
-        } else {
-            alert('Hubo un error al actualizar los datos');
-        }
-    })
-    .catch(error => {
-        console.error('Error al actualizar:', error);
-        alert('Hubo un error al actualizar los datos');
-    });
-}
-
-    </script>
+    <script src="{{ asset('js/Administrator.js') }}"></script>
 </body>
 </html>
