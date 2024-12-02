@@ -128,6 +128,10 @@
             </ul>
         </div>
 
+
+
+
+
     </nav>
 
     <div class="w-full flex justify-between items-center mt-6">
@@ -144,101 +148,58 @@
                     </div>
                     <h1 class="text-lg m-0 text-black font-bold">ADMINISTRADOR</h1>
                     </div>
+
                     <h3 class="font-bold mb-4">Datos básicos</h3>
                     <div class="space-y-4">
-                      <!-- Campo Nombres -->
-                      <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Nombres:</label>
-                        <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-md">
-                        <div id="nameError" class="text-red-600 text-sm mt-1" style="display: none;">Este campo es obligatorio.</div>
-                      </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Nombres:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->name }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Apellidos:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->last_name }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->email }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Cuenta Soy SENA:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->sena_account }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Departamento:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->department }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Municipio:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
+                        </div>
 
-                      <!-- Campo Apellidos -->
-                      <div>
-                        <label for="last_name" class="block text-sm font-medium text-gray-700">Apellidos:</label>
-                        <input type="text" id="last_name" name="last_name" class="w-full p-2 border border-gray-300 rounded-md">
-                        <div id="lastNameError" class="text-red-600 text-sm mt-1" style="display: none;">Este campo es obligatorio.</div>
-                      </div>
-
-                      <!-- Campo Correo Electrónico -->
-                      <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded-md">
-                        <div id="emailError" class="text-red-600 text-sm mt-1" style="display: none;">Por favor, ingrese un correo electrónico válido.</div>
-                      </div>
-
-                      <!-- Campo Departamento -->
-                      <div>
-                        <label for="department" class="block text-sm font-medium text-gray-700">Departamento:</label>
-                        <input type="text" id="department" name="department" class="w-full p-2 border border-gray-300 rounded-md">
-                        <div id="departmentError" class="text-red-600 text-sm mt-1" style="display: none;">Este campo es obligatorio.</div>
-                      </div>
-
-                      <!-- Campo Municipio -->
-                      <div>
-                        <label for="municipality" class="block text-sm font-medium text-gray-700">Municipio:</label>
-                        <input type="text" id="municipality" name="municipality" class="w-full p-2 border border-gray-300 rounded-md">
-                        <div id="municipalityError" class="text-red-600 text-sm mt-1" style="display: none;">Este campo es obligatorio.</div>
-                      </div>
                     </div>
 
-                    <!-- Botones de Confirmar y Cancelar -->
+                    <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Departamento:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->department }}</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Municipio:</label>
+                            <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
+                        </div>
+
+                    </div>
+
+
                     <div class="flex justify-end mt-6 space-x-4">
-                      <button type="button" id="submitForm" class="bg-green-700 text-white py-2 px-4 rounded">Confirmar</button>
-                      <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                        <a type="submit" href="{{ route('superadmin.SuperAdmin-Administrator')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
+                        <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                     </div>
-                  </div>
-                </main>
-              </div>
-
-              <script>
-                // Función de validación del formulario
-                function validateForm() {
-                    let isValid = true;
-                    let fields = [
-                        { id: 'name', errorId: 'nameError' },
-                        { id: 'last_name', errorId: 'lastNameError' },
-                        { id: 'email', errorId: 'emailError', type: 'email' },
-                        { id: 'department', errorId: 'departmentError' },
-                        { id: 'municipality', errorId: 'municipalityError' }
-                    ];
-
-                    // Validar los campos
-                    fields.forEach(field => {
-                        let value = document.getElementById(field.id).value.trim();
-                        let errorElement = document.getElementById(field.errorId);
-
-                        if (value === '') {
-                            errorElement.style.display = 'block';
-                            isValid = false;
-                        } else {
-                            errorElement.style.display = 'none';
-                        }
-
-                        if (field.type === 'email' && value !== '') {
-                            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                            if (!emailRegex.test(value)) {
-                                errorElement.style.display = 'block';
-                                errorElement.innerHTML = 'Por favor, ingrese un correo electrónico válido.';
-                                isValid = false;
-                            } else {
-                                errorElement.style.display = 'none';
-                            }
-                        }
-                    });
-
-                    return isValid;
-                }
-
-                document.getElementById('submitForm').addEventListener('click', function(event) {
-                    if (!validateForm()) {
-                        event.preventDefault();
-                    }
-                });
-              </script>
+            </div>
+        </main>
+    </div>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-    <script src="{{ asset('js/SuperAdmin/AdministradorPerfil.js') }}"></script>
-
 </body>
 
 </html>

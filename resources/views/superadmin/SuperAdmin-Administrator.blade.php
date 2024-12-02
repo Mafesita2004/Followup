@@ -13,19 +13,16 @@
             margin-top: 0.5rem;
         }
         .user-status {
-            text-align: center;
-            color: #009e00;
-            margin-top: 5px;
-            font-size: 12px;
-        }
-        .error {
-            color: red;
-            font-size: 0.875rem;
+            text-align: center; /* Centrar el texto */
+            color: #009e00; /* Color verde */
+            margin-top: 5px; /* Espacio superior para alineación */
+            font-size: 12px; /* Ajustar el tamaño de fuente */
         }
     </style>
 </head>
 <body class="font-['Arial',sans-serif] bg-white m-0 flex flex-col min-h-screen">
   <header class="bg-white text-[#009e00] px-5 py-2.5 flex flex-col items-center border-t-[5px] border-t-white border-b border-b-[#e0e0e0]">
+
         <div class="flex justify-between w-full">
             <div class="flex items-center">
                 <!-- Logo de SENA en el lado izquierdo -->
@@ -62,144 +59,118 @@
                         </svg>
                     </button>
                 </div>
-                {{-- Menu --}}
-                <div id="userMenu" class="hidden absolute right-4 mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
-                    <div class="p-4">
-                        <div class="flex items-center mb-4">
-                            <div>
-                                <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                                <p class="text-sm mt-2">Super Administrador</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
-                            <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                            <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Permisos</a></li>
-                            <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
-                        </ul>
-                        <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
-                            @csrf
-                            <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </header>
+                 {{-- Menu --}}
+                 <div id="userMenu" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
+                     <div class="p-4">
+                         <div class="flex items-center mb-4">
+                             <div>
+                                 <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
+                                 <p class="text-sm mt-2">Super Administrador</p>
+                             </div>
 
+
+                         </div>
+                         <ul>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Permisos</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
+                         </ul>
+                         <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
+                             @csrf
+                             <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                         </form>
+                 </div>
+             </div>
+        </header>
     <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-end items-center relative z-10">
+
         <div class="w-full flex justify-center items-center">
             <ul class="horizontal-list flex space-x-4 justify-center items-center" >
-                <li><a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">Inicio</a></li>
-                <li><a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('superadmin.SuperAdmin-Administrator') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}"><span class="font-bold">Administradores</span></a></li>
-                <li><a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">Instructores</a></li>
-                <li><a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">Aprendices</a></li>
-                <li><a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">Graficas</a></li>
-                <button id="notifButton" class="absolute right-0 mr-4 items-center">
+                <li>
+                    <a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('superadmin.SuperAdmin-Administrator') }}"
+                       class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('superadmin.SuperAdmin-Administrator') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
+                        <span class="font-bold">
+                           Administradores
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                       Instructores
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                        Aprendices
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                       Graficas
+                    </a>
+                </li>
+                 <!-- Botón de notificaciones alineado a la derecha -->
+                 <button id="notifButton" class="absolute right-0 mr-4 items-center">
                     <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}">
                         <img class="w-[50px] h-auto filter invert items-center " src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
                     </a>
                 </button>
+
+
+
             </ul>
         </div>
     </nav>
-
     <main class="flex flex-col items-center mt-4 relative">
         <div class="w-full flex justify-between items-center mb-4">
             <a href="{{ route('superadmin.home') }}" class="ml-4">
                 <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
             </a>
-        </div>
+            <form action="#" method="GET" class="flex items-center">
+                <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
+                <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
+                    <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
+                </button>
+            </form>
 
-        <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
-            <form id="addAdminForm" action="{{ route('superadmin.SuperAdmin-AdministratorGuardar') }}" method="POST" class="space-y-4">
-                @csrf
-                <!-- Nombre -->
-                <div>
-                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required>
-                    <span id="nombreError" class="error"></span>
-                </div>
-
-                <!-- Apellido -->
-                <div>
-                    <label for="apellido" class="block text-sm font-medium text-gray-700">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required>
-                    <span id="apellidoError" class="error"></span>
-                </div>
-
-                <!-- Email -->
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required>
-                    <span id="emailError" class="error"></span>
-                </div>
-
-                <!-- Cédula -->
-                <div>
-                    <label for="cedula" class="block text-sm font-medium text-gray-700">Cédula</label>
-                    <input type="text" id="cedula" name="cedula" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" required>
-                    <span id="cedulaError" class="error"></span>
-                </div>
-
-                <!-- Botón de enviar -->
-                <div>
-                    <button type="submit" class="w-full py-2 bg-[#009e00] text-white rounded-md">Guardar</button>
-                </div>
+            <form action="#" method="GET" class="mr-8">
+                <a href="{{route('superadmin.SuperAdmin-AdministratorAñadir')}}" type="button" class="bg-white border-none p-2 cursor-pointer">
+                    <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
+                </a>
             </form>
         </div>
+        <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                @php
+                    $contador = 0;
+                @endphp
+                @for ($i = 0; $i < 24; $i++)
+                    <a href="{{ route('superadmin.SuperAdmin-AdministratorPerfil') }}" class="w-40 h-30 bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
+                        <img src="{{ asset('img/administrador/administrador.png') }}" alt="User" class="w-8 h-8 mb-1">
+                        <span class="text-xs text-center p-1">Nombre Completo</span>
+                        <span class="text-xs text-center p-1">Cédula</span>
+                        <span class="text-xs text-center p-1">Sede</span>
+                        <span class="text-xs text-center p-1">Rol</span>
+                    </a>
+                    @php
+                        $contador++;
+                    @endphp
+                @endfor
+            </div>
+
+        </div>
+
+        <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
-
-    <script>
-        // Validación del formulario
-        document.getElementById('addAdminForm').addEventListener('submit', function(event) {
-            // Evitar el envío del formulario para la validación
-            event.preventDefault();
-
-            // Limpiar errores previos
-            const errorFields = ['nombre', 'apellido', 'email', 'cedula'];
-            errorFields.forEach(field => {
-                document.getElementById(field + 'Error').textContent = '';
-            });
-
-            let valid = true;
-
-            // Validación del nombre
-            const nombre = document.getElementById('nombre').value;
-            if (nombre === '') {
-                document.getElementById('nombreError').textContent = 'El nombre es obligatorio.';
-                valid = false;
-            }
-
-            // Validación del apellido
-            const apellido = document.getElementById('apellido').value;
-            if (apellido === '') {
-                document.getElementById('apellidoError').textContent = 'El apellido es obligatorio.';
-                valid = false;
-            }
-
-            // Validación del email
-            const email = document.getElementById('email').value;
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!emailPattern.test(email)) {
-                document.getElementById('emailError').textContent = 'Por favor ingrese un email válido.';
-                valid = false;
-            }
-
-            // Validación de la cédula
-            const cedula = document.getElementById('cedula').value;
-            if (cedula === '' || isNaN(cedula)) {
-                document.getElementById('cedulaError').textContent = 'La cédula es obligatoria y debe ser un número.';
-                valid = false;
-            }
-
-            // Si el formulario es válido, lo envía
-            if (valid) {
-                document.getElementById('addAdminForm').submit();
-            }
-        });
-    </script>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-    <script src="{{ asset('js/SuperAdmin/Administradore.js') }}"></script>
-
 </body>
+
 </html>

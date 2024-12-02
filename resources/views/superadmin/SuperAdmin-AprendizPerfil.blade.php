@@ -203,6 +203,12 @@
                     <label class="block text-sm font-medium text-gray-700">Nivel academico:</label>
                     <p class="text-sm text-black bg-white mt-1 w-full h-7 p-1 rounded-md border border-gray-300">{{ auth()->user()->municipality }}</p>
                 </div>
+
+
+
+
+
+
                 <div class="flex justify-end mt-6 space-x-4">
                     <a href="{{ route('administrator.home') }}" class="bg-[#009e00] hover:bg-[#37a837] text-white py-2 px-4 rounded">Actualizar</a>
                     <a href="{{ route('administrator.apprentice') }}" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">Cancelar</a>

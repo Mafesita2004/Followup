@@ -142,109 +142,47 @@
             <a href="{{ route('superadmin.home') }}" class="ml-4">
                 <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
             </a>
+
+
             <form action="#" method="GET" class="flex items-center">
                 <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
                 <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
                     <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
                 </button>
             </form>
+
             <form action="#" method="GET" class="mr-1 -ml-28">
                 <a href="{{ route('superadmin.SuperAdmin-AprendizAgregar') }}" type="button" class="bg-white border-none p-2 cursor-pointer">
                     <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
                 </a>
             </form>
+
             <a href="#" class="-ml-96">
                 <img src="{{ asset('img/Descarga.webp') }}" alt="descarga" class="w-8 mr-12 h-auto">
             </a>
         </div>
-
         <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
-            <!-- Formulario de validación -->
-            <h2 class="text-center mb-4">Formulario de Aprendiz</h2>
-            <form id="formulario" method="POST" action="{{ route('superadmin.SuperAdmin-AprendizGuardar') }}">
-                @csrf
-                <div>
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ingrese nombre completo">
-                    <div id="errorNombre" class="error"></div>
-                </div>
-
-                <div>
-                    <label for="cedula">Cédula</label>
-                    <input type="text" id="cedula" name="cedula" required placeholder="Ingrese la cédula">
-                    <div id="errorCedula" class="error"></div>
-                </div>
-
-                <div>
-                    <label for="ficha">Ficha</label>
-                    <input type="text" id="ficha" name="ficha" required placeholder="Ingrese la ficha">
-                    <div id="errorFicha" class="error"></div>
-                </div>
-
-                <div>
-                    <label for="programa">Programa</label>
-                    <input type="text" id="programa" name="programa" required placeholder="Ingrese el programa">
-                    <div id="errorPrograma" class="error"></div>
-                </div>
-
-                <div class="mt-4">
-                    <button type="submit">Guardar</button>
-                </div>
-            </form>
-
-            <!-- Validación con JavaScript -->
-            <script>
-                document.getElementById('formulario').addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevenir el envío para validación
-
-                    // Limpiar errores previos
-                    document.getElementById('errorNombre').textContent = '';
-                    document.getElementById('errorCedula').textContent = '';
-                    document.getElementById('errorFicha').textContent = '';
-                    document.getElementById('errorPrograma').textContent = '';
-
-                    let isValid = true;
-
-                    // Validación de Nombre
-                    const nombre = document.getElementById('nombre').value;
-                    if (nombre.trim() === '') {
-                        isValid = false;
-                        document.getElementById('errorNombre').textContent = 'El nombre es obligatorio.';
-                    }
-
-                    // Validación de Cédula
-                    const cedula = document.getElementById('cedula').value;
-                    const cedulaRegex = /^[0-9]{6,10}$/; // Solo números, entre 6 y 10 caracteres
-                    if (!cedulaRegex.test(cedula)) {
-                        isValid = false;
-                        document.getElementById('errorCedula').textContent = 'La cédula debe ser un número entre 6 y 10 caracteres.';
-                    }
-
-                    // Validación de Ficha
-                    const ficha = document.getElementById('ficha').value;
-                    if (ficha.trim() === '') {
-                        isValid = false;
-                        document.getElementById('errorFicha').textContent = 'La ficha es obligatoria.';
-                    }
-
-                    // Validación de Programa
-                    const programa = document.getElementById('programa').value;
-                    if (programa.trim() === '') {
-                        isValid = false;
-                        document.getElementById('errorPrograma').textContent = 'El programa es obligatorio.';
-                    }
-
-                    // Si la validación es exitosa, enviar el formulario
-                    if (isValid) {
-                        this.submit();
-                    }
-                });
-            </script>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                @php
+                    $contador = 0;
+                @endphp
+                @for ($i = 0; $i < 24; $i++)
+                    <a href='{{ route('superadmin.SuperAdmin-AprendizPerfil') }}' class="w-40px h-30px  bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
+                        <img src="{{ asset('img/administrador/aprendiz_icono.png') }}" alt="User" class="w-8 h-8 mb-1">
+                        <span class="text-xs text-center p-1">Nombre Completo</span>
+                        <span class="text-xs text-center p-1">Cédula</span>
+                        <span class="text-xs text-center p-1">Ficha</span>
+                        <span class="text-xs text-center p-1">Programa</span>
+                    </a>
+                    @php
+                        $contador++;
+                    @endphp
+                @endfor
+            </div>
         </div>
+        <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
-
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
-    <script src="{{ asset('js/SuperAdmin/Aprendiz.js') }}"></script>
-
 </body>
+
 </html>
