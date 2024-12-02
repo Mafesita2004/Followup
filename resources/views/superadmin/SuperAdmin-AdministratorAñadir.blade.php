@@ -150,60 +150,151 @@
                     </div>
 
                     <h3 class="font-bold mb-4">Datos básicos</h3>
-                    <div class="grid grid-cols-3 gap-4 mb-6">
-                        <div>
-                            <label class="block text-gray-700">Nombre</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Nombre">
+                    <form id="adminForm" onsubmit="return validateForm()">
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div>
+                                <label class="block text-gray-700">Nombre</label>
+                                <input type="text" id="nombre" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Nombre">
+                                <span id="nombreError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Apellido</label>
+                                <input type="text" id="apellido" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Apellido">
+                                <span id="apellidoError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Cedula</label>
+                                <input type="text" id="cedula" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula">
+                                <span id="cedulaError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Correo</label>
+                                <input type="text" id="correo" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo">
+                                <span id="correoError" class="error-message">Por favor ingresa un correo válido</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Celular</label>
+                                <input type="text" id="celular" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
+                                <span id="celularError" class="error-message">Este campo es obligatorio</span>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-gray-700">Apellido</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Apellido">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Cedula</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Correo</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Celular</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular">
-                        </div>
-                    </div>
 
-                    <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
-                    <div class="grid grid-cols-3 gap-4 mb-6">
-                        <div>
-                            <label class="block text-gray-700">Pais:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Pais">
+                        <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div>
+                                <label class="block text-gray-700">Pais:</label>
+                                <input type="text" id="pais" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Pais">
+                                <span id="paisError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Departamento:</label>
+                                <input type="text" id="departamento" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Departamento">
+                                <span id="departamentoError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Municipio:</label>
+                                <input type="text" id="municipio" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Municipio">
+                                <span id="municipioError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Barrio:</label>
+                                <input type="text" id="barrio" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Barrio">
+                                <span id="barrioError" class="error-message">Este campo es obligatorio</span>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700">Dirección:</label>
+                                <input type="text" id="direccion" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Dirección">
+                                <span id="direccionError" class="error-message">Este campo es obligatorio</span>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-gray-700">Departamento:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Departamento">
+
+                        <div class="flex justify-end mt-6 space-x-4">
+                            <button type="submit" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</button>
+                            <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
                         </div>
-                        <div>
-                            <label class="block text-gray-700">Municipio:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Municipio">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Barrio:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Barrio">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Dirección:</label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Dirección">
-                        </div>
-                    </div>
-                    <div class="flex justify-end mt-6 space-x-4">
-                        <a type="submit" href="{{ route('superadmin.SuperAdmin-Administrator')}}" class="bg-green-700 hover:bg-green-900 text-white py-2 px-4 rounded">Confirmar</a>
-                        <a href="{{ route('superadmin.SuperAdmin-Administrator') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
-                    </div>
-            </div>
-        </main>
-    </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            // Función para validar el formulario
+            function validateForm() {
+                let isValid = true;
+
+                // Limpiar mensajes de error al inicio
+                let errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(function (errorMessage) {
+                    errorMessage.style.display = 'none';
+                });
+
+                // Validación del campo Nombre
+                if (document.getElementById('nombre').value.trim() === '') {
+                    document.getElementById('nombreError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Apellido
+                if (document.getElementById('apellido').value.trim() === '') {
+                    document.getElementById('apellidoError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Cedula
+                if (document.getElementById('cedula').value.trim() === '') {
+                    document.getElementById('cedulaError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Correo (usando una expresión regular)
+                const email = document.getElementById('correo').value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('correoError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Celular
+                if (document.getElementById('celular').value.trim() === '') {
+                    document.getElementById('celularError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo País
+                if (document.getElementById('pais').value.trim() === '') {
+                    document.getElementById('paisError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Departamento
+                if (document.getElementById('departamento').value.trim() === '') {
+                    document.getElementById('departamentoError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Municipio
+                if (document.getElementById('municipio').value.trim() === '') {
+                    document.getElementById('municipioError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Barrio
+                if (document.getElementById('barrio').value.trim() === '') {
+                    document.getElementById('barrioError').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Validación del campo Dirección
+                if (document.getElementById('direccion').value.trim() === '') {
+                    document.getElementById('direccionError').style.display = 'block';
+                    isValid = false;
+                }
+
+                return isValid; // Si todo es válido, permite enviar el formulario
+            }
+        </script>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
+    <script> src="{{ asset('js/SuperAdmin/Añadir_Administradores.js') }}"></script>
 </body>
 
 </html>
