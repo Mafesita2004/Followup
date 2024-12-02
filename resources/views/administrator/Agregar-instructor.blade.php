@@ -222,21 +222,14 @@
                                 </select>
                             </div>
 
-                            <div>
-                                <label class="block text-gray-700">Total de horas</label>
-                                <input type="text" name="total_hours" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Total de horas" required>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700">Horas realizadas</label>
-                                <input type="text" name="Hours performed" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Horas realizadas" required>
-                            </div>
+
                             <div>
                                 <label class="block text-gray-700">Fecha de inicio</label>
-                                <input type="date" name="fecha_inicio" class="w-full border border-gray-300 rounded-lg p-2.5" required>
+                                <input type="date" name="Start_date" class="w-full border border-gray-300 rounded-lg p-2.5" required>
                             </div>
                             <div>
                                 <label class="block text-gray-700">Fecha de fin</label>
-                                <input type="date" name="Start date" class="w-full border border-gray-300 rounded-lg p-2.5" required>
+                                <input type="date" name="end_date" class="w-full border border-gray-300 rounded-lg p-2.5" required>
                             </div>
                         </div>
 
