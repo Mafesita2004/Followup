@@ -149,8 +149,8 @@
                 <input type="text" placeholder="Para" class="border p-2 rounded w-full mb-2">
                 <input type="text" placeholder="Título" class="border p-2 rounded w-full mb-2">
                 <textarea placeholder="Asunto" class="border p-2 rounded w-full mb-2"></textarea>
-                <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Enviar Reporte</a>
-                <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded">Cancelar</a>
+                <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" type="submit" class="bg-[#009e00] text-white p-2 rounded ml-2">Enviar Reporte</a>
+                <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}" type="submit" class="bg-gray-300 text-black p-2 rounded ml-2">Cancelar</a>
             </form>
                 </div>
                     </div>

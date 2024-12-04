@@ -197,7 +197,7 @@
                 <textarea name="documentos" rows="4" class="w-full h-[300px] p-2 border border-gray-300 bg-[#D9D9D9] rounded-lg resize-none"></textarea>
             </label>
             <div class="flex justify-end gap-2 mt-5">
-                <button type="button" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded" onclick="window.location.href='{{ route('administrator.reports') }}'">CANCELAR</button>
+                <button type="button" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded" onclick="window.location.href='{{ route('superadmin.SuperAdmin-Notificaciones') }}'">CANCELAR</button>
                 <button type="submit" class="bg-[#009e00] hover:bg-[#37a837] text-white p-2 rounded ml-2">CONFIRMAR</button>
             </div>
         </div>

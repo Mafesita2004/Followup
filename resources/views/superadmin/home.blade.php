@@ -87,11 +87,44 @@
     <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-end items-center relative z-10">
 
                 <!-- Botón de notificaciones alineado a la derecha -->
-                <button id="notifButton" class="absolute right-0 mr-4">
-                    <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}">
-                        <img class="w-[50px] h-auto filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
-                    </a>
-                </button>
+                <div class="w-full flex justify-center">
+                    <ul class="horizontal-list flex space-x-4 justify-center items-center" >
+                        <li>
+                            <a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('superadmin.SuperAdmin-Administrator') }}"
+                            class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                           Administrador
+        
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-center text-white px-4 py-2 rounded-lg {{ request()->routeIs('superadmin.SuperAdmin-Instructor') ? 'bg-green-600 bg-opacity-70' : 'bg-green-600 bg-opacity-20 hover:bg-opacity-50' }}">
+                                <span class="font-bold">
+                                   Instructor
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                                Aprendices
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                               Graficas
+                            </a>
+                        </li>
+                        <button id="notifButton" class="absolute right-0 mr-4">
+                            <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}">
+                                <img class="w-[50px] h-auto filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
+                            </a>
+                        </button>
+                    </ul>
+                </div>
             </nav>
 
     <main class="flex-nowrap p-10 flex justify-center items-center bg-white">
