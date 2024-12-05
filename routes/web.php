@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -85,6 +85,7 @@ Route::get('/superadmin/SuperAdmin-InstructorPerfil', [SuperadminController::cla
 
 // Ruta para añadir un nuevo instructor
 Route::get('/superadmin/SuperAdmin-InstructorAñadir', [UserRegisterController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
+Route::post('/superadmin/store-user', [UserRegisterController::class, 'storeUser'])->name('superadmin.storeUser');
 
 // Ruta para configuración general del superadmin
 Route::get('/superadmin/SuperAdmin-Configuracion', [SuperadminController::class, 'SuperAdminConfiguracion'])->name('superadmin.SuperAdmin-Configuracion');

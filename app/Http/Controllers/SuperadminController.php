@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\superadmin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 
 class SuperadminController extends Controller
 {
@@ -15,7 +17,10 @@ class SuperadminController extends Controller
 
     public function SuperAdminAdministrator()
     {
-        return view('superadmin.SuperAdmin-Administrator');
+        $userData = Http::get('https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers');
+        $userDataArray = $userData->json();
+
+        return view('superadmin.SuperAdmin-Administrator', ['users' => $userDataArray]);
     }
 
     // public function SuperAdminNotificaciones()
@@ -61,8 +66,11 @@ class SuperadminController extends Controller
 
     public function SuperAdminInstructor()
     {
-        return view('superadmin.SuperAdmin-Instructor');
+        $userData = Http::get('https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers');
+        $userDataArray = $userData->json();
+            return view('superadmin.SuperAdmin-Instructor', ['users' => $userDataArray]);
     }
+    
 
     // public function SuperAdminInstructorAñadir()
     // {
@@ -164,4 +172,6 @@ class SuperadminController extends Controller
     {
         //
     }
+
+
 }

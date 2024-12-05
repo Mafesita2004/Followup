@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\administrator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AdministratorController extends Controller
 {
@@ -82,5 +83,7 @@ class AdministratorController extends Controller
     }
 
 
+  
+    
 }
-?>
+

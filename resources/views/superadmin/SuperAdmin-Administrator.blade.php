@@ -46,7 +46,7 @@
                     <h2 class="text-sm mt-2 text-[#009e00]">Centro de Comercio y Servicios</h2>
                 </div>
             </div>
-            <div class="relative ml-auto flex items-center">
+            <div class="relative flex items-center ml-auto">
                 <!-- Contenedor para la imagen y el ícono de los tres puntos -->
                 <div class="relative">
                     <!-- Imagen de usuario -->
@@ -65,31 +65,31 @@
                          <div class="flex items-center mb-4">
                              <div>
                                  <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                                 <p class="text-sm mt-2">Super Administrador</p>
+                                 <p class="mt-2 text-sm">Super Administrador</p>
                              </div>
 
 
                          </div>
                          <ul>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block py-1 font-bold text-center text-green-600 bg-white border border-green-600 rounded-lg hover:text-white hover:bg-green-600">Ver perfil</a></li>
 
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Permisos</a></li>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block p-2 text-black rounded-lg hover:bg-white">Configuración</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block p-2 text-black rounded-lg hover:bg-white" onclick="toggleSublist(event)">Permisos</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block p-2 text-black rounded-lg hover:bg-white">Graficas</a></li>
                          </ul>
                          <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                              @csrf
-                             <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                             <button type="submit" class="block w-full py-2 font-bold text-center text-green-600 bg-white border border-green-600 rounded-lg hover:text-white hover:bg-green-600">Cerrar sesión</button>
                          </form>
                  </div>
              </div>
         </header>
     <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex justify-end items-center relative z-10">
 
-        <div class="w-full flex justify-center items-center">
-            <ul class="horizontal-list flex space-x-4 justify-center items-center" >
+        <div class="flex items-center justify-center w-full">
+            <ul class="flex items-center justify-center space-x-4 horizontal-list" >
                 <li>
-                    <a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.home') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                         Inicio
                     </a>
                 </li>
@@ -102,22 +102,22 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                        Instructores
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                         Aprendices
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                        Graficas
                     </a>
                 </li>
                  <!-- Botón de notificaciones alineado a la derecha -->
-                 <button id="notifButton" class="absolute right-0 mr-4 items-center">
+                 <button id="notifButton" class="absolute right-0 items-center mr-4">
                     <a href="{{ route('superadmin.SuperAdmin-Notificaciones') }}">
                         <img class="w-[50px] h-auto filter invert items-center " src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
                     </a>
@@ -128,47 +128,47 @@
             </ul>
         </div>
     </nav>
-    <main class="flex flex-col items-center mt-4 relative">
-        <div class="w-full flex justify-between items-center mb-4">
+    <main class="relative flex flex-col items-center mt-4">
+        <div class="flex items-center justify-between w-full mb-4">
             <a href="{{ route('superadmin.home') }}" class="ml-4">
                 <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
             </a>
             <form action="#" method="GET" class="flex items-center">
                 <input type="text" name="q" placeholder="Buscar..." class="px-2 py-1 text-sm border border-black rounded-full w-96">
-                <button type="submit" aria-label="Buscar" class="p-2 bg-transparent border-none cursor-pointer -ml-10">
+                <button type="submit" aria-label="Buscar" class="p-2 -ml-10 bg-transparent border-none cursor-pointer">
                     <img src="{{ asset('img/lupa.png') }}" alt="Buscar" class="w-4 h-auto">
                 </button>
             </form>
 
             <form action="#" method="GET" class="mr-8">
-                <a href="{{route('superadmin.SuperAdmin-AdministratorAñadir')}}" type="button" class="bg-white border-none p-2 cursor-pointer">
+                <a href="{{route('superadmin.SuperAdmin-AdministratorAñadir')}}" type="button" class="p-2 bg-white border-none cursor-pointer">
                     <img src="{{ asset('img/mas.png') }}" alt="Agregar" class="w-5 h-auto">
                 </a>
             </form>
         </div>
         <div class="w-full max-w-6xl bg-[#2f3e4c14] border-2 border-[#04324D] rounded-lg p-6 shadow-[0_0_10px_rgba(0,0,0,0.8)] mt-1">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6">
                 @php
                     $contador = 0;
                 @endphp
-                @for ($i = 0; $i < 24; $i++)
+                 @foreach ($users as $user)
                     <a href="{{ route('superadmin.SuperAdmin-AdministratorPerfil') }}" class="w-40 h-30 bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
                         <img src="{{ asset('img/administrador/administrador.png') }}" alt="User" class="w-8 h-8 mb-1">
-                        <span class="text-xs text-center p-1">Nombre Completo</span>
-                        <span class="text-xs text-center p-1">Cédula</span>
-                        <span class="text-xs text-center p-1">Sede</span>
-                        <span class="text-xs text-center p-1">Rol</span>
+                        <span class="p-1 text-xs text-center">{{ $user['name'] }} {{ $user['last_name'] }}</span>
+                        <span class="p-1 text-xs text-center">Cédula</span>
+                        <span class="p-1 text-xs text-center">Sede</span>
+                        <span class="p-1 text-xs text-center">Rol</span>
                     </a>
                     @php
                         $contador++;
                     @endphp
-                @endfor
+               @endforeach
             </div>
 
         </div>
 
-        <div class="mt-4 text-center m-4 text-sm text-gray-500">Total de cuadros: {{ $contador }}</div>
+        <div class="m-4 mt-4 text-sm text-center text-gray-500">Total de cuadros: {{ $contador }}</div>
     </main>
     <script src="{{ asset('js/SuperAdmin.js') }}"></script>
 </body>

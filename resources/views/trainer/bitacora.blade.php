@@ -39,7 +39,7 @@
                     <h2 class="text-sm mt-2 text-[#009e00]">Centro de Comercio y Servicios</h2>
                 </div>
             </div>
-            <div class="relative ml-auto flex items-center">
+            <div class="relative flex items-center ml-auto">
                 <!-- Contenedor para la imagen y el ícono de los tres puntos -->
                 <div class="relative">
                     <!-- Imagen de usuario -->
@@ -55,16 +55,16 @@
     </header>
       <!--Notificaciones -->
       <nav class="bg-[#009e00] px-2.5 h-14 py-1.5 flex items-center relative z-10">
-        <div class="text-white text-center absolute left-1/2 transform -translate-x-1/2">Bitacora</div>
+        <div class="absolute text-center text-white transform -translate-x-1/2 left-1/2">Bitacora</div>
 
-        <div class="relative ml-auto flex items-center">
+        <div class="relative flex items-center ml-auto">
             <button id="notifButton" class="relative">
                 <a href="{{ route('notificationtrainer') }}">
                 <img class="w-[50px] h-auto mr-3.0 filter invert" src="{{ asset('img/notificaciones.png') }}" alt="Notificaciones">
 
             </button>
 
-        <div class="relative ml-auto flex items-center ">
+        <div class="relative flex items-center ml-auto ">
 
 
             <div id="userMenuTri" class=" hidden absolute right-4  mt-2 w-64 bg-[#D9D9D9] border border-gray-300 rounded-lg shadow-lg z-20">
@@ -72,21 +72,21 @@
                     <div class="flex items-center mb-4">
                         <div>
                             <p class="text-sm font-bold">Nombre Usuario<p>
-                            <p class="text-sm mt-2">Instructor</p>
+                            <p class="mt-2 text-sm">Instructor</p>
                         </div>
 
-                        <img src="{{ asset('img/administrador/mujer.png') }}" alt="User Icon" class="w-10 h-10 rounded-full mr-3 mx-10 bg-white border-black border-2">
+                        <img src="{{ asset('img/administrador/mujer.png') }}" alt="User Icon" class="w-10 h-10 mx-10 mr-3 bg-white border-2 border-black rounded-full">
                     </div>
                     <ul>
-                        <a href="{{ route('username')}}" class="block text-center text-green-600 font-bold mt-4 bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a>
-                        <li class="mt-2"><a href="{{ route('configuracion')}}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                        <li class="mt-2"><a href="{{ route('icon') }}" class="block text-black hover:bg-white p-2 rounded-lg">Aprendices</a></li>
-                        <li class="mt-2"><a href="{{ route('cronograma') }}" class="block text-black hover:bg-white p-2 rounded-lg">Cronograma</a></li>
+                        <a href="{{ route('username')}}" class="block py-1 mt-4 font-bold text-center text-green-600 bg-white border border-green-600 rounded-lg hover:text-white hover:bg-green-600">Ver perfil</a>
+                        <li class="mt-2"><a href="{{ route('configuracion')}}" class="block p-2 text-black rounded-lg hover:bg-white">Configuración</a></li>
+                        <li class="mt-2"><a href="{{ route('icon') }}" class="block p-2 text-black rounded-lg hover:bg-white">Aprendices</a></li>
+                        <li class="mt-2"><a href="{{ route('cronograma') }}" class="block p-2 text-black rounded-lg hover:bg-white">Cronograma</a></li>
 
                     </ul>
                     <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                         @csrf
-                        <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                        <button type="submit" class="block w-full py-2 font-bold text-center text-green-600 bg-white border border-green-600 rounded-lg hover:text-white hover:bg-green-600">Cerrar sesión</button>
                     </form>
             </div>
         </div>
@@ -95,7 +95,7 @@
 
         </div>
 </nav>
-    <div class="w-full flex justify-between items-center mt-4">
+    <div class="flex items-center justify-between w-full mt-4">
         <a href="http://127.0.0.1:8000/trainer/perfilapre" class="ml-4">
             <img src="http://127.0.0.1:8000/img/flecha.png" alt="Flecha" class="w-5 h-auto">
         </a>
@@ -103,75 +103,75 @@
 
     <main class=" bg-white m-2 px-2 rounded-lg max-height-100% w-5/7">
 
-        <div class="flex flex-cols-4 gap-12 pb-4  items-between text-center mt-2">
+        <div class="flex gap-12 pb-4 mt-2 text-center flex-cols-4 items-between">
                 <div class="flex flex-col w-1/4 ">
                     <label class="font-bold">Nombre Del Aprendiz</label>
-                    <p type="text" class="bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">Marian Diaz</p>
+                    <p type="text" class="p-2 text-black bg-gray-200 rounded-md bg-opacity-60">Marian Diaz</p>
                 </div>
-                <div class="flex flex-col  w-1/4">
+                <div class="flex flex-col w-1/4">
                     <label class="font-bold">Programa</label>
-                    <p type="text" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">ADSO</p>
+                    <p type="text" class="p-2 text-black bg-gray-200 rounded-md  bg-opacity-60">ADSO</p>
                 </div>
-                <div class="flex flex-col  w-1/4">
+                <div class="flex flex-col w-1/4">
                     <label class="font-bold">N° Ficha</label>
-                    <p type="text" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">2654013</p>
+                    <p type="text" class="p-2 text-black bg-gray-200 rounded-md  bg-opacity-60">2654013</p>
                 </div>
-                <div class="flex flex-col  w-1/4">
+                <div class="flex flex-col w-1/4">
                     <label class="font-bold">Correo Electrónico</label>
-                    <p type="email" class=" bg-gray-200 bg-opacity-60 p-2 rounded-md text-black">mariandiaz@gmail.com</p>
+                    <p type="email" class="p-2 text-black bg-gray-200 rounded-md  bg-opacity-60">mariandiaz@gmail.com</p>
                 </div>
         </div>
     <div class="flex flex-cols-3">
         <div class="lex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl ml-4">
             <label class="font-semibold text-center ">Bitacoras</label>
-            <div class="flex flex-col text-center items-center">
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="1">
-                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">1</span>
+            <div class="flex flex-col items-center text-center">
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="1">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">1</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="2">
-                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">2</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="2">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">2</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="3">
-                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">3</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden itbacora-checkbox" name="bitacora" value="3">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">3</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="4">
-                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">4</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="4">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">4</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="5">
-                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">5</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="5">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">5</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="6">
-                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">6</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="6">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">6</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="7">
-                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">7</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="7">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">7</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="8">
-                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">8</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="8">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">8</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3 ">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="9">
-                    <span class="block px-4 py-2 border  border-gray-400 rounded-md text-gray-700">9</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96 ">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="9">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">9</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="10">
-                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">10</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="10">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">10</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="11">
-                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">11</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="11">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">11</span>
                 </label>
-                <label class="w-96 items-center cursor-pointer space-x-2 mb-3">
-                    <input type="checkbox" class="bitacora-checkbox hidden" name="bitacora" value="12">
-                    <span class="block px-4 py-2 border  border-gray-400  rounded-md text-gray-700">12</span>
+                <label class="items-center mb-3 space-x-2 cursor-pointer w-96">
+                    <input type="checkbox" class="hidden bitacora-checkbox" name="bitacora" value="12">
+                    <span class="block px-4 py-2 text-gray-700 border border-gray-400 rounded-md">12</span>
                 </label>
             </div>
             <script>
@@ -224,24 +224,24 @@
 
         </div>
         {{-- Contenedor Fantasma --}}
-        <div class=" w-60 ">
+        <div class=" w-60">
         </div>
         <div class=" lex-cols-2 gap-2 p-4 w-2/5 text-center h-vg[80] shadow-[0_0_10px_rgba(0,0,0,0.3)] border-gray-300 rounded-2xl ml-4">
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Tipo de Modalidad de Etapa Productiva</label>
-                <p type="text" class="border  border-gray-400  p-2 rounded-md bg-white">Pasantia</p>
+                <p type="text" class="p-2 bg-white border border-gray-400 rounded-md">Pasantia</p>
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Descripcion De La Actividad</label>
-                <textarea id="descripcion" class="border  border-gray-400 p-2 rounded-md h-28 bg-white"></textarea>
+                <textarea id="descripcion" class="p-2 bg-white border border-gray-400 rounded-md h-28"></textarea>
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-bold">Fecha</label>
-                <input type="date" class="border border-gray-400 p-2 rounded-md w-64 bg-white mx-auto text-center">
+                <input type="date" class="w-64 p-2 mx-auto text-center bg-white border border-gray-400 rounded-md">
             </div>
             <div class="flex flex-col p-6 text-center">
                 <label class="font-semibold ">Observación/Inasistencia y/o Dificultades</label>
-                <textarea id="observacion" class="border border-gray-400 p-2 rounded-md h-28 bg-white"></textarea>
+                <textarea id="observacion" class="p-2 bg-white border border-gray-400 rounded-md h-28"></textarea>
             </div>
         </div>
     </div>
