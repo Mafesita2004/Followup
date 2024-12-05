@@ -211,6 +211,10 @@
 
                 <div class="input-group">
                     <img src="{{ asset('img/user-icon.png') }}" alt="Usuario" class="input-icon">
+                    <input id="identification" type="text" name="identification" placeholder="Identificación" value="{{ old('identification') }}" required autofocus autocomplete="identification">
+                </div>
+                <div class="input-group">
+                    <img src="{{ asset('img/user-icon.png') }}" alt="Usuario" class="input-icon">
                     <input id="name" type="text" name="name" placeholder="Nombre" value="{{ old('name') }}" required autofocus autocomplete="name">
                 </div>
                 <div class="input-group">
@@ -220,7 +224,17 @@
 
                 <div class="input-group">
                     <img src="{{ asset('img/image.png') }}" alt="Correo electrónico" class="input-icon">
+                    <input id="telephone" type="text" name="telephone" placeholder="Teléfono" value="{{ old('telephone') }}" required autocomplete="telephone">
+                </div>
+
+                <div class="input-group">
+                    <img src="{{ asset('img/image.png') }}" alt="Correo electrónico" class="input-icon">
                     <input id="email" type="email" name="email" placeholder="Correo electrónico" value="{{ old('email') }}" required autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                    <img src="{{ asset('img/image.png') }}" alt="Correo electrónico" class="input-icon">
+                    <input id="address" type="address" name="address" placeholder="Dirección" value="{{ old('address') }}" required autocomplete="address">
                 </div>
 
                 <div class="input-group">
@@ -296,6 +310,8 @@
         </div>
     </main>
    <script>
+    const departmentSelect = document.getElementById('department');
+    const municipalitySelect = document.getElementById('municipality');
 const municipalities = {
         1: ["Leticia", "Puerto Nariño"], // Amazonas
     2: ["Medellín", "Envigado", "Itagüí", "Bello", "Apartadó", "Turbo", "Rionegro"], // Antioquia
@@ -331,24 +347,67 @@ const municipalities = {
     32: ["Puerto Carreño"], // Vichada
     };
 
-    function loadMunicipalities() {
-        const departmentId = document.getElementById('department').value;
-        const municipalitySelect = document.getElementById('municipality');
+   function loadMunicipalities() {
+    const selectedDepartment = departmentSelect.value;
+    municipalitySelect.innerHTML = '<option value="" disabled selected>Seleccione un municipio</option>';
 
-        // Limpiar opciones previas
-        municipalitySelect.innerHTML = '<option value="" disabled selected>Seleccione un municipio</option>';
+    if (municipalities[selectedDepartment]) {
+        municipalities[selectedDepartment].forEach((municipality) => {
+            const option = document.createElement('option');
+            option.value = municipality;
+            option.textContent = municipality;
+            municipalitySelect.appendChild(option);
+        });
+    }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        if (departmentId && municipalities[departmentId]) {
-            const departmentMunicipalities = municipalities[departmentId];
-            departmentMunicipalities.forEach(municipality => {
-                const option = document.createElement('option');
-                option.value = municipality;
-                option.textContent = municipality;
-                municipalitySelect.appendChild(option);
-            });
-        }
+<script>
+    function submitForm() {
+        const formData = {
+            identification: document.getElementById('identification').value,
+            name: document.getElementById('nombre').value,
+            last_name: document.getElementById('last_name').value,
+            telephone: document.getElementById('telephone').value,
+            email: document.getElementById('email').value,
+            address: document.getElementById('address').value,
+            department: document.getElementById('department').value,
+            municipality: document.getElementById('municipality').value,
+            password: document.getElementById('password').value,
+            id_role: document.getElementById('id_role').value,
+        };
+
+        axios.post('https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers', formData, {
+            headers: {
+                'Content-Type': 'application/json',  
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
     }
 </script>
 
+
+   {{-- cedula: document.getElementById('cedula').value,
+            correo: document.getElementById('correo').value,
+            celular: document.getElementById('celular').value,
+            programa: document.getElementById('programa').value,
+            total_horas: document.getElementById('total_horas').value,
+            horas_realizadas: document.getElementById('horas_realizadas').value,
+            fecha_inicio: document.getElementById('fecha_inicio').value,
+            fecha_fin: document.getElementById('fecha_fin').value,
+            pais: document.getElementById('pais').value,
+            departamento: document.getElementById('departamento').value,
+            municipio: document.getElementById('municipio').value,
+            barrio: document.getElementById('barrio').value,
+            direccion: document.getElementById('direccion').value --}}
+
+
 </body>
+
 </html>

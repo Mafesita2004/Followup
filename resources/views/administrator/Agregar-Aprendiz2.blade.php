@@ -242,8 +242,8 @@
                                         </select>
                             </div>
                             <div class="w-full">
-                                <label for="Academic_level" class="block text-gray-700">Nivel Académico</label>
-                                <select id="Academic_level" name="Academic_level" class="w-full border border-gray-300 rounded-lg p-2.5" required>
+                                <label for="academic_level" class="block text-gray-700">Nivel Académico</label>
+                                <select id="academic_level" name="academic_level" class="w-full border border-gray-300 rounded-lg p-2.5" required>
                                     <option value="" disabled selected>Seleccione Nivel Académico</option>
                                     <option value="tecnologo">Tecnólogo</option>
                                     <option value="tecnico">Técnico</option>
@@ -252,11 +252,11 @@
                             </div>
                             <div class="w-full">
                                 <label class="block text-gray-700">Ficha</label>
-                                <input type="text" name="File" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula" required>
+                                <input type="text" name="ficha" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Cedula" required>
                             </div>
                             <div class="w-full">
                                 <label class="block text-gray-700">Teléfono</label>
-                                <input type="text" name="Telephone" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo" required>
+                                <input type="text" name="telephone" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Correo" required>
                             </div>
                             <div class="w-full">
                                 <label class="block text-gray-700">Correo</label>
@@ -319,5 +319,42 @@
                 </div>
             </main>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    function submitForm() {
+        const formData = {
+            name: document.getElementById('nombre').value,
+        };
+
+        axios.post('http://127.0.0.1:8001/api/user_registers', formData, {
+            headers: {
+                'Content-Type': 'application/json',  
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
+</script>
+
+
+   {{-- cedula: document.getElementById('cedula').value,
+            correo: document.getElementById('correo').value,
+            celular: document.getElementById('celular').value,
+            programa: document.getElementById('programa').value,
+            total_horas: document.getElementById('total_horas').value,
+            horas_realizadas: document.getElementById('horas_realizadas').value,
+            fecha_inicio: document.getElementById('fecha_inicio').value,
+            fecha_fin: document.getElementById('fecha_fin').value,
+            pais: document.getElementById('pais').value,
+            departamento: document.getElementById('departamento').value,
+            municipio: document.getElementById('municipio').value,
+            barrio: document.getElementById('barrio').value,
+            direccion: document.getElementById('direccion').value --}}
+
     </body>
     </html>

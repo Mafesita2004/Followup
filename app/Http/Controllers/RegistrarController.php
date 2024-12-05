@@ -56,7 +56,7 @@ class RegistrarController extends Controller
     {
         // Validación de los datos de entrada
         $request->validate([
-            'identificacion' => 'required|integer',
+            // 'identificacion' => 'required|integer',
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:user_registers',
