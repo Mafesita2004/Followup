@@ -69,7 +69,7 @@ class UserRegisterController extends Controller
             'address' => $validated['address'],
             'department' => $validated['department'],
             'municipality' => $validated['municipality'],
-            'id_role' => $validated['id_role'],
+            'id_role' => 2,
             'password' => $validated['password'],
             'last_name' => $validated['last_name'],
 

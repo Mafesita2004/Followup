@@ -158,7 +158,7 @@
                         <span class="p-1 text-xs text-center">{{ $user['name'] }} {{ $user['last_name'] }}</span>
                         <span class="p-1 text-xs text-center">Cédula</span>
                         <span class="p-1 text-xs text-center">Sede</span>
-                        <span class="p-1 text-xs text-center">Rol</span>
+                        <span class="p-1 text-xs text-center">{{ $user['role']['role_type'] }}</span>
                     </a>
                     @php
                         $contador++;
