@@ -75,7 +75,7 @@
 
                              <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
                              <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Permisos</a></li>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
+                             <li class="mt-2"><a href="{{ route('graficos.index')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
                          </ul>
                          <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                              @csrf
@@ -98,7 +98,7 @@
                             <a href="{{ route('superadmin.SuperAdmin-Administrator') }}"
                             class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                            Administrador
-        
+
                             </a>
                         </li>
                         <li>
@@ -114,7 +114,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                            <a href="{{ route('graficos.index') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                                Graficas
                             </a>
                         </li>
@@ -146,7 +146,7 @@
                     <span class="text-sm p-4">Aprendices</span>
                 </a>
 
-            <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+            <a href="{{ route('graficos.index') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
                 <img src="{{ asset('img/administrador/graficas.png') }}" alt="Graficas" class="w-[120px] h-[110px] mb-2.5">
                 <span class="text-sm p-4">Graficas</span>
             </a>

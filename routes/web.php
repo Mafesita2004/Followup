@@ -16,6 +16,7 @@ use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\BitacoraController;
 use App\Models\User_register;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\GraphicController;
 
 //CONEXION DE RUTAS API
 use App\Http\Controllers\FollowupController;
@@ -26,6 +27,7 @@ Route::get('/', function () {
     return view('administrator.web');
 });
 
+Route::get('/graficos', [GraphicController::class, 'index'])->name('graficos.index');
 // Rutas para el inicio de sesión y registro
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

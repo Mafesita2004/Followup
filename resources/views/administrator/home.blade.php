@@ -121,7 +121,7 @@
                                        <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Unidad Productiva Familiar</a></li>
                                        <li><a href="{{ route('administrator.template')}}" class="block text-black hover:bg-white p-2 rounded-lg">Proyecto Productivo Empresarial</a></li>
                                    </ul></li>
-                               <li class="mt-2"><a href="{{ route('administrator.graphic')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
+                               <li class="mt-2"><a href="{{ route('graficos.index')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
                                <a href="javascript:void(0);" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Registrar </a>
             <ul class="hidden ml-4 mt-2 bg-[#D9D9D9] p-2 rounded-lg w-[250px]">
                 <li class="mt-2">
@@ -162,7 +162,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('administrator.graphic') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                        <a href="{{ route('graficos.index') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
                             Gráficas
                         </a>
                     </li>
@@ -202,7 +202,7 @@
                     <span class="text-sm p-4">Aprendices</span>
                 </a>
 
-            <a href="{{ route('administrator.graphic') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
+            <a href="{{ route('graficos.index') }}" class="m-2.5 rounded-[15%] flex flex-col items-center text-center py-10 p-5 bg-white border-[3px] border-black w-56 h-56 hover:border-green-600">
                 <img src="{{ asset('img/administrador/graficas.png') }}" alt="Graficas" class="w-[120px] h-[110px] mb-2.5">
                 <span class="text-sm p-4">Graficas</span>
             </a>
@@ -285,7 +285,7 @@
             // Validar que el archivo sea un documento Excel
             if (file && (file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' || file.type === 'application/vnd.ms-excel')) {
                 alert(`Archivo "${file.name}" cargado correctamente.`);
-                
+
                 // Aquí puedes añadir lógica para procesar el archivo,
                 // como subirlo al servidor mediante un formulario o AJAX.
             } else {
