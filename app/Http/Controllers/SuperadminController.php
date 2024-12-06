@@ -59,9 +59,17 @@ class SuperadminController extends Controller
     //     return view('superadmin.SuperAdmin-AdministratorAñadir');
     // }
 
-    public function SuperAdminAdministratorPerfil()
+    public function SuperAdminAdministratorPerfil($id)
     {
-        return view('superadmin.SuperAdmin-AdministratorPerfil');
+        $response = Http::get("https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers/{$id}");
+    
+        if ($response->failed()) {
+            abort(404, 'Usuario no encontrado en la API.');
+        }
+    
+        $user = $response->json();
+    
+        return view('superadmin.SuperAdmin-AdministratorPerfil', compact('user'));
     }
 
     public function SuperAdminInstructor()
