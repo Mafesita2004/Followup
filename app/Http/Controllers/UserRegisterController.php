@@ -74,8 +74,6 @@ class UserRegisterController extends Controller
             'last_name' => $validated['last_name'],
 
         ]);
-
-        dd($response);
     
         if ($response->successful()) {
             return redirect()->route('superadmin.SuperAdmin-Administrator')->with('success', 'Usuario creado correctamente');
