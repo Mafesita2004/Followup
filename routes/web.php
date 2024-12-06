@@ -68,7 +68,7 @@ Route::get('/superadmin/email', [SuperadminController::class, 'SuperAdminemail']
 Route::get('/superadmin/SuperAdmin-AdministratorAñadir', [UserRegisterController::class, 'SuperAdminAdministratorAñadir'])->name('superadmin.SuperAdmin-AdministratorAñadir');
 
 // Ruta para ver el perfil de un administrador específico
-Route::get('/superadmin/SuperAdmin-AdministratorPerfil', [SuperadminController::class, 'SuperAdminAdministratorPerfil'])->name('superadmin.SuperAdmin-AdministratorPerfil');
+Route::get('/superadmin/SuperAdmin-AdministratorPerfil/{id}', [SuperadminController::class, 'SuperAdminAdministratorPerfil'])->name('superadmin.SuperAdmin-AdministratorPerfil');
 
 // Ruta para gestionar permisos de administradores
 Route::get('/superadmin/SuperAdmin-Permisos', [SuperadminController::class, 'SuperAdminPermisos'])->name('superadmin.SuperAdmin-Permisos');
@@ -81,7 +81,8 @@ Route::get('/superadmin/SuperAdmin-Graficas', [SuperadminController::class, 'Sup
 Route::get('/superadmin/SuperAdmin-Instructor', [SuperadminController::class, 'SuperAdminInstructor'])->name('superadmin.SuperAdmin-Instructor');
 
 // Ruta para ver el perfil de un instructor específico
-Route::get('/superadmin/SuperAdmin-InstructorPerfil', [SuperadminController::class, 'SuperAdminInstructorPerfil'])->name('superadmin.SuperAdmin-InstructorPerfil');
+Route::get('/superadmin/SuperAdmin-InstructorPerfil/{id}', [SuperadminController::class, 'SuperAdminInstructorPerfil'])
+     ->name('superadmin.SuperAdmin-InstructorPerfil');
 
 
 

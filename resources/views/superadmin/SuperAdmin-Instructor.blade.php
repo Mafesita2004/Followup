@@ -153,11 +153,13 @@
                 $contador = 0;
             @endphp
             @foreach ($users as $user)
-                <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil') }}" class="w-40px h-30px bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
+                 <a href="{{ route('superadmin.SuperAdmin-InstructorPerfil', ['id' => $user['id']]) }}" class="w-40px h-30px bg-white border-2 border-[#009E00] rounded-2xl m-4 p-2 flex flex-col items-center hover:bg-green-100">
                     <img src="{{ asset('img/administrador/instructor-icon.png') }}" alt="User" class="w-8 h-8 mb-1">
                     <span class="p-1 text-xs text-center ">{{ $user['name'] }} {{ $user['last_name'] }}</span>
                     <span class="p-1 text-xs text-center">{{ $user['identification'] }}</span>
                     <span class="p-1 text-xs text-center">{{ $user['municipality'] }}</span>
+                    <span class="p-1 text-xs text-center">{{ $user['role']['role_type'] }}</span>
+
                     <span class="p-1 text-xs text-center">Aprendices: 0</span>
                 </a>
                 @php
