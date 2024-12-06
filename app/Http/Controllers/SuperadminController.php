@@ -17,7 +17,7 @@ class SuperadminController extends Controller
 
     public function SuperAdminAdministrator()
     {
-        $userData = Http::get('https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers');
+        $userData = Http::get('https://apietapaproductivatest-production-af30.up.railway.app/api/user_by_roles');
         $userDataArray = $userData->json();
 
         return view('superadmin.SuperAdmin-Administrator', ['users' => $userDataArray]);
@@ -66,7 +66,7 @@ class SuperadminController extends Controller
 
     public function SuperAdminInstructor()
     {
-        $userData = Http::get('https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers');
+        $userData = Http::get('https://apietapaproductivatest-production-af30.up.railway.app/api/user_by_roles_instructor');
         $userDataArray = $userData->json();
             return view('superadmin.SuperAdmin-Instructor', ['users' => $userDataArray]);
     }
