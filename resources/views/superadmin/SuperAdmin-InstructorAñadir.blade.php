@@ -140,7 +140,7 @@
         </a>
     </div>
     <div class="flex justify-center">
-        <form action="{{ route('superadmin.storeUserTrainer') }}" method="POST" class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
+        <form action="{{ route('superadmin.storeUser') }}" method="POST" class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
             <div class="bg-gray-100 p-6 rounded-lg">
                 <div class="text-center mb-6">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">

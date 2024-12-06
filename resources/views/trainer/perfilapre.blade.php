@@ -6,6 +6,9 @@
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.9/vis-timeline-graph2d.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.9/vis-timeline-graph2d.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Etapa Seguimiento</title>
     <style>
     #userMenuTri {
@@ -174,8 +177,11 @@
                     </div>
                     <div></div>
                     <div class="bg-gray-100 p-4 rounded-md w-full">
-                        <h3>LINEA TEMPORAL (Etapa de seguimiento)</h3>
-                        <img src="{{asset('img/lineatiempo.png')}}" alt="timeline" class='timeline'>
+                        <div class="w-full md:flex-1 mt-[0.5%] bg-gray-100 rounded-lg shadow mx-auto tarjeta flex flex-col items-center p-8 ">
+                            <h3 class="text-center text-lg font-bold mb-0">Línea Temporal (Etapa de seguimiento)</h3>
+                            <div id="timeline" class="w-full h-60 md:h-80 object-cover "></div>
+                        </div>
+                
                     </div>
                 </div>
             </div>
@@ -213,6 +219,84 @@
     });
 });
 
+// script linea de tiempo 
+ // Crear elementos para la línea de tiempo
+ var items = new vis.DataSet([
+            { id: 1, content: 'Asignación', start: '2023-12-29' },
+            { id: 2, content: 'Inicio Etapa Productiva', start: '2024-01-01' }, // Completado
+    { id: 3, content: 'Primera Visita', start: '2024-02-01' },
+    { id: 4, content: 'Segunda Visita', start: '2024-04-01' },
+    { id: 5, content: 'Tercera Visita', start: '2024-06-01' },
+    { id: 6, content: 'Finalización de Etapa Productiva', start: '2024-08-01' }
+]);
+
+// Crear elementos para la línea de tiempo
+var items = new vis.DataSet([
+            { id: 1, content: 'Asignación', start: '2023-12-29' },
+            { id: 2, content: 'Inicio Etapa Productiva', start: '2024-01-01' }, // Completado
+    { id: 3, content: 'Primera Visita', start: '2024-02-01' },
+    { id: 4, content: 'Segunda Visita', start: '2024-04-01' },
+    { id: 5, content: 'Tercera Visita', start: '2024-06-01' },
+    { id: 6, content: 'Finalización de Etapa Productiva', start: '2024-08-01' }
+]);
+
+        // Opciones de la línea de tiempo
+        var options = {
+            width: '100%',
+            height: '100%', // Ajusta la altura automáticamente
+            start: new Date(),
+            end: '2024-08-01',
+            showCurrentTime: true, // Muestra una línea para el tiempo actual
+            zoomMin: 1000 * 60 * 60 * 24 * 30, // Z'oom mínimo: 1 mes
+            orientation: { axis: 'top', item:'top' }, // Coloca el eje temporal en la parte superior zoomMax: 1000 * 60 * 60 * 24 * 365 * 2, // Zoom máximo: 2 años
+            editable: {
+            updateTime: false, // No permite cambiar la hora de los eventos
+            updateGroup: false, // No permite cambiar el grupo de los eventos
+            add: false, // No permite añadir nuevos eventos
+            remove: false // No permite eliminar eventos
+            },
+            margin: {
+            item: 10, // Margen entre los elementos y el eje temporal
+            axis: 5 // Margen entre el eje y el borde de la visualización
+            },
+            stack: true, // Permite apilar eventos que se solapan
+            tooltip: {
+            followMouse: true, // El tooltip sigue el puntero
+           },
+            locale: 'es', // Define el idioma como español
+           format: {
+           minorLabels: {
+            minute: 'HH:mm', // Formato de horas y minutos en etiquetas menores
+            hour: 'HH:mm', // Formato de horas en etiquetas menores
+            day: 'DD-MM', // Formato de día en etiquetas menores
+            },
+            majorLabels: {
+            day: 'MMMM YYYY', // Formato de mes y año en etiquetas mayores
+        }
+    }
+};
+        // Función para obtener actividades completadas
+        function getCompletedActivities() {
+            return JSON.parse(localStorage.getItem('completedActivities')) || [];
+        }
+
+        // Crear el contenedor de la línea de tiempo
+        var container = document.getElementById('timeline');
+        var timeline = new vis.Timeline(container, items, options);
+
+        // Función para actualizar el estado de los eventos en la línea de tiempo
+        function updateTimeline() {
+            let completedActivities = getCompletedActivities();
+            completedActivities.forEach(date => {
+                let item = items.get({ filter: function (item) { return item.start === date; } });
+                if (item.length > 0) {
+                    items.update({ id: item[0].id, className: 'completed' });
+                }
+            });
+        }
+
+        // Actualizar la línea de tiempo al cargar la página
+        updateTimeline();
 </script>
 </body>
 </html>
