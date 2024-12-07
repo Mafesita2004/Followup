@@ -46,7 +46,7 @@
                     <h2 class="text-sm mt-2 text-[#009e00]">Centro de Comercio y Servicios</h2>
                 </div>
             </div>
-            <div class="relative ml-auto flex items-center">
+            <div class="relative flex items-center ml-auto">
                 <!-- Contenedor para la imagen y el ícono de los tres puntos -->
                 <div class="relative">
                     <!-- Imagen de usuario -->
@@ -65,21 +65,21 @@
                          <div class="flex items-center mb-4">
                              <div>
                                  <p class="text-sm font-bold">{{ auth()->user()->name }} {{ auth()->user()->last_name }}</p>
-                                 <p class="text-sm mt-2">Super Administrador</p>
+                                 <p class="mt-2 text-sm">Super Administrador</p>
                              </div>
 
 
                          </div>
                          <ul>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-1">Ver perfil</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Perfil') }}" class="block py-1 font-bold text-center text-green-600 bg-white border border-green-600 rounded-lg hover:text-white hover:bg-green-600">Ver perfil</a></li>
 
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block text-black hover:bg-white p-2 rounded-lg">Configuración</a></li>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block text-black hover:bg-white p-2 rounded-lg" onclick="toggleSublist(event)">Permisos</a></li>
-                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block text-black hover:bg-white p-2 rounded-lg">Graficas</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Configuracion') }}" class="block p-2 text-black rounded-lg hover:bg-white">Configuración</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Permisos') }}" class="block p-2 text-black rounded-lg hover:bg-white" onclick="toggleSublist(event)">Permisos</a></li>
+                             <li class="mt-2"><a href="{{ route('superadmin.SuperAdmin-Graficas')}}" class="block p-2 text-black rounded-lg hover:bg-white">Graficas</a></li>
                          </ul>
                          <form id="logoutForm" action="{{ route('logout') }}" method="POST" class="mt-4">
                              @csrf
-                             <button type="submit" class="block text-center text-green-600 font-bold bg-white border hover:text-white hover:bg-green-600 border-green-600 rounded-lg py-2 w-full">Cerrar sesión</button>
+                             <button type="submit" class="block w-full py-2 font-bold text-center text-green-600 bg-white border border-green-600 rounded-lg hover:text-white hover:bg-green-600">Cerrar sesión</button>
                          </form>
                  </div>
              </div>
@@ -88,16 +88,16 @@
 
     {{-- FIN Barra Azul --}}
 
-        <div class="w-full flex justify-center">
-            <ul class="horizontal-list flex space-x-4 justify-center items-center" >
+        <div class="flex justify-center w-full">
+            <ul class="flex items-center justify-center space-x-4 horizontal-list" >
                 <li>
-                    <a href="{{ route('superadmin.home') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.home') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                         Inicio
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('superadmin.SuperAdmin-Administrator') }}"
-                    class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                    Administrador
 
                     </a>
@@ -110,12 +110,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.SuperAdmin-Aprendiz') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                         Aprendices
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block text-white text-center bg-transparent px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    <a href="{{ route('superadmin.SuperAdmin-Graficas') }}" class="block px-4 py-2 text-center text-white transition bg-transparent rounded-lg hover:bg-green-700">
                        Graficas
                     </a>
                 </li>
@@ -134,21 +134,22 @@
     </nav>
 
 
-    <div class="w-full flex justify-between items-center mt-6">
+    <div class="flex items-center justify-between w-full mt-6">
         <a href="{{route('superadmin.SuperAdmin-Instructor') }}" class="ml-4">
             <img src="{{ asset('img/flecha.png') }}" alt="Flecha" class="w-5 h-auto">
         </a>
     </div>
     <div class="flex justify-center">
-        <form action="{{ route('superadmin.storeUser') }}" method="POST" class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <div class="text-center mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 mx-auto text-gray-500 m-4">
+            <form action="{{ route('superadmin.crearInstructor') }}" method="POST"   class="bg-white m-4 p-2 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)] border-[#2F3E4C] w-2/3 items-center">
+            <div class="p-6 bg-gray-100 rounded-lg">
+@csrf
+                <div class="mb-6 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-40 h-40 m-4 mx-auto text-gray-500">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
-                    <h1 class="text-lg m-0 text-black font-bold">INSTRUCTOR</h1>
+                    <h1 class="m-0 text-lg font-bold text-black">INSTRUCTOR</h1>
                 </div>
-                <h3 class="font-bold mb-4">Datos básicos</h3>
+                <h3 class="mb-4 font-bold">Datos básicos</h3>
                 <div class="grid grid-cols-3 gap-4 mb-6">
                     <div>
                         <label class="block text-gray-700">Nombre</label>
@@ -170,7 +171,7 @@
                         <label class="block text-gray-700">Celular</label>
                         <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Celular" name="telephone">
                     </div>
-                    <div>
+                    {{-- <div>
                         <label for="programa" class="block text-gray-700">Red de conocimiento</label>
                         <select id="programa" name="program" class="w-full border border-gray-300 rounded-lg p-2.5">
                             <option value="" disabled selected>Seleccione una red de conocimiento</option>
@@ -206,8 +207,8 @@
                             <option value="textil-confeccion">Red de Textil, confección, diseño y moda</option>
                             <option value="transporte">Red de Transporte</option>
                         </select>
-                    </div>
-                    <div>
+                    </div> --}}
+                    {{-- <div>
                         <label class="block text-gray-700">Total de horas</label>
                         <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Total de horas" name="total_horas">
                     </div>
@@ -219,26 +220,29 @@
                     <div>
                         <label class="block text-gray-700">Fecha de fin</label>
                         <input type="date" class="w-full border border-gray-300 rounded-lg p-2.5" name="end_date">
-                    </div>
+                    </div> --}}
                 </div>
     
-                <h3 class="font-bold mb-4 mt-6">Lugar de Residencia</h3>
+                <h3 class="mt-6 mb-4 font-bold">Lugar de Residencia</h3>
                 <div class="grid grid-cols-3 gap-4 mb-6">
                 
-                    <div>
-                        <label class="block text-gray-700">Departamento:</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Departamento" name="departamento">
-                    </div>
+                                        <div>
+                                        <label class="block text-gray-700">Departamento:</label>
+                                        <input type="text" name="department" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Departamento" required>
+                                    </div>
                     <div>
                         <label class="block text-gray-700">Municipio:</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Municipio" name="municipio">
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Municipio" name="municipality">
                     </div>
                    
                     <div>
                         <label class="block text-gray-700">Dirección:</label>
-                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Dirección" name="direccion">
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-2.5" placeholder="Dirección" name="address">
                     </div>
-                    
+                       <div>
+                                    <label class="block text-gray-700">Rol</label>
+                                    <input type="hidden" name="id_role" value="3"> <!-- O el valor adecuado -->
+                                </div>
                      <!-- Contraseña -->
                      <div>
                         <label class="block text-gray-700">Contraseña</label>
@@ -248,7 +252,7 @@
                 </div>
                 <div class="flex justify-end mt-6 space-x-4">
                     <button type="submit" class="px-4 py-2 text-white bg-green-700 rounded hover:bg-green-900">Confirmar</button>
-                    <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Cancelar</a>
+                    <a href="{{ route('superadmin.SuperAdmin-Instructor') }}" class="px-4 py-2 text-gray-800 bg-gray-300 rounded hover:bg-gray-400">Cancelar</a>
                 </div>
             </div>
         </form>

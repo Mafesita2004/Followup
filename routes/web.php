@@ -89,6 +89,9 @@ Route::get('/superadmin/SuperAdmin-InstructorPerfil/{id}', [SuperadminController
 // Ruta para añadir un nuevo instructor
 Route::get('/superadmin/SuperAdmin-InstructorAñadir', [UserRegisterController::class, 'SuperAdminInstructorAñadir'])->name('superadmin.SuperAdmin-InstructorAñadir');
 Route::post('/superadmin/store-user', [UserRegisterController::class, 'storeUser'])->name('superadmin.storeUser');
+Route::post('/superadmin/store-instructor', [UserRegisterController::class, 'crearInstructor'])->name('superadmin.crearInstructor');
+
+
 
 // Ruta para configuración general del superadmin
 Route::get('/superadmin/SuperAdmin-Configuracion', [SuperadminController::class, 'SuperAdminConfiguracion'])->name('superadmin.SuperAdmin-Configuracion');

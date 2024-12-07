@@ -196,4 +196,51 @@ class UserRegisterController extends Controller
 
         return response()->json(null, 204); // Respuesta vacía con código 204
     }
+
+
+    public function crearInstructor(Request $request)
+    {
+        
+        $validated = $request->validate([
+            'identification' => 'required|max:50',
+            'name' => 'required|string|max:255',
+            'telephone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'address' => 'required|string|max:255',
+            'department' => 'required|string|max:100',
+            'municipality' => 'required|string|max:100',
+            'id_role' => 'required|integer',
+            'password' => 'required|string|min:8',
+            'last_name' => 'required|string|max:100',
+            
+
+        ]);
+    
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',              
+            'Accept' => 'application/json',   
+        ])->post('https://apietapaproductivatest-production-af30.up.railway.app/api/user_registers', [
+            'identification' => $validated['identification'],
+            'name' => $validated['name'],
+            'telephone' => $validated['telephone'],
+            'email' => $validated['email'],
+            'address' => $validated['address'],
+            'department' => $validated['department'],
+            'municipality' => $validated['municipality'],
+            'id_role' => 3,
+            'password' => $validated['password'],
+            'last_name' => $validated['last_name'],
+
+        ]);
+
+    
+        if ($response->successful()) {
+            return redirect()->route('superadmin.SuperAdmin-Administrator')->with('success', 'Usuario creado correctamente');
+        } else {
+            return redirect()->back()->with('error', 'Error al crear el usuario');
+        }
+    }
+    
 }
+
+
